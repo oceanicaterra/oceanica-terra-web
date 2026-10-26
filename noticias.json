@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T09:00:00-04:00",
+  "updated": "2026-10-26T12:47:38-04:00",
   "items": [
     {
       "lead": true,
@@ -11,12 +11,20 @@
       "date": "2026-10-26"
     },
     {
-      "category": "rutas",
-      "title": "Las navieras vuelven a Suez en servicios que suman el 63% de la capacidad Asia-Europa",
-      "summary": "Según un análisis de Alphaliner, CMA CGM, Cosco y OOCL, Maersk, Hapag-Lloyd y MSC encabezan el regreso por el mar Rojo. Entre el 15 de septiembre y el 15 de octubre hubo tránsitos en 24 de 46 servicios directos; Evergreen y ZIM aún no anuncian su vuelta.",
-      "source": "MundoMarítimo",
-      "url": "https://mundomaritimo.cl/noticias/navieras-retoman-la-ruta-del-canal-de-suez-en-servicios-que-reunen-el-63-de-la-capacidad-asia-europa",
-      "date": "2026-10-23"
+      "category": "regulacion",
+      "title": "EE. UU. propone prorrogar hasta el 9 de enero la suspensión de tasas portuarias a buques chinos",
+      "summary": "La Oficina del Representante Comercial (USTR) plantea suspender dos meses más, hasta el 9 de enero, las tasas a buques vinculados a China, que vencían el 9 de noviembre, mientras negocia con Pekín. Las tasas serían de 50 dólares por tonelada neta para buques construidos en China de empresas no chinas.",
+      "source": "The Loadstar",
+      "url": "https://theloadstar.com/us-delays-port-fees-for-chinese-ships-again-now-until-9-january/",
+      "date": "2026-10-26"
+    },
+    {
+      "category": "astilleros",
+      "title": "El astillero chino Hengli Heavy Industry recibe pedidos de 52 portacontenedores ultragrandes de doble combustible",
+      "summary": "Varias navieras encargaron 20 buques de 19.000 TEU, 12 de 22.000 TEU y 20 de 24.000 TEU, estos últimos contratados por MSC, todos con propulsión dual a GNL. No se publicaron importes ni fechas de entrega.",
+      "source": "Seatrade Maritime",
+      "url": "https://www.seatrade-maritime.com/shipyards/hengli-heavy-industry-bags-52-ultra-large-container-ships",
+      "date": "2026-10-26"
     },
     {
       "category": "seguridad",
@@ -65,14 +73,6 @@
       "source": "The Week",
       "url": "https://www.theweek.in/news/maritime/2026/10/24/indian-seafarers-union-warns-imo-of-hundreds-affected-in-fake-documents-crisis.html",
       "date": "2026-10-24"
-    },
-    {
-      "category": "rutas",
-      "title": "CMA CGM y Maersk cerrarán en diciembre un servicio entre Asia y la costa este de Sudamérica",
-      "summary": "El servicio conjunto SEAS 3 / ASAS2 hará su última salida desde Shanghái el 8 de diciembre. Ambas navieras seguirán atendiendo la ruta con otros servicios.",
-      "source": "MundoMarítimo",
-      "url": "https://mundomaritimo.cl/noticias/cma-cgm-y-maersk-terminaran-servicio-maritimo-entre-asia-y-la-costa-este-de-sudamerica-en-diciembre",
-      "date": "2026-10-23"
     },
     {
       "category": "astilleros",
