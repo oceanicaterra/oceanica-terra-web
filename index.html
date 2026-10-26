@@ -11,15 +11,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
-/* Layout: una carta náutica clara organizada como un índice de puerto: cada sección es una «dársena» con su estado (disponible / en preparación); la biblioteca es el centro, con pestañas por disciplina */
+/* Layout: mar claro. Portada con olas en movimiento, fondo con líneas de oleaje muy suaves y pie de página como fondo marino; las tarjetas blancas mantienen el texto legible */
 :root {
-  --paper: #EDF1F3;
+  --paper: #F3F9FC;
   --surface: #FFFFFF;
-  --ink: #0E2338;
-  --muted: #4C5E6E;
-  --rule: #C5D1D9;
+  --ink: #0A2540;
+  --muted: #4A6075;
+  --rule: #D3E2EB;
   --accent: #D9480F;
-  --accent-ink: #A8390B;
+  --accent-ink: #0B6E8F;
   --on-accent: #FFFFFF;
   --cover-bg: #0B2545;
   --cover-line: rgba(140, 175, 210, .22);
@@ -29,24 +29,43 @@
   --good-bg: #DCEFE4;
   --wait: #6B5A12;
   --wait-bg: #F3ECCB;
+  --sea-1: #E2F3FA;
+  --sea-2: #B5E1F0;
+  --sea-3: #6FC0DE;
+  --sea-line: #BFE3F0;
+  --hero-top: #FFFFFF;
+  --hero-bottom: #DFF2FA;
+  --glow: rgba(111, 192, 222, .28);
+  --deep: #0B3A57;
+  --deep-fg: #FFFFFF;
+  --deep-soft: #C3DDEA;
+  --shadow: 0 1px 2px rgba(10, 37, 64, .05), 0 10px 28px -14px rgba(10, 37, 64, .22);
   --font-display: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0A1622; --surface: #112130; --ink: #E5ECF1; --muted: #9DB1C1; --rule: #253A4C;
-    --accent: #FF7A3D; --accent-ink: #FF9C6B; --on-accent: #1A0A02;
+    --paper: #061624; --surface: #0B2134; --ink: #E6F0F5; --muted: #A0B8C8; --rule: #1E3A50;
+    --accent: #FF7A3D; --accent-ink: #6CCDEB; --on-accent: #1A0A02;
     --good: #7FD9A9; --good-bg: #133526; --wait: #E9D27A; --wait-bg: #3A3212;
     --cover-bg: #0E2E55; --cover-line: rgba(160, 195, 230, .2);
+    --sea-1: #0C2A40; --sea-2: #0F3A57; --sea-3: #17587A; --sea-line: #12324A;
+    --hero-top: #061624; --hero-bottom: #0A2338; --glow: rgba(60, 160, 210, .16);
+    --deep: #020E18; --deep-fg: #FFFFFF; --deep-soft: #9DB8C8;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 30px -16px rgba(0, 0, 0, .7);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0A1622; --surface: #112130; --ink: #E5ECF1; --muted: #9DB1C1; --rule: #253A4C;
-  --accent: #FF7A3D; --accent-ink: #FF9C6B; --on-accent: #1A0A02;
+  --paper: #061624; --surface: #0B2134; --ink: #E6F0F5; --muted: #A0B8C8; --rule: #1E3A50;
+  --accent: #FF7A3D; --accent-ink: #6CCDEB; --on-accent: #1A0A02;
   --good: #7FD9A9; --good-bg: #133526; --wait: #E9D27A; --wait-bg: #3A3212;
   --cover-bg: #0E2E55; --cover-line: rgba(160, 195, 230, .2);
+  --sea-1: #0C2A40; --sea-2: #0F3A57; --sea-3: #17587A; --sea-line: #12324A;
+  --hero-top: #061624; --hero-bottom: #0A2338; --glow: rgba(60, 160, 210, .16);
+  --deep: #020E18; --deep-fg: #FFFFFF; --deep-soft: #9DB8C8;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 30px -16px rgba(0, 0, 0, .7);
   color-scheme: dark;
 }
 
@@ -54,7 +73,12 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
-  background: var(--paper); color: var(--ink);
+  background-color: var(--paper); color: var(--ink);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 8% 18%, var(--glow), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 95% 55%, var(--glow), transparent 62%),
+    radial-gradient(ellipse 70% 40% at 35% 98%, var(--glow), transparent 62%);
+  background-attachment: fixed;
   font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -75,6 +99,35 @@ ul, ol { margin: 0; }
 .muted { color: var(--muted); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 section[id], main[id] { scroll-margin-top: 5rem; }
+
+/* Mar de fondo */
+.bg-sea { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.bg-sea svg { position: absolute; left: 0; width: 200%; height: 100%; }
+.bg-sea path { fill: none; stroke: var(--sea-line); stroke-width: 1.3; vector-effect: non-scaling-stroke; }
+.hero { position: relative; overflow: hidden; background:
+  radial-gradient(ellipse 55% 60% at 12% 0%, var(--glow), transparent 70%),
+  radial-gradient(ellipse 45% 55% at 92% 25%, var(--glow), transparent 70%),
+  linear-gradient(180deg, var(--hero-top) 0%, var(--hero-bottom) 100%);
+  padding-bottom: clamp(60px, 9vw, 120px); }
+.hero > .wrap { position: relative; z-index: 1; }
+.waves { position: absolute; left: 0; right: 0; bottom: -1px; height: clamp(70px, 10vw, 140px); overflow: hidden; pointer-events: none; }
+.waves svg { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; }
+.waves .w1 path { fill: var(--sea-2); opacity: .75; }
+.waves .w2 path { fill: var(--sea-3); opacity: .35; }
+.waves .w3 path { fill: var(--surface); }
+.shore { position: relative; height: clamp(50px, 7vw, 90px); background: var(--surface); overflow: hidden; }
+.shore svg { position: absolute; bottom: -1px; left: 0; width: 200%; height: 100%; }
+.shore .s1 path { fill: var(--sea-3); opacity: .45; }
+.shore .s2 path { fill: var(--deep); }
+@media (prefers-reduced-motion: no-preference) {
+  .waves .w1 { animation: drift 38s linear infinite; }
+  .waves .w2 { animation: drift 26s linear infinite reverse; }
+  .waves .w3 { animation: drift 18s linear infinite; }
+  .shore .s1 { animation: drift 30s linear infinite reverse; }
+  .shore .s2 { animation: drift 22s linear infinite; }
+  .bg-sea svg { animation: drift 90s linear infinite; }
+}
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Estado */
 .chip { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 999px; white-space: nowrap; }
@@ -98,7 +151,7 @@ nav.links a:hover { color: var(--accent-ink); }
 .langnote .wrap { padding-block: .6rem; }
 
 /* Botones */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; padding: .78rem 1.25rem; border-radius: 6px; text-decoration: none; cursor: pointer; border: 2px solid transparent; }
+.btn { box-shadow: 0 6px 16px -10px rgba(10, 37, 64, .45); display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; padding: .78rem 1.25rem; border-radius: 6px; text-decoration: none; cursor: pointer; border: 2px solid transparent; }
 .btn-primary { background: var(--accent); color: var(--on-accent); }
 .btn-primary:hover { filter: brightness(1.06); }
 .btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
@@ -130,8 +183,8 @@ nav.links a:hover { color: var(--accent-ink); }
 @media (prefers-reduced-motion: no-preference) { .cover { transition: transform .5s ease; } .book:hover .cover { transform: rotateY(-2deg); } }
 
 /* Secciones */
-section.band { padding-block: clamp(3rem, 7vw, 5.5rem); border-top: 1px solid var(--rule); }
-section.band.alt { background: var(--surface); }
+section.band { padding-block: clamp(3rem, 7vw, 5.5rem); }
+section.band.alt { background: color-mix(in srgb, var(--surface) 94%, transparent); }
 .sec-head { display: grid; gap: .6rem; max-width: 46rem; margin-bottom: 2.2rem; }
 .sec-head p:not(.label) { color: var(--muted); font-size: 1.1rem; }
 .sec-head .row { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
@@ -150,7 +203,7 @@ section.alt .tabs button { background: var(--paper); }
 .tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .panel-intro { max-width: 46rem; color: var(--muted); margin-bottom: 1.4rem; }
 .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.entry { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.1rem; display: grid; gap: .4rem; align-content: start; }
+.entry { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; box-shadow: var(--shadow); padding: 1rem 1.1rem; display: grid; gap: .4rem; align-content: start; }
 section:not(.alt) .entry { background: var(--surface); }
 .entry .meta { font-family: var(--font-mono); font-size: .74rem; color: var(--accent-ink); letter-spacing: .04em; }
 .entry p { font-size: .96rem; color: var(--muted); }
@@ -165,7 +218,7 @@ table.reg td.y { font-family: var(--font-mono); font-variant-numeric: tabular-nu
 
 /* Artículos */
 .articles { display: grid; gap: 1.2rem; }
-.art { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(1.1rem, 3vw, 1.8rem); }
+.art { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); padding: clamp(1.1rem, 3vw, 1.8rem); }
 .art-head { display: grid; gap: .5rem; max-width: 46rem; }
 .art-head .meta { font-family: var(--font-mono); font-size: .74rem; color: var(--accent-ink); letter-spacing: .04em; }
 .art-head h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; }
@@ -189,7 +242,7 @@ table.reg td.y { font-family: var(--font-mono); font-variant-numeric: tabular-nu
 
 /* Módulos */
 .mods { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
-.mod { display: grid; gap: .45rem; grid-template-rows: auto auto 1fr auto auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.05rem 1.1rem; text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease; }
+.mod { display: grid; gap: .45rem; grid-template-rows: auto auto 1fr auto auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); padding: 1rem 1.05rem 1.1rem; text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease; }
 section.alt .mod { background: var(--paper); }
 .mod:hover { border-color: var(--accent); }
 @media (prefers-reduced-motion: no-preference) { .mod:hover { transform: translateY(-2px); } }
@@ -222,7 +275,7 @@ section.alt .mod { background: var(--paper); }
 
 /* Publicaciones */
 .pubs { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
-.feature { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.6rem; display: grid; gap: 1rem; }
+.feature { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); padding: 1.6rem; display: grid; gap: 1rem; }
 section.alt .feature { background: var(--paper); }
 .feature .top { display: flex; justify-content: space-between; gap: 1rem; align-items: start; flex-wrap: wrap; }
 .price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; line-height: 1; }
@@ -241,12 +294,12 @@ section.alt .feature { background: var(--paper); }
 
 /* Ejercicios y calculadora */
 .sample { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
-.sheet { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.5rem; display: grid; gap: .6rem; }
+.sheet { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); padding: 1.5rem; display: grid; gap: .6rem; }
 section.alt .sheet { background: var(--paper); }
 details.reveal { margin-top: .6rem; border-top: 1px dashed var(--rule); padding-top: .9rem; }
 details.reveal summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--accent-ink); }
 details.reveal ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap: .3rem; }
-.calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; background: var(--surface); }
 .calc form { padding: 1.4rem; display: grid; gap: 1rem; }
 .field { display: grid; gap: .3rem; }
 .field > span { font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
@@ -292,10 +345,10 @@ details.reveal ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap:
 .contact .mail a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 4px; }
 .contact .btn { justify-self: start; }
 
-footer { border-top: 1px solid var(--rule); padding-block: 2.5rem; font-size: .92rem; color: var(--muted); }
+footer { background: var(--deep); padding-block: 1.5rem 2.8rem; font-size: .92rem; color: var(--deep-soft); }
 footer .wrap { display: grid; gap: 1.5rem; }
 .legal { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
-.legal details summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+.legal details summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--deep-fg); }
 .legal details p { margin-top: .5rem; font-size: .88rem; }
 
 @media (max-width: 960px) {
@@ -315,6 +368,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
 }
 </style>
 
+<div class="bg-sea" aria-hidden="true"><svg viewBox="0 0 2880 900" preserveAspectRatio="none"><path d="M0 140 C120 126 360 154 480 140 C600 126 840 154 960 140 C1080 126 1320 154 1440 140 C1560 126 1800 154 1920 140 C2040 126 2280 154 2400 140 C2520 126 2760 154 2880 140"/><path d="M0 300 C120 290 360 310 480 300 C600 290 840 310 960 300 C1080 290 1320 310 1440 300 C1560 290 1800 310 1920 300 C2040 290 2280 310 2400 300 C2520 290 2760 310 2880 300"/><path d="M0 470 C120 454 360 486 480 470 C600 454 840 486 960 470 C1080 454 1320 486 1440 470 C1560 454 1800 486 1920 470 C2040 454 2280 486 2400 470 C2520 454 2760 486 2880 470"/><path d="M0 640 C120 628 360 652 480 640 C600 628 840 652 960 640 C1080 628 1320 652 1440 640 C1560 628 1800 652 1920 640 C2040 628 2280 652 2400 640 C2520 628 2760 652 2880 640"/><path d="M0 800 C120 785 360 815 480 800 C600 785 840 815 960 800 C1080 785 1320 815 1440 800 C1560 785 1800 815 1920 800 C2040 785 2280 815 2400 800 C2520 785 2760 815 2880 800"/></svg></div>
 </head>
 <body>
 <header class="top">
@@ -347,6 +401,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
 <main id="inicio">
   <!-- HERO -->
   <section class="hero">
+    <div class="waves" aria-hidden="true"><svg class="w1" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 48 C180 22 540 74 720 48 C900 22 1260 74 1440 48 C1620 22 1980 74 2160 48 C2340 22 2700 74 2880 48 V120 H0 Z"/></svg><svg class="w2" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 66 C180 48 540 84 720 66 C900 48 1260 84 1440 66 C1620 48 1980 84 2160 66 C2340 48 2700 84 2880 66 V120 H0 Z"/></svg><svg class="w3" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 88 C180 76 540 100 720 88 C900 76 1260 100 1440 88 C1620 76 1980 100 2160 88 C2340 76 2700 100 2880 88 V120 H0 Z"/></svg></div>
     <div class="wrap">
       <div>
         <p class="label">Educación y conocimiento marítimo · en español</p>
@@ -931,6 +986,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
 <dialog class="dlg" id="modulo-19" aria-labelledby="modulo-19-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 19 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-19-t">Tecnología marítima y transformación digital</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Sistemas a bordo y en tierra, datos, conectividad, ciberseguridad y automatización.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Describir los principales sistemas electrónicos del buque.</li><li>Explicar el valor de los datos en la operación.</li><li>Identificar riesgos de ciberseguridad.</li><li>Situar la automatización y los buques autónomos.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Del sextante al ECDIS</li><li>AIS, conectividad y seguimiento de flotas</li><li>Datos y analítica operativa</li><li>Ciberseguridad marítima</li><li>Automatización portuaria</li><li>Buques autónomos: estado y retos</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 19</span><b class="fp-t">Tecnología marítima y transformación digital</b><p>Un buque moderno genera datos sin parar: posición, velocidad, consumo, temperatura de motores, estado de la carga. Bien usados, esos datos ahorran combustible, anticipan averías y mejoran la seguridad.</p><p>La digitalización también trae riesgos nuevos. Un ataque informático puede paralizar un buque o una terminal, y por eso la ciberseguridad forma parte hoy de la gestión de la seguridad.</p><p>Este módulo te da una visión práctica de la tecnología que está cambiando el sector.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 19">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
 <dialog class="dlg" id="modulo-20" aria-labelledby="modulo-20-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 20 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-20-t">Estrategia, emprendimiento y métodos de investigación</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Analizar el sector, crear un negocio marítimo y hacer trabajos de investigación con fuentes fiables.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Analizar la estrategia de una empresa del sector.</li><li>Preparar un plan de negocio marítimo.</li><li>Diseñar un trabajo de investigación.</li><li>Encontrar y citar fuentes fiables.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Estrategia en el sector marítimo</li><li>Modelos de negocio y ventajas competitivas</li><li>Emprender en servicios marítimos</li><li>Plan de empresa paso a paso</li><li>Métodos de investigación</li><li>Fuentes de datos y cómo citarlas</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 20</span><b class="fp-t">Estrategia, emprendimiento y métodos de investigación</b><p>El sector marítimo no es solo para grandes navieras. Consultorías, agencias, empresas de formación, tecnología o servicios portuarios nacen cada año con equipos pequeños y una buena idea.</p><p>Para competir hace falta entender cómo funciona el mercado, dónde está el valor y qué riesgos hay. Y para estudiar el sector con rigor, hace falta saber investigar: formular una pregunta, buscar datos fiables y citarlos bien.</p><p>Este módulo cierra el plan de estudios uniendo estrategia, emprendimiento e investigación.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 20">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
 
+<div class="shore" aria-hidden="true"><svg class="s1" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 40 C180 24 540 56 720 40 C900 24 1260 56 1440 40 C1620 24 1980 56 2160 40 C2340 24 2700 56 2880 40 V100 H0 Z"/></svg><svg class="s2" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 62 C180 50 540 74 720 62 C900 50 1260 74 1440 62 C1620 50 1980 74 2160 62 C2340 50 2700 74 2880 62 V100 H0 Z"/></svg></div>
 <footer>
   <div class="wrap">
     <div class="legal">
