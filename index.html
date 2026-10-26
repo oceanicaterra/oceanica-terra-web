@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230B2545'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23D9480F'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Oceanica Terra</title>
+<meta name="description" content="Oceanica Terra: educación y conocimiento marítimo verificado en español. Biblioteca de buques, convenios y logística, academia, publicaciones y vídeos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: una carta náutica clara organizada como un índice de puerto: cada sección es una «dársena» con su estado (disponible / en preparación); la biblioteca es el centro, con pestañas por disciplina */
+:root {
+  --paper: #EDF1F3;
+  --surface: #FFFFFF;
+  --ink: #0E2338;
+  --muted: #4C5E6E;
+  --rule: #C5D1D9;
+  --accent: #D9480F;
+  --accent-ink: #A8390B;
+  --on-accent: #FFFFFF;
+  --cover-bg: #0B2545;
+  --cover-line: rgba(140, 175, 210, .22);
+  --cover-fg: #FFFFFF;
+  --cover-soft: #BFD0E0;
+  --good: #1F6F4A;
+  --good-bg: #DCEFE4;
+  --wait: #6B5A12;
+  --wait-bg: #F3ECCB;
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0A1622; --surface: #112130; --ink: #E5ECF1; --muted: #9DB1C1; --rule: #253A4C;
+    --accent: #FF7A3D; --accent-ink: #FF9C6B; --on-accent: #1A0A02;
+    --good: #7FD9A9; --good-bg: #133526; --wait: #E9D27A; --wait-bg: #3A3212;
+    --cover-bg: #0E2E55; --cover-line: rgba(160, 195, 230, .2);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0A1622; --surface: #112130; --ink: #E5ECF1; --muted: #9DB1C1; --rule: #253A4C;
+  --accent: #FF7A3D; --accent-ink: #FF9C6B; --on-accent: #1A0A02;
+  --good: #7FD9A9; --good-bg: #133526; --wait: #E9D27A; --wait-bg: #3A3212;
+  --cover-bg: #0E2E55; --cover-line: rgba(160, 195, 230, .2);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.wrap {
+  max-width: 72rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; }
+h3 { font-size: 1.18rem; font-weight: 600; }
+h4 { font-size: 1.02rem; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent-ink); }
+ul, ol { margin: 0; }
+.label { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+section[id], main[id] { scroll-margin-top: 5rem; }
+
+/* Estado */
+.chip { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 999px; white-space: nowrap; }
+.chip::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; }
+.chip.on { color: var(--good); background: var(--good-bg); }
+.chip.soon { color: var(--wait); background: var(--wait-bg); }
+
+/* Cabecera */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--paper) 93%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--rule); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: .8rem 1.2rem; padding-block: .7rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); }
+.brand svg { width: 28px; height: 28px; flex: none; }
+.brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: .14em; }
+nav.links { display: flex; gap: .4rem 1rem; flex-wrap: wrap; align-items: center; font-family: var(--font-display); font-size: .98rem; }
+nav.links a { color: var(--ink); text-decoration: none; }
+nav.links a:hover { color: var(--accent-ink); }
+.langs { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+.langs button { font-family: var(--font-mono); font-size: .76rem; background: transparent; color: var(--muted); border: 0; padding: .22rem .6rem; cursor: pointer; }
+.langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.langnote { background: var(--wait-bg); color: var(--wait); font-family: var(--font-display); font-size: 1rem; }
+.langnote .wrap { padding-block: .6rem; }
+
+/* Botones */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; padding: .78rem 1.25rem; border-radius: 6px; text-decoration: none; cursor: pointer; border: 2px solid transparent; }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--surface); }
+.btn[aria-disabled="true"] { background: var(--rule); color: var(--muted); cursor: default; filter: none; }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(2.5rem, 6vw, 5rem); }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); font-weight: 700; margin-top: .9rem; }
+.hero h1 em { font-style: normal; color: var(--accent-ink); }
+.hero .lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; margin-top: 1.2rem; }
+.hero .ctas { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+.audience { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.audience span { font-family: var(--font-display); font-size: .92rem; border: 1px solid var(--rule); border-radius: 999px; padding: .15rem .65rem; color: var(--muted); }
+
+/* Portada del libro */
+.book { perspective: 1400px; display: grid; justify-items: center; gap: .9rem; }
+.cover { width: min(100%, 300px); aspect-ratio: 8.5 / 11; max-width: 100%;
+  background: repeating-conic-gradient(from 0deg at 72% 70%, var(--cover-line) 0deg .45deg, transparent .45deg 11.25deg), var(--cover-bg);
+  color: var(--cover-fg); border-radius: 3px 8px 8px 3px; padding: 1.5rem 1.3rem; display: flex; flex-direction: column; justify-content: space-between; position: relative;
+  box-shadow: inset 6px 0 0 rgba(0,0,0,.25), 0 24px 50px -20px rgba(5, 20, 40, .55); transform: rotateY(-8deg) rotateX(2deg); text-decoration: none; }
+.cover::after { content: ""; position: absolute; left: 72%; top: 70%; width: 9px; height: 9px; margin: -4.5px; border-radius: 50%; background: var(--accent); }
+.cover .k { font-family: var(--font-display); letter-spacing: .16em; font-size: .7rem; color: var(--cover-soft); font-weight: 600; }
+.cover h3 { font-size: 1.75rem; font-weight: 700; color: var(--cover-fg); margin-top: 1.8rem; }
+.cover i { font-family: var(--font-body); color: var(--cover-soft); font-size: .92rem; display: block; margin-top: .5rem; }
+.cover .bar { width: 52px; height: 4px; background: var(--accent); margin-top: .8rem; }
+.cover small { font-family: var(--font-display); color: var(--cover-soft); font-size: .72rem; letter-spacing: .03em; }
+.cover small b { color: var(--cover-fg); }
+@media (prefers-reduced-motion: no-preference) { .cover { transition: transform .5s ease; } .book:hover .cover { transform: rotateY(-2deg); } }
+
+/* Secciones */
+section.band { padding-block: clamp(3rem, 7vw, 5.5rem); border-top: 1px solid var(--rule); }
+section.band.alt { background: var(--surface); }
+.sec-head { display: grid; gap: .6rem; max-width: 46rem; margin-bottom: 2.2rem; }
+.sec-head p:not(.label) { color: var(--muted); font-size: 1.1rem; }
+.sec-head .row { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+
+/* Índice de la plataforma */
+.harbour { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.harbour a { display: grid; gap: .45rem; align-content: start; padding: 1.1rem 1rem 1.2rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }
+.harbour a:hover h3 { color: var(--accent-ink); }
+.harbour .n { font-family: var(--font-mono); font-size: .78rem; color: var(--accent-ink); }
+.harbour p { color: var(--muted); font-size: .96rem; }
+
+/* Biblioteca */
+.tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.6rem; }
+.tabs button { font-family: var(--font-display); font-size: 1rem; font-weight: 600; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); padding: .45rem .9rem; border-radius: 6px; cursor: pointer; }
+section.alt .tabs button { background: var(--paper); }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.panel-intro { max-width: 46rem; color: var(--muted); margin-bottom: 1.4rem; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.entry { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.1rem; display: grid; gap: .4rem; align-content: start; }
+section:not(.alt) .entry { background: var(--surface); }
+.entry .meta { font-family: var(--font-mono); font-size: .74rem; color: var(--accent-ink); letter-spacing: .04em; }
+.entry p { font-size: .96rem; color: var(--muted); }
+.tablewrap { overflow-x: auto; }
+table.reg { width: 100%; border-collapse: collapse; font-size: .95rem; min-width: 640px; }
+table.reg th, table.reg td { text-align: left; padding: .6rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.reg th { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+table.reg td:first-child { font-family: var(--font-display); font-weight: 600; white-space: nowrap; }
+table.reg td.y { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.kind { font-family: var(--font-mono); font-size: .72rem; padding: .1rem .45rem; border-radius: 4px; border: 1px solid var(--rule); white-space: nowrap; }
+.footnote { font-size: .9rem; color: var(--muted); margin-top: 1rem; max-width: 50rem; }
+
+/* Artículos */
+.articles { display: grid; gap: 1.2rem; }
+.art { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(1.1rem, 3vw, 1.8rem); }
+.art-head { display: grid; gap: .5rem; max-width: 46rem; }
+.art-head .meta { font-family: var(--font-mono); font-size: .74rem; color: var(--accent-ink); letter-spacing: .04em; }
+.art-head h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; }
+.art-lede { font-size: 1.1rem; }
+.byline { font-family: var(--font-mono); font-size: .76rem; color: var(--muted); }
+.art-body { margin-top: 1rem; }
+.art-body > summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--accent-ink); font-size: 1.05rem; }
+.art-text { display: grid; gap: .9rem; max-width: 46rem; margin-top: 1rem; }
+.art-text h4 { font-size: 1.15rem; margin-top: .6rem; }
+.art-text ol, .art-text ul { padding-left: 1.2rem; display: grid; gap: .4rem; }
+.art-text table.reg { background: var(--surface); }
+.callout { border-left: 3px solid var(--accent); background: var(--surface); padding: .8rem 1rem; border-radius: 0 6px 6px 0; }
+.sources { font-size: .9rem; color: var(--muted); }
+
+/* Academia */
+.modules { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2.5rem; counter-reset: m; }
+.modules li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) auto; gap: .6rem; align-items: baseline; padding: .6rem 0; border-bottom: 1px solid var(--rule); counter-increment: m; }
+.modules li::before { content: counter(m, decimal-leading-zero); font-family: var(--font-mono); font-size: .82rem; color: var(--accent-ink); }
+.modules li span { font-family: var(--font-display); font-size: 1.05rem; }
+.formats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2.2rem; }
+
+/* Módulos */
+.mods { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.mod { display: grid; gap: .45rem; grid-template-rows: auto auto 1fr auto auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.05rem 1.1rem; text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease; }
+section.alt .mod { background: var(--paper); }
+.mod:hover { border-color: var(--accent); }
+@media (prefers-reduced-motion: no-preference) { .mod:hover { transform: translateY(-2px); } }
+.mod-n { font-family: var(--font-mono); font-size: .8rem; color: var(--accent-ink); }
+.mod h3 { font-size: 1.08rem; }
+.mod p { font-size: .92rem; color: var(--muted); }
+.mod .chip { justify-self: start; }
+.mod-more { font-family: var(--font-display); font-weight: 600; font-size: .95rem; color: var(--accent-ink); margin-top: .2rem; }
+.dlg { border: 0; padding: 0; border-radius: 12px; width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); color: var(--ink); box-shadow: 0 30px 80px -30px rgba(5, 20, 40, .6); }
+.dlg:focus, .dlg:focus-visible { outline: none; }
+.dlg::backdrop { background: rgba(8, 20, 34, .55); }
+.dlg-in { padding: clamp(1.1rem, 3vw, 1.8rem); display: grid; gap: .9rem; }
+.dlg-top { display: flex; justify-content: space-between; align-items: center; }
+.dlg-x { border: 1px solid var(--rule); background: var(--paper); color: var(--ink); width: 2.2rem; height: 2.2rem; border-radius: 50%; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.dlg h3 { font-size: clamp(1.4rem, 3.4vw, 1.9rem); font-weight: 700; }
+.dlg h4 { font-size: 1.05rem; margin-bottom: .4rem; }
+.dlg .chip { justify-self: start; }
+.dlg-sum { font-size: 1.08rem; color: var(--muted); }
+.dlg-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; }
+.dlg-list { padding-left: 1.2rem; display: grid; gap: .3rem; font-size: .98rem; }
+.firstpage { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: clamp(1rem, 3vw, 1.6rem); display: grid; gap: .7rem; box-shadow: 0 1px 0 var(--rule), 0 6px 0 -3px var(--paper), 0 7px 0 -3px var(--rule); }
+.fp-k { font-family: var(--font-display); font-size: .7rem; letter-spacing: .14em; color: var(--muted); font-weight: 600; }
+.fp-t { font-family: var(--font-display); font-size: 1.25rem; }
+.firstpage p { font-size: 1rem; }
+.dlg-buy { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); padding-top: 1rem; }
+.dlg-buy > div:first-child { display: grid; gap: .15rem; }
+.dlg-buy b { font-family: var(--font-display); font-size: 1.1rem; }
+.dlg-cta { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.dlg-cta .price { font-size: 1.8rem; }
+
+/* Publicaciones */
+.pubs { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.feature { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.6rem; display: grid; gap: 1rem; }
+section.alt .feature { background: var(--paper); }
+.feature .top { display: flex; justify-content: space-between; gap: 1rem; align-items: start; flex-wrap: wrap; }
+.price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; line-height: 1; }
+.price small { font-family: var(--font-mono); font-size: .8rem; color: var(--muted); font-weight: 400; margin-left: .4rem; }
+.ticks { list-style: none; padding: 0; display: grid; gap: .4rem; font-size: .98rem; }
+.ticks li { padding-left: 1.4rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .62em; width: .7rem; height: 2px; background: var(--accent); }
+.specs { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem 1rem; font-size: .95rem; margin: 0; }
+.specs dt { font-family: var(--font-mono); font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; padding-top: .2rem; }
+.specs dd { margin: 0; }
+.note { font-size: .9rem; color: var(--muted); }
+.upcoming { list-style: none; padding: 0; border-top: 2px solid var(--ink); }
+.upcoming li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; padding: .8rem 0; border-bottom: 1px solid var(--rule); }
+.upcoming b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; display: block; }
+.upcoming small { color: var(--muted); font-size: .92rem; }
+
+/* Ejercicios y calculadora */
+.sample { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.sheet { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.5rem; display: grid; gap: .6rem; }
+section.alt .sheet { background: var(--paper); }
+details.reveal { margin-top: .6rem; border-top: 1px dashed var(--rule); padding-top: .9rem; }
+details.reveal summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--accent-ink); }
+details.reveal ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap: .3rem; }
+.calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.calc form { padding: 1.4rem; display: grid; gap: 1rem; }
+.field { display: grid; gap: .3rem; }
+.field > span { font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.inp { display: flex; align-items: center; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+.inp input { width: 100%; min-width: 0; border: 0; background: transparent; color: var(--ink); font-family: var(--font-mono); font-size: 1rem; padding: .5rem .6rem; font-variant-numeric: tabular-nums; }
+.inp input:focus { outline: none; }
+.inp:focus-within { border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent); }
+.inp em { font-style: normal; font-family: var(--font-mono); font-size: .76rem; color: var(--muted); padding-right: .6rem; white-space: nowrap; }
+.out { background: var(--cover-bg); color: var(--cover-fg); padding: 1.4rem; display: grid; align-content: start; gap: .9rem; }
+.out .label { color: var(--cover-soft); }
+.out .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.out .kindout { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--cover-soft); }
+.out .kindout.dem { color: #FFB089; }
+.out .kindout.des { color: #8FE0B6; }
+.gauge { height: 10px; border-radius: 99px; background: rgba(255,255,255,.12); position: relative; overflow: hidden; }
+.gauge i { position: absolute; inset: 0 auto 0 0; background: var(--cover-soft); border-radius: 99px; }
+.gauge b { position: absolute; top: 0; bottom: 0; background: #FF7A3D; }
+.steps { font-family: var(--font-mono); font-size: .8rem; line-height: 1.7; color: var(--cover-soft); padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
+.steps li span { color: var(--cover-fg); }
+
+/* Actualidad y vídeos */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+.series { list-style: none; padding: 0; display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.series li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .6rem; padding: .7rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.series .n { font-family: var(--font-mono); font-size: .8rem; color: var(--accent-ink); }
+.series b { font-family: var(--font-display); font-weight: 600; font-size: 1.03rem; display: block; }
+.series small { color: var(--muted); font-size: .92rem; }
+
+/* Sobre, estándar, FAQ, contacto */
+.standard { display: grid; gap: .9rem; list-style: none; padding: 0; }
+.standard li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--rule); }
+.standard b { font-family: var(--font-display); font-weight: 600; }
+.prose { display: grid; gap: 1rem; max-width: 40rem; }
+.faq details { border-bottom: 1px solid var(--rule); padding: 1rem 0; }
+.faq summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent-ink); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin-top: .6rem; color: var(--muted); max-width: 44rem; }
+.contact { display: grid; gap: .8rem; align-content: start; }
+.contact .mail { font-family: var(--font-display); font-size: clamp(1.4rem, 3.5vw, 2rem); font-weight: 600; overflow-wrap: anywhere; user-select: all; }
+.contact .mail a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 4px; }
+.contact .btn { justify-self: start; }
+
+footer { border-top: 1px solid var(--rule); padding-block: 2.5rem; font-size: .92rem; color: var(--muted); }
+footer .wrap { display: grid; gap: 1.5rem; }
+.legal { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
+.legal details summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+.legal details p { margin-top: .5rem; font-size: .88rem; }
+
+@media (max-width: 960px) {
+  .harbour, .mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid3, .formats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .legal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 780px) {
+  .hero .wrap, .pubs, .sample, .calc, .split, .modules { grid-template-columns: minmax(0, 1fr); }
+  .book { order: -1; }
+  .cover { width: min(64%, 240px); }
+}
+@media (max-width: 520px) {
+  .harbour, .grid3, .formats, .legal, .mods, .dlg-cols { grid-template-columns: minmax(0, 1fr); }
+  .standard li { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  nav.links { font-size: .93rem; gap: .3rem .8rem; }
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Oceanica Terra, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M16 2 L16 30 M2 16 L30 16 M6 6 L26 26 M26 6 L6 26" stroke="currentColor" stroke-width=".8" opacity=".55"/>
+        <circle cx="16" cy="16" r="3" fill="#D9480F"/>
+      </svg>
+      <span>OCEANICA TERRA</span>
+    </a>
+    <nav class="links" aria-label="Secciones">
+      <a href="#biblioteca">Biblioteca</a>
+      <a href="#academia">Academia</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#actualidad">Actualidad</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#contacto">Contacto</a>
+      <span class="langs" role="group" aria-label="Idioma">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="it" aria-pressed="false">IT</button>
+      </span>
+    </nav>
+  </div>
+</header>
+<div class="langnote" id="langnote" hidden><div class="wrap" id="langnote-text"></div></div>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label">Educación y conocimiento marítimo · en español</p>
+        <h1>El mar, <em>explicado con rigor</em>.</h1>
+        <p class="lede">Oceanica Terra explica cómo funciona el transporte marítimo: los buques, los puertos, los contratos y los convenios que los regulan. Contenido original, verificado y pensado para aplicarse en el trabajo.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#biblioteca">Explorar la biblioteca</a>
+          <a class="btn btn-ghost" href="#publicaciones">Ver el primer libro</a>
+        </div>
+        <div class="audience" aria-label="Para quién">
+          <span>Estudiantes</span><span>Cadetes</span><span>Oficiales de puente</span><span>Ingenieros navales y de máquinas</span><span>Capitanes</span><span>Gestores portuarios</span><span>Profesionales del shipping</span><span>Investigadores</span><span>Aficionados al mundo marítimo</span>
+        </div>
+      </div>
+      <div class="book">
+        <a class="cover" href="#publicaciones" aria-label="Laytime y demora sin misterios, de Cesar Andrade">
+          <div class="k">OCEANICA TERRA</div>
+          <div>
+            <h3>Laytime y demora sin misterios</h3>
+            <i>Guía práctica con 12 ejercicios resueltos</i>
+            <div class="bar"></div>
+          </div>
+          <small><b>Autor: Cesar Andrade · Oceanica Terra</b><br>Edición 1.0 · octubre de 2026</small>
+        </a>
+        <span class="chip on">Primer libro disponible</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÍNDICE DE LA PLATAFORMA -->
+  <section class="band alt" id="plataforma">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Qué encontrarás</p>
+        <h2>Una plataforma, ocho dársenas</h2>
+        <p>Así se organiza Oceanica Terra. Cada sección indica si ya está disponible o en preparación.</p>
+      </div>
+      <div class="harbour">
+        <a href="#biblioteca"><span class="n">01</span><h3>Biblioteca</h3><p>Tipos de buque, logística, construcción naval, navegación, seguridad, convenios y los primeros artículos.</p><span class="chip on">Disponible</span></a>
+        <a href="#academia"><span class="n">02</span><h3>Academia</h3><p>20 módulos con resumen y primera página gratis, cursos, webinars y formación para empresas.</p><span class="chip on">1 de 20 disponible</span></a>
+        <a href="#publicaciones"><span class="n">03</span><h3>Publicaciones</h3><p>Libros, cuadernos de ejercicios, guías y glosarios descargables.</p><span class="chip on">1 disponible</span></a>
+        <a href="#ejercicios"><span class="n">04</span><h3>Ejercicios y herramientas</h3><p>Casos resueltos y calculadoras gratuitas para practicar.</p><span class="chip on">Disponible</span></a>
+        <a href="#actualidad"><span class="n">05</span><h3>Actualidad y análisis</h3><p>Lo que cambia en el sector, explicado y con fuentes oficiales.</p><span class="chip soon">En preparación</span></a>
+        <a href="#videos"><span class="n">06</span><h3>Vídeos y pódcast</h3><p>Series en YouTube y redes: cómo funcionan los buques y el comercio marítimo.</p><span class="chip soon">En preparación</span></a>
+                <a href="#sobre"><span class="n">07</span><h3>Sobre nosotros</h3><p>Misión editorial, estándar de verificación y colaboración profesional.</p><span class="chip on">Disponible</span></a>
+        <a href="#contacto"><span class="n">08</span><h3>Contacto y colaboración</h3><p>Compras, licencias para escuelas y empresas, autores y revisores técnicos.</p><span class="chip on">Disponible</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBLIOTECA -->
+  <section class="band" id="biblioteca">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Biblioteca de conocimiento marítimo</p>
+        <h2>Del casco al contrato</h2>
+        <p>Fichas introductorias de cada área y artículos completos con fuentes y fecha de verificación.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Áreas de la biblioteca">
+        <button role="tab" id="t-buques" aria-controls="p-buques" aria-selected="true">Tipos de buque</button>
+        <button role="tab" id="t-logistica" aria-controls="p-logistica" aria-selected="false" tabindex="-1">Transporte y logística</button>
+        <button role="tab" id="t-ingenieria" aria-controls="p-ingenieria" aria-selected="false" tabindex="-1">Construcción e ingeniería</button>
+        <button role="tab" id="t-navegacion" aria-controls="p-navegacion" aria-selected="false" tabindex="-1">Navegación y cubierta</button>
+        <button role="tab" id="t-seguridad" aria-controls="p-seguridad" aria-selected="false" tabindex="-1">Seguridad y medio ambiente</button>
+        <button role="tab" id="t-convenios" aria-controls="p-convenios" aria-selected="false" tabindex="-1">Convenios e instituciones</button>
+      </div>
+
+      <div role="tabpanel" id="p-buques" aria-labelledby="t-buques">
+        <p class="panel-intro">Cada tipo de buque responde a una carga y a un negocio. Estas fichas resumen para qué sirve cada uno; las guías completas tratarán diseño, equipo, tripulación, riesgos y normativa.</p>
+        <div class="grid3">
+          <article class="entry"><span class="meta">Línea regular</span><h4>Portacontenedores</h4><p>Transportan contenedores normalizados, medidos en TEU. Rotaciones fijas entre puertos y operaciones de carga muy rápidas.</p></article>
+          <article class="entry"><span class="meta">Tramp y proyectos</span><h4>Carga general y multipropósito</h4><p>Carga fraccionada, piezas grandes y mercancía variada; suelen llevar grúas propias para operar en puertos sin equipo.</p></article>
+          <article class="entry"><span class="meta">Graneles sólidos</span><h4>Graneleros</h4><p>Grano, mineral, carbón o fertilizantes sin envasar. Se clasifican por tamaño: Handysize, Supramax, Panamax o Capesize.</p></article>
+          <article class="entry"><span class="meta">Graneles líquidos</span><h4>Petroleros de crudo y productos</h4><p>Crudo en grandes unidades y productos refinados en buques menores. Su prevención de la contaminación se rige por MARPOL Anexo I.</p></article>
+          <article class="entry"><span class="meta">Graneles líquidos</span><h4>Quimiqueros</h4><p>Productos químicos a granel en tanques segregados y recubiertos, según el Código IBC de la OMI.</p></article>
+          <article class="entry"><span class="meta">Gas licuado</span><h4>Gaseros LNG</h4><p>Gas natural licuado a unos −162 °C en tanques criogénicos de membrana o esféricos, bajo el Código IGC.</p></article>
+          <article class="entry"><span class="meta">Gas licuado</span><h4>Gaseros LPG</h4><p>Propano, butano y otros gases transportados a presión, refrigerados o en sistemas mixtos.</p></article>
+          <article class="entry"><span class="meta">Pasaje</span><h4>Cruceros y buques de pasaje</h4><p>Un hotel flotante con miles de personas: la seguridad, la evacuación y la logística de a bordo son su núcleo.</p></article>
+          <article class="entry"><span class="meta">Carga rodada</span><h4>Ro-ro, car carriers y ferris</h4><p>La carga entra y sale rodando por rampas: vehículos, camiones y remolques. La estanqueidad y el fuego en cubiertas son riesgos clave.</p></article>
+          <article class="entry"><span class="meta">Energía en el mar</span><h4>Offshore: OSV, PSV y construcción</h4><p>Abastecen y apoyan plataformas y parques eólicos; muchos usan posicionamiento dinámico.</p></article>
+          <article class="entry"><span class="meta">Servicios portuarios</span><h4>Remolcadores, prácticos y dragas</h4><p>Asisten las maniobras, embarcan a los prácticos y mantienen los calados de puertos y canales.</p></article>
+          <article class="entry"><span class="meta">Pesca</span><h4>Buques pesqueros</h4><p>Desde artesanales hasta factoría. Tienen normativa propia de formación, como el Convenio STCW-F.</p></article>
+          <article class="entry"><span class="meta">Ciencia</span><h4>Buques de investigación</h4><p>Laboratorios flotantes para oceanografía, hidrografía, pesquerías y geofísica.</p></article>
+          <article class="entry"><span class="meta">Aguas interiores</span><h4>Navegación fluvial</h4><p>Barcazas y empujadores en ríos y canales; reglas y titulaciones distintas a las del tráfico marítimo.</p></article>
+          <article class="entry"><span class="meta">Cargas especiales</span><h4>Carga pesada y proyectos</h4><p>Buques con grúas de gran capacidad y semisumergibles para mover piezas industriales o plataformas.</p></article>
+          <article class="entry"><span class="meta">Perecederos</span><h4>Frigoríficos (reefer)</h4><p>Bodegas refrigeradas para fruta, carne o pescado; compiten con los contenedores refrigerados.</p></article>
+          <article class="entry"><span class="meta">Combustible</span><h4>Bunkering y almacenamiento flotante</h4><p>Suministran combustible a otros buques o almacenan carga y combustible frente a la costa.</p></article>
+          <article class="entry"><span class="meta">Diseño a medida</span><h4>Buques especializados</h4><p>Cableros, rompehielos, buques grúa y otros diseños para una sola misión.</p></article>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="p-logistica" aria-labelledby="t-logistica" hidden>
+        <p class="panel-intro">El negocio marítimo: quién contrata a quién, qué documentos mueven la carga y cómo se forman los fletes. Es el corazón del plan de estudios de Oceanica Terra.</p>
+        <div class="grid3">
+          <article class="entry"><span class="meta">Contratos</span><h4>Pólizas de fletamento y contratos de transporte</h4><p>Fletamento por viaje, por tiempo y a casco desnudo; transporte en línea regular.</p></article>
+          <article class="entry"><span class="meta">Documentos</span><h4>Conocimiento de embarque y carta de porte marítimo</h4><p>Recibo de la carga, prueba del contrato y, en el caso del B/L negociable, título de la mercancía.</p><a href="#art-bl">Leer el artículo</a></article>
+          <article class="entry"><span class="meta">Comercio</span><h4>Incoterms</h4><p>Reparto de costes y riesgos entre vendedor y comprador. Versión vigente: Incoterms 2020 de la ICC.</p><a href="#art-incoterms">Leer: FOB frente a CIF</a></article>
+          <article class="entry"><span class="meta">Economía</span><h4>Mercados de fletes y economía marítima</h4><p>Oferta de flota, demanda de carga, índices de fletes y ciclos del mercado.</p></article>
+          <article class="entry"><span class="meta">Modelos de negocio</span><h4>Línea regular y tramp</h4><p>Servicios con itinerario fijo frente a buques que van donde está la carga.</p></article>
+          <article class="entry"><span class="meta">Intermodalidad</span><h4>Contenerización y transporte intermodal</h4><p>Cómo el contenedor unió buque, tren y camión en una sola cadena.</p></article>
+          <article class="entry"><span class="meta">Puertos</span><h4>Terminales, estiba y planificación</h4><p>Operación de terminales, productividad de grúas, patios y ventanas de atraque.</p></article>
+          <article class="entry"><span class="meta">Operaciones</span><h4>Escalas, agencia, crewing y gestión de flota</h4><p>Planificación del viaje, consignación, tripulación y gestión técnica y comercial.</p></article>
+          <article class="entry"><span class="meta">Tiempo en puerto</span><h4>Laytime, demora, despacho y detención</h4><p>Quién paga el tiempo en puerto. Tema del primer libro de Oceanica Terra.</p><a href="#publicaciones">Ver el libro</a></article>
+          <article class="entry"><span class="meta">Riesgo</span><h4>Reclamaciones, seguro marítimo y responsabilidad</h4><p>Casco y máquinas, P&amp;I, carga, avería gruesa y límites de responsabilidad.</p></article>
+          <article class="entry"><span class="meta">Cargas especiales</span><h4>Mercancías peligrosas</h4><p>Clasificación, embalaje, estiba y documentación según el Código IMDG.</p></article>
+          <article class="entry"><span class="meta">Futuro</span><h4>Digitalización y resiliencia</h4><p>Documentos electrónicos, automatización portuaria y cadenas de suministro más robustas.</p></article>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="p-ingenieria" aria-labelledby="t-ingenieria" hidden>
+        <p class="panel-intro">Cómo se diseña, construye, propulsa y mantiene un buque. Estas fichas son introductorias: los cálculos de ingeniería reales requieren datos verificados del buque y validación profesional.</p>
+        <div class="grid3">
+          <article class="entry"><span class="meta">Diseño</span><h4>Fundamentos de arquitectura naval</h4><p>Formas del casco, resistencia al avance, compartimentado y etapas del proyecto.</p></article>
+          <article class="entry"><span class="meta">Estructura</span><h4>Casco, materiales, soldadura y corrosión</h4><p>Acero naval, uniones soldadas, protección catódica y pinturas.</p></article>
+          <article class="entry"><span class="meta">Hidrostática</span><h4>Estabilidad, flotabilidad, desplazamiento y asiento</h4><p>Por qué un buque flota, se mantiene adrizado y cómo cambia al cargar.</p></article>
+          <article class="entry"><span class="meta">Máquinas</span><h4>Propulsión y motores marinos</h4><p>Motores diésel de dos y cuatro tiempos, hélices, ejes y nuevas propulsiones.</p></article>
+          <article class="entry"><span class="meta">Sistemas</span><h4>Electricidad, auxiliares y automatización</h4><p>Generación eléctrica, bombas, separadores, control y alarmas.</p></article>
+          <article class="entry"><span class="meta">Astillero</span><h4>Diques, reparación, mantenimiento y reconocimientos</h4><p>Varadas, inspecciones de clase y gestión de proyectos de astillero.</p></article>
+          <article class="entry"><span class="meta">Descarbonización</span><h4>Eficiencia energética y combustibles alternativos</h4><p>GNL, metanol, amoníaco, hidrógeno y medidas de eficiencia de la OMI.</p></article>
+          <article class="entry"><span class="meta">Tecnología</span><h4>Gemelos digitales y monitorización</h4><p>Mantenimiento basado en condición y datos en tiempo real.</p></article>
+          <article class="entry"><span class="meta">Economía</span><h4>Costes de construcción y reparación</h4><p>Presupuestos, plazos y control de costes en astilleros.</p></article>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="p-navegacion" aria-labelledby="t-navegacion" hidden>
+        <p class="panel-intro">El trabajo del puente y de la cubierta. Material educativo: nunca sustituye los procedimientos aprobados de cada buque ni el criterio de un oficial cualificado.</p>
+        <div class="grid3">
+          <article class="entry"><span class="meta">Reglamento</span><h4>COLREG y prevención de abordajes</h4><p>Reglas de rumbo y gobierno, luces, marcas y señales acústicas.</p></article>
+          <article class="entry"><span class="meta">Equipos</span><h4>ECDIS, radar y AIS</h4><p>Cartografía electrónica, radar con punteo automático e identificación automática.</p></article>
+          <article class="entry"><span class="meta">Equipo humano</span><h4>Gestión de recursos del puente</h4><p>Comunicación, liderazgo y conciencia situacional en la guardia.</p></article>
+          <article class="entry"><span class="meta">Viaje</span><h4>Planificación y seguimiento de la derrota</h4><p>Las cuatro fases del plan de viaje: evaluación, planificación, ejecución y seguimiento.</p></article>
+          <article class="entry"><span class="meta">Entorno</span><h4>Meteorología y oceanografía</h4><p>Borrascas, oleaje, corrientes y su efecto sobre la navegación y la carga.</p></article>
+          <article class="entry"><span class="meta">Maniobra</span><h4>Amarre, fondeo, practicaje y manejo del buque</h4><p>Maniobras en puerto, riesgos de las líneas de amarre y trabajo con prácticos.</p></article>
+          <article class="entry"><span class="meta">Carga</span><h4>Planificación, trincaje y descarga</h4><p>Planos de carga, sujeción de la mercancía y cálculos de estabilidad.</p></article>
+          <article class="entry"><span class="meta">Mantenimiento</span><h4>Inspecciones y listas de comprobación</h4><p>Rutinas de cubierta, inspecciones de bodegas y equipos de amarre.</p></article>
+          <article class="entry"><span class="meta">Formación</span><h4>Titulaciones de puente</h4><p>Cómo encaja la formación de oficiales en el Convenio STCW.</p></article>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="p-seguridad" aria-labelledby="t-seguridad" hidden>
+        <p class="panel-intro">Seguridad, protección y medio ambiente. Los contenidos de esta área pasarán revisión técnica adicional antes de publicarse.</p>
+        <div class="grid3">
+          <article class="entry"><span class="meta">Gestión</span><h4>Sistemas de gestión de la seguridad</h4><p>Cómo el Código IGS organiza la seguridad en buques y compañías.</p></article>
+          <article class="entry"><span class="meta">Riesgo</span><h4>Evaluación de riesgos y peligros</h4><p>Identificar, valorar y controlar riesgos antes de trabajar.</p></article>
+          <article class="entry"><span class="meta">Emergencias</span><h4>Ejercicios, contraincendios y abandono</h4><p>Preparación para emergencias, lucha contra incendios y supervivencia en el mar.</p></article>
+          <article class="entry"><span class="meta">Trabajo seguro</span><h4>Espacios cerrados y equipos de protección</h4><p>Por qué los espacios cerrados siguen causando muertes y cómo se previenen.</p></article>
+          <article class="entry"><span class="meta">Lecciones</span><h4>Investigación de accidentes</h4><p>Leer informes oficiales para aprender, no para buscar culpables.</p></article>
+          <article class="entry"><span class="meta">Protección</span><h4>Protección marítima y piratería</h4><p>Niveles de protección del Código PBIP y medidas contra la piratería.</p></article>
+          <article class="entry"><span class="meta">Contaminación</span><h4>Hidrocarburos, basuras y aguas de lastre</h4><p>Prevención y respuesta según MARPOL y el Convenio BWM.</p></article>
+          <article class="entry"><span class="meta">Factor humano</span><h4>Fatiga, liderazgo y cultura de seguridad</h4><p>Horas de descanso, comunicación y decisiones bajo presión.</p></article>
+          <article class="entry"><span class="meta">Salud</span><h4>Bienestar de la gente de mar</h4><p>Condiciones de vida y trabajo a bordo según el MLC 2006.</p></article>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="p-convenios" aria-labelledby="t-convenios" hidden>
+        <p class="panel-intro">Los principales instrumentos que regulan el sector. Distinguimos convenios (tratados obligatorios para los Estados parte) de códigos que se vuelven obligatorios a través de un convenio. Antes de aplicar cualquiera, comprueba su versión y enmiendas vigentes en la fuente oficial. <a href="#art-solas">Leer: SOLAS en 10 minutos</a>.</p>
+        <div class="tablewrap">
+          <table class="reg">
+            <thead><tr><th>Instrumento</th><th>Organismo</th><th>Adoptado</th><th>Tipo</th><th>Para qué sirve</th></tr></thead>
+            <tbody>
+              <tr><td>SOLAS</td><td>OMI</td><td class="y">1974</td><td><span class="kind">Convenio</span></td><td>Seguridad de la vida humana en el mar: construcción, equipos de salvamento, contraincendios, navegación.</td></tr>
+              <tr><td>MARPOL</td><td>OMI</td><td class="y">1973 / 1978</td><td><span class="kind">Convenio</span></td><td>Prevención de la contaminación por buques, en seis anexos.</td></tr>
+              <tr><td>STCW</td><td>OMI</td><td class="y">1978</td><td><span class="kind">Convenio</span></td><td>Formación, titulación y guardia de la gente de mar.</td></tr>
+              <tr><td>COLREG</td><td>OMI</td><td class="y">1972</td><td><span class="kind">Convenio</span></td><td>Reglamento internacional para prevenir los abordajes.</td></tr>
+              <tr><td>Líneas de Carga</td><td>OMI</td><td class="y">1966</td><td><span class="kind">Convenio</span></td><td>Francobordo mínimo y condiciones de estanqueidad.</td></tr>
+              <tr><td>Código IGS (ISM)</td><td>OMI</td><td class="y">1993</td><td><span class="kind">Código obligatorio vía SOLAS</span></td><td>Gestión de la seguridad de buques y compañías.</td></tr>
+              <tr><td>Código PBIP (ISPS)</td><td>OMI</td><td class="y">2002</td><td><span class="kind">Código obligatorio vía SOLAS</span></td><td>Protección de buques e instalaciones portuarias.</td></tr>
+              <tr><td>BWM</td><td>OMI</td><td class="y">2004</td><td><span class="kind">Convenio</span></td><td>Control y gestión del agua de lastre y sus sedimentos.</td></tr>
+              <tr><td>MLC 2006</td><td>OIT</td><td class="y">2006</td><td><span class="kind">Convenio</span></td><td>Derechos laborales y condiciones de vida de la gente de mar.</td></tr>
+              <tr><td>CLC</td><td>OMI</td><td class="y">1969 / 1992</td><td><span class="kind">Convenio</span></td><td>Responsabilidad civil por daños de contaminación por hidrocarburos.</td></tr>
+              <tr><td>Salvamento</td><td>OMI</td><td class="y">1989</td><td><span class="kind">Convenio</span></td><td>Régimen jurídico y recompensa del salvamento marítimo.</td></tr>
+              <tr><td>CONVEMAR (UNCLOS)</td><td>ONU</td><td class="y">1982</td><td><span class="kind">Convenio</span></td><td>Marco general del derecho del mar: zonas marítimas, navegación, Estado de abanderamiento.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="footnote">Instituciones que conviene conocer: la Organización Marítima Internacional (OMI), la Organización Internacional del Trabajo (OIT), la Cámara Naviera Internacional (ICS), la Asociación Internacional de Sociedades de Clasificación (IACS), el Estado de abanderamiento, el control por el Estado rector del puerto y las organizaciones reconocidas. Los años indican la adopción del instrumento original; la entrada en vigor y las enmiendas varían.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTÍCULOS -->
+  <section class="band alt" id="articulos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Artículos de la biblioteca</p>
+        <h2>Para leer con calma</h2>
+        <p>Cada artículo indica sus fuentes y la fecha en que se verificó. Si encuentras un error, escríbenos y lo corregimos.</p>
+      </div>
+      <div class="articles">
+
+        <article class="art" id="art-bl">
+          <header class="art-head">
+            <span class="meta">Documentación · Lectura de 7 minutos</span>
+            <h3>El conocimiento de embarque, campo por campo</h3>
+            <p class="art-lede">El conocimiento de embarque (bill of lading o B/L) es el documento más importante del comercio marítimo: en muchos casos, quien tiene el original puede reclamar la carga en destino. Entender sus campos evita retrasos, rechazos bancarios y entregas a la persona equivocada.</p>
+            <p class="byline">Redacción: Oceanica Terra · Verificado el 25 de octubre de 2026</p>
+          </header>
+          <details class="art-body" id="d-art-bl">
+            <summary>Leer el artículo completo</summary>
+            <div class="art-text">
+              <h4>Tres funciones en un papel</h4>
+              <ol>
+                <li><b>Recibo de la mercancía.</b> El transportista declara qué recibió, cuántos bultos y en qué estado aparente.</li>
+                <li><b>Prueba del contrato de transporte.</b> El contrato puede estar en una póliza de fletamento o en las condiciones del transportista; el B/L lo acredita.</li>
+                <li><b>Título representativo de la mercancía.</b> Si es negociable, transferir el documento transfiere el derecho a recibir la carga. Por eso se usa en los créditos documentarios y en la venta de cargas en tránsito.</li>
+              </ol>
+              <h4>Los campos, uno por uno</h4>
+              <div class="tablewrap"><table class="reg">
+                <thead><tr><th>Campo</th><th>Qué contiene</th><th>Error típico</th></tr></thead>
+                <tbody>
+                  <tr><td>Cargador (shipper)</td><td>Quien entrega la carga al transportista, normalmente el vendedor.</td><td>Nombre distinto al del crédito documentario.</td></tr>
+                  <tr><td>Consignatario (consignee)</td><td>A quién se entrega: una persona concreta, «a la orden» de alguien o al portador.</td><td>Poner un nombre cuando el banco exigía «a la orden».</td></tr>
+                  <tr><td>Parte a notificar (notify party)</td><td>A quién avisa el transportista de la llegada; no tiene derecho a la carga por estar ahí.</td><td>Confundirla con el consignatario.</td></tr>
+                  <tr><td>Buque y viaje</td><td>Nombre del buque y número de viaje.</td><td>Buque cambiado sin corregir el documento.</td></tr>
+                  <tr><td>Puertos de carga y descarga</td><td>Los puertos del tramo marítimo; en transporte multimodal, también lugar de recepción y de entrega.</td><td>Puertos que no coinciden con el contrato de venta.</td></tr>
+                  <tr><td>Marcas, bultos y descripción</td><td>Marcas, número y tipo de bultos, descripción, peso bruto y volumen.</td><td>Descripción vaga o distinta a la factura.</td></tr>
+                  <tr><td>Flete</td><td>«Prepaid» (pagado en origen) o «collect» (se paga en destino).</td><td>No cuadrar con el Incoterm acordado.</td></tr>
+                  <tr><td>Número de originales</td><td>Suele emitirse un juego de varios originales; cumplido uno, los demás quedan sin efecto.</td><td>No controlar dónde está cada original.</td></tr>
+                  <tr><td>Fecha y lugar de emisión</td><td>Cuándo y dónde se firma; en un B/L «embarcado», también la fecha de embarque.</td><td>Antedatar el documento: es fraude.</td></tr>
+                  <tr><td>Firma</td><td>Del transportista, el capitán o un agente identificado en su nombre.</td><td>Firma de un agente sin indicar por cuenta de quién firma.</td></tr>
+                </tbody>
+              </table></div>
+              <h4>Tipos que conviene distinguir</h4>
+              <ul>
+                <li><b>Embarcado frente a recibido para embarque.</b> El primero acredita que la carga ya está a bordo; los créditos documentarios suelen exigirlo.</li>
+                <li><b>Limpio frente a con reservas.</b> Una reserva sobre el estado de la carga («cajas rotas», «óxido») puede hacer que el banco rechace el documento.</li>
+                <li><b>A la orden, nominativo o al portador.</b> Determina cómo se transmite y quién puede retirar la carga.</li>
+                <li><b>House B/L y master B/L.</b> El primero lo emite un transitario u operador sin buque; el segundo, la naviera que transporta.</li>
+                <li><b>Carta de porte marítimo (sea waybill).</b> No es título de la mercancía: la carga se entrega al consignatario identificado sin presentar un original. Es más rápida cuando no hay que negociar el documento.</li>
+                <li><b>Conocimiento electrónico.</b> Cada vez más usado; su validez depende de la plataforma y de la ley aplicable.</li>
+              </ul>
+              <h4>¿Qué ley lo regula?</h4>
+              <p>Depende del país y del contrato. Los regímenes internacionales más conocidos son las Reglas de La Haya (1924), las de La Haya-Visby (1968) y las de Hamburgo (1978). Las Reglas de Rotterdam (2008) pretenden sustituirlas, pero según los datos disponibles todavía no han alcanzado las 20 ratificaciones que necesitan para entrar en vigor. Muchos documentos incluyen una cláusula «paramount» que elige el régimen aplicable.</p>
+              <div class="callout"><b>El error más caro:</b> entregar la carga sin recibir un original del B/L. Si lo hace, el transportista puede responder ante quien tenga el original. Por eso a veces se pide una carta de indemnidad, que reparte el riesgo pero no lo elimina.</div>
+              <p class="sources">Fuentes: estado de las Reglas de Rotterdam según <a href="https://en.wikipedia.org/wiki/Rotterdam_Rules" target="_blank" rel="noopener">Wikipedia</a> (confirmar en la página de estado de tratados de la CNUDMI/UNCITRAL). Material educativo; no sustituye asesoramiento jurídico.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="art" id="art-solas">
+          <header class="art-head">
+            <span class="meta">Convenios · Lectura de 6 minutos</span>
+            <h3>SOLAS en 10 minutos</h3>
+            <p class="art-lede">El Convenio internacional para la seguridad de la vida humana en el mar es el tratado de seguridad marítima más importante. Nació tras el hundimiento del Titanic y hoy regula desde la construcción del buque hasta su protección frente a amenazas.</p>
+            <p class="byline">Redacción: Oceanica Terra · Verificado el 25 de octubre de 2026</p>
+          </header>
+          <details class="art-body" id="d-art-solas">
+            <summary>Leer el artículo completo</summary>
+            <div class="art-text">
+              <h4>De 1914 a hoy</h4>
+              <p>La primera versión de SOLAS se adoptó en 1914, tras la pérdida del Titanic. Le siguieron las de 1929, 1948 y 1960. La versión vigente es la de 1974: se adoptó el 1 de noviembre de 1974 y entró en vigor el 25 de mayo de 1980, y desde entonces se ha enmendado muchas veces.</p>
+              <h4>Cómo se mantiene al día</h4>
+              <p>SOLAS usa el procedimiento de <b>aceptación tácita</b>: una enmienda entra en vigor en una fecha fijada salvo que un número suficiente de Estados parte se oponga antes. Gracias a eso, el convenio se actualiza sin esperar a que cada país lo ratifique de nuevo.</p>
+              <h4>Quién lo hace cumplir</h4>
+              <p>El <b>Estado de abanderamiento</b> certifica que sus buques cumplen y emite los certificados que prevé el convenio. El <b>Estado rector del puerto</b> puede inspeccionar buques extranjeros cuando hay motivos claros para pensar que no cumplen.</p>
+              <h4>Los capítulos</h4>
+              <div class="tablewrap"><table class="reg">
+                <thead><tr><th>Capítulo</th><th>Materia</th></tr></thead>
+                <tbody>
+                  <tr><td>I</td><td>Disposiciones generales: ámbito, reconocimientos y certificados.</td></tr>
+                  <tr><td>II-1</td><td>Construcción: compartimentado, estabilidad, máquinas e instalaciones eléctricas.</td></tr>
+                  <tr><td>II-2</td><td>Prevención, detección y extinción de incendios.</td></tr>
+                  <tr><td>III</td><td>Dispositivos y medios de salvamento.</td></tr>
+                  <tr><td>IV</td><td>Radiocomunicaciones.</td></tr>
+                  <tr><td>V</td><td>Seguridad de la navegación.</td></tr>
+                  <tr><td>VI</td><td>Transporte de cargas.</td></tr>
+                  <tr><td>VII</td><td>Transporte de mercancías peligrosas.</td></tr>
+                  <tr><td>VIII</td><td>Buques nucleares.</td></tr>
+                  <tr><td>IX</td><td>Gestión de la seguridad operacional (Código IGS).</td></tr>
+                  <tr><td>X</td><td>Naves de gran velocidad.</td></tr>
+                  <tr><td>XI-1</td><td>Medidas especiales para incrementar la seguridad marítima.</td></tr>
+                  <tr><td>XI-2</td><td>Medidas especiales para incrementar la protección marítima (Código PBIP).</td></tr>
+                  <tr><td>XII</td><td>Medidas adicionales para graneleros.</td></tr>
+                  <tr><td>XIII</td><td>Verificación del cumplimiento.</td></tr>
+                  <tr><td>XIV</td><td>Buques que operan en aguas polares.</td></tr>
+                  <tr><td>XV</td><td>Buques que transportan personal industrial (en vigor desde el 1 de julio de 2024).</td></tr>
+                </tbody>
+              </table></div>
+              <h4>Códigos que se vuelven obligatorios a través de SOLAS</h4>
+              <p>Varios códigos de la OMI son obligatorios porque un capítulo de SOLAS los hace obligatorios: el Código IGS (capítulo IX), el Código PBIP (capítulo XI-2), el Código IMDG de mercancías peligrosas (capítulo VII), el Código de Navegación Polar (capítulo XIV), entre otros. Es la diferencia entre un convenio, que obliga a los Estados que lo ratifican, y un código, que obliga cuando un convenio lo incorpora.</p>
+              <div class="callout"><b>Consejo práctico:</b> nunca cites SOLAS de memoria ni de una edición antigua. Comprueba siempre la edición consolidada vigente y las enmiendas posteriores en las fuentes de la OMI.</div>
+              <p class="sources">Fuente: <a href="https://www.imo.org/en/about/conventions/pages/international-convention-for-the-safety-of-life-at-sea-(solas),-1974.aspx" target="_blank" rel="noopener">OMI, International Convention for the Safety of Life at Sea (SOLAS), 1974</a>. Material educativo; no sustituye el texto oficial ni los procedimientos aprobados de a bordo.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="art" id="art-incoterms">
+          <header class="art-head">
+            <span class="meta">Comercio internacional · Lectura de 6 minutos</span>
+            <h3>FOB frente a CIF sin confusiones</h3>
+            <p class="art-lede">Son los dos Incoterms marítimos más usados y los más malinterpretados. La sorpresa para muchos: en ambos, el riesgo pasa del vendedor al comprador en el mismo momento, cuando la mercancía está a bordo en el puerto de carga.</p>
+            <p class="byline">Redacción: Oceanica Terra · Verificado el 25 de octubre de 2026</p>
+          </header>
+          <details class="art-body" id="d-art-incoterms">
+            <summary>Leer el artículo completo</summary>
+            <div class="art-text">
+              <h4>Qué son los Incoterms</h4>
+              <p>Son reglas de la Cámara de Comercio Internacional (ICC) que reparten entre vendedor y comprador los costes, los riesgos y los trámites del transporte. La versión actual es Incoterms 2020, aplicable desde el 1 de enero de 2020 a los contratos que la incorporan. Se espera una nueva revisión hacia 2030.</p>
+              <h4>FOB: libre a bordo</h4>
+              <p>El vendedor entrega la mercancía <b>a bordo del buque designado por el comprador</b> en el puerto de embarque convenido. El riesgo pasa al comprador cuando la carga está a bordo. El comprador contrata y paga el flete principal y decide si asegura la mercancía. Si el comprador no designa el buque a tiempo, o el buque llega tarde, puede tener que asumir riesgos y costes aunque la carga no se haya embarcado.</p>
+              <h4>CIF: coste, seguro y flete</h4>
+              <p>El vendedor contrata y paga el transporte hasta el puerto de destino y un seguro de la mercancía. Pero el riesgo pasa al comprador <b>en el mismo punto que en FOB</b>: a bordo, en origen. Si la carga se daña en alta mar, el perjudicado es el comprador, que reclamará al seguro contratado por el vendedor. En Incoterms 2020, CIF exige como mínimo una cobertura básica; CIP, su equivalente multimodal, exige por defecto una cobertura amplia.</p>
+              <div class="tablewrap"><table class="reg">
+                <thead><tr><th>Concepto</th><th>FOB</th><th>CIF</th></tr></thead>
+                <tbody>
+                  <tr><td>Se nombra</td><td>Puerto de embarque (FOB Veracruz)</td><td>Puerto de destino (CIF Valencia)</td></tr>
+                  <tr><td>Flete principal</td><td>Lo contrata y paga el comprador</td><td>Lo contrata y paga el vendedor</td></tr>
+                  <tr><td>Seguro</td><td>Decide el comprador</td><td>Lo contrata el vendedor (cobertura mínima)</td></tr>
+                  <tr><td>Paso del riesgo</td><td>A bordo, en origen</td><td>A bordo, en origen</td></tr>
+                  <tr><td>Modos de transporte</td><td>Solo marítimo y vías navegables</td><td>Solo marítimo y vías navegables</td></tr>
+                </tbody>
+              </table></div>
+              <h4>El error de los contenedores</h4>
+              <p>FOB y CIF nacieron antes de los contenedores. Cuando el vendedor entrega un contenedor en la terminal días antes del embarque, pierde el control de la carga pero sigue soportando el riesgo hasta que está a bordo. Para esos casos, la ICC recomienda <b>FCA</b> en lugar de FOB y <b>CIP</b> en lugar de CIF. Incoterms 2020 permite además que, en FCA, el vendedor obtenga un conocimiento de embarque con anotación de «a bordo», que suelen exigir los bancos.</p>
+              <h4>Lo que los Incoterms no regulan</h4>
+              <ul>
+                <li>Cuándo se transmite la propiedad de la mercancía.</li>
+                <li>El precio, la forma de pago ni las consecuencias de un incumplimiento.</li>
+                <li>El contrato de transporte con la naviera: eso lo rige el conocimiento de embarque o la póliza.</li>
+              </ul>
+              <div class="callout"><b>Escríbelo completo:</b> «FOB Veracruz, Incoterms 2020» o «CIF Valencia, Incoterms 2020». Sin la versión y el lugar, la cláusula puede dar lugar a disputas.</div>
+              <p class="sources">Fuentes: <a href="https://icc.academy/incoterms-2020-fca-or-fob" target="_blank" rel="noopener">ICC Academy, Incoterms 2020: FCA or FOB?</a>; <a href="https://www.hfw.com/insights/ICC-Incoterms-2020-Commentary" target="_blank" rel="noopener">HFW, ICC Incoterms 2020 – Commentary</a>. El texto oficial de las reglas lo publica la ICC.</p>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIA -->
+  <section class="band" id="academia">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="row"><p class="label">Academia</p><span class="chip on">1 de 20 disponible</span></div>
+        <h2>Plan de estudios en administración marítima y portuaria</h2>
+        <p>Veinte módulos que ordenan todo el contenido de Oceanica Terra. Abre cualquiera para ver su resumen, lo que aprenderás, su contenido y la primera página. Los módulos se publican uno a uno; el 11 ya está a la venta.</p>
+        <p class="note">Plan provisional propio, basado en programas universitarios del sector. No es un título oficial ni está acreditado por ninguna universidad.</p>
+      </div>
+      <div class="mods">
+<a class="mod" href="#modulo-01" data-dialog="modulo-01"><span class="mod-n">01</span><h3>Introducción al transporte marítimo</h3><p>Qué mueve el comercio por mar, quién participa y cómo se conectan buques, puertos y contratos. Es el punto de partida de todo el plan.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-02" data-dialog="modulo-02"><span class="mod-n">02</span><h3>Economía marítima y mercados</h3><p>Por qué los fletes suben y bajan, cómo se forma la oferta y la demanda de transporte y cómo funcionan los ciclos del shipping.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-03" data-dialog="modulo-03"><span class="mod-n">03</span><h3>Administración de empresas navieras</h3><p>Cómo se organiza una naviera por dentro: departamentos, costes, presupuestos e indicadores de gestión.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-04" data-dialog="modulo-04"><span class="mod-n">04</span><h3>Gestión portuaria y operación de terminales</h3><p>Modelos de gestión de puertos, funcionamiento de una terminal y cómo se mide su productividad.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-05" data-dialog="modulo-05"><span class="mod-n">05</span><h3>Logística marítima y cadena de suministro</h3><p>El viaje completo de la mercancía, de la fábrica al cliente, y el lugar del buque en esa cadena.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-06" data-dialog="modulo-06"><span class="mod-n">06</span><h3>Derecho marítimo mercantil</h3><p>Las reglas jurídicas propias del mar: el buque como bien, el abordaje, el salvamento, la avería gruesa y la limitación de responsabilidad.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-07" data-dialog="modulo-07"><span class="mod-n">07</span><h3>Conocimiento de embarque y contratos de transporte</h3><p>El documento que acredita la carga, prueba el contrato y, si es negociable, representa la mercancía. Y los regímenes que lo regulan.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-08" data-dialog="modulo-08"><span class="mod-n">08</span><h3>Incoterms y comercio internacional</h3><p>Cómo reparten vendedor y comprador costes, riesgos y trámites, y cómo encaja el transporte en la compraventa internacional.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-09" data-dialog="modulo-09"><span class="mod-n">09</span><h3>Documentación marítima y aduanas</h3><p>Los documentos del buque y de la carga que exige una escala, y cómo se relacionan con el despacho aduanero.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-10" data-dialog="modulo-10"><span class="mod-n">10</span><h3>Seguro marítimo y reclamaciones</h3><p>Qué cubre cada seguro del sector, cómo funciona un club de P&amp;I y cómo se prepara una reclamación.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-11" data-dialog="modulo-11"><span class="mod-n">11</span><h3>Fletamentos y mercados de fletes</h3><p>Cómo se contrata un buque, qué dicen las pólizas y quién paga el tiempo en puerto. Su primera publicación ya está disponible.</p><span class="chip on">Disponible</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-12" data-dialog="modulo-12"><span class="mod-n">12</span><h3>Operación de buques y gestión de flota</h3><p>El día a día de una flota: planificación de viajes, combustible, mantenimiento, inspecciones y seguimiento del rendimiento.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-13" data-dialog="modulo-13"><span class="mod-n">13</span><h3>Seguridad marítima y gestión de riesgos</h3><p>Cómo se organiza la seguridad en buques y compañías, cómo se evalúan los riesgos y qué enseñan los accidentes.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-14" data-dialog="modulo-14"><span class="mod-n">14</span><h3>Convenios internacionales y cumplimiento</h3><p>Los grandes convenios de la OMI y la OIT, cómo entran en vigor y cómo se comprueba que los buques los cumplen.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-15" data-dialog="modulo-15"><span class="mod-n">15</span><h3>Finanzas, contabilidad e inversión marítima</h3><p>Cómo se financia un buque, cómo se valora y cómo se mide si una inversión naviera es rentable.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-16" data-dialog="modulo-16"><span class="mod-n">16</span><h3>Recursos humanos, crewing y relaciones laborales</h3><p>Cómo se forma, contrata y gestiona a la gente de mar, y qué derechos les reconoce el Convenio sobre el Trabajo Marítimo.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-17" data-dialog="modulo-17"><span class="mod-n">17</span><h3>Economía de la construcción, reparación y mantenimiento</h3><p>El ciclo de vida del buque, del contrato de construcción al reciclaje, y los costes de cada etapa.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-18" data-dialog="modulo-18"><span class="mod-n">18</span><h3>Gestión ambiental y sostenibilidad</h3><p>Cómo reduce el sector su impacto: contaminación, emisiones, agua de lastre y la transición hacia combustibles con menos carbono.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-19" data-dialog="modulo-19"><span class="mod-n">19</span><h3>Tecnología marítima y transformación digital</h3><p>Sistemas a bordo y en tierra, datos, conectividad, ciberseguridad y automatización.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+<a class="mod" href="#modulo-20" data-dialog="modulo-20"><span class="mod-n">20</span><h3>Estrategia, emprendimiento y métodos de investigación</h3><p>Analizar el sector, crear un negocio marítimo y hacer trabajos de investigación con fuentes fiables.</p><span class="chip soon">En preparación</span><span class="mod-more">Ver resumen y primera página</span></a>
+</div>
+      <div class="formats">
+        <article class="entry"><span class="meta">A tu ritmo</span><h4>Cursos grabados</h4><p>Lecciones en vídeo con ejercicios, soluciones y evaluaciones por módulo.</p><span class="chip soon">Próximamente</span></article>
+        <article class="entry"><span class="meta">En directo</span><h4>Webinars y talleres</h4><p>Sesiones prácticas sobre casos reales del sector, con preguntas.</p><span class="chip soon">Próximamente</span></article>
+        <article class="entry"><span class="meta">Instituciones</span><h4>Formación para empresas y escuelas</h4><p>Licencias de materiales y programas a medida. Escríbenos para hablarlo.</p><a href="#contacto">Contactar</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICACIONES -->
+  <section class="band alt" id="publicaciones">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Publicaciones</p>
+        <h2>Libros, cuadernos y descargas</h2>
+        <p>Material original con versión, fecha, fuentes y registro de erratas.</p>
+      </div>
+      <div class="pubs">
+        <article class="feature" aria-label="Laytime y demora sin misterios">
+          <div class="top">
+            <div><span class="chip on">Disponible</span><h3 style="font-size:1.6rem;margin-top:.6rem">Laytime y demora sin misterios</h3><p class="muted">Guía práctica con 12 ejercicios resueltos · Cesar Andrade</p></div>
+            <div class="price"><span class="js-price">USD 10</span><small>pago único</small></div>
+          </div>
+          <p>Laytime, demora (sobrestadía) y despacho en el fletamento por viaje: vocabulario, cuándo empieza a correr el tiempo, exclusiones, un ejemplo paso a paso, 12 ejercicios con solución y glosario español-inglés-italiano.</p>
+          <ul class="ticks">
+            <li>Descarga inmediata del PDF tras el pago.</li>
+            <li>Paga con PayPal o con tarjeta.</li>
+            <li>Actualizaciones de la edición 1 sin coste.</li>
+            <li>Reembolso en 14 días si no te sirve.</li>
+          </ul>
+          <a class="btn btn-primary js-buy" href="#publicaciones">Comprar ahora</a>
+          <p class="note js-buy-note" hidden>La venta se abre en las próximas horas. Vuelve pronto a esta página.</p>
+          <dl class="specs">
+            <dt>Autor</dt><dd>Cesar Andrade · Oceanica Terra</dd>
+            <dt>Formato</dt><dd>PDF, tamaño carta, 19 páginas</dd>
+            <dt>Edición</dt><dd>1.0 · octubre de 2026</dd>
+            <dt>Nivel</dt><dd>Inicial e intermedio</dd>
+          </dl>
+          <p class="note">Material educativo. Las cláusulas de los ejemplos están simplificadas; en una operación real manda el texto de tu póliza y la ley aplicable.</p>
+        </article>
+        <div>
+          <p class="label" style="margin-bottom:.8rem">En preparación</p>
+          <ul class="upcoming">
+            <li><div><b>Pack de documentación marítima comentada</b><small>Modelos originales de NOR, SOF y conocimiento de embarque, campo por campo.</small></div><span class="chip soon">Próximo</span></li>
+            <li><div><b>Glosario marítimo español · inglés · italiano</b><small>Terminología controlada con definiciones originales.</small></div><span class="chip soon">Próximo</span></li>
+            <li><div><b>Guía ilustrada de tipos de buque</b><small>Diseño, carga, tripulación, riesgos y normativa de cada tipo.</small></div><span class="chip soon">Próximo</span></li>
+            <li><div><b>Guías rápidas de convenios OMI y OIT</b><small>SOLAS, MARPOL, STCW, MLC, PBIP y COLREG en dos páginas cada uno.</small></div><span class="chip soon">Próximo</span></li>
+            <li><div><b>Cuaderno ampliado de laytime</b><small>30 casos completos y hoja de cálculo.</small></div><span class="chip soon">Próximo</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJERCICIOS Y HERRAMIENTAS -->
+  <section class="band" id="ejercicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Ejercicios y herramientas gratuitas</p>
+        <h2>Practica con casos reales del oficio</h2>
+        <p>Un ejercicio del libro y una calculadora de demora y despacho, cargada con los mismos datos.</p>
+      </div>
+      <div class="sample">
+        <div class="sheet">
+          <span class="label">Ejercicio 4 · Demora simple</span>
+          <h3>¿Cuánto debe pagar el fletador?</h3>
+          <p>Laytime permitido: 4 días. Tiempo usado según la hoja de tiempos: 5 días y 9 horas. Tarifa de demora: 14 000 USD por día, a prorrata.</p>
+          <details class="reveal">
+            <summary>Ver la solución</summary>
+            <ol>
+              <li>Tiempo usado: 5 + 9/24 = 5,375 días.</li>
+              <li>Exceso: 5,375 − 4 = 1,375 días.</li>
+              <li>Demora: 1,375 × 14 000 = <b>19 250 USD</b>.</li>
+              <li>Comprobación: 33 h × 583,33 USD/h = 19 250 USD.</li>
+            </ol>
+          </details>
+        </div>
+        <div class="calc">
+          <form id="calc-form" novalidate>
+            <label class="field"><span>Laytime permitido</span>
+              <div class="pair">
+                <div class="inp"><input id="ad" type="number" min="0" step="1" value="4" inputmode="numeric"><em>días</em></div>
+                <div class="inp"><input id="ah" type="number" min="0" step="0.25" value="0" inputmode="decimal"><em>horas</em></div>
+              </div>
+            </label>
+            <label class="field"><span>Tiempo que cuenta</span>
+              <div class="pair">
+                <div class="inp"><input id="ud" type="number" min="0" step="1" value="5" inputmode="numeric"><em>días</em></div>
+                <div class="inp"><input id="uh" type="number" min="0" step="0.25" value="9" inputmode="decimal"><em>horas</em></div>
+              </div>
+            </label>
+            <label class="field"><span>Tarifa de demora</span>
+              <div class="inp"><input id="dr" type="number" min="0" step="100" value="14000" inputmode="decimal"><em>USD/día</em></div>
+            </label>
+            <label class="field"><span>Tarifa de despacho</span>
+              <div class="inp"><input id="sr" type="number" min="0" step="100" value="7000" inputmode="decimal"><em>USD/día</em></div>
+            </label>
+            <p class="note">Calcula sobre todo el tiempo ahorrado y a prorrata. Descuenta antes las exclusiones de tu póliza.</p>
+          </form>
+          <div class="out" aria-live="polite">
+            <span class="label">Resultado</span>
+            <div class="kindout" id="kind">Demora a cargo del fletador</div>
+            <div class="big" id="big">19 250 USD</div>
+            <div class="gauge" aria-hidden="true"><i id="g-used"></i><b id="g-over"></b></div>
+            <ul class="steps" id="steps"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTUALIDAD -->
+  <section class="band alt" id="actualidad">
+    <div class="wrap split">
+      <div class="sec-head" style="margin-bottom:0">
+        <div class="row"><p class="label">Actualidad y análisis</p><span class="chip soon">En preparación</span></div>
+        <h2>Lo que cambia en el sector, explicado</h2>
+        <p>Noticias y cambios normativos con su contexto. Nunca publicamos rumores ni cifras sin fuente: cada pieza enlaza al documento oficial que la respalda.</p>
+      </div>
+      <ul class="series">
+        <li><span class="n">S</span><div><b>Semana marítima</b><small>Resumen semanal de lo relevante para el transporte marítimo y los puertos.</small></div></li>
+        <li><span class="n">N</span><div><b>Normativa al día</b><small>Enmiendas de la OMI y la OIT: qué cambia, para quién y desde cuándo.</small></div></li>
+        <li><span class="n">C</span><div><b>Casos y lecciones</b><small>Informes oficiales de investigación de accidentes, explicados.</small></div></li>
+        <li><span class="n">M</span><div><b>Mitos y realidades</b><small>Ideas extendidas sobre el mundo marítimo, contrastadas con datos.</small></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VÍDEOS -->
+  <section class="band" id="videos">
+    <div class="wrap split">
+      <div class="sec-head" style="margin-bottom:0">
+        <div class="row"><p class="label">Vídeos y pódcast</p><span class="chip soon">En preparación</span></div>
+        <h2>Diez primeros vídeos del canal</h2>
+        <p>Explicaciones de 8 a 12 minutos con diagramas originales, y versiones cortas para YouTube Shorts, Instagram, TikTok y LinkedIn.</p>
+      </div>
+      <ul class="series">
+        <li><span class="n">1</span><div><b>Laytime: por qué un buque esperando cuesta miles de dólares al día</b></div></li>
+        <li><span class="n">2</span><div><b>Cómo funciona un portacontenedores, de la grúa a tu puerta</b></div></li>
+        <li><span class="n">3</span><div><b>El conocimiento de embarque: el papel que vale tanto como la carga</b></div></li>
+        <li><span class="n">4</span><div><b>SOLAS en 10 minutos: el convenio nacido tras el Titanic</b></div></li>
+        <li><span class="n">5</span><div><b>Cinco tipos de buque que mueven el comercio mundial</b></div></li>
+        <li><span class="n">6</span><div><b>Incoterms 2020: FOB frente a CIF sin confusiones</b></div></li>
+        <li><span class="n">7</span><div><b>¿Por qué los buques esperan fondeados? El aviso de alistamiento</b></div></li>
+        <li><span class="n">8</span><div><b>MARPOL: los seis anexos que protegen el mar</b></div></li>
+        <li><span class="n">9</span><div><b>Siete profesiones marítimas en tierra que casi nadie conoce</b></div></li>
+        <li><span class="n">10</span><div><b>Cómo leer un informe oficial de accidente</b></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="band alt" id="sobre">
+    <div class="wrap split">
+      <div class="prose">
+        <p class="label">Sobre Oceanica Terra</p>
+        <h2>Nuestra misión editorial</h2>
+        <p>Oceanica Terra es una marca de educación y conocimiento marítimo fundada por Cesar Andrade. Queremos que cualquier persona que estudie o trabaje en el sector pueda entender cómo funciona el transporte marítimo y aplicarlo con seguridad.</p>
+        <p>Empezamos en español. El inglés y el italiano llegarán con el mismo nivel de revisión: nada de traducciones automáticas en contenidos técnicos, normativos o de seguridad.</p>
+        <p>¿Eres profesional del sector y quieres colaborar como autor o revisor técnico? <a href="#contacto">Escríbenos</a>.</p>
+      </div>
+      <ul class="standard" aria-label="Estándar editorial">
+        <li><b>Fuentes</b><span>Cada dato regulatorio indica el convenio o documento oficial y la fecha de verificación.</span></li>
+        <li><b>Hechos y opinión</b><span>Separamos lo verificado de la interpretación y la opinión, y lo señalamos.</span></li>
+        <li><b>Original</b><span>Textos, ejemplos y casos propios. No reproducimos manuales, formularios ni diagramas protegidos.</span></li>
+        <li><b>Revisión</b><span>Los contenidos de seguridad y operaciones pasan una revisión técnica adicional.</span></li>
+        <li><b>Correcciones</b><span>Los errores se corrigen y se anotan en un registro público de erratas.</span></li>
+        <li><b>Alcance</b><span>Material educativo: no sustituye procedimientos aprobados, la normativa vigente ni el asesoramiento profesional.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band faq" id="preguntas">
+    <div class="wrap">
+      <div class="sec-head"><p class="label">Preguntas frecuentes</p><h2>Antes de empezar</h2></div>
+      <details><summary>¿Cómo recibo un libro que compro?</summary><p>Al completar el pago se descarga el PDF en el momento y recibes un enlace de descarga por correo electrónico.</p></details>
+      <details><summary>¿Qué formas de pago aceptan?</summary><p>PayPal y tarjetas de crédito o débito, a través de una plataforma de pago segura. Oceanica Terra nunca ve ni guarda los datos de tu tarjeta.</p></details>
+      <details><summary>¿Los cursos dan un título oficial?</summary><p>No. Oceanica Terra ofrece formación y material educativo propios. No emitimos títulos oficiales ni certificados STCW, y no estamos afiliados a ninguna universidad ni administración marítima.</p></details>
+      <details><summary>¿El contenido sirve para la legislación de mi país?</summary><p>Explicamos la práctica y la normativa internacional. La ley de cada país puede cambiar el resultado de un caso concreto; por eso indicamos siempre dónde consultar.</p></details>
+      <details><summary>¿Y si un libro no me sirve?</summary><p>Si no cumple lo que promete, pide el reembolso en los 14 días siguientes a la compra.</p></details>
+      <details><summary>¿Cuándo habrá contenido en inglés e italiano?</summary><p>Estamos preparando ambas ediciones con revisión profesional de la terminología. Las anunciaremos en esta página.</p></details>
+      <details><summary>¿Ofrecen licencias para escuelas o empresas?</summary><p>Sí. La compra individual es de uso personal; para grupos ofrecemos licencias con factura y pago por PayPal, tarjeta o transferencia bancaria en EE. UU. Escríbenos.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="band alt" id="contacto">
+    <div class="wrap split">
+      <div class="prose">
+        <p class="label">Contacto</p>
+        <h2>Escríbenos</h2>
+        <p>Dudas sobre una compra, licencias para escuelas y empresas, colaboraciones, propuestas de revisión técnica o correcciones al contenido.</p>
+      </div>
+      <div class="contact">
+        <p class="label">Correo</p>
+        <p class="mail"><a href="mailto:oceanicaterra@gmail.com" id="mail">oceanicaterra@gmail.com</a></p>
+        <button class="btn btn-ghost" type="button" id="copy-mail">Copiar correo</button>
+        <p class="note">Cesar Andrade · Oceanica Terra. Respondemos en uno o dos días hábiles.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog class="dlg" id="modulo-01" aria-labelledby="modulo-01-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 01 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-01-t">Introducción al transporte marítimo</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Qué mueve el comercio por mar, quién participa y cómo se conectan buques, puertos y contratos. Es el punto de partida de todo el plan.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Explicar el papel del transporte marítimo en el comercio mundial.</li><li>Identificar a los actores principales y lo que hace cada uno.</li><li>Distinguir los grandes segmentos del mercado.</li><li>Reconocer qué instituciones regulan el sector.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>El mar, autopista del comercio</li><li>Armadores, fletadores, cargadores, puertos y agentes</li><li>Graneles, contenedores, líquidos y pasaje</li><li>Tipos de buque y para qué sirve cada uno</li><li>Quién regula: OMI, OIT, Estado de bandera y Estado rector del puerto</li><li>Carreras en el mar y en tierra</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 01</span><b class="fp-t">Introducción al transporte marítimo</b><p>Casi todo lo que usas a diario ha viajado por mar en algún momento: el café, el teléfono, la gasolina, el algodón de tu camisa. La mayor parte del comercio mundial, medido en toneladas, se mueve en buques, porque ningún otro medio transporta tanto peso tan lejos con un coste tan bajo por unidad.</p><p>Detrás de cada carga hay una cadena de personas y empresas que rara vez se ven: el armador que pone el buque, el fletador que lo contrata, el cargador que entrega la mercancía, el consignatario que atiende el buque en puerto y la autoridad que comprueba que todo se haga con seguridad.</p><p>Este módulo te da el mapa completo antes de entrar en detalle. Al terminarlo sabrás situar cualquier tema del sector en su sitio.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 01">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-02" aria-labelledby="modulo-02-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 02 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-02-t">Economía marítima y mercados</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Por qué los fletes suben y bajan, cómo se forma la oferta y la demanda de transporte y cómo funcionan los ciclos del shipping.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Explicar la demanda derivada del transporte marítimo.</li><li>Describir los cuatro mercados del shipping y cómo se conectan.</li><li>Interpretar un índice de fletes.</li><li>Reconocer las fases de un ciclo de mercado.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Demanda derivada: el transporte depende del comercio</li><li>Oferta de flota: entregas, desguaces y velocidad</li><li>Los cuatro mercados: fletes, nuevas construcciones, compraventa y desguace</li><li>Índices de fletes y cómo leerlos</li><li>Ciclos del shipping</li><li>Costes y rentabilidad de un buque</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 02</span><b class="fp-t">Economía marítima y mercados</b><p>Nadie contrata un buque por el gusto de navegar. La demanda de transporte marítimo es una demanda derivada: existe porque alguien necesita mover petróleo, grano, mineral o mercancías de un lugar a otro.</p><p>Por eso los fletes reaccionan a lo que pasa en la economía mundial, en las cosechas o en la industria, mientras que la flota disponible cambia despacio: construir un buque lleva años. Ese desfase explica por qué el sector vive en ciclos de euforia y crisis.</p><p>En este módulo aprenderás a leer esos ciclos con herramientas sencillas y a entender qué decisiones toman armadores e inversores en cada fase.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 02">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-03" aria-labelledby="modulo-03-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 03 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-03-t">Administración de empresas navieras</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Cómo se organiza una naviera por dentro: departamentos, costes, presupuestos e indicadores de gestión.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Describir la estructura de una compañía naviera.</li><li>Clasificar los costes de un buque.</li><li>Preparar un presupuesto operativo básico.</li><li>Elegir indicadores de gestión útiles.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Armador, operador y gestor técnico</li><li>Departamentos: comercial, operaciones, técnico, tripulaciones</li><li>Costes de capital, operativos y de viaje</li><li>Presupuestos y control de gestión</li><li>Gestión externalizada (ship management)</li><li>Indicadores de rendimiento</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 03</span><b class="fp-t">Administración de empresas navieras</b><p>Una naviera puede tener un solo buque o cientos, pero todas resuelven las mismas preguntas: quién busca la carga, quién mantiene el buque en condiciones, quién contrata a la tripulación y quién controla que los números cuadren.</p><p>A veces el propietario del buque no lo gestiona: encarga la parte técnica o las tripulaciones a empresas especializadas. Entender quién hace qué es imprescindible para leer un contrato, preparar un presupuesto o trabajar en una oficina naviera.</p><p>Este módulo recorre la empresa naviera departamento por departamento, con ejemplos de costes y presupuestos.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 03">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-04" aria-labelledby="modulo-04-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 04 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-04-t">Gestión portuaria y operación de terminales</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Modelos de gestión de puertos, funcionamiento de una terminal y cómo se mide su productividad.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Comparar los modelos de gestión portuaria.</li><li>Describir las áreas de una terminal.</li><li>Calcular indicadores básicos de productividad.</li><li>Explicar los servicios técnico-náuticos.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Qué es un puerto y qué no</li><li>Modelos de gestión: puerto propietario, instrumental y de servicios</li><li>La terminal: muelle, patio y puerta</li><li>Productividad y ventanas de atraque</li><li>Practicaje, remolque y amarre</li><li>Puertos y ciudad: relación y sostenibilidad</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 04</span><b class="fp-t">Gestión portuaria y operación de terminales</b><p>Un buque solo gana dinero navegando, y un puerto solo es útil si lo hace volver al mar cuanto antes. Toda la gestión portuaria gira en torno a esa idea: atender más buques, más rápido y con más seguridad.</p><p>Detrás de cada escala trabajan la autoridad portuaria, las terminales, los prácticos, los remolcadores, los amarradores, la aduana y los transportistas terrestres. Cuando uno falla, el buque espera y alguien paga esa espera.</p><p>En este módulo verás cómo se organiza un puerto, cómo funciona una terminal por dentro y cómo se mide su eficiencia.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 04">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-05" aria-labelledby="modulo-05-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 05 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-05-t">Logística marítima y cadena de suministro</h3><span class="chip soon">En preparación</span><p class="dlg-sum">El viaje completo de la mercancía, de la fábrica al cliente, y el lugar del buque en esa cadena.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Trazar una cadena de suministro puerta a puerta.</li><li>Explicar el papel del transitario y del operador sin buque.</li><li>Valorar el coste del inventario en tránsito.</li><li>Proponer medidas de resiliencia.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>De la fábrica al cliente</li><li>Transitarios, operadores sin buque y agentes</li><li>Contenedor e intermodalidad</li><li>Puertos hub y transbordo</li><li>Inventario en tránsito y nivel de servicio</li><li>Riesgos y resiliencia de la cadena</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 05</span><b class="fp-t">Logística marítima y cadena de suministro</b><p>Para quien compra, el buque es solo un tramo del viaje. La mercancía sale de una fábrica, viaja en camión o tren hasta un puerto, cruza el océano, puede cambiar de buque en un puerto intermedio y vuelve a la carretera hasta su destino final.</p><p>La logística marítima estudia cómo coordinar todo ese recorrido para que la carga llegue a tiempo, en buen estado y al menor coste total, que no siempre es el flete más barato.</p><p>Este módulo te enseña a ver la cadena completa y a tomar decisiones con números.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 05">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-06" aria-labelledby="modulo-06-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 06 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-06-t">Derecho marítimo mercantil</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Las reglas jurídicas propias del mar: el buque como bien, el abordaje, el salvamento, la avería gruesa y la limitación de responsabilidad.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Identificar las fuentes del derecho marítimo.</li><li>Explicar las figuras clásicas: abordaje, salvamento y avería gruesa.</li><li>Entender la limitación de responsabilidad.</li><li>Saber cuándo hace falta un abogado especialista.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Fuentes: convenios, leyes nacionales y contratos</li><li>El buque: registro, bandera e hipoteca naval</li><li>Abordaje</li><li>Salvamento y remolque</li><li>Avería gruesa y Reglas de York-Amberes</li><li>Limitación de responsabilidad</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 06</span><b class="fp-t">Derecho marítimo mercantil</b><p>El derecho marítimo es una de las ramas más antiguas del derecho mercantil. Muchas de sus figuras, como la avería gruesa, nacieron cuando los barcos de vela tenían que tirar carga por la borda para salvarse, y siguen vivas hoy en contratos que mueven millones.</p><p>Su rasgo más característico es la mezcla de normas internacionales, leyes de cada país y contratos tipo que las partes eligen. Por eso un mismo problema puede resolverse de forma distinta según la bandera, el puerto o la cláusula de ley aplicable.</p><p>Este módulo explica las instituciones esenciales con casos sencillos. No sustituye el consejo de un abogado marítimo.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 06">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-07" aria-labelledby="modulo-07-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 07 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-07-t">Conocimiento de embarque y contratos de transporte</h3><span class="chip soon">En preparación</span><p class="dlg-sum">El documento que acredita la carga, prueba el contrato y, si es negociable, representa la mercancía. Y los regímenes que lo regulan.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Explicar las tres funciones del conocimiento de embarque.</li><li>Revisar un B/L campo por campo.</li><li>Distinguir sus tipos y la carta de porte marítimo.</li><li>Situar los regímenes de La Haya-Visby, Hamburgo y Rotterdam.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Funciones del conocimiento de embarque</li><li>Campos y errores típicos</li><li>Tipos: embarcado, limpio, a la orden, house y master</li><li>Carta de porte marítimo y documentos electrónicos</li><li>Regímenes internacionales de responsabilidad</li><li>Entrega sin original y cartas de indemnidad</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 07</span><b class="fp-t">Conocimiento de embarque y contratos de transporte</b><p>Quien tiene en la mano el original adecuado de un conocimiento de embarque puede, en muchos casos, reclamar la carga en el puerto de destino. Por eso este papel, o su versión electrónica, es tan importante como la propia mercancía.</p><p>El conocimiento de embarque cumple tres funciones a la vez: es el recibo de lo que se embarcó, la prueba del contrato de transporte y, cuando es negociable, el título que representa la carga.</p><p>En este módulo aprenderás a leerlo, a detectar los errores que bloquean pagos y entregas, y a entender qué régimen jurídico se le aplica.</p></div><p class="note">Lee gratis el artículo relacionado: <a href="#art-bl" data-close>abrir artículo</a>.</p><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 07">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-08" aria-labelledby="modulo-08-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 08 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-08-t">Incoterms y comercio internacional</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Cómo reparten vendedor y comprador costes, riesgos y trámites, y cómo encaja el transporte en la compraventa internacional.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Elegir el Incoterm adecuado para cada operación.</li><li>Explicar dónde pasa el riesgo en cada regla.</li><li>Relacionar Incoterms, transporte y seguro.</li><li>Entender los medios de pago, como el crédito documentario.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Las 11 reglas de Incoterms 2020</li><li>Reglas para cualquier modo y reglas marítimas</li><li>FOB, CFR y CIF frente a FCA, CPT y CIP</li><li>Seguro de la mercancía</li><li>Medios de pago y crédito documentario</li><li>Errores frecuentes en contratos</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 08</span><b class="fp-t">Incoterms y comercio internacional</b><p>Dos letras en un contrato de compraventa pueden decidir quién paga el flete, quién asegura la mercancía y quién pierde dinero si la carga se daña en el camino. Esas letras son los Incoterms, las reglas de la Cámara de Comercio Internacional.</p><p>Usarlos bien evita disputas; usarlos mal, por costumbre o por copiar un contrato antiguo, es uno de los errores más caros del comercio exterior. El caso clásico: creer que con CIF el riesgo es del vendedor hasta el destino.</p><p>Este módulo recorre las once reglas con ejemplos marítimos y te enseña a elegir la adecuada.</p></div><p class="note">Lee gratis el artículo relacionado: <a href="#art-incoterms" data-close>abrir artículo</a>.</p><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 08">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-09" aria-labelledby="modulo-09-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 09 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-09-t">Documentación marítima y aduanas</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Los documentos del buque y de la carga que exige una escala, y cómo se relacionan con el despacho aduanero.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Enumerar los documentos que necesita un buque en puerto.</li><li>Relacionar los documentos de la carga con el despacho aduanero.</li><li>Explicar la ventanilla única marítima.</li><li>Evitar retrasos por errores documentales.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Certificados del buque</li><li>Manifiesto y documentos de la carga</li><li>Llegada y salida: declaraciones a las autoridades</li><li>Despacho aduanero de importación y exportación</li><li>Convenio FAL y ventanilla única marítima</li><li>Errores documentales y sus consecuencias</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 09</span><b class="fp-t">Documentación marítima y aduanas</b><p>Un buque puede estar en perfecto estado y la carga lista, y aun así quedarse parado en puerto por un papel que falta o un dato que no coincide. La documentación es la parte menos visible de la operación marítima y una de las que más retrasos provoca.</p><p>Cada escala exige documentos del buque, de la tripulación y de la carga, que llegan a varias autoridades distintas. La tendencia es enviarlos una sola vez por medios electrónicos, a través de la ventanilla única marítima que impulsa el Convenio FAL de la OMI.</p><p>Este módulo te enseña qué se pide, quién lo pide y por qué.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 09">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-10" aria-labelledby="modulo-10-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 10 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-10-t">Seguro marítimo y reclamaciones</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Qué cubre cada seguro del sector, cómo funciona un club de P&amp;I y cómo se prepara una reclamación.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Distinguir seguro de casco, de P&amp;I y de carga.</li><li>Explicar la avería gruesa desde el punto de vista del seguro.</li><li>Comparar las coberturas de carga A, B y C.</li><li>Preparar la documentación de una reclamación.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Principios del seguro marítimo</li><li>Casco y máquinas</li><li>Clubes de protección e indemnización (P&amp;I)</li><li>Seguro de carga y sus coberturas</li><li>Avería gruesa y particular</li><li>Cómo se tramita una reclamación</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 10</span><b class="fp-t">Seguro marítimo y reclamaciones</b><p>En el mar los riesgos son grandes y los valores también: un buque, su carga y la responsabilidad frente a terceros pueden sumar cifras enormes. Por eso el seguro marítimo es uno de los más antiguos y especializados del mundo.</p><p>Cada riesgo tiene su seguro. El casco y las máquinas protegen el buque; los clubes de P&amp;I cubren la responsabilidad del armador frente a terceros; el seguro de carga protege al dueño de la mercancía.</p><p>Este módulo explica qué cubre cada uno, qué queda fuera y cómo se reclama cuando algo sale mal.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 10">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-11" aria-labelledby="modulo-11-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 11 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-11-t">Fletamentos y mercados de fletes</h3><span class="chip on">Disponible</span><p class="dlg-sum">Cómo se contrata un buque, qué dicen las pólizas y quién paga el tiempo en puerto. Su primera publicación ya está disponible.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Distinguir fletamento por viaje, por tiempo y a casco desnudo.</li><li>Seguir una negociación de fletamento.</li><li>Calcular laytime, demora y despacho.</li><li>Leer las cláusulas clave de una póliza.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Tipos de fletamento</li><li>El broker y la negociación</li><li>La póliza y sus cláusulas</li><li>Laytime, demora y despacho</li><li>Hire, off-hire y entrega del buque</li><li>Mercados de fletes</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 11</span><b class="fp-t">Fletamentos y mercados de fletes</b><p>Un buque mercante cuesta dinero cada hora que existe. Mientras navega, ese coste produce ingresos; mientras espera en puerto, no. La pregunta comercial es sencilla: ¿quién paga el tiempo que el buque pasa cargando, descargando o esperando?</p><p>La respuesta depende del tipo de contrato. En un fletamento por tiempo, el fletador alquila el buque por días y el riesgo de las demoras es suyo. En un fletamento por viaje, el armador cobra un flete que solo cubre un tiempo razonable en puerto: el laytime.</p><p>Así empieza «Laytime y demora sin misterios», el primer libro de este módulo, con 12 ejercicios resueltos.</p></div><div class="dlg-buy"><div><span class="label">Primer libro del módulo</span><b>Laytime y demora sin misterios</b><span class="muted">Cesar Andrade · PDF de 19 páginas</span></div><div class="dlg-cta"><span class="price js-price">USD 10</span><a class="btn btn-primary js-buy" href="https://payhip.com/b/YE7Hb" target="_blank" rel="noopener">Comprar ahora</a></div></div></div></dialog>
+<dialog class="dlg" id="modulo-12" aria-labelledby="modulo-12-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 12 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-12-t">Operación de buques y gestión de flota</h3><span class="chip soon">En preparación</span><p class="dlg-sum">El día a día de una flota: planificación de viajes, combustible, mantenimiento, inspecciones y seguimiento del rendimiento.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Planificar un viaje desde el punto de vista del operador.</li><li>Estimar consumos y costes de combustible.</li><li>Explicar el mantenimiento planificado.</li><li>Prepararse para inspecciones y auditorías.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>El operador y el capitán: quién decide qué</li><li>Planificación de viajes y escalas</li><li>Combustible y bunkering</li><li>Mantenimiento planificado</li><li>Inspecciones: Estado rector del puerto, clase y vetting</li><li>Indicadores de rendimiento de la flota</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 12</span><b class="fp-t">Operación de buques y gestión de flota</b><p>Cuando un buque zarpa, en la oficina alguien ya está pensando en el siguiente viaje: dónde cargará, cuánto combustible necesitará, qué inspección le toca y si el calendario de mantenimiento encaja con sus escalas.</p><p>Esa es la gestión de flota: coordinar comercial, técnica y tripulaciones para que cada buque trabaje el máximo de días al año, de forma segura y rentable.</p><p>Este módulo te muestra cómo se planifica y controla la operación de una flota, con ejemplos y cálculos sencillos.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 12">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-13" aria-labelledby="modulo-13-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 13 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-13-t">Seguridad marítima y gestión de riesgos</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Cómo se organiza la seguridad en buques y compañías, cómo se evalúan los riesgos y qué enseñan los accidentes.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Explicar el sistema de gestión de la seguridad del Código IGS.</li><li>Realizar una evaluación de riesgos sencilla.</li><li>Analizar el factor humano en los accidentes.</li><li>Extraer lecciones de un informe oficial de investigación.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Cultura de seguridad</li><li>El Código IGS y el sistema de gestión</li><li>Evaluación de riesgos y permisos de trabajo</li><li>Factor humano y fatiga</li><li>Investigación de accidentes</li><li>Protección marítima y Código PBIP</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 13</span><b class="fp-t">Seguridad marítima y gestión de riesgos</b><p>La mayoría de los accidentes marítimos no tienen una sola causa. Suelen ser una cadena de pequeñas decisiones, atajos y fallos de comunicación que, juntos, terminan en un abordaje, un incendio o una varada.</p><p>La gestión de la seguridad intenta romper esa cadena antes de que ocurra: con procedimientos claros, evaluaciones de riesgo, formación y una cultura en la que cualquiera pueda decir «paremos».</p><p>Este módulo es educativo y no sustituye los procedimientos aprobados de cada buque ni el criterio de un profesional cualificado.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 13">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-14" aria-labelledby="modulo-14-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 14 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-14-t">Convenios internacionales y cumplimiento</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Los grandes convenios de la OMI y la OIT, cómo entran en vigor y cómo se comprueba que los buques los cumplen.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Distinguir convenios, códigos obligatorios y guías.</li><li>Resumir SOLAS, MARPOL, STCW, MLC 2006 y COLREG.</li><li>Explicar el papel del Estado de bandera y del Estado rector del puerto.</li><li>Encontrar la versión vigente de un requisito.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Cómo nace y se enmienda un convenio</li><li>SOLAS y sus códigos</li><li>MARPOL y la contaminación</li><li>STCW y la formación</li><li>MLC 2006 y las condiciones de la gente de mar</li><li>Certificados, inspecciones y memorandos de control</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 14</span><b class="fp-t">Convenios internacionales y cumplimiento</b><p>Un buque puede tener bandera de un país, armador de otro, tripulación de diez nacionalidades y hacer escala en puertos de todo el mundo. Solo funciona porque hay reglas comunes, acordadas en organismos como la OMI y la OIT.</p><p>Pero no todas las normas obligan igual. Hay convenios que vinculan a los Estados que los ratifican, códigos que se vuelven obligatorios porque un convenio los incorpora y guías que solo recomiendan.</p><p>Este módulo te enseña a distinguirlos y a buscar siempre la versión vigente.</p></div><p class="note">Lee gratis el artículo relacionado: <a href="#art-solas" data-close>abrir artículo</a>.</p><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 14">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-15" aria-labelledby="modulo-15-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 15 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-15-t">Finanzas, contabilidad e inversión marítima</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Cómo se financia un buque, cómo se valora y cómo se mide si una inversión naviera es rentable.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Describir las fuentes de financiación de buques.</li><li>Calcular el equivalente diario de fletamento por tiempo (TCE).</li><li>Leer la cuenta de resultados de un buque.</li><li>Valorar los riesgos de una inversión naviera.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Financiación: bancos, arrendamiento y mercados de capitales</li><li>Valoración de buques</li><li>El TCE y la rentabilidad por día</li><li>Contabilidad de una naviera</li><li>Riesgos financieros: tipos de interés, divisas y fletes</li><li>Casos de inversión</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 15</span><b class="fp-t">Finanzas, contabilidad e inversión marítima</b><p>Un buque nuevo puede costar decenas de millones de dólares y trabajar veinte o veinticinco años en un mercado que cambia cada mes. Pocas inversiones combinan tanto capital con tanta incertidumbre.</p><p>Por eso las finanzas marítimas tienen herramientas propias, como el equivalente diario de fletamento por tiempo, que permite comparar viajes muy distintos con una sola cifra.</p><p>Este módulo explica cómo se financian, valoran y evalúan los buques, con ejercicios resueltos.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 15">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-16" aria-labelledby="modulo-16-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 16 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-16-t">Recursos humanos, crewing y relaciones laborales</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Cómo se forma, contrata y gestiona a la gente de mar, y qué derechos les reconoce el Convenio sobre el Trabajo Marítimo.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Explicar la estructura de la tripulación de un buque.</li><li>Relacionar titulaciones con el Convenio STCW.</li><li>Resumir los derechos del MLC 2006.</li><li>Planificar relevos y dotaciones.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>La tripulación: puente, máquinas y fonda</li><li>Formación y titulaciones STCW</li><li>Agencias de dotación y contratación</li><li>MLC 2006: contratos, descanso, salarios y repatriación</li><li>Bienestar y salud a bordo</li><li>Equipos multiculturales</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 16</span><b class="fp-t">Recursos humanos, crewing y relaciones laborales</b><p>Ningún buque se mueve sin su tripulación. Detrás de cada viaje hay personas que pasan meses lejos de casa, trabajan por turnos y conviven en un espacio reducido con compañeros de otros países.</p><p>Gestionar a la gente de mar exige conocer sus titulaciones, sus contratos y sus derechos, recogidos en convenios internacionales como el STCW y el MLC 2006, y también cuidar su bienestar.</p><p>Este módulo explica cómo funciona el crewing y qué obligaciones tiene una naviera con sus tripulantes.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 16">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-17" aria-labelledby="modulo-17-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 17 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-17-t">Economía de la construcción, reparación y mantenimiento</h3><span class="chip soon">En preparación</span><p class="dlg-sum">El ciclo de vida del buque, del contrato de construcción al reciclaje, y los costes de cada etapa.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Describir las etapas de construcción de un buque.</li><li>Entender un contrato de construcción.</li><li>Planificar una varada y su presupuesto.</li><li>Explicar el reciclaje responsable de buques.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>El ciclo de vida del buque</li><li>Astilleros y contratos de construcción</li><li>Supervisión y pruebas de mar</li><li>Varadas, reparaciones y reconocimientos</li><li>Costes de mantenimiento</li><li>Reciclaje de buques</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 17</span><b class="fp-t">Economía de la construcción, reparación y mantenimiento</b><p>Un buque nace en un astillero, pasa por varadas periódicas durante su vida útil y termina en una instalación de reciclaje. Cada etapa tiene costes, plazos y riesgos que una naviera debe planificar con años de antelación.</p><p>Una varada mal preparada puede alargarse días y disparar el presupuesto; un contrato de construcción mal negociado puede costar millones.</p><p>Este módulo enfoca la construcción y el mantenimiento desde la economía y la gestión. Los cálculos de ingeniería requieren datos verificados y validación profesional.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 17">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-18" aria-labelledby="modulo-18-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 18 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-18-t">Gestión ambiental y sostenibilidad</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Cómo reduce el sector su impacto: contaminación, emisiones, agua de lastre y la transición hacia combustibles con menos carbono.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Resumir los anexos de MARPOL.</li><li>Explicar las medidas de eficiencia energética de la OMI.</li><li>Describir la gestión del agua de lastre.</li><li>Comparar combustibles alternativos.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>MARPOL y sus seis anexos</li><li>Emisiones al aire y zonas de control</li><li>Eficiencia energética y gases de efecto invernadero</li><li>Agua de lastre y especies invasoras</li><li>Combustibles alternativos</li><li>Sostenibilidad como estrategia de empresa</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 18</span><b class="fp-t">Gestión ambiental y sostenibilidad</b><p>El transporte marítimo es, por tonelada transportada, uno de los medios más eficientes. Pero mueve tanto volumen que su impacto total sobre el mar y la atmósfera es importante, y la regulación ambiental crece cada año.</p><p>Desde los vertidos de hidrocarburos hasta las emisiones de gases de efecto invernadero, pasando por las especies que viajan en el agua de lastre, cada problema tiene su norma y sus soluciones técnicas.</p><p>Este módulo explica el marco ambiental vigente y cómo se preparan las navieras para lo que viene. Comprueba siempre la versión vigente de cada requisito.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 18">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-19" aria-labelledby="modulo-19-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 19 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-19-t">Tecnología marítima y transformación digital</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Sistemas a bordo y en tierra, datos, conectividad, ciberseguridad y automatización.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Describir los principales sistemas electrónicos del buque.</li><li>Explicar el valor de los datos en la operación.</li><li>Identificar riesgos de ciberseguridad.</li><li>Situar la automatización y los buques autónomos.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Del sextante al ECDIS</li><li>AIS, conectividad y seguimiento de flotas</li><li>Datos y analítica operativa</li><li>Ciberseguridad marítima</li><li>Automatización portuaria</li><li>Buques autónomos: estado y retos</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 19</span><b class="fp-t">Tecnología marítima y transformación digital</b><p>Un buque moderno genera datos sin parar: posición, velocidad, consumo, temperatura de motores, estado de la carga. Bien usados, esos datos ahorran combustible, anticipan averías y mejoran la seguridad.</p><p>La digitalización también trae riesgos nuevos. Un ataque informático puede paralizar un buque o una terminal, y por eso la ciberseguridad forma parte hoy de la gestión de la seguridad.</p><p>Este módulo te da una visión práctica de la tecnología que está cambiando el sector.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 19">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+<dialog class="dlg" id="modulo-20" aria-labelledby="modulo-20-t"><div class="dlg-in"><div class="dlg-top"><span class="label">Módulo 20 de 20</span><button type="button" class="dlg-x" data-close aria-label="Cerrar">×</button></div><h3 id="modulo-20-t">Estrategia, emprendimiento y métodos de investigación</h3><span class="chip soon">En preparación</span><p class="dlg-sum">Analizar el sector, crear un negocio marítimo y hacer trabajos de investigación con fuentes fiables.</p><div class="dlg-cols"><div><h4>Lo que aprenderás</h4><ul class="ticks"><li>Analizar la estrategia de una empresa del sector.</li><li>Preparar un plan de negocio marítimo.</li><li>Diseñar un trabajo de investigación.</li><li>Encontrar y citar fuentes fiables.</li></ul></div><div><h4>Contenido</h4><ol class="dlg-list"><li>Estrategia en el sector marítimo</li><li>Modelos de negocio y ventajas competitivas</li><li>Emprender en servicios marítimos</li><li>Plan de empresa paso a paso</li><li>Métodos de investigación</li><li>Fuentes de datos y cómo citarlas</li></ol></div></div><h4>Primera página</h4><div class="firstpage"><span class="fp-k">OCEANICA TERRA · MÓDULO 20</span><b class="fp-t">Estrategia, emprendimiento y métodos de investigación</b><p>El sector marítimo no es solo para grandes navieras. Consultorías, agencias, empresas de formación, tecnología o servicios portuarios nacen cada año con equipos pequeños y una buena idea.</p><p>Para competir hace falta entender cómo funciona el mercado, dónde está el valor y qué riesgos hay. Y para estudiar el sector con rigor, hace falta saber investigar: formular una pregunta, buscar datos fiables y citarlos bien.</p><p>Este módulo cierra el plan de estudios uniendo estrategia, emprendimiento e investigación.</p></div><div class="dlg-buy"><div><span class="label">Disponibilidad</span><b>Este módulo está en preparación</b><span class="muted">Escríbenos y te avisamos en cuanto salga a la venta.</span></div><div class="dlg-cta"><a class="btn btn-ghost" href="mailto:oceanicaterra@gmail.com?subject=Avísame: módulo 20">Avísame</a><span class="note">oceanicaterra@gmail.com</span></div></div></div></dialog>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <details><summary>Aviso de privacidad</summary><p>Esta página no usa formularios ni cookies de seguimiento. Los datos de compra (nombre, correo y pago) los trata la plataforma de pago para procesar el pedido y enviarte el archivo. Puedes pedir acceso, rectificación o cancelación de tus datos escribiendo a oceanicaterra@gmail.com.</p></details>
+      <details><summary>Términos de uso</summary><p>Los contenidos son material educativo de Oceanica Terra. Las publicaciones se venden con licencia personal: no se permite revenderlas ni compartir los archivos. Los ejemplos son ficticios y simplificados.</p></details>
+      <details><summary>Política de reembolso</summary><p>Reembolso completo si lo solicitas en los 14 días siguientes a la compra. Escribe a oceanicaterra@gmail.com con tu número de pedido; se tramita por el mismo medio de pago.</p></details>
+      <details><summary>Aviso educativo</summary><p>Nada en este sitio sustituye los procedimientos aprobados de a bordo, los requisitos oficiales vigentes ni el criterio de un profesional cualificado. Oceanica Terra no está afiliada a la OMI, la OIT ni a ninguna administración marítima.</p></details>
+    </div>
+    <p>© 2026 Cesar Andrade · Oceanica Terra · Educación marítima en español · ES activo, EN e IT en preparación</p>
+  </div>
+</footer>
+
+<script>
+/* ===== Configuración de la compra =====
+   Cuando el producto exista en Payhip, pega aquí su enlace (p. ej. https://payhip.com/b/XXXX).
+   Mientras BUY_URL esté vacío, el botón de compra muestra "Muy pronto a la venta". */
+const BUY_URL = "https://payhip.com/b/YE7Hb";
+const PRICE_LABEL = "USD 10";
+
+const $ = id => document.getElementById(id);
+
+(function setupBuy() {
+  document.querySelectorAll(".js-price").forEach(el => { el.textContent = PRICE_LABEL; });
+  const ready = /^https:\/\//.test(BUY_URL);
+  document.querySelectorAll(".js-buy").forEach(a => {
+    if (ready) { a.href = BUY_URL; a.target = "_blank"; a.rel = "noopener"; }
+    else { a.textContent = "Muy pronto a la venta"; a.setAttribute("aria-disabled", "true"); a.removeAttribute("href"); }
+  });
+  document.querySelectorAll(".js-buy-note").forEach(n => { n.hidden = ready; });
+})();
+
+/* ===== Pestañas de la biblioteca ===== */
+(function setupTabs() {
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  function select(tab, focus) {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      $(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => select(t, false));
+    t.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        const next = tabs.at((i + (e.key === "ArrowRight" ? 1 : -1)) % tabs.length);
+        select(next, true);
+      }
+    });
+  });
+})();
+
+/* ===== Idioma ===== */
+(function setupLang() {
+  const notes = {
+    en: "The English edition of Oceanica Terra is in preparation, with professionally reviewed terminology. Our Spanish content is available below.",
+    it: "L'edizione italiana di Oceanica Terra è in preparazione, con terminologia revisionata da professionisti. I contenuti in spagnolo sono disponibili qui sotto."
+  };
+  const buttons = document.querySelectorAll("[data-lang]");
+  function apply(lang) {
+    buttons.forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"));
+    const box = $("langnote");
+    if (notes[lang]) { $("langnote-text").textContent = notes[lang]; box.hidden = false; box.lang = lang; }
+    else { box.hidden = true; }
+    try { localStorage.setItem("ot-lang", lang); } catch (e) {}
+  }
+  buttons.forEach(b => b.addEventListener("click", () => apply(b.dataset.lang)));
+  let saved = "es";
+  try { saved = localStorage.getItem("ot-lang") || "es"; } catch (e) {}
+  apply(saved);
+})();
+
+/* ===== Abrir artículos enlazados ===== */
+function openArticleFromHash() {
+  const id = location.hash.slice(1);
+  if (!/^art-[a-z]+$/.test(id)) return;
+  const d = document.getElementById("d-" + id);
+  if (d) { d.open = true; const a = document.getElementById(id); if (a) a.scrollIntoView(); }
+}
+document.querySelectorAll('a[href^="#art-"]').forEach(a => a.addEventListener("click", () => {
+  const d = document.getElementById("d-" + a.getAttribute("href").slice(1)); if (d) d.open = true;
+}));
+window.addEventListener("hashchange", openArticleFromHash);
+openArticleFromHash();
+
+/* ===== Fichas de módulos ===== */
+function openModule(id, push) {
+  const d = document.getElementById(id);
+  if (!d || typeof d.showModal !== "function") return false;
+  if (!d.open) d.showModal();
+  if (push) { try { history.replaceState(null, "", "#" + id); } catch (e) {} }
+  return true;
+}
+document.querySelectorAll("[data-dialog]").forEach(a => a.addEventListener("click", e => {
+  if (openModule(a.dataset.dialog, true)) e.preventDefault();
+}));
+document.querySelectorAll("dialog.dlg").forEach(d => {
+  d.addEventListener("click", e => { if (e.target === d) d.close(); });
+  d.querySelectorAll("[data-close]").forEach(b => b.addEventListener("click", () => d.close()));
+  d.addEventListener("close", () => {
+    if (location.hash === "#" + d.id) { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} }
+  });
+});
+function openModuleFromHash() { const id = location.hash.slice(1); if (/^modulo-\d{2}$/.test(id)) openModule(id, false); }
+window.addEventListener("hashchange", openModuleFromHash);
+openModuleFromHash();
+
+/* ===== Copiar correo ===== */
+$("copy-mail").addEventListener("click", e => {
+  const btn = e.currentTarget, addr = "oceanicaterra@gmail.com";
+  const done = () => { btn.textContent = "Correo copiado"; setTimeout(() => { btn.textContent = "Copiar correo"; }, 2000); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("mail")); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); btn.textContent = "Selecciona y copia"; };
+  try { navigator.clipboard.writeText(addr).then(done, fallback); } catch (err) { fallback(); }
+});
+
+/* ===== Calculadora de demora y despacho ===== */
+const num = id => { const v = parseFloat($(id).value); return Number.isFinite(v) && v >= 0 ? v : 0; };
+const fmtMoney = v => v.toLocaleString("es-MX", { minimumFractionDigits: 0, maximumFractionDigits: 2 }).replace(/,/g, " ") + " USD";
+const fmtDays = v => v.toLocaleString("es-MX", { maximumFractionDigits: 4 });
+function fmtDH(hours) {
+  const total = Math.round(hours * 60);
+  const d = Math.floor(total / 1440), h = Math.floor((total % 1440) / 60), m = total % 60;
+  return `${d} d ${h} h${m ? " " + m + " min" : ""}`;
+}
+function calc() {
+  const allowed = num("ad") * 24 + num("ah");
+  const used = num("ud") * 24 + num("uh");
+  const dem = num("dr"), des = num("sr");
+  const diff = used - allowed;
+  const kind = $("kind"), big = $("big");
+  const lines = [
+    `Permitido: <span>${fmtDH(allowed)}</span> = ${fmtDays(allowed / 24)} d`,
+    `Cuenta: <span>${fmtDH(used)}</span> = ${fmtDays(used / 24)} d`
+  ];
+  if (diff > 0) {
+    const amount = diff / 24 * dem;
+    kind.textContent = "Demora a cargo del fletador"; kind.className = "kindout dem";
+    big.textContent = fmtMoney(amount);
+    lines.push(`Exceso: <span>${fmtDH(diff)}</span> = ${fmtDays(diff / 24)} d`);
+    lines.push(`${fmtDays(diff / 24)} × ${fmtMoney(dem)} = <span>${fmtMoney(amount)}</span>`);
+  } else if (diff < 0) {
+    const saved = -diff, amount = saved / 24 * des;
+    kind.textContent = "Despacho a favor del fletador"; kind.className = "kindout des";
+    big.textContent = fmtMoney(amount);
+    lines.push(`Ahorrado: <span>${fmtDH(saved)}</span> = ${fmtDays(saved / 24)} d`);
+    lines.push(`${fmtDays(saved / 24)} × ${fmtMoney(des)} = <span>${fmtMoney(amount)}</span>`);
+  } else {
+    kind.textContent = "Sin demora ni despacho"; kind.className = "kindout";
+    big.textContent = "0 USD";
+  }
+  $("steps").innerHTML = lines.map(l => `<li>${l}</li>`).join("");
+  const span = Math.max(allowed, used) || 1;
+  $("g-used").style.width = (Math.min(allowed, used) / span * 100) + "%";
+  const over = $("g-over");
+  if (diff > 0) { over.style.left = (allowed / span * 100) + "%"; over.style.width = (diff / span * 100) + "%"; }
+  else { over.style.width = "0"; }
+}
+$("calc-form").addEventListener("input", calc);
+$("calc-form").addEventListener("submit", e => e.preventDefault());
+calc();
+</script>
+
+</body>
+</html>

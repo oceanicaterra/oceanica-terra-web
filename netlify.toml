@@ -1,0 +1,4 @@
+# Configuración de Netlify: sitio estático, sin paso de compilación.
+[build]
+  publish = "."
+  command = ""
