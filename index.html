@@ -298,7 +298,30 @@ details.reveal ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap:
 .steps { font-family: var(--font-mono); font-size: .8rem; line-height: 1.7; color: var(--cover-soft); padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
 .steps li span { color: var(--cover-fg); }
 
-/* Actualidad y vídeos */
+/* Noticias */
+.news-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem 2rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+.news-updated { font-family: var(--font-mono); font-size: .8rem; color: var(--muted); }
+.news { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+.story { display: grid; grid-template-rows: auto 1fr; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); color: var(--ink); text-decoration: none; transition: border-color .15s ease, transform .15s ease; }
+section.alt .story { background: var(--paper); }
+.story:hover { border-color: var(--accent-ink); }
+@media (prefers-reduced-motion: no-preference) { .story:hover { transform: translateY(-2px); } }
+.story .pic { aspect-ratio: 16 / 9; max-width: 100%; background: var(--sea-1); }
+.story .pic svg { display: block; width: 100%; height: 100%; }
+.story .txt { display: grid; gap: .45rem; align-content: start; padding: 1rem 1.1rem 1.15rem; }
+.story .meta { display: flex; flex-wrap: wrap; gap: .3rem .6rem; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em; color: var(--muted); }
+.story .cat { color: var(--accent-ink); text-transform: uppercase; }
+.story h3 { font-size: 1.12rem; line-height: 1.2; }
+.story p { font-size: .95rem; color: var(--muted); }
+.story .go { font-family: var(--font-display); font-weight: 600; font-size: .95rem; color: var(--accent-ink); margin-top: .2rem; }
+.story.lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows: auto; }
+.story.lead .pic { aspect-ratio: auto; min-height: 280px; height: 100%; }
+.story.lead .txt { padding: clamp(1.2rem, 3vw, 2.2rem); align-content: center; gap: .7rem; }
+.story.lead h3 { font-size: clamp(1.5rem, 3.2vw, 2.2rem); }
+.story.lead p { font-size: 1.05rem; }
+.news-empty { color: var(--muted); }
+
+/* Vídeos */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
 .series { list-style: none; padding: 0; display: grid; gap: 0; border-top: 2px solid var(--ink); }
 .series li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .6rem; padding: .7rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
@@ -329,7 +352,9 @@ footer .wrap { display: grid; gap: 1.5rem; }
 .legal details p { margin-top: .5rem; font-size: .88rem; }
 
 @media (max-width: 960px) {
-  .harbour, .mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .harbour, .mods, .news { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .story.lead { grid-template-columns: minmax(0, 1fr); }
+  .story.lead .pic { aspect-ratio: 16 / 9; min-height: 0; }
   .grid3, .formats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .legal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -339,7 +364,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
   .cover { width: min(64%, 240px); }
 }
 @media (max-width: 520px) {
-  .harbour, .grid3, .formats, .legal, .mods, .dlg-cols { grid-template-columns: minmax(0, 1fr); }
+  .harbour, .grid3, .formats, .legal, .mods, .news, .dlg-cols { grid-template-columns: minmax(0, 1fr); }
   .standard li { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
   nav.links { font-size: .93rem; gap: .3rem .8rem; }
 }
@@ -362,7 +387,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
       <a href="#biblioteca">Biblioteca</a>
       <a href="#academia">Academia</a>
       <a href="#publicaciones">Publicaciones</a>
-      <a href="#actualidad">Actualidad</a>
+      <a href="#actualidad">Noticias</a>
       <a href="#videos">Vídeos</a>
       <a href="#contacto">Contacto</a>
       <span class="langs" role="group" aria-label="Idioma">
@@ -420,7 +445,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
         <a href="#academia"><span class="n">02</span><h3>Academia</h3><p>20 módulos con resumen y primera página gratis, cursos, webinars y formación para empresas.</p><span class="chip on">1 de 20 disponible</span></a>
         <a href="#publicaciones"><span class="n">03</span><h3>Publicaciones</h3><p>Libros, cuadernos de ejercicios, guías y glosarios descargables.</p><span class="chip on">1 disponible</span></a>
         <a href="#ejercicios"><span class="n">04</span><h3>Ejercicios y herramientas</h3><p>Casos resueltos y calculadoras gratuitas para practicar.</p><span class="chip on">Disponible</span></a>
-        <a href="#actualidad"><span class="n">05</span><h3>Actualidad y análisis</h3><p>Lo que cambia en el sector, explicado y con fuentes oficiales.</p><span class="chip soon">En preparación</span></a>
+        <a href="#actualidad"><span class="n">05</span><h3>Noticias del día</h3><p>Lo más importante del mundo marítimo y portuario, resumido y con enlace a la fuente.</p><span class="chip on">Cada mañana</span></a>
         <a href="#videos"><span class="n">06</span><h3>Vídeos y pódcast</h3><p>Series en YouTube y redes: cómo funcionan los buques y el comercio marítimo.</p><span class="chip soon">En preparación</span></a>
                 <a href="#sobre"><span class="n">07</span><h3>Sobre nosotros</h3><p>Misión editorial, estándar de verificación y colaboración profesional.</p><span class="chip on">Disponible</span></a>
         <a href="#contacto"><span class="n">08</span><h3>Contacto y colaboración</h3><p>Compras, licencias para escuelas y empresas, autores y revisores técnicos.</p><span class="chip on">Disponible</span></a>
@@ -849,20 +874,19 @@ footer .wrap { display: grid; gap: 1.5rem; }
     </div>
   </section>
 
-  <!-- ACTUALIDAD -->
+  <!-- NOTICIAS -->
   <section class="band alt" id="actualidad">
-    <div class="wrap split">
-      <div class="sec-head" style="margin-bottom:0">
-        <div class="row"><p class="label">Actualidad y análisis</p><span class="chip soon">En preparación</span></div>
-        <h2>Lo que cambia en el sector, explicado</h2>
-        <p>Noticias y cambios normativos con su contexto. Nunca publicamos rumores ni cifras sin fuente: cada pieza enlaza al documento oficial que la respalda.</p>
+    <div class="wrap">
+      <div class="news-head">
+        <div class="sec-head" style="margin-bottom:0">
+          <div class="row"><p class="label">Noticias del mundo marítimo y portuario</p><span class="chip on">Se actualiza cada mañana</span></div>
+          <h2>Lo que pasa hoy en el mar</h2>
+          <p>Una selección diaria de noticias de navieras, puertos, canales y regulación. Cada una con un resumen propio y el enlace a su medio original.</p>
+        </div>
+        <p class="news-updated" id="news-updated"></p>
       </div>
-      <ul class="series">
-        <li><span class="n">S</span><div><b>Semana marítima</b><small>Resumen semanal de lo relevante para el transporte marítimo y los puertos.</small></div></li>
-        <li><span class="n">N</span><div><b>Normativa al día</b><small>Enmiendas de la OMI y la OIT: qué cambia, para quién y desde cuándo.</small></div></li>
-        <li><span class="n">C</span><div><b>Casos y lecciones</b><small>Informes oficiales de investigación de accidentes, explicados.</small></div></li>
-        <li><span class="n">M</span><div><b>Mitos y realidades</b><small>Ideas extendidas sobre el mundo marítimo, contrastadas con datos.</small></div></li>
-      </ul>
+      <div class="news" id="news" aria-live="polite"></div>
+      <p class="footnote">Resúmenes redactados por Oceanica Terra a partir de las noticias enlazadas. Cada noticia pertenece a su medio: pulsa el enlace para leerla completa. Las ilustraciones son propias y representan el tema, no la escena real.</p>
     </div>
   </section>
 
@@ -976,6 +1000,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
   </div>
 </footer>
 
+<script type="application/json" id="news-seed">{"updated": "2026-10-26T09:00:00-04:00", "items": [{"lead": true, "category": "canales", "title": "El Canal de Panamá vuelve a ofrecer reservas de última hora mientras se recupera el tráfico", "summary": "Desde el 21 de octubre, la Autoridad del Canal ofrece de nuevo, según la capacidad disponible, reservas de último minuto en las esclusas panamax gracias a las lluvias y al ahorro de agua. En el año fiscal que cerró el 30 de septiembre el canal sumó 13.951 tránsitos, aunque la cuenca aún tiene déficit de agua y los buques sin reserva pueden sufrir esperas.", "source": "Splash247", "url": "https://splash247.com/panama-canal-reopens-last-minute-slots-amid-traffic-recovery/", "date": "2026-10-26"}, {"category": "rutas", "title": "Las navieras vuelven a Suez en servicios que suman el 63% de la capacidad Asia-Europa", "summary": "Según un análisis de Alphaliner, CMA CGM, Cosco y OOCL, Maersk, Hapag-Lloyd y MSC encabezan el regreso por el mar Rojo. Entre el 15 de septiembre y el 15 de octubre hubo tránsitos en 24 de 46 servicios directos; Evergreen y ZIM aún no anuncian su vuelta.", "source": "MundoMarítimo", "url": "https://mundomaritimo.cl/noticias/navieras-retoman-la-ruta-del-canal-de-suez-en-servicios-que-reunen-el-63-de-la-capacidad-asia-europa", "date": "2026-10-23"}, {"category": "seguridad", "title": "Un crucero choca con un portacontenedores de MSC atracado en Bremerhaven", "summary": "El Mein Schiff 3 golpeó la popa del MSC Victorine, de 16.520 TEU, al salir de la terminal con ayuda de remolcadores en pleno temporal. El portacontenedores sufrió una brecha de unos 10 metros por encima de la flotación; no se informó de heridos.", "source": "Splash247", "url": "https://splash247.com/msc-boxship-gashed-in-bremerhaven-cruise-ship-collision/", "date": "2026-10-26"}, {"category": "mercados", "title": "Las entregas de VLCC podrían alcanzar niveles que no se veían desde los años setenta", "summary": "Hartland Shipping Services prevé más de 100 entregas de superpetroleros al año en 2028 y 2029, con 319 buques encargados, el 34% de la flota actual. En los nueve primeros meses de 2026 solo se desguazaron cuatro VLCC.", "source": "Splash247", "url": "https://splash247.com/vlcc-delivery-wave-set-to-reach-levels-not-seen-since-the-1970s/", "date": "2026-10-26"}, {"category": "puertos", "title": "Lázaro Cárdenas mueve 21,5 millones de toneladas entre enero y septiembre", "summary": "El puerto mexicano manejó 2.007.493 TEU, un 3% más que en el mismo periodo de 2025, y la carga contenerizada supuso el 52% del total. La nota lo sitúa en el 21% del movimiento nacional de mercancías.", "source": "Container News", "url": "https://container-news.com/port-of-lazaro-cardenas-handles-21-of-mexicos-commercial-cargo/", "date": "2026-10-24"}, {"category": "ambiente", "title": "El puerto de Los Ángeles registra sus menores emisiones por contenedor", "summary": "Su inventario de emisiones de 2025, con casi 10,2 millones de TEU movidos, muestra caídas frente a 2024 de partículas diésel (2%), óxidos de nitrógeno (4%) y gases de efecto invernadero (3%).", "source": "Container News", "url": "https://container-news.com/port-of-los-angeles-records-lowest-emissions-per-container/", "date": "2026-10-24"}, {"category": "canales", "title": "North Sea Port levanta las restricciones de calado en el canal Gante-Terneuzen", "summary": "Desde el 7 de julio, la sequía había limitado el calado a entre 12,35 y 12,5 metros. Las lluvias recientes permiten retirar el límite, aunque la salinidad del agua sigue muy por encima del objetivo.", "source": "PortalPortuario", "url": "https://portalportuario.cl/north-sea-port-levanta-restricciones-de-calado-en-canal-gante-terneuzen/", "date": "2026-10-26"}, {"category": "gente-de-mar", "title": "Un sindicato indio alerta a la OMI sobre documentos falsos que afectan a cientos de marinos", "summary": "El Forward Seamen's Union of India envió dos cartas sobre falsos registros y banderas. El secretario general de la OMI respondió el 23 de octubre y señaló el trabajo de la organización para endurecer los controles de registro.", "source": "The Week", "url": "https://www.theweek.in/news/maritime/2026/10/24/indian-seafarers-union-warns-imo-of-hundreds-affected-in-fake-documents-crisis.html", "date": "2026-10-24"}, {"category": "rutas", "title": "CMA CGM y Maersk cerrarán en diciembre un servicio entre Asia y la costa este de Sudamérica", "summary": "El servicio conjunto SEAS 3 / ASAS2 hará su última salida desde Shanghái el 8 de diciembre. Ambas navieras seguirán atendiendo la ruta con otros servicios.", "source": "MundoMarítimo", "url": "https://mundomaritimo.cl/noticias/cma-cgm-y-maersk-terminaran-servicio-maritimo-entre-asia-y-la-costa-este-de-sudamerica-en-diciembre", "date": "2026-10-23"}, {"category": "astilleros", "title": "Seatrium convertirá cinco centrales eléctricas flotantes para Karpowership", "summary": "El astillero de Singapur integrará cinco unidades de tercera generación clase Whale, preparadas para hidrógeno. El primer buque llegará a su astillero de Tuas en diciembre de 2027; no se publicó el importe.", "source": "Container News", "url": "https://container-news.com/seatrium-secures-contract-for-five-karpowership-conversions/", "date": "2026-10-26"}]}</script>
 <script>
 /* ===== Configuración de la compra =====
    Cuando el producto exista en Payhip, pega aquí su enlace (p. ej. https://payhip.com/b/XXXX).
@@ -993,6 +1018,67 @@ const $ = id => document.getElementById(id);
     else { a.textContent = "Muy pronto a la venta"; a.setAttribute("aria-disabled", "true"); a.removeAttribute("href"); }
   });
   document.querySelectorAll(".js-buy-note").forEach(n => { n.hidden = ready; });
+})();
+
+/* ===== Noticias del día ===== */
+(function setupNews() {
+  const box = $("news"), stamp = $("news-updated");
+  const CATS = {
+    "puertos": "Puertos", "canales": "Canales y vías navegables", "rutas": "Líneas y rutas",
+    "seguridad": "Seguridad", "mercados": "Mercados", "ambiente": "Medio ambiente",
+    "gente-de-mar": "Gente de mar", "astilleros": "Astilleros", "regulacion": "Regulación",
+    "tecnologia": "Tecnología", "energia": "Energía en el mar"
+  };
+  const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+  const esc = t => String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const day = d => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d || ""); return m ? `${Number(m[3])} de ${MESES[Number(m[2]) - 1]}` : ""; };
+  const safeUrl = u => { try { const x = new URL(u); return x.protocol === "https:" ? x.href : null; } catch (e) { return null; } };
+
+  const SKY = `<rect width="320" height="180" fill="var(--sea-1)"/><circle cx="268" cy="38" r="16" fill="#FFD27A" opacity=".85"/>`;
+  const SEA = y => `<path d="M0 ${y} C40 ${y - 6} 80 ${y + 6} 120 ${y} S200 ${y - 6} 240 ${y} S300 ${y + 6} 320 ${y} V180 H0 Z" fill="var(--sea-2)"/><path d="M0 ${y + 14} C40 ${y + 8} 80 ${y + 20} 120 ${y + 14} S200 ${y + 8} 240 ${y + 14} S300 ${y + 20} 320 ${y + 14} V180 H0 Z" fill="var(--sea-3)" opacity=".55"/>`;
+  const INK = "var(--cover-bg)", OR = "var(--accent)";
+  const ART = {
+    "puertos": SKY + `<g fill="${INK}"><rect x="70" y="40" width="8" height="90"/><rect x="104" y="40" width="8" height="90"/><rect x="60" y="40" width="130" height="8"/><rect x="150" y="48" width="3" height="40"/><rect x="142" y="86" width="20" height="10" fill="${OR}"/></g><g><rect x="196" y="104" width="34" height="14" fill="${OR}"/><rect x="232" y="104" width="34" height="14" fill="var(--accent-ink)"/><rect x="214" y="90" width="34" height="14" fill="var(--accent-ink)"/><rect x="250" y="90" width="34" height="14" fill="${INK}"/><rect x="196" y="118" width="88" height="14" fill="${INK}"/></g>` + SEA(132),
+    "canales": SKY + `<rect x="0" y="70" width="80" height="110" fill="var(--sea-3)" opacity=".5"/><rect x="240" y="70" width="80" height="110" fill="var(--sea-3)" opacity=".5"/><g fill="${INK}"><rect x="76" y="62" width="10" height="70"/><rect x="234" y="62" width="10" height="70"/></g><path d="M110 112 L210 112 L198 128 L122 128 Z" fill="${INK}"/><rect x="150" y="96" width="30" height="16" fill="${OR}"/><rect x="132" y="102" width="16" height="10" fill="var(--accent-ink)"/>` + SEA(128),
+    "rutas": SKY + SEA(120) + `<path d="M40 110 Q160 20 280 100" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="8 7"/><circle cx="40" cy="110" r="8" fill="${OR}"/><circle cx="280" cy="100" r="8" fill="${OR}"/><path d="M150 60 l18 -6 l-4 10 Z" fill="${INK}"/>`,
+    "seguridad": SKY + SEA(122) + `<circle cx="160" cy="92" r="40" fill="${OR}"/><circle cx="160" cy="92" r="20" fill="var(--sea-1)"/><g fill="#FFFFFF"><path d="M160 52 a40 40 0 0 1 14 2.5 l-7 18.8 a20 20 0 0 0 -7 -1.3 Z"/><path d="M200 92 a40 40 0 0 1 -2.5 14 l-18.8 -7 a20 20 0 0 0 1.3 -7 Z"/><path d="M160 132 a40 40 0 0 1 -14 -2.5 l7 -18.8 a20 20 0 0 0 7 1.3 Z"/><path d="M120 92 a40 40 0 0 1 2.5 -14 l18.8 7 a20 20 0 0 0 -1.3 7 Z"/></g>`,
+    "mercados": SKY + `<g fill="${INK}" opacity=".9"><rect x="60" y="100" width="22" height="30"/><rect x="92" y="86" width="22" height="44"/><rect x="124" y="92" width="22" height="38"/><rect x="156" y="70" width="22" height="60"/><rect x="188" y="58" width="22" height="72"/></g><path d="M56 96 L102 80 L136 88 L168 64 L232 40" fill="none" stroke="${OR}" stroke-width="4"/><circle cx="232" cy="40" r="6" fill="${OR}"/>` + SEA(130),
+    "ambiente": SKY + SEA(118) + `<path d="M160 50 C210 50 222 96 192 118 C170 134 136 126 128 100 C120 74 132 50 160 50 Z" fill="#3E9C6A"/><path d="M140 118 C152 96 170 80 196 64" fill="none" stroke="#FFFFFF" stroke-width="3"/>`,
+    "gente-de-mar": SKY + SEA(128) + `<g transform="translate(160 86)"><circle r="36" fill="none" stroke="${INK}" stroke-width="8"/><circle r="8" fill="${OR}"/><g stroke="${INK}" stroke-width="6" stroke-linecap="round"><path d="M0 -36 V-52 M0 36 V52 M-36 0 H-52 M36 0 H52 M-25 -25 L-37 -37 M25 25 L37 37 M25 -25 L37 -37 M-25 25 L-37 37"/></g></g>`,
+    "astilleros": SKY + `<g fill="${INK}"><rect x="226" y="30" width="8" height="100"/><rect x="150" y="30" width="110" height="7"/><rect x="170" y="37" width="3" height="34"/></g><path d="M60 100 L230 100 L214 132 L76 132 Z" fill="var(--accent-ink)"/><path d="M60 100 L230 100 L226 108 L64 108 Z" fill="${OR}"/><rect x="90" y="132" width="120" height="6" fill="${INK}"/>` + SEA(140),
+    "regulacion": SKY + SEA(130) + `<rect x="112" y="34" width="96" height="112" rx="6" fill="#FFFFFF" stroke="${INK}" stroke-width="3"/><g fill="${INK}" opacity=".7"><rect x="126" y="54" width="68" height="6"/><rect x="126" y="70" width="68" height="6"/><rect x="126" y="86" width="48" height="6"/></g><circle cx="186" cy="124" r="14" fill="${OR}"/>`,
+    "tecnologia": SKY + SEA(132) + `<g transform="translate(160 90)"><circle r="46" fill="${INK}"/><circle r="32" fill="none" stroke="#6FC0DE" stroke-width="1.5" opacity=".7"/><circle r="16" fill="none" stroke="#6FC0DE" stroke-width="1.5" opacity=".7"/><path d="M0 0 L46 0 A46 46 0 0 0 32 -33 Z" fill="#6FC0DE" opacity=".55"/><circle cx="20" cy="-18" r="4" fill="${OR}"/></g>`,
+    "energia": SKY + `<g fill="${INK}"><rect x="120" y="70" width="80" height="12"/><rect x="128" y="82" width="8" height="60"/><rect x="184" y="82" width="8" height="60"/><rect x="186" y="34" width="6" height="36"/><rect x="136" y="52" width="30" height="18"/></g><path d="M189 34 c-6 -10 6 -14 0 -24 c10 8 6 16 0 24 Z" fill="${OR}"/>` + SEA(126)
+  };
+  const art = c => `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${ART[c] || ART["rutas"]}</svg>`;
+
+  function render(data) {
+    const items = (data && Array.isArray(data.items) ? data.items : [])
+      .map(it => ({ ...it, url: safeUrl(it.url) }))
+      .filter(it => it.url && it.title);
+    if (!items.length) { box.innerHTML = '<p class="news-empty">Hoy no hay noticias cargadas. Vuelve más tarde.</p>'; return; }
+    items.sort((a, b) => (b.lead ? 1 : 0) - (a.lead ? 1 : 0));
+    box.innerHTML = items.map((it, k) => `
+      <a class="story${k === 0 ? " lead" : ""}" href="${esc(it.url)}" target="_blank" rel="noopener">
+        <div class="pic">${art(it.category)}</div>
+        <div class="txt">
+          <div class="meta"><span class="cat">${esc(CATS[it.category] || "Actualidad")}</span><span>${esc(it.source)} · ${esc(day(it.date))}</span></div>
+          <h3>${esc(it.title)}</h3>
+          <p>${esc(it.summary)}</p>
+          <span class="go">Leer en ${esc(it.source)} ↗</span>
+        </div>
+      </a>`).join("");
+    const u = data.updated ? new Date(data.updated) : null;
+    stamp.textContent = u && !isNaN(u) ? "Actualizado el " + u.toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" }) : "";
+  }
+
+  let seed = null;
+  try { seed = JSON.parse($("news-seed").textContent); } catch (e) {}
+  render(seed);
+  fetch("noticias.json", { cache: "no-store" })
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { if (d && (!seed || String(d.updated) >= String(seed.updated))) render(d); })
+    .catch(() => {});
 })();
 
 /* ===== Pestañas de la biblioteca ===== */
