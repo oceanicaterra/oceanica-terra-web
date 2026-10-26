@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230B2545'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23D9480F'/%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Oceanica Terra</title>
-<meta name="description" content="Oceanica Terra: educación y conocimiento marítimo verificado en español. Biblioteca de buques, convenios y logística, academia, publicaciones y vídeos.">
+<meta name="description" content="Oceanica Terra: noticias diarias del sector marítimo y portuario, con su fuente, y guías en español sobre buques, puertos, contratos y convenios.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
@@ -140,6 +140,12 @@ nav.links a:hover { color: var(--accent-ink); }
 .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); font-weight: 700; margin-top: .9rem; }
 .hero h1 em { font-style: normal; color: var(--accent-ink); }
 .hero .lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; margin-top: 1.2rem; }
+.hero .lede-k { color: var(--ink); font-weight: 600; }
+.today { display: flex; align-items: center; gap: .7rem; margin-top: 1.4rem; max-width: 36rem; padding: .65rem .9rem; background: color-mix(in srgb, var(--surface) 85%, transparent); border: 1px solid var(--rule); border-radius: 12px; box-shadow: var(--shadow); color: var(--ink); text-decoration: none; }
+.today:hover { border-color: var(--accent-ink); }
+.today-k { flex: none; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--on-accent); background: var(--accent); padding: .2rem .5rem; border-radius: 999px; }
+.today-t { flex: 1; min-width: 0; font-family: var(--font-display); font-weight: 600; font-size: 1rem; line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.today-go { flex: none; color: var(--accent-ink); font-weight: 700; }
 .hero .ctas { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
 .audience { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .4rem; }
 .audience span { font-family: var(--font-display); font-size: .92rem; border: 1px solid var(--rule); border-radius: 999px; padding: .15rem .65rem; color: var(--muted); }
@@ -406,12 +412,13 @@ footer .wrap { display: grid; gap: 1.5rem; }
     <div class="waves" aria-hidden="true"><svg class="w1" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 48 C180 22 540 74 720 48 C900 22 1260 74 1440 48 C1620 22 1980 74 2160 48 C2340 22 2700 74 2880 48 V120 H0 Z"/></svg><svg class="w2" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 66 C180 48 540 84 720 66 C900 48 1260 84 1440 66 C1620 48 1980 84 2160 66 C2340 48 2700 84 2880 66 V120 H0 Z"/></svg><svg class="w3" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 88 C180 76 540 100 720 88 C900 76 1260 100 1440 88 C1620 76 1980 100 2160 88 C2340 76 2700 100 2880 88 V120 H0 Z"/></svg></div>
     <div class="wrap">
       <div>
-        <p class="label">Educación y conocimiento marítimo · en español</p>
+        <p class="label">Actualidad y conocimiento marítimo · en español</p>
         <h1>El mar, <em>explicado con rigor</em>.</h1>
-        <p class="lede">Oceanica Terra explica cómo funciona el transporte marítimo: los buques, los puertos, los contratos y los convenios que los regulan. Contenido original, verificado y pensado para aplicarse en el trabajo.</p>
+        <p class="lede"><b class="lede-k">Lo que pasa hoy en el mar y el conocimiento para entenderlo.</b> Cada día, las noticias del sector marítimo y portuario resumidas y con su fuente; y siempre, guías sobre buques, puertos, contratos y convenios pensadas para aplicarse en el trabajo.</p>
+        <a class="today" id="today" href="#actualidad" hidden><span class="today-k">Hoy en el mar</span><span class="today-t" id="today-t"></span><span class="today-go" aria-hidden="true">→</span></a>
         <div class="ctas">
           <a class="btn btn-primary" href="#biblioteca">Explorar la biblioteca</a>
-          <a class="btn btn-ghost" href="#publicaciones">Ver el primer libro</a>
+          <a class="btn btn-ghost" href="#actualidad">Noticias de hoy</a>
         </div>
         <div class="audience" aria-label="Para quién">
           <span>Estudiantes</span><span>Cadetes</span><span>Oficiales de puente</span><span>Ingenieros navales y de máquinas</span><span>Capitanes</span><span>Gestores portuarios</span><span>Profesionales del shipping</span><span>Investigadores</span><span>Aficionados al mundo marítimo</span>
@@ -1068,6 +1075,7 @@ const $ = id => document.getElementById(id);
           <span class="go">Leer en ${esc(it.source)} ↗</span>
         </div>
       </a>`).join("");
+    const t = $("today"); if (t) { $("today-t").textContent = items[0].title; t.hidden = false; }
     const u = data.updated ? new Date(data.updated) : null;
     stamp.textContent = u && !isNaN(u) ? "Actualizado el " + u.toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" }) : "";
   }
