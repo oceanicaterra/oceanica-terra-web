@@ -1,8 +1,24 @@
 {
-  "updated": "2026-10-26T12:47:38-04:00",
+  "updated": "2026-10-27T06:42:13-04:00",
   "items": [
     {
       "lead": true,
+      "category": "rutas",
+      "title": "ZIM añade el puerto de Houston a su servicio semanal Venezuela Line",
+      "summary": "La naviera incorpora Houston a la rotación del servicio VEL, que enlaza Puerto Cabello, Cartagena, Kingston, Guanta, La Guaira y Georgetown con frecuencia semanal, usando los buques Tzini, Seamaster y Martí Cloud.",
+      "source": "PortalPortuario",
+      "url": "https://portalportuario.cl/zim-incluye-al-puerto-de-houston-en-itinerario-de-su-servicio-venezuela-line",
+      "date": "2026-10-26"
+    },
+    {
+      "category": "astilleros",
+      "title": "La surcoreana KMTC encarga por primera vez buques en un astillero chino",
+      "summary": "KMTC contrató seis portacontenedores de 3.100 TEU, 18.600 TEU en total, al astillero CSSC Huangpu Wenchong de Cantón, basados en un diseño feeder del astillero. No se revelaron precio ni fechas de entrega.",
+      "source": "Splash247",
+      "url": "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
+      "date": "2026-10-27"
+    },
+    {
       "category": "canales",
       "title": "El Canal de Panamá vuelve a ofrecer reservas de última hora mientras se recupera el tráfico",
       "summary": "Desde el 21 de octubre, la Autoridad del Canal ofrece de nuevo, según la capacidad disponible, reservas de último minuto en las esclusas panamax gracias a las lluvias y al ahorro de agua. En el año fiscal que cerró el 30 de septiembre el canal sumó 13.951 tránsitos, aunque la cuenca aún tiene déficit de agua y los buques sin reserva pueden sufrir esperas.",
@@ -51,28 +67,12 @@
       "date": "2026-10-24"
     },
     {
-      "category": "ambiente",
-      "title": "El puerto de Los Ángeles registra sus menores emisiones por contenedor",
-      "summary": "Su inventario de emisiones de 2025, con casi 10,2 millones de TEU movidos, muestra caídas frente a 2024 de partículas diésel (2%), óxidos de nitrógeno (4%) y gases de efecto invernadero (3%).",
-      "source": "Container News",
-      "url": "https://container-news.com/port-of-los-angeles-records-lowest-emissions-per-container/",
-      "date": "2026-10-24"
-    },
-    {
       "category": "canales",
       "title": "North Sea Port levanta las restricciones de calado en el canal Gante-Terneuzen",
       "summary": "Desde el 7 de julio, la sequía había limitado el calado a entre 12,35 y 12,5 metros. Las lluvias recientes permiten retirar el límite, aunque la salinidad del agua sigue muy por encima del objetivo.",
       "source": "PortalPortuario",
       "url": "https://portalportuario.cl/north-sea-port-levanta-restricciones-de-calado-en-canal-gante-terneuzen/",
       "date": "2026-10-26"
-    },
-    {
-      "category": "gente-de-mar",
-      "title": "Un sindicato indio alerta a la OMI sobre documentos falsos que afectan a cientos de marinos",
-      "summary": "El Forward Seamen's Union of India envió dos cartas sobre falsos registros y banderas. El secretario general de la OMI respondió el 23 de octubre y señaló el trabajo de la organización para endurecer los controles de registro.",
-      "source": "The Week",
-      "url": "https://www.theweek.in/news/maritime/2026/10/24/indian-seafarers-union-warns-imo-of-hundreds-affected-in-fake-documents-crisis.html",
-      "date": "2026-10-24"
     },
     {
       "category": "astilleros",
