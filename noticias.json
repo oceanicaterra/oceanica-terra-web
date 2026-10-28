@@ -1,8 +1,24 @@
 {
-  "updated": "2026-10-27T06:42:13-04:00",
+  "updated": "2026-10-28T06:41:25-04:00",
   "items": [
     {
-      "lead": true,
+      "title": "Irán anuncia medidas legales contra todos los buques de la naviera surcoreana Sinokor en Ormuz",
+      "summary": "La autoridad iraní del estrecho de Ormuz actuará desde el 1 de noviembre contra los buques de Sinokor, a los que atribuye el mayor número de infracciones de tránsito en los últimos tres meses; al menos siete ya han sido sancionados.",
+      "source": "PortalPortuario",
+      "url": "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
+      "date": "2026-10-27",
+      "category": "seguridad",
+      "lead": true
+    },
+    {
+      "title": "Terminales de contenedores del puerto de Ningbo-Zhoushan registran récords de actividad en septiembre",
+      "summary": "Meidong superó 1,26 millones de TEU (+8,9 %), Beisan pasó del millón (+14 %) y Daxie rozó 480.000 TEU (+33 %); la carga general superó 11,8 millones de toneladas.",
+      "source": "PortalPortuario",
+      "url": "https://portalportuario.cl/actividad-de-transporte-y-produccion-de-puerto-de-ningbo-zhoushan-alcanza-record-en-septiembre",
+      "date": "2026-10-26",
+      "category": "puertos"
+    },
+    {
       "category": "rutas",
       "title": "ZIM añade el puerto de Houston a su servicio semanal Venezuela Line",
       "summary": "La naviera incorpora Houston a la rotación del servicio VEL, que enlaza Puerto Cabello, Cartagena, Kingston, Guanta, La Guaira y Georgetown con frecuencia semanal, usando los buques Tzini, Seamaster y Martí Cloud.",
@@ -59,27 +75,11 @@
       "date": "2026-10-26"
     },
     {
-      "category": "puertos",
-      "title": "Lázaro Cárdenas mueve 21,5 millones de toneladas entre enero y septiembre",
-      "summary": "El puerto mexicano manejó 2.007.493 TEU, un 3% más que en el mismo periodo de 2025, y la carga contenerizada supuso el 52% del total. La nota lo sitúa en el 21% del movimiento nacional de mercancías.",
-      "source": "Container News",
-      "url": "https://container-news.com/port-of-lazaro-cardenas-handles-21-of-mexicos-commercial-cargo/",
-      "date": "2026-10-24"
-    },
-    {
       "category": "canales",
       "title": "North Sea Port levanta las restricciones de calado en el canal Gante-Terneuzen",
       "summary": "Desde el 7 de julio, la sequía había limitado el calado a entre 12,35 y 12,5 metros. Las lluvias recientes permiten retirar el límite, aunque la salinidad del agua sigue muy por encima del objetivo.",
       "source": "PortalPortuario",
       "url": "https://portalportuario.cl/north-sea-port-levanta-restricciones-de-calado-en-canal-gante-terneuzen/",
-      "date": "2026-10-26"
-    },
-    {
-      "category": "astilleros",
-      "title": "Seatrium convertirá cinco centrales eléctricas flotantes para Karpowership",
-      "summary": "El astillero de Singapur integrará cinco unidades de tercera generación clase Whale, preparadas para hidrógeno. El primer buque llegará a su astillero de Tuas en diciembre de 2027; no se publicó el importe.",
-      "source": "Container News",
-      "url": "https://container-news.com/seatrium-secures-contract-for-five-karpowership-conversions/",
       "date": "2026-10-26"
     }
   ]
