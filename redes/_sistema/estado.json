@@ -1,0 +1,29 @@
+{
+ "siguiente_tema": 2,
+ "historial": [
+  {
+   "fecha": "2026-10-28",
+   "tema": 1,
+   "slug": "fob-cif",
+   "instagram": {
+    "post": "6ae17dac56ec3750d2529196",
+    "estado": "sent",
+    "url": "https://www.instagram.com/p/DfBmpYEkfuz/"
+   },
+   "youtube": {
+    "post": "6ae17dba1b33b85d1be2f753",
+    "estado": "sent"
+   },
+   "facebook": {
+    "post": "6ae1864c1b33b85d1be50481",
+    "estado": "sent"
+   }
+  }
+ ],
+ "noticias": [],
+ "canales": {
+  "instagram": "6ae175a72f1f5ed648f64678",
+  "youtube": "6ae176852f1f5ed648f65a4c",
+  "facebook": "6ae186252f1f5ed648f76d44"
+ }
+}

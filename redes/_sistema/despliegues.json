@@ -1,0 +1,10 @@
+{
+ "descripcion": "Registro de publicaciones de la web en producción (rama main de Netlify). Cada una gasta 15 créditos de 300 al mes. Límite propio: 12 publicaciones en 30 días.",
+ "limite_30_dias": 12,
+ "despliegues": [
+  {
+   "fecha": "2026-10-28",
+   "motivo": "Noticias leídas desde la rama datos; sistema de redes movido a datos"
+  }
+ ]
+}
