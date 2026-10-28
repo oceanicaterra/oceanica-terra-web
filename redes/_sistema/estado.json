@@ -15,9 +15,15 @@
     "estado": "sent"
    },
    "facebook": {
-    "estado": "pendiente: página no conectada"
+    "post": "6ae1864c1b33b85d1be50481",
+    "estado": "sent"
    }
   }
  ],
- "noticias": []
+ "noticias": [],
+ "canales": {
+  "instagram": "6ae175a72f1f5ed648f64678",
+  "youtube": "6ae176852f1f5ed648f65a4c",
+  "facebook": "6ae186252f1f5ed648f76d44"
+ }
 }
