@@ -1,0 +1,94 @@
+{
+ "descripcion": "Hoja de ruta de la web. La tarea «Web Oceanica Terra» toma el primer item pendiente o en_curso, trabaja en la rama web y anota el avance. Puede añadir items nuevos al final (artículos de actualidad cada semana, más guías de buques, más módulos y productos) sin borrar los existentes.",
+ "items": [
+  {
+   "id": "seo-base",
+   "tipo": "web",
+   "titulo": "Base para crecer en Google",
+   "detalle": "Páginas propias por artículo (/articulos/<slug>.html) con estilo compartido, sitemap.xml, robots.txt, metadatos Open Graph y enlaces a Instagram, Facebook y YouTube en el pie.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "art-bl-pagina",
+   "tipo": "articulo",
+   "titulo": "Llevar los 3 artículos existentes a páginas propias",
+   "detalle": "Conocimiento de embarque, SOLAS y FOB/CIF: cada uno en /articulos/ con enlace desde la Biblioteca (el ancla actual se mantiene).",
+   "estado": "pendiente"
+  },
+  {
+   "id": "prod-glosario",
+   "tipo": "producto",
+   "titulo": "Glosario marítimo español-inglés (PDF)",
+   "detalle": "300+ términos de fletamento, puerto, documentación y seguridad, con definición breve propia.",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 7"
+  },
+  {
+   "id": "prod-kit",
+   "tipo": "producto",
+   "titulo": "Kit de documentación del buque en puerto",
+   "detalle": "Modelos comentados campo por campo de NOR, hoja de hechos (SOF) y carta de protesta, ya anunciado como «Muy pronto».",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 12"
+  },
+  {
+   "id": "guia-buques-1",
+   "tipo": "biblioteca",
+   "titulo": "Guía completa: portacontenedores",
+   "detalle": "Primera de las 18 fichas convertida en guía: diseño, equipo, operación, riesgos y normativa, con fuentes oficiales.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "modulo-01",
+   "tipo": "academia",
+   "titulo": "Academia: módulo 01 completo",
+   "detalle": "Introducción al transporte marítimo: lección gratis en la web + resto del módulo como producto (Doc).",
+   "estado": "pendiente"
+  },
+  {
+   "id": "art-actualidad-1",
+   "tipo": "articulo",
+   "titulo": "Artículo de actualidad",
+   "detalle": "Tema con más interés en noticias.json de las últimas 2 semanas, explicado a fondo con fuentes.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "prod-solas-marpol",
+   "tipo": "producto",
+   "titulo": "Guía rápida SOLAS y MARPOL (PDF)",
+   "detalle": "Capítulos y anexos clave en tablas, con fecha de verificación de cada dato.",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 9"
+  },
+  {
+   "id": "guia-buques-2",
+   "tipo": "biblioteca",
+   "titulo": "Guía completa: graneleros",
+   "detalle": "Segunda ficha convertida en guía.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "modulo-08",
+   "tipo": "academia",
+   "titulo": "Academia: módulo 08 completo",
+   "detalle": "Incoterms y comercio internacional.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "prod-checklist-psc",
+   "tipo": "producto",
+   "titulo": "Lista de comprobación para inspecciones PSC (PDF)",
+   "detalle": "Qué revisa el Estado rector del puerto y cómo prepararse, con fuentes de los MoU.",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 7"
+  },
+  {
+   "id": "videos-pagina",
+   "tipo": "videos",
+   "titulo": "Sección de vídeos con los Shorts publicados",
+   "detalle": "Mostrar los Shorts ya publicados en YouTube y el enlace al canal.",
+   "estado": "pendiente"
+  }
+ ],
+ "registro": []
+}
