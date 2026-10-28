@@ -1181,10 +1181,13 @@ const $ = id => document.getElementById(id);
   let seed = null;
   try { seed = JSON.parse($("news-seed").textContent); } catch (e) {}
   render(seed);
-  fetch("noticias.json", { cache: "no-store" })
-    .then(r => r.ok ? r.json() : null)
-    .then(d => { if (d && (!seed || String(d.updated) >= String(seed.updated))) render(d); })
-    .catch(() => {});
+  /* Las noticias se actualizan a diario en la rama «datos» de GitHub (sin republicar la web);
+     si no se puede leer, se usa la copia local noticias.json. Se muestra siempre la más reciente. */
+  let best = seed;
+  const take = d => { if (d && d.items && (!best || String(d.updated) > String(best.updated))) { best = d; render(d); } };
+  const load = url => fetch(url, { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(take).catch(() => {});
+  load("https://raw.githubusercontent.com/oceanicaterra/oceanica-terra-web/datos/noticias.json");
+  load("noticias.json");
 })();
 
 /* ===== Pestañas de la biblioteca ===== */
