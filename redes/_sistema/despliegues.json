@@ -1,6 +1,5 @@
 {
- "descripcion": "Registro de publicaciones de la web en producción (rama main de Netlify). Cada una gasta 15 créditos de 300 al mes. Límite propio: 12 publicaciones en 30 días.",
- "limite_30_dias": 12,
+ "descripcion": "Registro de publicaciones de la web en producción. Desde el 28/10/2026 la web está en GitHub Pages (rama main, dominio en Cloudflare): publicar no gasta créditos. Límite de GitHub Pages: unas 10 publicaciones por hora; la tarea web publica como máximo una vez al día.",
  "despliegues": [
   {
    "fecha": "2026-10-28",
@@ -9,8 +8,10 @@
   {
    "fecha": "2026-10-28",
    "motivo": "Enlaces a redes sociales con iconos en la cabecera y el pie (pedido del propietario)"
+  },
+  {
+   "fecha": "2026-10-28",
+   "motivo": "Mudanza a GitHub Pages (CNAME y .nojekyll). Netlify ya no sirve la web."
   }
- ],
- "pausa_hasta": "2026-11-23",
- "pausa_motivo": "El 28/10 Netlify avisó que se agotaron los 300 créditos del ciclo y concedió 30 extra para mantener la web en línea. El ciclo se renueva el 24/11/2026 (confirmado por el propietario): no se publica en main hasta entonces."
+ ]
 }
