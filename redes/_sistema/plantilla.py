@@ -13,6 +13,7 @@ La especificación (JSON) puede incluir:
 
 Genera: ig-<slug>-N.png (1080×1350), yt-<slug>-N.png (1080×1920) y yt-<slug>.mp4 (Short),
 fb-<slug>.png (1200×630) y story-<slug>.png (1080×1920).
+El Short lleva de fondo la música original de musica/ (estilo dreamwave), con el estribillo al final.
 """
 import asyncio, html, json, pathlib, subprocess, sys
 
@@ -146,7 +147,14 @@ async def render(spec, out):
         for i, d in enumerate(durs, 1):
             args += ["-loop", "1", "-t", str(d), "-i", str(out / f"yt-{slug}-{i}.png")]
         total = sum(durs) - 0.5 * (len(durs) - 1)
-        args += ["-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=44100:cl=stereo"]
+        # Música de fondo original (regla 5): el clímax del estribillo cae al final del vídeo.
+        musica = ROOT / "musica" / "dreamwave-01.m4a"
+        if musica.exists():
+            meta = json.loads((ROOT / "musica" / "dreamwave-01.json").read_text())
+            ini = max(0.0, meta["final"] + 1.5 - total)
+            args += ["-ss", f"{ini:.2f}", "-t", f"{total:.2f}", "-i", str(musica)]
+        else:
+            args += ["-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=44100:cl=stereo"]
         if len(durs) == 1:
             fc = "[0]format=yuv420p,fps=30[v]"
         else:
@@ -158,7 +166,9 @@ async def render(spec, out):
                 parts.append(f"{prev}[{i}]xfade=transition=fade:duration=0.5:offset={off:.2f}{tail}{lab}")
                 prev = lab
             fc = ";".join(parts)
-        args += ["-filter_complex", fc, "-map", "[v]", "-map", f"{len(durs)}:a", "-c:v", "libx264",
+        fc += (f";[{len(durs)}:a]afade=t=in:d=0.3,afade=t=out:st={max(0, total - 1):.2f}:d=1,"
+               f"loudnorm=I=-14:TP=-1.5,aresample=48000[a]")
+        args += ["-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-c:v", "libx264",
                  "-preset", "veryfast", "-crf", "20", "-c:a", "aac", "-shortest", "-movflags", "+faststart",
                  str(out / f"yt-{slug}.mp4")]
         subprocess.run(args, check=True)
