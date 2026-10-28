@@ -5,7 +5,7 @@
    "id": "seo-base",
    "tipo": "web",
    "titulo": "Base para crecer en Google",
-   "detalle": "Páginas propias por artículo (/articulos/<slug>.html) con estilo compartido, sitemap.xml, robots.txt, metadatos Open Graph y enlaces a Instagram, Facebook y YouTube en el pie.",
+   "detalle": "Páginas propias por artículo (/articulos/<slug>.html) con estilo compartido, sitemap.xml, robots.txt, metadatos Open Graph y enlaces a Instagram, Facebook y YouTube en el pie. (Los enlaces a redes en cabecera y pie ya están hechos desde el 28/10.)",
    "estado": "pendiente"
   },
   {
@@ -90,5 +90,10 @@
    "estado": "pendiente"
   }
  ],
- "registro": []
+ "registro": [
+  {
+   "fecha": "2026-10-28",
+   "hecho": "Enlaces a Instagram, Facebook y YouTube en cabecera fija y pie (publicado)."
+  }
+ ]
 }
