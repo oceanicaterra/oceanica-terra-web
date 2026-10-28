@@ -1,5 +1,5 @@
 {
- "siguiente_tema": 2,
+ "siguiente_tema": 4,
  "historial": [
   {
    "fecha": "2026-10-28",
@@ -18,12 +18,66 @@
     "post": "6ae1864c1b33b85d1be50481",
     "estado": "sent"
    }
+  },
+  {
+   "fecha": "2026-10-28",
+   "tipo": "noticias",
+   "instagram_story": {
+    "post": "6ae20ba300f35d308c815a51",
+    "estado": "scheduled",
+    "hora": "10:00"
+   },
+   "facebook": {
+    "post": "6ae20baafe2b5b0857629616",
+    "estado": "scheduled",
+    "hora": "11:00"
+   }
+  },
+  {
+   "fecha": "2026-10-29",
+   "tema": 2,
+   "slug": "teu",
+   "instagram": {
+    "post": "6ae20bc5522cb4d35117d05e",
+    "estado": "scheduled"
+   },
+   "youtube": {
+    "post": "6ae20bcffe2b5b085762a3da",
+    "estado": "scheduled"
+   },
+   "facebook": {
+    "post": "6ae20bd2620f841dd3492306",
+    "estado": "scheduled"
+   }
+  },
+  {
+   "fecha": "2026-10-30",
+   "tema": 3,
+   "slug": "solas-historia",
+   "instagram": {
+    "post": "6ae20be524430b41b8a5caeb",
+    "estado": "scheduled"
+   },
+   "youtube": {
+    "post": "6ae20be800f35d308c8172b7",
+    "estado": "scheduled"
+   },
+   "facebook": {
+    "post": "6ae20bed522cb4d35117dba3",
+    "estado": "scheduled"
+   }
   }
  ],
- "noticias": [],
+ "noticias": [
+  "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
+  "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships"
+ ],
  "canales": {
   "instagram": "6ae175a72f1f5ed648f64678",
   "youtube": "6ae176852f1f5ed648f65a4c",
   "facebook": "6ae186252f1f5ed648f76d44"
- }
+ },
+ "notas": [
+  "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto."
+ ]
 }
