@@ -124,6 +124,18 @@ nav.links a:hover { color: var(--accent-ink); }
 .langs { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
 .langs button { font-family: var(--font-mono); font-size: .76rem; background: transparent; color: var(--muted); border: 0; padding: .22rem .6rem; cursor: pointer; }
 .langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* Redes sociales: siempre visibles en la cabecera fija y en el pie */
+.social { display: inline-flex; gap: .35rem; align-items: center; }
+.social a { display: inline-flex; align-items: center; gap: .3rem; padding: .22rem .55rem; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; font-family: var(--font-mono); font-size: .74rem; line-height: 1; }
+.social a:hover, .social a:focus-visible { color: var(--accent-ink); border-color: currentColor; }
+.social svg { width: 18px; height: 18px; flex: none; }
+header.top .social span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+header.top .social a { padding: .3rem; }
+.social.foot a { color: var(--deep-soft); border-color: currentColor; font-size: .8rem; padding: .35rem .7rem; }
+.social.foot a:hover, .social.foot a:focus-visible { color: #fff; }
+.social.foot svg { width: 20px; height: 20px; }
+.social-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 0; }
 .langnote { background: var(--wait-bg); color: var(--wait); font-family: var(--font-display); font-size: 1rem; }
 .langnote .wrap { padding-block: .6rem; }
 
@@ -436,6 +448,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
         <button type="button" data-lang="it" aria-pressed="false">IT</button>
       </span>
+      <span class="social" role="group" aria-label="Redes sociales de Oceanica Terra"><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener" title="Oceanica Terra en Instagram" aria-label="Oceanica Terra en Instagram (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.2-1.8h5l1.2 1.8h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Instagram</span></a><a href="https://www.facebook.com/1388088841059206" target="_blank" rel="noopener" title="Oceanica Terra en Facebook" aria-label="Oceanica Terra en Facebook (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15.5 14.2c2.6-.3 4.5 1.3 5 4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Facebook</span></a><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener" title="Oceanica Terra en YouTube" aria-label="Oceanica Terra en YouTube (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 8.6v6.8l5.4-3.4z" fill="currentColor"/></svg><span>YouTube</span></a></span>
     </nav>
   </div>
 </header>
@@ -1089,7 +1102,8 @@ footer .wrap { display: grid; gap: 1.5rem; }
       <details><summary>Política de reembolso</summary><p>Reembolso completo si lo solicitas en los 14 días siguientes a la compra. Escribe a oceanicaterra@gmail.com con tu número de pedido; se tramita por el mismo medio de pago.</p></details>
       <details><summary>Aviso educativo</summary><p>Nada en este sitio sustituye los procedimientos aprobados de a bordo, los requisitos oficiales vigentes ni el criterio de un profesional cualificado. Oceanica Terra no está afiliada a la OMI, la OIT ni a ninguna administración marítima.</p></details>
     </div>
-    <p>© 2026 Cesar Andrade · Oceanica Terra · Educación marítima en español · ES activo, EN e IT en preparación · Actualizado el 26 de octubre de 2026</p>
+    <p class="social-row">Síguenos: <span class="social foot" role="group" aria-label="Redes sociales de Oceanica Terra"><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener" title="Oceanica Terra en Instagram" aria-label="Oceanica Terra en Instagram (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.2-1.8h5l1.2 1.8h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Instagram</span></a><a href="https://www.facebook.com/1388088841059206" target="_blank" rel="noopener" title="Oceanica Terra en Facebook" aria-label="Oceanica Terra en Facebook (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15.5 14.2c2.6-.3 4.5 1.3 5 4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Facebook</span></a><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener" title="Oceanica Terra en YouTube" aria-label="Oceanica Terra en YouTube (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 8.6v6.8l5.4-3.4z" fill="currentColor"/></svg><span>YouTube</span></a></span></p>
+    <p>© 2026 Cesar Andrade · Oceanica Terra · Educación marítima en español · ES activo, EN e IT en preparación · Actualizado el 28 de octubre de 2026</p>
   </div>
 </footer>
 
