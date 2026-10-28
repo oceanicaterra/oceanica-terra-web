@@ -13,7 +13,8 @@ La especificación (JSON) puede incluir:
 
 Genera: ig-<slug>-N.png (1080×1350), yt-<slug>-N.png (1080×1920) y yt-<slug>.mp4 (Short),
 fb-<slug>.png (1200×630) y story-<slug>.png (1080×1920).
-El Short lleva de fondo la música original de musica/ (estilo dreamwave), con el estribillo al final.
+El Short lleva de fondo una música original de musica/ (rota según el slug; "musica": "<nombre>" en la
+especificación fuerza una pista), con el clímax alineado al final del vídeo.
 """
 import asyncio, html, json, pathlib, subprocess, sys
 
@@ -148,9 +149,13 @@ async def render(spec, out):
             args += ["-loop", "1", "-t", str(d), "-i", str(out / f"yt-{slug}-{i}.png")]
         total = sum(durs) - 0.5 * (len(durs) - 1)
         # Música de fondo original (regla 5): el clímax del estribillo cae al final del vídeo.
-        musica = ROOT / "musica" / "dreamwave-01.m4a"
-        if musica.exists():
-            meta = json.loads((ROOT / "musica" / "dreamwave-01.json").read_text())
+        pistas = sorted(p for p in (ROOT / "musica").glob("*.m4a") if p.with_suffix(".json").exists())
+        if spec.get("musica"):  # forzar una pista concreta, p. ej. "piano-suave-01"
+            pistas = [p for p in pistas if p.stem == spec["musica"]] or pistas
+        musica = pistas[sum(slug.encode()) % len(pistas)] if pistas else None
+        if musica:
+            meta = json.loads(musica.with_suffix(".json").read_text())
+            print(f"Música: {musica.stem}")
             ini = max(0.0, meta["final"] + 1.5 - total)
             args += ["-ss", f"{ini:.2f}", "-t", f"{total:.2f}", "-i", str(musica)]
         else:
