@@ -11,6 +11,6 @@
    "motivo": "Enlaces a redes sociales con iconos en la cabecera y el pie (pedido del propietario)"
   }
  ],
- "pausa_hasta": "2026-11-27",
- "pausa_motivo": "El 28/10 Netlify avisó que se agotaron los 300 créditos del ciclo y concedió 30 extra para mantener la web en línea. No se publica en main hasta que se renueve el ciclo (fecha por confirmar con el propietario; por prudencia, 27/11/2026)."
+ "pausa_hasta": "2026-11-23",
+ "pausa_motivo": "El 28/10 Netlify avisó que se agotaron los 300 créditos del ciclo y concedió 30 extra para mantener la web en línea. El ciclo se renueva el 24/11/2026 (confirmado por el propietario): no se publica en main hasta entonces."
 }
