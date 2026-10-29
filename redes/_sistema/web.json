@@ -6,14 +6,17 @@
    "tipo": "web",
    "titulo": "Base para crecer en Google",
    "detalle": "Páginas propias por artículo (/articulos/<slug>.html) con estilo compartido, sitemap.xml, robots.txt, metadatos Open Graph y enlaces a Instagram, Facebook y YouTube en el pie. (Los enlaces a redes en cabecera y pie ya están hechos desde el 28/10.)",
-   "estado": "pendiente"
+   "estado": "hecho",
+   "fecha": "2026-10-29",
+   "nota": "Hecho: canonical, Open Graph/Twitter con imagen 1200x630 (/assets/og-oceanica-terra.jpg), datos estructurados Organization/WebSite, robots.txt, sitemap.xml, 404.html y /assets/sitio.css (estilo compartido de páginas internas). Las páginas por artículo se crean en art-bl-pagina; cada página nueva debe añadirse a sitemap.xml."
   },
   {
    "id": "art-bl-pagina",
    "tipo": "articulo",
    "titulo": "Llevar los 3 artículos existentes a páginas propias",
    "detalle": "Conocimiento de embarque, SOLAS y FOB/CIF: cada uno en /articulos/ con enlace desde la Biblioteca (el ancla actual se mantiene).",
-   "estado": "pendiente"
+   "estado": "en_curso",
+   "nota": "Siguiente: usar /assets/sitio.css y la estructura de 404.html (cabecera, miga de pan, .doc, .sources, pie). Añadir cada página a sitemap.xml y su enlace desde la tarjeta de la Biblioteca sin quitar las anclas #art-*."
   },
   {
    "id": "prod-glosario",
@@ -94,6 +97,10 @@
   {
    "fecha": "2026-10-28",
    "hecho": "Enlaces a Instagram, Facebook y YouTube en cabecera fija y pie (publicado)."
+  },
+  {
+   "fecha": "2026-10-29",
+   "hecho": "Base SEO publicada: metadatos para Google y redes (vista previa con imagen al compartir), sitemap.xml, robots.txt, página 404 y estilo compartido para las futuras páginas de artículos, guías y lecciones."
   }
  ]
 }

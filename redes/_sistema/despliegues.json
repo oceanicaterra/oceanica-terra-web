@@ -12,6 +12,10 @@
   {
    "fecha": "2026-10-28",
    "motivo": "Mudanza a GitHub Pages (CNAME y .nojekyll). Netlify ya no sirve la web."
+  },
+  {
+   "fecha": "2026-10-29",
+   "motivo": "Base SEO: canonical, Open Graph/Twitter con imagen, datos estructurados, robots.txt, sitemap.xml, 404 y /assets/sitio.css (commit 740f0b6)"
   }
  ]
 }
