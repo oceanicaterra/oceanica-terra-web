@@ -1,5 +1,5 @@
 {
- "siguiente_tema": 4,
+ "siguiente_tema": 5,
  "historial": [
   {
    "fecha": "2026-10-28",
@@ -24,12 +24,12 @@
    "tipo": "noticias",
    "instagram_story": {
     "post": "6ae20ba300f35d308c815a51",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora": "10:00"
    },
    "facebook": {
     "post": "6ae20baafe2b5b0857629616",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora": "11:00"
    }
   },
@@ -66,11 +66,63 @@
     "post": "6ae20bed522cb4d35117dba3",
     "estado": "scheduled"
    }
+  },
+  {
+   "fecha": "2026-10-29",
+   "tipo": "noticias",
+   "slug": "noticias-2026-10-29",
+   "hora_orlando": "12:15",
+   "instagram_story": {
+    "post": "6ae35e5610365a6fbeee4106",
+    "estado": "scheduled"
+   },
+   "facebook_story": {
+    "post": "6ae35e57f3a8aff3f3528fa6",
+    "estado": "scheduled"
+   },
+   "instagram": {
+    "post": "6ae35e5ff3a8aff3f352906a",
+    "estado": "scheduled",
+    "hora_orlando": "12:20"
+   },
+   "facebook": {
+    "post": "6ae35e64f3a8aff3f35291e0",
+    "estado": "scheduled"
+   }
+  },
+  {
+   "fecha": "2026-10-31",
+   "tema": 4,
+   "slug": "semana-2026-10-31",
+   "musica": "piano-suave-01",
+   "sha": "c989b8ffd70256c2f29c8b3f65e4d0caf7b279d7",
+   "instagram": {
+    "post": "6ae35e7725e7fa4a8db1da41",
+    "estado": "scheduled"
+   },
+   "facebook": {
+    "post": "6ae35e7be079e57982e10ca4",
+    "estado": "scheduled"
+   },
+   "youtube": {
+    "post": "6ae35e81a87e7858ef13d782",
+    "estado": "scheduled"
+   },
+   "instagram_reel": {
+    "post": "6ae35e8425e7fa4a8db1dcfa",
+    "estado": "scheduled"
+   },
+   "facebook_reel": {
+    "post": "6ae35e8710365a6fbeee4d18",
+    "estado": "scheduled"
+   }
   }
  ],
  "noticias": [
   "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
-  "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships"
+  "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
+  "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
+  "https://portalportuario.cl/portonave-recibe-nuevo-servicio-de-las-navieras-cma-cgm-cosco-y-oocl/"
  ],
  "canales": {
   "instagram": "6ae175a72f1f5ed648f64678",
