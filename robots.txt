@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /redes/
+
+Sitemap: https://www.oceanicaterra.com/sitemap.xml

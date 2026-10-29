@@ -1,0 +1,120 @@
+/* Oceanica Terra — estilo compartido de las páginas internas (/articulos/, /buques/, /academia/ y 404).
+   Mismos colores, tipografías y componentes que index.html. Sin librerías ni cookies. */
+:root {
+  --paper: #F3F9FC; --surface: #FFFFFF; --ink: #0A2540; --muted: #4A6075; --rule: #D3E2EB;
+  --accent: #D9480F; --accent-ink: #0B6E8F; --on-accent: #FFFFFF;
+  --good: #1F6F4A; --good-bg: #DCEFE4; --wait: #6B5A12; --wait-bg: #F3ECCB;
+  --sea-2: #B5E1F0; --sea-3: #6FC0DE; --sea-line: #BFE3F0; --glow: rgba(111, 192, 222, .28);
+  --deep: #0B3A57; --deep-fg: #FFFFFF; --deep-soft: #C3DDEA;
+  --shadow: 0 1px 2px rgba(10, 37, 64, .05), 0 10px 28px -14px rgba(10, 37, 64, .22);
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: light;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background-color: var(--paper); color: var(--ink);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 8% 18%, var(--glow), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 95% 55%, var(--glow), transparent 62%);
+  background-attachment: fixed;
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-wrap: break-word;
+}
+img, svg { max-width: 100%; }
+[hidden] { display: none !important; }
+.wrap { max-width: 72rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+a { color: var(--accent-ink); }
+.label { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.chip { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 999px; white-space: nowrap; }
+.chip::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; }
+.chip.on { color: var(--good); background: var(--good-bg); }
+.chip.soon { color: var(--wait); background: var(--wait-bg); }
+
+/* Cabecera */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--paper) 93%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--rule); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: .8rem 1.2rem; padding-block: .7rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); }
+.brand svg { width: 28px; height: 28px; flex: none; }
+.brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: .14em; }
+nav.links { display: flex; gap: .4rem 1rem; flex-wrap: wrap; align-items: center; font-family: var(--font-display); font-size: .98rem; }
+nav.links a { color: var(--ink); text-decoration: none; }
+nav.links a:hover { color: var(--accent-ink); }
+.social { display: inline-flex; gap: .35rem; align-items: center; }
+.social a { display: inline-flex; align-items: center; gap: .3rem; padding: .22rem .55rem; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; font-family: var(--font-mono); font-size: .74rem; line-height: 1; }
+.social a:hover, .social a:focus-visible { color: var(--accent-ink); border-color: currentColor; }
+.social svg { width: 18px; height: 18px; flex: none; }
+header.top .social span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+header.top .social a { padding: .3rem; }
+.social.foot a { color: var(--deep-soft); border-color: currentColor; font-size: .8rem; padding: .35rem .7rem; }
+.social.foot a:hover, .social.foot a:focus-visible { color: #fff; }
+.social.foot svg { width: 20px; height: 20px; }
+.social-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 0; }
+
+/* Botones */
+.btn { box-shadow: 0 6px 16px -10px rgba(10, 37, 64, .45); display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; padding: .78rem 1.25rem; border-radius: 6px; text-decoration: none; cursor: pointer; border: 2px solid transparent; }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--surface); }
+.ctas { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
+
+/* Miga de pan */
+.crumbs { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .04em; color: var(--muted); margin: 1.6rem 0 0; }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: .3rem; padding: 0; margin: 0; }
+.crumbs li + li::before { content: "/"; margin-right: .3rem; color: var(--rule); }
+.crumbs a { color: var(--muted); }
+
+/* Página de lectura (artículo, guía, lección) */
+.page { padding-block: 1.2rem 3rem; }
+.doc { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); padding: clamp(1.2rem, 4vw, 2.6rem); max-width: 50rem; margin: 1rem auto 0; }
+.doc-head { display: grid; gap: .6rem; margin-bottom: 1.6rem; }
+.doc-head .meta { font-family: var(--font-mono); font-size: .76rem; color: var(--accent-ink); letter-spacing: .04em; }
+.doc-head h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 700; }
+.doc-lede { font-size: 1.15rem; color: var(--ink); }
+.byline { font-family: var(--font-mono); font-size: .76rem; color: var(--muted); }
+.doc h2 { font-size: clamp(1.4rem, 3.4vw, 1.8rem); font-weight: 700; margin: 2.2rem 0 .7rem; }
+.doc h3 { font-size: 1.18rem; font-weight: 600; margin: 1.6rem 0 .5rem; }
+.doc p { margin: 0 0 1rem; }
+.doc ul, .doc ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+.doc li { margin-bottom: .35rem; }
+.doc .table-wrap { overflow-x: auto; margin: 0 0 1.2rem; }
+.doc table { border-collapse: collapse; width: 100%; font-size: .96rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: .55rem .6rem; border-bottom: 1px solid var(--rule); }
+.doc th { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.doc figure { margin: 1.4rem 0; }
+.doc figcaption { font-size: .9rem; color: var(--muted); margin-top: .4rem; }
+.note { background: var(--paper); border-left: 4px solid var(--accent-ink); border-radius: 6px; padding: .9rem 1.1rem; margin: 0 0 1.2rem; }
+.note.warn { border-left-color: var(--accent); }
+.sources { border-top: 1px solid var(--rule); margin-top: 2.4rem; padding-top: 1.2rem; font-size: .95rem; }
+.sources h2 { margin-top: 0; font-size: 1.2rem; }
+.sources li { margin-bottom: .5rem; }
+.disclaimer { font-size: .9rem; color: var(--muted); margin-top: 1.6rem; }
+
+/* Pie */
+.shore { position: relative; height: clamp(50px, 7vw, 90px); overflow: hidden; margin-top: 2rem; }
+.shore svg { position: absolute; bottom: -1px; left: 0; width: 200%; max-width: none; height: 100%; }
+.shore .s1 path { fill: var(--sea-3); opacity: .45; }
+.shore .s2 path { fill: var(--deep); }
+@media (prefers-reduced-motion: no-preference) {
+  .shore .s1 { animation: drift 30s linear infinite reverse; }
+  .shore .s2 { animation: drift 22s linear infinite; }
+}
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+footer { background: var(--deep); padding-block: 1.5rem 2.8rem; font-size: .92rem; color: var(--deep-soft); }
+footer .wrap { display: grid; gap: 1.2rem; }
+footer a { color: var(--deep-fg); }
+footer p { margin: 0; }
+
+@media (max-width: 640px) {
+  header.top .wrap { padding-block: .55rem; }
+  nav.links { font-size: .92rem; gap: .3rem .8rem; }
+  .doc { border-radius: 10px; }
+}
