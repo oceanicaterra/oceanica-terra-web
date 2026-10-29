@@ -130,10 +130,11 @@
  "canales": {
   "instagram": "6ae175a72f1f5ed648f64678",
   "youtube": "6ae176852f1f5ed648f65a4c",
-  "facebook": "6ae186252f1f5ed648f76d44"
+  "tiktok": "6ae378802f1f5ed648110762"
  },
  "notas": [
   "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
-  "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela."
+  "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
+  "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok)."
  ]
 }
