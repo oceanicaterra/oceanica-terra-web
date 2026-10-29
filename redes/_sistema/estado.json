@@ -131,6 +131,6 @@
  },
  "notas": [
   "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
-  "2026-10-29: Instagram pasa a cuenta de Creador. Los Reels de Instagram usan una versión rítmica (cortes secos de 2-4,6 s, zoom suave, sin música, CTA «enlace en la biografía»: ig-<slug>-ritmo.mp4) y una canción en tendencia elegida tras investigar; el audio se añade en Buffer web o en la app. YouTube y Facebook mantienen la música original."
+  "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela."
  ]
 }
