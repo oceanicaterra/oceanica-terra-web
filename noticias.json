@@ -1,14 +1,30 @@
 {
-  "updated": "2026-10-28T06:41:25-04:00",
+  "updated": "2026-10-29T06:36:47-04:00",
   "items": [
+    {
+      "title": "La naviera japonesa ECL inicia escalas en Lázaro Cárdenas con 2.906 vehículos y carga de proyecto",
+      "summary": "El buque Malaysia Brave, de Eastern Car Liner, hizo su primera escala en la Terminal de Usos Múltiples II y descargó 2.906 unidades: 2.640 automóviles y 266 máquinas, autobuses y carga de proyecto.",
+      "source": "PortalPortuario",
+      "url": "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
+      "date": "2026-10-28",
+      "category": "puertos",
+      "lead": true
+    },
+    {
+      "title": "CMA CGM, Cosco y OOCL lanzarán en 2027 un servicio semanal Asia-Sudamérica con escala en Portonave",
+      "summary": "El servicio SEAS A conectará Ningbo, Shanghái, Shekou y Singapur con Santos, Navegantes, Montevideo, Buenos Aires y Coega desde enero de 2027, con foco en carga refrigerada. La primera salida será del CMA CGM Xenon el 17 de diciembre.",
+      "source": "PortalPortuario",
+      "url": "https://portalportuario.cl/portonave-recibe-nuevo-servicio-de-las-navieras-cma-cgm-cosco-y-oocl/",
+      "date": "2026-10-28",
+      "category": "rutas"
+    },
     {
       "title": "Irán anuncia medidas legales contra todos los buques de la naviera surcoreana Sinokor en Ormuz",
       "summary": "La autoridad iraní del estrecho de Ormuz actuará desde el 1 de noviembre contra los buques de Sinokor, a los que atribuye el mayor número de infracciones de tránsito en los últimos tres meses; al menos siete ya han sido sancionados.",
       "source": "PortalPortuario",
       "url": "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
       "date": "2026-10-27",
-      "category": "seguridad",
-      "lead": true
+      "category": "seguridad"
     },
     {
       "title": "Terminales de contenedores del puerto de Ningbo-Zhoushan registran récords de actividad en septiembre",
@@ -64,22 +80,6 @@
       "summary": "El Mein Schiff 3 golpeó la popa del MSC Victorine, de 16.520 TEU, al salir de la terminal con ayuda de remolcadores en pleno temporal. El portacontenedores sufrió una brecha de unos 10 metros por encima de la flotación; no se informó de heridos.",
       "source": "Splash247",
       "url": "https://splash247.com/msc-boxship-gashed-in-bremerhaven-cruise-ship-collision/",
-      "date": "2026-10-26"
-    },
-    {
-      "category": "mercados",
-      "title": "Las entregas de VLCC podrían alcanzar niveles que no se veían desde los años setenta",
-      "summary": "Hartland Shipping Services prevé más de 100 entregas de superpetroleros al año en 2028 y 2029, con 319 buques encargados, el 34% de la flota actual. En los nueve primeros meses de 2026 solo se desguazaron cuatro VLCC.",
-      "source": "Splash247",
-      "url": "https://splash247.com/vlcc-delivery-wave-set-to-reach-levels-not-seen-since-the-1970s/",
-      "date": "2026-10-26"
-    },
-    {
-      "category": "canales",
-      "title": "North Sea Port levanta las restricciones de calado en el canal Gante-Terneuzen",
-      "summary": "Desde el 7 de julio, la sequía había limitado el calado a entre 12,35 y 12,5 metros. Las lluvias recientes permiten retirar el límite, aunque la salinidad del agua sigue muy por encima del objetivo.",
-      "source": "PortalPortuario",
-      "url": "https://portalportuario.cl/north-sea-port-levanta-restricciones-de-calado-en-canal-gante-terneuzen/",
       "date": "2026-10-26"
     }
   ]
