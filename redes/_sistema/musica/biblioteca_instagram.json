@@ -1,81 +1,95 @@
 {
- "descripcion": "Pistas seguras de la biblioteca musical de Instagram, vistas en el selector «Add Music» de Buffer (Instagram enlazado a la página de Facebook OceanicaTerra). Solo pistas de la biblioteca con nombre de artista; nunca copias de canciones comerciales subidas por usuarios. La tarea «Música de Reels» elige de aquí o busca nuevas con las mismas reglas, y anota cada uso para no repetir la misma pista en 14 días.",
- "reglas": [
-  "Válida: autor con nombre de artista o sello (p. ej. «Auralux», «Jordan Olmos», «Giulio Cercato»), duración de al menos 30 s.",
-  "Prohibida: autor con nombre de usuario (minúsculas, puntos, guiones bajos o números), «Original audio», títulos que nombran canciones o artistas famosos, covers, remixes, «sped up», «slowed».",
-  "Prohibida: pistas de menos de 30 s (los «Reels Sound» de 5–9 s no sirven para vídeos de 20–26 s)."
- ],
- "pistas": [
-  {
-   "titulo": "Momentum Rising",
-   "artista": "Auralux",
-   "duracion": "1:01",
-   "animo": "energía, avance, logística y tecnología",
-   "estado": "verificada"
-  },
-  {
-   "titulo": "Majestic",
-   "artista": "Jordan Olmos",
-   "duracion": "1:03",
-   "animo": "épica, historia, seguridad, grandes buques",
-   "estado": "verificada"
-  },
-  {
-   "titulo": "Waves (Instrumental)",
-   "artista": "Giulio Cercato",
-   "animo": "mar, calma, navegación",
-   "estado": "candidata"
-  },
-  {
-   "titulo": "Glorious",
-   "artista": "Giulio Cercato",
-   "animo": "épica, logros",
-   "estado": "candidata"
-  },
-  {
-   "titulo": "Blue Horizon (Instrumental)",
-   "artista": "Giulio Cercato",
-   "animo": "mar abierto, viaje",
-   "estado": "candidata"
-  },
-  {
-   "titulo": "Heros Journey (Instrumental)",
-   "artista": "Abby Posner",
-   "animo": "historia, superación",
-   "estado": "candidata"
-  },
-  {
-   "titulo": "Orion",
-   "artista": "Austin Woodward & Adam Griffith",
-   "animo": "tecnología, futuro",
-   "estado": "verificada",
-   "duracion": "3:46"
-  },
-  {
-   "titulo": "Essence Of Time",
-   "artista": "Global Genius",
-   "animo": "historia, cronologías",
-   "estado": "candidata"
-  }
- ],
- "usos": [
-  {
-   "fecha": "2026-10-29",
-   "slug": "teu",
-   "post": "6ae21b294785904534fb9b7d",
-   "pista": "Momentum Rising — Auralux"
-  },
-  {
-   "fecha": "2026-10-30",
-   "slug": "solas-historia",
-   "post": "6ae21b32f835de4f325680f5",
-   "pista": "Majestic — Jordan Olmos"
-  },
-  {
-   "fecha": "2026-10-31",
-   "slug": "semana-2026-10-31",
-   "post": "6ae35e8425e7fa4a8db1dcfa",
-   "pista": "Orion — Austin Woodward & Adam Griffith"
-  }
- ]
+  "descripcion": "Pistas seguras de la biblioteca musical de Instagram, vistas en el selector «Add Music» de Buffer (Instagram enlazado a la página de Facebook OceanicaTerra). Solo pistas de la biblioteca con nombre de artista; nunca copias de canciones comerciales subidas por usuarios. La tarea «Música de Reels» elige de aquí o busca nuevas con las mismas reglas, y anota cada uso para no repetir la misma pista en 14 días.",
+  "reglas": [
+    "Válida: autor con nombre de artista o sello (p. ej. «Auralux», «Jordan Olmos», «Giulio Cercato»), duración de al menos 30 s.",
+    "Prohibida: autor con nombre de usuario (minúsculas, puntos, guiones bajos o números), «Original audio», títulos que nombran canciones o artistas famosos, covers, remixes, «sped up», «slowed».",
+    "Prohibida: pistas de menos de 30 s (los «Reels Sound» de 5–9 s no sirven para vídeos de 20–26 s)."
+  ],
+  "pistas": [
+    {
+      "titulo": "Momentum Rising",
+      "artista": "Auralux",
+      "duracion": "1:01",
+      "animo": "energía, avance, logística y tecnología",
+      "estado": "verificada"
+    },
+    {
+      "titulo": "Majestic",
+      "artista": "Jordan Olmos",
+      "duracion": "1:03",
+      "animo": "épica, historia, seguridad, grandes buques",
+      "estado": "verificada"
+    },
+    {
+      "titulo": "Waves (Instrumental)",
+      "artista": "Giulio Cercato",
+      "animo": "mar, calma, navegación",
+      "estado": "candidata"
+    },
+    {
+      "titulo": "Glorious",
+      "artista": "Giulio Cercato",
+      "animo": "épica, logros",
+      "estado": "candidata"
+    },
+    {
+      "titulo": "Blue Horizon (Instrumental)",
+      "artista": "Giulio Cercato",
+      "animo": "mar abierto, viaje",
+      "estado": "candidata"
+    },
+    {
+      "titulo": "Heros Journey (Instrumental)",
+      "artista": "Abby Posner",
+      "animo": "historia, superación",
+      "estado": "candidata"
+    },
+    {
+      "titulo": "Orion",
+      "artista": "Austin Woodward & Adam Griffith",
+      "animo": "tecnología, futuro",
+      "estado": "verificada",
+      "duracion": "3:46"
+    },
+    {
+      "titulo": "Essence Of Time",
+      "artista": "Global Genius",
+      "animo": "historia, cronologías",
+      "estado": "candidata"
+    },
+    {
+      "titulo": "Fast Life (Instrumental)",
+      "artista": "Chela Rivas",
+      "duracion": "3:25",
+      "animo": "noticias, actualidad, ritmo enérgico",
+      "estado": "verificada"
+    }
+  ],
+  "usos": [
+    {
+      "fecha": "2026-10-29",
+      "slug": "teu",
+      "post": "6ae21b294785904534fb9b7d",
+      "pista": "Momentum Rising — Auralux"
+    },
+    {
+      "fecha": "2026-10-30",
+      "slug": "solas-historia",
+      "post": "6ae21b32f835de4f325680f5",
+      "pista": "Majestic — Jordan Olmos"
+    },
+    {
+      "fecha": "2026-10-31",
+      "slug": "semana-2026-10-31",
+      "post": "6ae35e8425e7fa4a8db1dcfa",
+      "pista": "Orion — Austin Woodward & Adam Griffith"
+    },
+    {
+      "fecha": "2026-10-30",
+      "slug": "resumen-semanal-2026-10-30",
+      "post": "6ae4aecde266b27191effce3",
+      "pista": "Fast Life (Instrumental) — Chela Rivas",
+      "tipo": "noticias / resumen semanal"
+    }
+  ]
 }
