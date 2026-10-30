@@ -24,6 +24,10 @@
   {
    "fecha": "2026-10-29",
    "motivo": "Seguridad: correo público contacto@oceanicaterra.com (sustituye al Gmail), política de ventas definitivas, y guía gratis servida desde oceanicaterra.com con el contacto nuevo (pedido del propietario)"
+  },
+  {
+   "fecha": "2026-10-30",
+   "motivo": "Páginas propias para los 3 artículos de la Biblioteca (/articulos/), sitemap actualizado, Reglas de Rotterdam con fuente CNUDMI, y arreglos de portada: Tienda sin botón Comprar para productos sin enlace, EN/IT como próximamente, tarjetas de la Academia más claras (commit bf33016)"
   }
  ]
 }

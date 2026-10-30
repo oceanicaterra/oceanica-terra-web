@@ -15,16 +15,19 @@
    "tipo": "web",
    "titulo": "Enlace a TikTok y pequeños arreglos de la portada (PRIORITARIO)",
    "detalle": "1) HECHO el 29/10/2026 (TikTok sustituye a Facebook en cabecera y pie de index.html y 404.html; commit c5035c1 en main). Antes: añadir el enlace a TikTok https://www.tiktok.com/@oceanicaterra con su icono en la cabecera y el pie, junto a Instagram y YouTube (pedido del propietario, 29/10/2026). Facebook sigue en la web: la página existe, aunque ya no se publica en ella a diario. 2) En la Tienda, los productos «Muy pronto» no deben llevar botón «Comprar» activo (cambiar por «Muy pronto», sin enlace). 3) El selector de idioma muestra EN e IT aunque solo el español está activo: ocultarlos o marcarlos como «próximamente». 4) Revisar que «En preparación» y «Ver resumen y primera página» se vean separados en las tarjetas de la Academia. Validar y publicar en una sola publicación. Es una tarea corta: hazla en la próxima ejecución antes de seguir con «art-bl-pagina» (su avance está guardado en la rama web).",
-   "estado": "en_curso",
-   "fecha_alta": "2026-10-29"
+   "estado": "hecho",
+   "fecha_alta": "2026-10-29",
+   "fecha": "2026-10-30",
+   "nota": "Hecho y publicado el 30/10: Tienda sin botón Comprar activo para productos sin enlace (la ficha muestra «Muy pronto»; hoy los 4 productos tienen enlace de Payhip y salen «Disponible»), EN e IT marcados como próximamente, y separación clara entre «En preparación» y «Ver resumen y primera página»."
   },
   {
    "id": "art-bl-pagina",
    "tipo": "articulo",
    "titulo": "Llevar los 3 artículos existentes a páginas propias",
    "detalle": "Conocimiento de embarque, SOLAS y FOB/CIF: cada uno en /articulos/ con enlace desde la Biblioteca (el ancla actual se mantiene).",
-   "estado": "en_curso",
-   "nota": "Siguiente: usar /assets/sitio.css y la estructura de 404.html (cabecera, miga de pan, .doc, .sources, pie). Añadir cada página a sitemap.xml y su enlace desde la tarjeta de la Biblioteca sin quitar las anclas #art-*."
+   "estado": "hecho",
+   "nota": "Publicado el 30/10: /articulos/conocimiento-de-embarque.html, /articulos/solas-en-10-minutos.html y /articulos/fob-frente-a-cif.html, enlazados desde sus tarjetas (anclas #art-* intactas) y en sitemap.xml. Plantilla reutilizable: cabecera y pie de 404.html + /assets/sitio.css.",
+   "fecha": "2026-10-30"
   },
   {
    "id": "prod-glosario",
@@ -40,7 +43,8 @@
    "titulo": "Kit de documentación del buque en puerto",
    "detalle": "Modelos comentados campo por campo de NOR, hoja de hechos (SOF) y carta de protesta, ya anunciado como «Muy pronto».",
    "estado": "pendiente",
-   "precio_sugerido": "USD 12"
+   "precio_sugerido": "USD 12",
+   "nota": "Ojo: la Tienda ya tiene una ficha «Kit de documentación del buque en puerto» con enlace de Payhip (YK8hW) que se muestra como Disponible. Antes de redactarlo, comprobar si es el mismo producto; si lo es, convertir este item en una segunda edición o en otro producto distinto."
   },
   {
    "id": "guia-buques-1",
@@ -109,6 +113,10 @@
   {
    "fecha": "2026-10-29",
    "hecho": "Base SEO publicada: metadatos para Google y redes (vista previa con imagen al compartir), sitemap.xml, robots.txt, página 404 y estilo compartido para las futuras páginas de artículos, guías y lecciones."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "Publicadas las páginas propias de los 3 artículos de la Biblioteca (conocimiento de embarque, SOLAS, FOB/CIF), con fuentes verificadas hoy (CNUDMI, OMI, ICC Academy y otras) y un esquema propio FOB/CIF en SVG. Arreglos de portada: Tienda, selector de idioma y tarjetas de la Academia."
   }
  ]
 }

@@ -1,4 +1,29 @@
 {
  "descripcion": "Novedades publicadas en la web que las redes deben promocionar. La tarea de la web añade; la tarea de redes marca promocionado=true.",
- "items": []
+ "items": [
+  {
+   "tipo": "articulo",
+   "titulo": "El conocimiento de embarque, campo por campo",
+   "ruta": "/articulos/conocimiento-de-embarque.html",
+   "fecha": "2026-10-30",
+   "publicado_en_web": true,
+   "promocionado": false
+  },
+  {
+   "tipo": "articulo",
+   "titulo": "SOLAS en 10 minutos",
+   "ruta": "/articulos/solas-en-10-minutos.html",
+   "fecha": "2026-10-30",
+   "publicado_en_web": true,
+   "promocionado": false
+  },
+  {
+   "tipo": "articulo",
+   "titulo": "FOB frente a CIF sin confusiones",
+   "ruta": "/articulos/fob-frente-a-cif.html",
+   "fecha": "2026-10-30",
+   "publicado_en_web": true,
+   "promocionado": false
+  }
+ ]
 }
