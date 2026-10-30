@@ -1,0 +1,8 @@
+{"slug":"ever-given-suez","escenas":[
+{"tipo":"texto","lineas":["UN SOLO BARCO","BLOQUEÓ","EL CANAL DE SUEZ"],"resaltar":2,"dur":2.4},
+{"tipo":"bloqueo","arriba":"Marzo de 2021","abajo":"6 días atascado","dur":3.6},
+{"tipo":"fila","numero":400,"prefijo":"+","etiqueta":"buques esperando","dur":3.2},
+{"tipo":"contador","numero":9600,"antes":"US$","despues":"millones","etiqueta":"en mercancías, cada día","nota":"Estimación citada por la BBC","dur":3.4},
+{"tipo":"texto","lineas":["¿CÓMO LO","SACARON?"],"resaltar":1,"dur":1.6},
+{"tipo":"texto","lineas":["DRAGAS","REMOLCADORES","MAREA ALTA"],"resaltar":2,"dur":2.4},
+{"tipo":"cta","pregunta":"¿Qué otro canal o estrecho es igual de importante?","linea":"Comenta y síguenos · @oceanicaterra","dur":3.2}]}
