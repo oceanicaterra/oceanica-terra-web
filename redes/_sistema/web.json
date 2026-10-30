@@ -63,6 +63,54 @@
       "nota": "Ojo: la Tienda ya tiene una ficha «Kit de documentación del buque en puerto» con enlace de Payhip (YK8hW) que se muestra como Disponible. Antes de redactarlo, comprobar si es el mismo producto; si lo es, convertir este item en una segunda edición o en otro producto distinto."
     },
     {
+      "id": "herr-conversor",
+      "tipo": "web",
+      "titulo": "Herramientas: conversor náutico (nudos ↔ km/h, millas náuticas ↔ km, metros ↔ pies, toneladas)",
+      "estado": "pendiente",
+      "nota": "Página /herramientas/ con JavaScript propio, sin librerías ni cookies. Pedido del propietario el 30/10/2026: herramientas de uso diario para marinos y logística.",
+      "fecha": null
+    },
+    {
+      "id": "herr-beaufort",
+      "tipo": "web",
+      "titulo": "Herramientas: escalas Beaufort (viento) y Douglas (mar) interactivas + enlaces a servicios oficiales de meteorología marítima",
+      "estado": "pendiente",
+      "nota": "Enlaces solo a servicios oficiales y verificados (p. ej. NOAA, servicios meteorológicos nacionales, WMO/GMDSS).",
+      "fecha": null
+    },
+    {
+      "id": "herr-eta",
+      "tipo": "web",
+      "titulo": "Herramientas: calculadora de ETA (distancia, velocidad, hora de salida en UTC y hora local)",
+      "estado": "pendiente",
+      "nota": null,
+      "fecha": null
+    },
+    {
+      "id": "herr-cbm",
+      "tipo": "web",
+      "titulo": "Herramientas: calculadora de carga (CBM, peso volumétrico y cuántas cajas caben en un contenedor de 20' y 40')",
+      "estado": "pendiente",
+      "nota": "Medidas internas de contenedores solo de fuentes verificadas (ISO 668 / navieras), con fecha de verificación.",
+      "fecha": null
+    },
+    {
+      "id": "herr-meteo",
+      "tipo": "web",
+      "titulo": "Meteorología marítima: viento y oleaje previstos para puertos de Latinoamérica",
+      "estado": "pendiente",
+      "nota": "Solo con una fuente de datos GRATUITA cuya licencia permita uso en un sitio comercial, sin clave secreta en el repositorio y sin cookies (verificar la licencia con WebFetch y citarla). Muchas API gratuitas son solo para uso no comercial: si no hay una válida, hacer una página de enlaces oficiales por país.",
+      "fecha": null
+    },
+    {
+      "id": "herr-senales",
+      "tipo": "web",
+      "titulo": "Herramientas: alfabeto fonético y banderas del Código Internacional de Señales (dibujadas en SVG propio)",
+      "estado": "pendiente",
+      "nota": null,
+      "fecha": null
+    },
+    {
       "id": "guia-buques-1",
       "tipo": "biblioteca",
       "titulo": "Guía completa: portacontenedores",
@@ -121,6 +169,10 @@
     {
       "fecha": "2026-10-30",
       "hecho": "PRIORIDAD TIENDA (pedido del propietario): los productos de pago pasan al principio de la hoja de ruta: lista PSC, glosario marítimo español-inglés y guía rápida SOLAS/MARPOL. Lo demás sigue después."
+    },
+    {
+      "fecha": "2026-10-30",
+      "hecho": "Pedido del propietario: sumar a la web herramientas de uso diario para marinos y logística (conversor, Beaufort/Douglas, ETA, carga/CBM, meteorología marítima, señales), sin quitar nada. Los productos de la Tienda los hace desde hoy la tarea «Tienda Oceanica Terra»."
     }
   ]
 }
