@@ -1,6 +1,7 @@
 """Reel visual de Oceanica Terra (formato «poco texto, mucho movimiento»).
 
 Uso:  python3 reel.py spec-reel.json carpeta_salida [--musica nombre] [--sin-musica]
+      (si el spec trae "salida", ese es el nombre del archivo; p. ej. "story-quiz-<slug>.mp4")
 
 Crea ig-<slug>-reel.mp4 (1080×1920, 30 fps) a partir de una lista de escenas animadas, todas
 dibujadas con código (sin fotos ajenas). Regla de oro: una idea por pantalla y como mucho
@@ -17,6 +18,8 @@ Escenas disponibles (campo "tipo"):
             Cifra que sube de 0 al valor, con etiqueta y nota pequeña.
   tamanos   {"barcos": [["Handysize", 0.42, "20–35 mil TPM"], ...], "titulo": "...", "dur": 4.5}
             Siluetas laterales de buques que van creciendo una tras otra (escala relativa 0–1).
+  quiz      {"pregunta": "¿...?", "opciones": ["A", "B", "C"], "correcta": 0, "explicacion": "...", "cuenta": 5, "dur": 10}
+            Pregunta con opciones, cuenta regresiva y la respuesta correcta resaltada (historias interactivas).
   cta       {"pregunta": "¿...?", "linea": "Síguenos · @oceanicaterra", "dur": 3.0}
 """
 import json, math, pathlib, subprocess, sys
@@ -302,7 +305,59 @@ def esc_cta(e, t, dur):
     return im
 
 
-ESCENAS = {"texto": esc_texto, "bloqueo": esc_bloqueo, "fila": esc_fila, "contador": esc_contador,
+def esc_quiz(e, t, dur):
+    """Pregunta con 3 opciones, cuenta regresiva y revelación de la respuesta correcta."""
+    im, d = base()
+    texto_centrado(d, 230, e.get("kicker", "PREGUNTA DEL DÍA"), fuente("Bold", 56), NARANJA)
+    lineas, f = envolver(d, e["pregunta"], "Bold", 92, W - 160)
+    y = 330
+    for l in lineas:
+        texto_centrado(d, y, l, f, BLANCO)
+        y += 104
+    t_cuenta = e.get("cuenta", 5)
+    t_rev = 1.2 + t_cuenta
+    y = max(y + 60, 760)
+    letras = "ABCD"
+    for i, op in enumerate(e["opciones"]):
+        k = ease_out((t - 0.3 - i * 0.25) / 0.4)
+        if k <= 0:
+            continue
+        correcta = i == e["correcta"]
+        revelado = t >= t_rev
+        if revelado and correcta:
+            fondo_c, borde, col = NARANJA, NARANJA, BLANCO
+        elif revelado:
+            fondo_c, borde, col = (20, 45, 75), (60, 80, 105), (120, 140, 160)
+        else:
+            fondo_c, borde, col = (16, 52, 88), CIELO, BLANCO
+        x0 = 110 + int((1 - k) * 80)
+        d.rounded_rectangle([x0, y, W - 110, y + 150], radius=28, fill=fondo_c, outline=borde, width=5)
+        d.text((x0 + 40, y + 38), letras[i], font=fuente("Bold", 70), fill=col)
+        fo = ajustar(d, op, "Bold", 64, W - 360)
+        d.text((x0 + 130, y + 42), op, font=fo, fill=col)
+        if revelado and correcta:
+            d.line([(W - 220, y + 78), (W - 190, y + 108), (W - 140, y + 46)], fill=BLANCO, width=14, joint="curve")
+        y += 185
+    if 1.2 <= t < t_rev:
+        n = int(t_rev - t) + 1
+        cx, cy, r = W // 2, y + 140, 90
+        frac = (t_rev - t) - int(t_rev - t)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(60, 80, 105), width=14)
+        d.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=NARANJA, width=14)
+        texto_centrado(d, cy - 70, str(n), fuente("Bold", 120), BLANCO)
+        texto_centrado(d, cy + 120, "Piensa tu respuesta...", fuente("Medium", 50), CIELO)
+    elif t >= t_rev and e.get("explicacion"):
+        k = ease_out((t - t_rev - 0.3) / 0.5)
+        if k > 0:
+            lineas, f = envolver(d, e["explicacion"], "Medium", 58, W - 200)
+            yy = y + 60
+            for l in lineas:
+                texto_centrado(d, yy, l, f, BLANCO)
+                yy += 74
+    return im
+
+
+ESCENAS = {"quiz": esc_quiz, "texto": esc_texto, "bloqueo": esc_bloqueo, "fila": esc_fila, "contador": esc_contador,
            "tamanos": esc_tamanos, "cta": esc_cta}
 
 
@@ -321,7 +376,7 @@ def main():
     args = sys.argv[3:]
     slug = spec["slug"]
     total = sum(e["dur"] for e in spec["escenas"])
-    salida = out_dir / f"ig-{slug}-reel.mp4"
+    salida = out_dir / spec.get("salida", f"ig-{slug}-reel.mp4")
     m4a, meta = (None, None) if "--sin-musica" in args else \
         elegir_musica(slug, args[args.index("--musica") + 1] if "--musica" in args else None)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
