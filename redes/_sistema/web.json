@@ -54,6 +54,78 @@
       "precio_sugerido": "USD 9"
     },
     {
+      "id": "prod-ingles-maritimo",
+      "tipo": "producto",
+      "titulo": "Inglés marítimo práctico: frases SMCP de la OMI explicadas, con situaciones reales (puente, VHF, puerto, emergencias)",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Explicar y practicar las frases normalizadas (SMCP, resolución A.918(22)) con ejemplos propios; no reproducir el documento completo.",
+      "fecha": null
+    },
+    {
+      "id": "prod-stcw-mapa",
+      "tipo": "producto",
+      "titulo": "Mapa de la formación STCW: qué cursos y certificados necesita cada cargo a bordo y en qué orden",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Contenido programático general de cursos OMI/STCW explicado por competencias (formación básica, PSCRB, lucha contra incendios avanzada, primeros auxilios, etc.), con fuentes oficiales.",
+      "fecha": null
+    },
+    {
+      "id": "prod-ecdis",
+      "tipo": "producto",
+      "titulo": "Guía práctica de ECDIS: planificación y monitoreo de la derrota, alarmas, capas y errores comunes",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+      "fecha": null
+    },
+    {
+      "id": "prod-radar-arpa",
+      "tipo": "producto",
+      "titulo": "Guía práctica de RADAR/ARPA: ajustes, punteo, CPA/TCPA y su uso con el COLREG",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+      "fecha": null
+    },
+    {
+      "id": "prod-ais",
+      "tipo": "producto",
+      "titulo": "Guía práctica de AIS: qué transmite, cómo interpretarlo y sus limitaciones",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+      "fecha": null
+    },
+    {
+      "id": "prod-gmdss",
+      "tipo": "producto",
+      "titulo": "Guía práctica de GMDSS: áreas marítimas, equipos, DSC, NAVTEX y procedimientos de socorro",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+      "fecha": null
+    },
+    {
+      "id": "prod-estabilidad",
+      "tipo": "producto",
+      "titulo": "Estabilidad del buque explicada: GM, curva GZ, efecto de superficie libre y criterios, con ejercicios resueltos",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+      "fecha": null
+    },
+    {
+      "id": "prod-lsa",
+      "tipo": "producto",
+      "titulo": "Mantenimiento de equipos de salvamento (LSA): botes, balsas, chalecos y aros; inspecciones semanales, mensuales y anuales",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Basado en SOLAS capítulo III y el Código IDS (LSA); citar sin reproducir.",
+      "fecha": null
+    },
+    {
+      "id": "prod-security-safety",
+      "tipo": "producto",
+      "titulo": "Seguridad a bordo (Safety y Security): Código IGS (ISM) y Código PBIP (ISPS) en la práctica, simulacros y registros",
+      "estado": "pendiente",
+      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+      "fecha": null
+    },
+    {
       "id": "prod-kit",
       "tipo": "producto",
       "titulo": "Kit de documentación del buque en puerto",
@@ -173,6 +245,10 @@
     {
       "fecha": "2026-10-30",
       "hecho": "Pedido del propietario: sumar a la web herramientas de uso diario para marinos y logística (conversor, Beaufort/Douglas, ETA, carga/CBM, meteorología marítima, señales), sin quitar nada. Los productos de la Tienda los hace desde hoy la tarea «Tienda Oceanica Terra»."
+    },
+    {
+      "fecha": "2026-10-30",
+      "hecho": "Nueva serie de productos «Guías prácticas STCW» propuesta por el propietario: inglés marítimo (SMCP), mapa de formación STCW, ECDIS, RADAR/ARPA, AIS, GMDSS, estabilidad, mantenimiento LSA y Safety/Security (IGS/PBIP)."
     }
   ]
 }
