@@ -34,8 +34,11 @@
       "tipo": "producto",
       "titulo": "Lista de comprobación para inspecciones PSC (PDF)",
       "detalle": "Qué revisa el Estado rector del puerto y cómo prepararse, con fuentes de los MoU.",
-      "estado": "pendiente",
-      "precio_sugerido": "USD 7"
+      "estado": "hecho",
+      "precio_sugerido": "USD 7",
+      "fecha": "2026-10-30",
+      "documento": "https://claude.ai/artifact/DPWZMQpguNVBCsYuzzKJDu",
+      "nota": "Listo para Payhip el 30/10/2026 (USD 7). Fuentes verificadas ese día: OMI A.1185(33), BMA sobre A.1206(34), Paris MoU, Panamá, DIMAR, OIT. En la web: No."
     },
     {
       "id": "prod-glosario",
@@ -365,6 +368,10 @@
     {
       "fecha": "2026-10-30",
       "hecho": "Ampliado el catálogo de productos: cursos de maniobra, liderazgo, navegación costera y astronómica, derecho marítimo, guía de entrevistas y exámenes, bienestar y salud mental, alimentación a bordo (ideas del propietario) y, por investigación propia, MLC 2006, combustibles alternativos, CII/EEXI, espacios cerrados, ciberseguridad y fatiga."
+    },
+    {
+      "fecha": "2026-10-30",
+      "hecho": "Tienda: «Lista de comprobación para inspecciones PSC» redactada en Claude Docs y lista para Payhip (USD 7)."
     }
   ]
 }
