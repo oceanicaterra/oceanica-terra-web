@@ -1,166 +1,204 @@
 {
- "siguiente_tema": 5,
- "historial": [
-  {
-   "fecha": "2026-10-28",
-   "tema": 1,
-   "slug": "fob-cif",
-   "instagram": {
-    "post": "6ae17dac56ec3750d2529196",
-    "estado": "sent",
-    "url": "https://www.instagram.com/p/DfBmpYEkfuz/"
-   },
-   "youtube": {
-    "post": "6ae17dba1b33b85d1be2f753",
-    "estado": "sent"
-   },
-   "facebook": {
-    "post": "6ae1864c1b33b85d1be50481",
-    "estado": "sent"
-   }
+  "siguiente_tema": 5,
+  "historial": [
+    {
+      "fecha": "2026-10-28",
+      "tema": 1,
+      "slug": "fob-cif",
+      "instagram": {
+        "post": "6ae17dac56ec3750d2529196",
+        "estado": "sent",
+        "url": "https://www.instagram.com/p/DfBmpYEkfuz/"
+      },
+      "youtube": {
+        "post": "6ae17dba1b33b85d1be2f753",
+        "estado": "sent"
+      },
+      "facebook": {
+        "post": "6ae1864c1b33b85d1be50481",
+        "estado": "sent"
+      }
+    },
+    {
+      "fecha": "2026-10-28",
+      "tipo": "noticias",
+      "instagram_story": {
+        "post": "6ae20ba300f35d308c815a51",
+        "estado": "sent",
+        "hora": "10:00"
+      },
+      "facebook": {
+        "post": "6ae20baafe2b5b0857629616",
+        "estado": "sent",
+        "hora": "11:00"
+      }
+    },
+    {
+      "fecha": "2026-10-29",
+      "tema": 2,
+      "slug": "teu",
+      "instagram": {
+        "post": "6ae20bc5522cb4d35117d05e",
+        "estado": "sent"
+      },
+      "youtube": {
+        "post": "6ae20bcffe2b5b085762a3da",
+        "estado": "sent"
+      },
+      "facebook": {
+        "post": "6ae20bd2620f841dd3492306",
+        "estado": "scheduled"
+      },
+      "musica_ig": "Momentum Rising — Auralux"
+    },
+    {
+      "fecha": "2026-10-30",
+      "tema": 3,
+      "slug": "solas-historia",
+      "instagram": {
+        "post": "6ae20be524430b41b8a5caeb",
+        "estado": "scheduled"
+      },
+      "youtube": {
+        "post": "6ae20be800f35d308c8172b7",
+        "estado": "scheduled"
+      },
+      "facebook": {
+        "post": "6ae20bed522cb4d35117dba3",
+        "estado": "scheduled"
+      },
+      "musica_ig": "Majestic — Jordan Olmos"
+    },
+    {
+      "fecha": "2026-10-29",
+      "tipo": "noticias",
+      "slug": "noticias-2026-10-29",
+      "hora_orlando": "12:15",
+      "instagram_story": {
+        "post": "6ae35e5610365a6fbeee4106",
+        "estado": "sent"
+      },
+      "facebook_story": {
+        "post": "6ae35e57f3a8aff3f3528fa6",
+        "estado": "scheduled"
+      },
+      "instagram": {
+        "post": "6ae35e5ff3a8aff3f352906a",
+        "estado": "sent",
+        "hora_orlando": "12:20"
+      },
+      "facebook": {
+        "post": "6ae35e64f3a8aff3f35291e0",
+        "estado": "scheduled"
+      }
+    },
+    {
+      "fecha": "2026-10-31",
+      "tema": 4,
+      "slug": "semana-2026-10-31",
+      "musica": "piano-suave-01",
+      "sha": "c989b8ffd70256c2f29c8b3f65e4d0caf7b279d7",
+      "instagram": {
+        "post": "6ae35e7725e7fa4a8db1da41",
+        "estado": "scheduled"
+      },
+      "facebook": {
+        "post": "6ae35e7be079e57982e10ca4",
+        "estado": "scheduled"
+      },
+      "youtube": {
+        "post": "6ae35e81a87e7858ef13d782",
+        "estado": "scheduled"
+      },
+      "instagram_reel": {
+        "post": "6ae35e8425e7fa4a8db1dcfa",
+        "estado": "scheduled"
+      },
+      "facebook_reel": {
+        "post": "6ae35e8710365a6fbeee4d18",
+        "estado": "scheduled"
+      },
+      "musica_ig": "Orion — Austin Woodward & Adam Griffith"
+    },
+    {
+      "fecha": "2026-10-30",
+      "tipo": "reutilizado",
+      "tema": 1,
+      "slug": "fob-cif-riesgo",
+      "origen": "fob-cif (carrusel del 2026-10-28)",
+      "instagram_reel": {
+        "post": "6ae41e062782e7f331d119a1",
+        "estado": "scheduled",
+        "hora_orlando": "17:30"
+      },
+      "tiktok": {
+        "post": "6ae41e094b8768bfb2dcebd7",
+        "estado": "scheduled",
+        "hora_orlando": "17:45"
+      },
+      "musica_ig": "pendiente",
+      "nota": "Reel creado a mano por el vCISO a petición del propietario (30/10/2026)"
+    },
+    {
+      "fecha": "2026-10-30",
+      "tipo": "noticias",
+      "slug": "noticias-2026-10-30",
+      "sha": "3aa1e273e42a94290ee6860a3d0173377719ef26",
+      "hora_orlando": "12:15",
+      "instagram_story": {
+        "post": "6ae4aec2e266b27191effacf",
+        "estado": "scheduled"
+      }
+    },
+    {
+      "fecha": "2026-10-30",
+      "tipo": "resumen_semanal",
+      "slug": "resumen-semanal-2026-10-30",
+      "sha": "3aa1e273e42a94290ee6860a3d0173377719ef26",
+      "musica": "dreamwave-01",
+      "youtube": {
+        "post": "6ae4aec61c3539c1f4e008cb",
+        "estado": "scheduled",
+        "hora_cdmx": "18:30"
+      },
+      "instagram_reel": {
+        "post": "6ae4aecde266b27191effce3",
+        "estado": "scheduled",
+        "hora_cdmx": "20:00"
+      },
+      "tiktok": {
+        "post": "6ae4aecf3faa32d97820e55c",
+        "estado": "scheduled",
+        "hora_cdmx": "20:15"
+      },
+      "musica_ig": "pendiente",
+      "nota": "Horas desplazadas (18:30/20:00/20:15) para no coincidir con el Short y el Reel educativos de SOLAS (18:00/19:00/19:15)."
+    }
+  ],
+  "noticias": [
+    "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
+    "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
+    "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
+    "https://portalportuario.cl/portonave-recibe-nuevo-servicio-de-las-navieras-cma-cgm-cosco-y-oocl/",
+    "https://maritime-executive.com/article/zim-confirms-loss-of-containership-attacked-in-black-sea-off-bulgaria",
+    "https://www.mundomaritimo.cl/noticias/mexico-inicia-construccion-del-puerto-punta-colonet-con-inversion-superior-a-us2180-millones"
+  ],
+  "canales": {
+    "instagram": "6ae175a72f1f5ed648f64678",
+    "youtube": "6ae176852f1f5ed648f65a4c",
+    "tiktok": "6ae378802f1f5ed648110762"
   },
-  {
-   "fecha": "2026-10-28",
-   "tipo": "noticias",
-   "instagram_story": {
-    "post": "6ae20ba300f35d308c815a51",
-    "estado": "sent",
-    "hora": "10:00"
-   },
-   "facebook": {
-    "post": "6ae20baafe2b5b0857629616",
-    "estado": "sent",
-    "hora": "11:00"
-   }
-  },
-  {
-   "fecha": "2026-10-29",
-   "tema": 2,
-   "slug": "teu",
-   "instagram": {
-    "post": "6ae20bc5522cb4d35117d05e",
-    "estado": "scheduled"
-   },
-   "youtube": {
-    "post": "6ae20bcffe2b5b085762a3da",
-    "estado": "scheduled"
-   },
-   "facebook": {
-    "post": "6ae20bd2620f841dd3492306",
-    "estado": "scheduled"
-   },
-   "musica_ig": "Momentum Rising — Auralux"
-  },
-  {
-   "fecha": "2026-10-30",
-   "tema": 3,
-   "slug": "solas-historia",
-   "instagram": {
-    "post": "6ae20be524430b41b8a5caeb",
-    "estado": "scheduled"
-   },
-   "youtube": {
-    "post": "6ae20be800f35d308c8172b7",
-    "estado": "scheduled"
-   },
-   "facebook": {
-    "post": "6ae20bed522cb4d35117dba3",
-    "estado": "scheduled"
-   },
-   "musica_ig": "Majestic — Jordan Olmos"
-  },
-  {
-   "fecha": "2026-10-29",
-   "tipo": "noticias",
-   "slug": "noticias-2026-10-29",
-   "hora_orlando": "12:15",
-   "instagram_story": {
-    "post": "6ae35e5610365a6fbeee4106",
-    "estado": "scheduled"
-   },
-   "facebook_story": {
-    "post": "6ae35e57f3a8aff3f3528fa6",
-    "estado": "scheduled"
-   },
-   "instagram": {
-    "post": "6ae35e5ff3a8aff3f352906a",
-    "estado": "scheduled",
-    "hora_orlando": "12:20"
-   },
-   "facebook": {
-    "post": "6ae35e64f3a8aff3f35291e0",
-    "estado": "scheduled"
-   }
-  },
-  {
-   "fecha": "2026-10-31",
-   "tema": 4,
-   "slug": "semana-2026-10-31",
-   "musica": "piano-suave-01",
-   "sha": "c989b8ffd70256c2f29c8b3f65e4d0caf7b279d7",
-   "instagram": {
-    "post": "6ae35e7725e7fa4a8db1da41",
-    "estado": "scheduled"
-   },
-   "facebook": {
-    "post": "6ae35e7be079e57982e10ca4",
-    "estado": "scheduled"
-   },
-   "youtube": {
-    "post": "6ae35e81a87e7858ef13d782",
-    "estado": "scheduled"
-   },
-   "instagram_reel": {
-    "post": "6ae35e8425e7fa4a8db1dcfa",
-    "estado": "scheduled"
-   },
-   "facebook_reel": {
-    "post": "6ae35e8710365a6fbeee4d18",
-    "estado": "scheduled"
-   },
-   "musica_ig": "Orion — Austin Woodward & Adam Griffith"
-  },
-  {
-   "fecha": "2026-10-30",
-   "tipo": "reutilizado",
-   "tema": 1,
-   "slug": "fob-cif-riesgo",
-   "origen": "fob-cif (carrusel del 2026-10-28)",
-   "instagram_reel": {
-    "post": "6ae41e062782e7f331d119a1",
-    "estado": "scheduled",
-    "hora_orlando": "17:30"
-   },
-   "tiktok": {
-    "post": "6ae41e094b8768bfb2dcebd7",
-    "estado": "scheduled",
-    "hora_orlando": "17:45"
-   },
-   "musica_ig": "pendiente",
-   "nota": "Reel creado a mano por el vCISO a petición del propietario (30/10/2026)"
-  }
- ],
- "noticias": [
-  "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
-  "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
-  "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
-  "https://portalportuario.cl/portonave-recibe-nuevo-servicio-de-las-navieras-cma-cgm-cosco-y-oocl/"
- ],
- "canales": {
-  "instagram": "6ae175a72f1f5ed648f64678",
-  "youtube": "6ae176852f1f5ed648f65a4c",
-  "tiktok": "6ae378802f1f5ed648110762"
- },
- "notas": [
-  "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
-  "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
-  "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok)."
- ],
- "reutilizados": [
-  {
-   "slug_origen": "fob-cif",
-   "fecha": "2026-10-30",
-   "slug_nuevo": "fob-cif-riesgo"
-  }
- ]
+  "notas": [
+    "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
+    "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
+    "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok).",
+    "2026-10-30: los viernes el resumen semanal choca con las horas del contenido educativo (YouTube 18:00, Reel 19:00, TikTok 19:15); se programa a las 18:30, 20:00 y 20:15 (Ciudad de México). Desde el sandbox no se puede abrir cdn.jsdelivr.net ni WebFetch a medios (permiso no concedido); Buffer sí descarga los archivos."
+  ],
+  "reutilizados": [
+    {
+      "slug_origen": "fob-cif",
+      "fecha": "2026-10-30",
+      "slug_nuevo": "fob-cif-riesgo"
+    }
+  ]
 }
