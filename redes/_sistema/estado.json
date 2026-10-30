@@ -193,7 +193,7 @@
   "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
   "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok).",
   "2026-10-30: los viernes el resumen semanal choca con las horas del contenido educativo (YouTube 18:00, Reel 19:00, TikTok 19:15); se programa a las 18:30, 20:00 y 20:15 (Ciudad de México). Desde el sandbox no se puede abrir cdn.jsdelivr.net ni WebFetch a medios (permiso no concedido); Buffer sí descarga los archivos.",
-  "30/10/2026: el propietario no quiere repetir en una red un tema ya publicado en esa misma red."
+  "30/10/2026: el propietario no quiere publicar fuera de calendario un tema ya publicado en esa misma red. Excepción aprobada: el Reel reutilizado mensual del Paso 4b (con portada nueva) se mantiene."
  ],
  "reutilizados": [
   {
