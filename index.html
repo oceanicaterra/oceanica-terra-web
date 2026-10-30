@@ -142,6 +142,8 @@ nav.links a:hover { color: var(--accent-ink); }
 .langs { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
 .langs button { font-family: var(--font-mono); font-size: .76rem; background: transparent; color: var(--muted); border: 0; padding: .22rem .6rem; cursor: pointer; }
 .langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.langs button.soon { opacity: .55; }
+.langs button.soon[aria-pressed="true"] { opacity: 1; }
 
 /* Redes sociales: siempre visibles en la cabecera fija y en el pie */
 .social { display: inline-flex; gap: .35rem; align-items: center; }
@@ -234,6 +236,8 @@ table.reg td.y { font-family: var(--font-mono); font-variant-numeric: tabular-nu
 .art { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--shadow); padding: clamp(1.1rem, 3vw, 1.8rem); }
 .art-head { display: grid; gap: .5rem; max-width: 46rem; }
 .art-head .meta { font-family: var(--font-mono); font-size: .74rem; color: var(--accent-ink); letter-spacing: .04em; }
+.art-page { font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+.art-page a { color: var(--accent-ink); }
 .art-head h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; }
 .art-lede { font-size: 1.1rem; }
 .byline { font-family: var(--font-mono); font-size: .76rem; color: var(--muted); }
@@ -263,7 +267,7 @@ section.alt .mod { background: var(--paper); }
 .mod h3 { font-size: 1.08rem; }
 .mod p { font-size: .92rem; color: var(--muted); }
 .mod .chip { justify-self: start; }
-.mod-more { font-family: var(--font-display); font-weight: 600; font-size: .95rem; color: var(--accent-ink); margin-top: .2rem; }
+.mod-more { font-family: var(--font-display); font-weight: 600; font-size: .95rem; color: var(--accent-ink); margin-top: .35rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
 .dlg { border: 0; padding: 0; border-radius: 12px; width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); color: var(--ink); box-shadow: 0 30px 80px -30px rgba(5, 20, 40, .6); }
 .dlg:focus, .dlg:focus-visible { outline: none; }
 .dlg::backdrop { background: rgba(8, 20, 34, .55); }
@@ -463,8 +467,8 @@ footer .wrap { display: grid; gap: 1.5rem; }
       <a href="#contacto">Contacto</a>
       <span class="langs" role="group" aria-label="Idioma">
         <button type="button" data-lang="es" aria-pressed="true">ES</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-        <button type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button type="button" class="soon" data-lang="en" aria-pressed="false" title="English — próximamente" aria-label="English (próximamente)">EN</button>
+        <button type="button" class="soon" data-lang="it" aria-pressed="false" title="Italiano — próximamente" aria-label="Italiano (próximamente)">IT</button>
       </span>
       <span class="social" role="group" aria-label="Redes sociales de Oceanica Terra"><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener" title="Oceanica Terra en Instagram" aria-label="Oceanica Terra en Instagram (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.2-1.8h5l1.2 1.8h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Instagram</span></a><a href="https://www.tiktok.com/@oceanicaterra" target="_blank" rel="noopener" title="Oceanica Terra en TikTok" aria-label="Oceanica Terra en TikTok (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 4.2v10.3a3.4 3.4 0 1 1-3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.4 4.2c.5 2.5 2.2 4.1 4.8 4.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>TikTok</span></a><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener" title="Oceanica Terra en YouTube" aria-label="Oceanica Terra en YouTube (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 8.6v6.8l5.4-3.4z" fill="currentColor"/></svg><span>YouTube</span></a></span>
     </nav>
@@ -672,6 +676,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
             <h3>El conocimiento de embarque, campo por campo</h3>
             <p class="art-lede">El conocimiento de embarque (bill of lading o B/L) es el documento más importante del comercio marítimo: en muchos casos, quien tiene el original puede reclamar la carga en destino. Entender sus campos evita retrasos, rechazos bancarios y entregas a la persona equivocada.</p>
             <p class="byline">Redacción: Oceanica Terra · Verificado el 25 de octubre de 2026</p>
+            <p class="art-page"><a href="/articulos/conocimiento-de-embarque.html">Leer en su propia página →</a></p>
           </header>
           <details class="art-body" id="d-art-bl">
             <summary>Leer el artículo completo</summary>
@@ -708,9 +713,9 @@ footer .wrap { display: grid; gap: 1.5rem; }
                 <li><b>Conocimiento electrónico.</b> Cada vez más usado; su validez depende de la plataforma y de la ley aplicable.</li>
               </ul>
               <h4>¿Qué ley lo regula?</h4>
-              <p>Depende del país y del contrato. Los regímenes internacionales más conocidos son las Reglas de La Haya (1924), las de La Haya-Visby (1968) y las de Hamburgo (1978). Las Reglas de Rotterdam (2008) pretenden sustituirlas, pero según los datos disponibles todavía no han alcanzado las 20 ratificaciones que necesitan para entrar en vigor. Muchos documentos incluyen una cláusula «paramount» que elige el régimen aplicable.</p>
+              <p>Depende del país y del contrato. Los regímenes internacionales más conocidos son las Reglas de La Haya (1924), las de La Haya-Visby (1968) y las de Hamburgo (1978). Las Reglas de Rotterdam (2008) pretenden sustituirlas, pero, según la CNUDMI, a 30 de octubre de 2026 tienen 5 Estados parte de los 20 que necesitan para entrar en vigor. Muchos documentos incluyen una cláusula «paramount» que elige el régimen aplicable.</p>
               <div class="callout"><b>El error más caro:</b> entregar la carga sin recibir un original del B/L. Si lo hace, el transportista puede responder ante quien tenga el original. Por eso a veces se pide una carta de indemnidad, que reparte el riesgo pero no lo elimina.</div>
-              <p class="sources">Fuentes: estado de las Reglas de Rotterdam según <a href="https://en.wikipedia.org/wiki/Rotterdam_Rules" target="_blank" rel="noopener">Wikipedia</a> (confirmar en la página de estado de tratados de la CNUDMI/UNCITRAL). Material educativo; no sustituye asesoramiento jurídico.</p>
+              <p class="sources">Fuente: <a href="https://uncitral.un.org/en/texts/transportgoods/conventions/rotterdam_rules/status" target="_blank" rel="noopener">CNUDMI (UNCITRAL), estado de las Reglas de Rotterdam</a>, consultada el 30 de octubre de 2026. Material educativo; no sustituye asesoramiento jurídico.</p>
             </div>
           </details>
         </article>
@@ -721,6 +726,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
             <h3>SOLAS en 10 minutos</h3>
             <p class="art-lede">El Convenio internacional para la seguridad de la vida humana en el mar es el tratado de seguridad marítima más importante. Nació tras el hundimiento del Titanic y hoy regula desde la construcción del buque hasta su protección frente a amenazas.</p>
             <p class="byline">Redacción: Oceanica Terra · Verificado el 25 de octubre de 2026</p>
+            <p class="art-page"><a href="/articulos/solas-en-10-minutos.html">Leer en su propia página →</a></p>
           </header>
           <details class="art-body" id="d-art-solas">
             <summary>Leer el artículo completo</summary>
@@ -768,6 +774,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
             <h3>FOB frente a CIF sin confusiones</h3>
             <p class="art-lede">Son los dos Incoterms marítimos más usados y los más malinterpretados. La sorpresa para muchos: en ambos, el riesgo pasa del vendedor al comprador en el mismo momento, cuando la mercancía está a bordo en el puerto de carga.</p>
             <p class="byline">Redacción: Oceanica Terra · Verificado el 25 de octubre de 2026</p>
+            <p class="art-page"><a href="/articulos/fob-frente-a-cif.html">Leer en su propia página →</a></p>
           </header>
           <details class="art-body" id="d-art-incoterms">
             <summary>Leer el artículo completo</summary>
@@ -874,43 +881,43 @@ footer .wrap { display: grid; gap: 1.5rem; }
           <span class="fmt">PDF · 19 páginas · edición 1.0</span>
           <div class="prod-buy">
             <div class="price"><span class="js-price" data-product="libro">USD 10</span></div>
-            <a class="btn btn-primary js-buy" data-product="libro" href="#publicaciones">Comprar</a>
+            <a class="btn btn-primary js-buy" data-product="libro" href="https://payhip.com/b/YE7Hb" target="_blank" rel="noopener">Comprar</a>
           </div>
         </article>
         <article class="prod best" id="producto-pack"><span class="ribbon">Ahorra USD 2</span>
           <div class="pcover duo"><span>PACK</span><b>Laytime completo: libro + calculadora</b><small>Cesar Andrade · Oceanica Terra</small></div>
-          <span class="chip soon js-chip" data-product="pack">Muy pronto</span>
+          <span class="chip on js-chip" data-product="pack">Disponible</span>
           <h3>Pack Laytime completo</h3>
           <p>El libro y la calculadora en Excel juntos: aprende el método y aplícalo a tus propias hojas de tiempos.</p>
           <ul class="ticks"><li>Libro en PDF (19 páginas)</li><li>Calculadora en Excel</li><li>Mismo ejemplo en los dos</li></ul>
           <span class="fmt">PDF + XLSX</span>
           <div class="prod-buy">
             <div class="price"><span class="js-price" data-product="pack">USD 17</span><s>USD 19</s></div>
-            <a class="btn btn-primary js-buy" data-product="pack" href="#publicaciones">Comprar</a>
+            <a class="btn btn-primary js-buy" data-product="pack" href="https://payhip.com/b/2rtnR" target="_blank" rel="noopener">Comprar</a>
           </div>
         </article>
         <article class="prod" id="producto-calculadora">
           <div class="pcover xls"><span>HOJA DE CÁLCULO</span><b>Calculadora de laytime y demora</b><small>Cesar Andrade · Oceanica Terra</small></div>
-          <span class="chip soon js-chip" data-product="calculadora">Muy pronto</span>
+          <span class="chip on js-chip" data-product="calculadora">Disponible</span>
           <h3>Calculadora de laytime y demora (Excel)</h3>
           <p>Escribe las horas del SOF y marca qué cuenta: calcula el tiempo usado, el exceso y el importe de demora o despacho.</p>
           <ul class="ticks"><li>40 filas de hoja de tiempos</li><li>Laytime por ritmo o fijo</li><li>Fórmulas visibles, sin macros</li></ul>
           <span class="fmt">XLSX · Excel, LibreOffice y Google Sheets</span>
           <div class="prod-buy">
             <div class="price"><span class="js-price" data-product="calculadora">USD 9</span></div>
-            <a class="btn btn-primary js-buy" data-product="calculadora" href="#publicaciones">Comprar</a>
+            <a class="btn btn-primary js-buy" data-product="calculadora" href="https://payhip.com/b/lcJLs" target="_blank" rel="noopener">Comprar</a>
           </div>
         </article>
         <article class="prod" id="producto-kit">
           <div class="pcover "><span>KIT DOCUMENTAL</span><b>Documentación del buque en puerto</b><small>Cesar Andrade · Oceanica Terra</small></div>
-          <span class="chip soon js-chip" data-product="kit">Muy pronto</span>
+          <span class="chip on js-chip" data-product="kit">Disponible</span>
           <h3>Kit de documentación del buque en puerto</h3>
           <p>Modelos comentados campo por campo de NOR, hoja de hechos (SOF), recibo del piloto y conocimiento de embarque.</p>
           <ul class="ticks"><li>Caso completo Veracruz–Valencia</li><li>Errores que cuestan dinero</li><li>Lista de comprobación</li></ul>
           <span class="fmt">PDF · 11 páginas · edición 1.0</span>
           <div class="prod-buy">
             <div class="price"><span class="js-price" data-product="kit">USD 15</span></div>
-            <a class="btn btn-primary js-buy" data-product="kit" href="#publicaciones">Comprar</a>
+            <a class="btn btn-primary js-buy" data-product="kit" href="https://payhip.com/b/YK8hW" target="_blank" rel="noopener">Comprar</a>
           </div>
         </article>
       </div>
@@ -1129,7 +1136,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
 <script>
 /* ===== Configuración de la tienda =====
    Para cada producto: pega su enlace de Payhip en "url" (p. ej. https://payhip.com/b/XXXX) y su precio.
-   Mientras "url" esté vacío, el botón muestra "Muy pronto a la venta". */
+   Mientras "url" esté vacío, la ficha muestra «Muy pronto» y el botón queda inactivo, sin enlace. */
 const PRODUCTS = {
   libro:       { url: "https://payhip.com/b/YE7Hb", price: "USD 10" },
   pack:        { url: "https://payhip.com/b/2rtnR", price: "USD 17" },
@@ -1149,10 +1156,12 @@ const $ = id => document.getElementById(id);
   document.querySelectorAll(".js-buy").forEach(a => {
     const p = PRODUCTS[a.dataset.product || "libro"]; if (!p) return;
     if (ok(p.url)) { a.href = p.url; a.target = "_blank"; a.rel = "noopener"; }
-    else { a.textContent = "Muy pronto a la venta"; a.setAttribute("aria-disabled", "true"); a.removeAttribute("href"); }
+    else { a.textContent = "Muy pronto"; a.setAttribute("aria-disabled", "true"); a.removeAttribute("href"); a.removeAttribute("target"); }
   });
   document.querySelectorAll(".js-chip").forEach(c => {
-    const p = PRODUCTS[c.dataset.product]; if (p && ok(p.url)) { c.textContent = "Disponible"; c.className = "chip on"; }
+    const p = PRODUCTS[c.dataset.product]; if (!p) return;
+    if (ok(p.url)) { c.textContent = "Disponible"; c.className = "chip on js-chip"; }
+    else { c.textContent = "Muy pronto"; c.className = "chip soon js-chip"; }
   });
   document.querySelectorAll(".js-buy-note").forEach(n => { n.hidden = ok(BUY_URL); });
 })();
