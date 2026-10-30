@@ -126,6 +126,118 @@
       "fecha": null
     },
     {
+      "id": "prod-maniobras",
+      "tipo": "producto",
+      "titulo": "Curso: maniobra de buques (hélice y timón, atraque y desatraque, remolcadores, fondeo), con casos prácticos",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-liderazgo",
+      "tipo": "producto",
+      "titulo": "Curso: liderazgo y trabajo en equipo a bordo (gestión de recursos del puente BRM/ERM y competencias STCW de liderazgo)",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-salud-mental",
+      "tipo": "producto",
+      "titulo": "Guía: bienestar y salud mental en la mar (soledad, estrés, fatiga, convivencia y dónde pedir ayuda las 24 h)",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Tema sensible: tono cuidadoso, fuentes OMS/OIT/ISWAN, incluir líneas de ayuda verificadas para gente de mar y aclarar que no sustituye la atención profesional.",
+      "fecha": null
+    },
+    {
+      "id": "prod-alimentacion",
+      "tipo": "producto",
+      "titulo": "Guía: alimentación y hábitos saludables a bordo (MLC 2006, cocina y provisiones, descanso, actividad física) con consejos prácticos",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Consejos generales de salud pública (OMS); nada de dietas ni cifras personalizadas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-nav-costera",
+      "tipo": "producto",
+      "titulo": "Curso: navegación costera con ejercicios resueltos (carta, situación, mareas, corrientes, abatimiento)",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-nav-astronomica",
+      "tipo": "producto",
+      "titulo": "Curso: navegación astronómica práctica (recta de altura, meridiana, error de compás por azimut) con ejercicios",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-entrevistas",
+      "tipo": "producto",
+      "titulo": "Guía: cómo preparar entrevistas de embarque y exámenes oficiales de competencia, por cargo",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Solo preguntas de práctica propias; nunca preguntas de examen filtradas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-derecho-maritimo",
+      "tipo": "producto",
+      "titulo": "Curso: derecho marítimo básico (CONVEMAR, pabellón, abordaje, salvamento, avería gruesa, conocimiento de embarque y reglas de La Haya-Visby, Hamburgo y Rotterdam)",
+      "estado": "pendiente",
+      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+      "fecha": null
+    },
+    {
+      "id": "prod-mlc",
+      "tipo": "producto",
+      "titulo": "Guía: derechos del marino según el Convenio sobre el Trabajo Marítimo (MLC 2006): contrato, descanso, salario, repatriación y quejas",
+      "estado": "pendiente",
+      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+      "fecha": null
+    },
+    {
+      "id": "prod-combustibles",
+      "tipo": "producto",
+      "titulo": "Guía: combustibles alternativos a bordo (GNL, metanol, amoníaco, hidrógeno): riesgos y formación necesaria",
+      "estado": "pendiente",
+      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+      "fecha": null
+    },
+    {
+      "id": "prod-cii-eexi",
+      "tipo": "producto",
+      "titulo": "Guía: CII, EEXI y SEEMP explicados para oficiales (descarbonización y qué cambia en la operación diaria)",
+      "estado": "pendiente",
+      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+      "fecha": null
+    },
+    {
+      "id": "prod-espacios-cerrados",
+      "tipo": "producto",
+      "titulo": "Lista de comprobación: entrada segura en espacios cerrados y simulacros obligatorios",
+      "estado": "pendiente",
+      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+      "fecha": null
+    },
+    {
+      "id": "prod-ciberseguridad",
+      "tipo": "producto",
+      "titulo": "Guía: ciberseguridad a bordo para tripulantes (gestión del riesgo cibernético en el SGS)",
+      "estado": "pendiente",
+      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+      "fecha": null
+    },
+    {
+      "id": "prod-fatiga",
+      "tipo": "producto",
+      "titulo": "Guía: fatiga y horas de descanso (STCW y MLC): cómo registrarlas y prevenir errores",
+      "estado": "pendiente",
+      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+      "fecha": null
+    },
+    {
       "id": "prod-kit",
       "tipo": "producto",
       "titulo": "Kit de documentación del buque en puerto",
@@ -249,6 +361,10 @@
     {
       "fecha": "2026-10-30",
       "hecho": "Nueva serie de productos «Guías prácticas STCW» propuesta por el propietario: inglés marítimo (SMCP), mapa de formación STCW, ECDIS, RADAR/ARPA, AIS, GMDSS, estabilidad, mantenimiento LSA y Safety/Security (IGS/PBIP)."
+    },
+    {
+      "fecha": "2026-10-30",
+      "hecho": "Ampliado el catálogo de productos: cursos de maniobra, liderazgo, navegación costera y astronómica, derecho marítimo, guía de entrevistas y exámenes, bienestar y salud mental, alimentación a bordo (ideas del propietario) y, por investigación propia, MLC 2006, combustibles alternativos, CII/EEXI, espacios cerrados, ciberseguridad y fatiga."
     }
   ]
 }
