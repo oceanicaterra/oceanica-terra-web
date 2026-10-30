@@ -1,0 +1,35 @@
+{
+ "slug": "ever-given-suez",
+ "fuente": "Fuentes: Reuters · BBC",
+ "slides": [
+  {
+   "estilo": "dark",
+   "html": "<div class='kicker'>Historia marítima · marzo de 2021</div><h1>Un solo barco bloqueó el Canal de Suez</h1><p>6 días y más de 400 buques atrapados</p>"
+  },
+  {
+   "estilo": "light",
+   "html": "<div class='kicker'>🚢 El buque</div><h2>Ever Given: 400 metros de largo</h2><p>Un portacontenedores de unos <em>20.000 TEU</em>. El 23 de marzo de 2021, con viento fuerte y tormenta de arena, quedó atravesado en un tramo de una sola vía.</p>"
+  },
+  {
+   "estilo": "light",
+   "html": "<div class='kicker'>⛔ El atasco</div><h2>Más de 400 buques en espera</h2><p>Por Suez pasa cerca del 12 % del comercio mundial. Se estimó que cada día de bloqueo retuvo unos <em>9.600 millones de dólares</em> en mercancías.</p>"
+  },
+  {
+   "estilo": "light",
+   "html": "<div class='kicker'>🔧 El rescate</div><h2>Dragas, remolcadores y marea alta</h2><p>Sacaron arena bajo la proa, retiraron unas <em>9.000 toneladas</em> de lastre y combustible, y más de una docena de remolcadores lo liberaron el 29 de marzo.</p>"
+  },
+  {
+   "estilo": "light",
+   "html": "<div class='kicker'>📚 La lección</div><h2>Un punto de estrangulamiento (chokepoint)</h2><p>Rodear África por el cabo de Buena Esperanza puede sumar <em>hasta dos semanas</em> de viaje. Por eso un solo canal mueve fletes y plazos en todo el mundo.</p>"
+  },
+  {
+   "estilo": "dark",
+   "html": "<div class='kicker'>Tu turno</div><h2>¿Qué otro paso marítimo es igual de crítico?</h2><span class='cta'>Enlace en la biografía · oceanicaterra.com</span>"
+  }
+ ],
+ "facebook": {
+  "kicker": "Historia marítima",
+  "titulo": "El barco que bloqueó Suez",
+  "texto": "Seis días que frenaron el comercio mundial."
+ }
+}
