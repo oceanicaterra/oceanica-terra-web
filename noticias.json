@@ -1,14 +1,30 @@
 {
-  "updated": "2026-10-29T06:36:47-04:00",
+  "updated": "2026-10-30T06:37:10-04:00",
   "items": [
+    {
+      "title": "Se hunde en el mar Negro el portacontenedores Contship Jet tras ser atacado por drones navales",
+      "summary": "El buque de 18.000 tpm, fletado por ZIM, se hundió a unas 17 millas de Varna (Bulgaria) tras ser alcanzado por tres drones marítimos. Toda la tripulación fue rescatada; llevaba 421 contenedores y no se detectó contaminación inmediata.",
+      "source": "The Maritime Executive",
+      "url": "https://maritime-executive.com/article/zim-confirms-loss-of-containership-attacked-in-black-sea-off-bulgaria",
+      "date": "2026-10-29",
+      "category": "seguridad",
+      "lead": true
+    },
+    {
+      "title": "México inicia la construcción del puerto de Punta Colonet con inversión superior a 2.180 millones de dólares",
+      "summary": "Con la colocación de la primera piedra arrancó en Baja California el desarrollo portuario, industrial y vial de Punta Colonet, que según sus promotores podría elevar más de 35 % las exportaciones mexicanas por el Pacífico.",
+      "source": "MundoMaritimo",
+      "url": "https://www.mundomaritimo.cl/noticias/mexico-inicia-construccion-del-puerto-punta-colonet-con-inversion-superior-a-us2180-millones",
+      "date": "2026-10-29",
+      "category": "puertos"
+    },
     {
       "title": "La naviera japonesa ECL inicia escalas en Lázaro Cárdenas con 2.906 vehículos y carga de proyecto",
       "summary": "El buque Malaysia Brave, de Eastern Car Liner, hizo su primera escala en la Terminal de Usos Múltiples II y descargó 2.906 unidades: 2.640 automóviles y 266 máquinas, autobuses y carga de proyecto.",
       "source": "PortalPortuario",
       "url": "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
       "date": "2026-10-28",
-      "category": "puertos",
-      "lead": true
+      "category": "puertos"
     },
     {
       "title": "CMA CGM, Cosco y OOCL lanzarán en 2027 un servicio semanal Asia-Sudamérica con escala en Portonave",
@@ -27,6 +43,14 @@
       "category": "seguridad"
     },
     {
+      "category": "astilleros",
+      "title": "La surcoreana KMTC encarga por primera vez buques en un astillero chino",
+      "summary": "KMTC contrató seis portacontenedores de 3.100 TEU, 18.600 TEU en total, al astillero CSSC Huangpu Wenchong de Cantón, basados en un diseño feeder del astillero. No se revelaron precio ni fechas de entrega.",
+      "source": "Splash247",
+      "url": "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
+      "date": "2026-10-27"
+    },
+    {
       "title": "Terminales de contenedores del puerto de Ningbo-Zhoushan registran récords de actividad en septiembre",
       "summary": "Meidong superó 1,26 millones de TEU (+8,9 %), Beisan pasó del millón (+14 %) y Daxie rozó 480.000 TEU (+33 %); la carga general superó 11,8 millones de toneladas.",
       "source": "PortalPortuario",
@@ -43,14 +67,6 @@
       "date": "2026-10-26"
     },
     {
-      "category": "astilleros",
-      "title": "La surcoreana KMTC encarga por primera vez buques en un astillero chino",
-      "summary": "KMTC contrató seis portacontenedores de 3.100 TEU, 18.600 TEU en total, al astillero CSSC Huangpu Wenchong de Cantón, basados en un diseño feeder del astillero. No se revelaron precio ni fechas de entrega.",
-      "source": "Splash247",
-      "url": "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
-      "date": "2026-10-27"
-    },
-    {
       "category": "canales",
       "title": "El Canal de Panamá vuelve a ofrecer reservas de última hora mientras se recupera el tráfico",
       "summary": "Desde el 21 de octubre, la Autoridad del Canal ofrece de nuevo, según la capacidad disponible, reservas de último minuto en las esclusas panamax gracias a las lluvias y al ahorro de agua. En el año fiscal que cerró el 30 de septiembre el canal sumó 13.951 tránsitos, aunque la cuenca aún tiene déficit de agua y los buques sin reserva pueden sufrir esperas.",
@@ -64,22 +80,6 @@
       "summary": "La Oficina del Representante Comercial (USTR) plantea suspender dos meses más, hasta el 9 de enero, las tasas a buques vinculados a China, que vencían el 9 de noviembre, mientras negocia con Pekín. Las tasas serían de 50 dólares por tonelada neta para buques construidos en China de empresas no chinas.",
       "source": "The Loadstar",
       "url": "https://theloadstar.com/us-delays-port-fees-for-chinese-ships-again-now-until-9-january/",
-      "date": "2026-10-26"
-    },
-    {
-      "category": "astilleros",
-      "title": "El astillero chino Hengli Heavy Industry recibe pedidos de 52 portacontenedores ultragrandes de doble combustible",
-      "summary": "Varias navieras encargaron 20 buques de 19.000 TEU, 12 de 22.000 TEU y 20 de 24.000 TEU, estos últimos contratados por MSC, todos con propulsión dual a GNL. No se publicaron importes ni fechas de entrega.",
-      "source": "Seatrade Maritime",
-      "url": "https://www.seatrade-maritime.com/shipyards/hengli-heavy-industry-bags-52-ultra-large-container-ships",
-      "date": "2026-10-26"
-    },
-    {
-      "category": "seguridad",
-      "title": "Un crucero choca con un portacontenedores de MSC atracado en Bremerhaven",
-      "summary": "El Mein Schiff 3 golpeó la popa del MSC Victorine, de 16.520 TEU, al salir de la terminal con ayuda de remolcadores en pleno temporal. El portacontenedores sufrió una brecha de unos 10 metros por encima de la flotación; no se informó de heridos.",
-      "source": "Splash247",
-      "url": "https://splash247.com/msc-boxship-gashed-in-bremerhaven-cruise-ship-collision/",
       "date": "2026-10-26"
     }
   ]
