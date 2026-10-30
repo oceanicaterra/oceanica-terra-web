@@ -119,6 +119,25 @@
     "estado": "scheduled"
    },
    "musica_ig": "Orion — Austin Woodward & Adam Griffith"
+  },
+  {
+   "fecha": "2026-10-30",
+   "tipo": "reutilizado",
+   "tema": 1,
+   "slug": "fob-cif-riesgo",
+   "origen": "fob-cif (carrusel del 2026-10-28)",
+   "instagram_reel": {
+    "post": "6ae41e062782e7f331d119a1",
+    "estado": "scheduled",
+    "hora_orlando": "17:30"
+   },
+   "tiktok": {
+    "post": "6ae41e094b8768bfb2dcebd7",
+    "estado": "scheduled",
+    "hora_orlando": "17:45"
+   },
+   "musica_ig": "pendiente",
+   "nota": "Reel creado a mano por el vCISO a petición del propietario (30/10/2026)"
   }
  ],
  "noticias": [
@@ -136,5 +155,12 @@
   "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
   "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
   "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok)."
+ ],
+ "reutilizados": [
+  {
+   "slug_origen": "fob-cif",
+   "fecha": "2026-10-30",
+   "slug_nuevo": "fob-cif-riesgo"
+  }
  ]
 }
