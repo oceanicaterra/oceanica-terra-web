@@ -301,5 +301,25 @@
    "fecha": "2026-10-30",
    "slug_nuevo": "fob-cif-riesgo"
   }
+ ],
+ "herramientas": [
+  {
+   "slug": "conversor-nautico",
+   "nombre": "Conversor náutico",
+   "url": "https://oceanicaterra.com/herramientas/conversor-nautico.html",
+   "story": "redes/_sistema/herramientas/story-conversor-nautico.mp4",
+   "reel": "redes/2026-10-31/ig-conversor-nautico-reel.mp4",
+   "ultima_story": "2026-10-31",
+   "ultimo_reel": "2026-10-31"
+  },
+  {
+   "slug": "demora-despacho",
+   "nombre": "Calculadora de demora y despacho",
+   "url": "https://oceanicaterra.com/#ejercicios",
+   "story": "redes/_sistema/herramientas/story-demora-despacho.mp4",
+   "reel": "redes/_sistema/herramientas/ig-herr-demora-despacho-reel.mp4",
+   "ultima_story": null,
+   "ultimo_reel": null
+  }
  ]
 }

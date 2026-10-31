@@ -1,0 +1,5 @@
+{"slug":"herr-demora-despacho","salida":"story-demora-despacho.mp4","escenas":[
+{"tipo":"texto","lineas":["HERRAMIENTA","DEL DÍA"],"resaltar":1,"dur":1.8},
+{"tipo":"texto","lineas":["CALCULADORA","DE DEMORA","Y DESPACHO"],"resaltar":1,"dur":2.4},
+{"tipo":"contador","numero":19250,"antes":"Ejemplo resuelto:","despues":"USD de demora","etiqueta":"4 días permitidos y 5 días y 9 h usados, a 14 000 USD/día","dur":3.2},
+{"tipo":"cta","pregunta":"Toca el enlace y calcúlala gratis","linea":"oceanicaterra.com","dur":3.0}]}

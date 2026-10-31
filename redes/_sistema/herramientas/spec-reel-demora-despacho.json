@@ -1,0 +1,7 @@
+{"slug":"herr-demora-despacho","salida":"ig-herr-demora-despacho-reel.mp4","escenas":[
+{"tipo":"texto","lineas":["BUQUE PARADO","EN PUERTO","= DINERO"],"resaltar":2,"dur":2.4},
+{"tipo":"texto","lineas":["4 DÍAS","PERMITIDOS"],"dur":1.8},
+{"tipo":"texto","lineas":["5 DÍAS Y 9 HORAS","USADOS"],"resaltar":0,"dur":2.0},
+{"tipo":"contador","numero":19250,"antes":"El fletador paga","despues":"USD de demora","etiqueta":"1,375 días de más × 14 000 USD/día","nota":"Ejemplo resuelto en oceanicaterra.com","dur":3.4},
+{"tipo":"texto","lineas":["CALCÚLALO","GRATIS","EN LA WEB"],"resaltar":1,"dur":2.2},
+{"tipo":"cta","pregunta":"¿Demora o despacho? Calcúlalo en oceanicaterra.com","linea":"Enlace en la biografía · @oceanicaterra","dur":3.0}]}
