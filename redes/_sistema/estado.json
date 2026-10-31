@@ -57,11 +57,11 @@
    "slug": "solas-historia",
    "instagram": {
     "post": "6ae20be524430b41b8a5caeb",
-    "estado": "scheduled"
+    "estado": "sent"
    },
    "youtube": {
     "post": "6ae20be800f35d308c8172b7",
-    "estado": "scheduled"
+    "estado": "sent"
    },
    "facebook": {
     "post": "6ae20bed522cb4d35117dba3",
@@ -70,7 +70,7 @@
    "musica_ig": "Majestic — Jordan Olmos",
    "historia_quiz": {
     "post": "6ae4ebd734702c2daac88e57",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora_orlando": "17:00"
    }
   },
@@ -143,7 +143,7 @@
    },
    "tiktok": {
     "post": "6ae41e094b8768bfb2dcebd7",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora_orlando": "17:45"
    },
    "musica_ig": "no aplica",
@@ -157,7 +157,7 @@
    "hora_orlando": "12:15",
    "instagram_story": {
     "post": "6ae4aec2e266b27191effacf",
-    "estado": "scheduled"
+    "estado": "sent"
    }
   },
   {
@@ -193,17 +193,17 @@
    "fuentes": "Reuters (nippon.com, 7/7/2021) · Wikipedia/BBC",
    "youtube": {
     "post": "6ae4d82b10a950f13736d4a4",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora_orlando": "18:30"
    },
    "instagram_reel": {
     "post": "6ae4d8a7cd8290b9b903ed6b",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora_orlando": "19:00"
    },
    "tiktok": {
     "post": "6ae4d8ad34702c2daac2daec",
-    "estado": "scheduled",
+    "estado": "sent",
     "hora_orlando": "19:15"
    },
    "musica_ig": "pendiente",
@@ -293,6 +293,45 @@
     "hora_cdmx": "14:45"
    },
    "musica_ig": "pendiente"
+  },
+  {
+   "fecha": "2026-11-01",
+   "tema": 8,
+   "novedad": "/articulos/conocimiento-de-embarque.html",
+   "slug": "conocimiento-embarque",
+   "sha": "0d128345383eb404a46f10b30871c1b51538b1c2",
+   "fuentes": "Artículo propio «El conocimiento de embarque, campo por campo» (oceanicaterra.com)",
+   "enlaces": "https://oceanicaterra.com/articulos/conocimiento-de-embarque.html (utm_campaign=art-bl)",
+   "musica": "reel jazz-suave-03 · quiz jazz-suave-01",
+   "instagram": {
+    "post": "6ae5ffb4ab019b90870ace25",
+    "estado": "scheduled",
+    "hora_cdmx": "13:00"
+   },
+   "youtube": {
+    "post": "6ae5ff081ee172cd6da84de3",
+    "estado": "scheduled",
+    "hora_cdmx": "17:30"
+   },
+   "tiktok": {
+    "post": "6ae5ffb8ab019b90870ad04d",
+    "estado": "scheduled",
+    "hora_cdmx": "18:15"
+   },
+   "historia_quiz": {
+    "post": null,
+    "estado": "pendiente_programar",
+    "hora_cdmx": "16:00",
+    "archivo": "redes/2026-11-01/story-quiz-conocimiento-embarque.mp4"
+   },
+   "instagram_reel": {
+    "post": null,
+    "estado": "pendiente_programar",
+    "hora_cdmx": "18:00",
+    "archivo": "redes/2026-11-01/ig-conocimiento-embarque-reel.mp4"
+   },
+   "musica_ig": "pendiente",
+   "nota": "Instagram tenía 8 pendientes el 31/10 (9 tras el carrusel): la historia «Pregunta del día» (16:00) y el Reel (18:00) del 1/11 quedan generados y subidos (SHA arriba) pero sin programar. La ejecución del 1/11 debe programarlos con estos archivos, sin regenerarlos."
   }
  ],
  "noticias": [
@@ -324,7 +363,8 @@
   "31/10/2026: IDIOMA (pedido por el propietario el 31/10/2026, obligatorio en web, productos y redes): español de LATINOAMÉRICA, nunca de España. «video/videos» sin tilde, «podcast/podcasts» (no «pódcast»), «celular» (no «móvil»), «computadora» (no «ordenador»), «archivo» (no «fichero»), «en vivo» (no «en directo»), «al instante» (no «al momento»), «campo» (no «casilla»), «manejar» (no «conducir»), «tomar» (no «coger»), «¿Hace falta…?» (no «¿Echas en falta…?»), «ustedes» (nunca «vosotros» ni formas -áis/-éis). Nada de «vale», «guay», «currar», «pillar». Revisa cada texto antes de publicarlo.",
   "31/10/2026: plan de promoción de herramientas aprobado (el propietario confía en el criterio): historia diaria «Herramienta del día» a las 14:30 CDMX rotando estado.json.herramientas (2 historias al día cuando haya 6 o más herramientas); Reel de herramienta los miércoles 14:30/14:45 CDMX y el día de cada herramienta nueva. Ver Paso 4c del prompt de Redes.",
   "31/10/2026: música de la marca ampliada (al propietario le encantó jazz-suave-01): jazz-suave-01 (saxo, 90 BPM), -02 (piano nocturno, 78 BPM), -03 (saxo al atardecer, 96 BPM) y -04 (brisa bossa con flauta, 100 BPM), todas originales (musica/jazz.py <salida> <variante>). reel.py, ritmo.py y plantilla.py rotan entre ellas según el slug, así que no hace falta elegir; para forzar una, --musica jazz-suave-0X o \"musica\" en el spec.",
-  "31/10/2026: el propietario pide cuidar los detalles de redacción. Cuando se habla de un grupo o una categoría, usar plural en todo el texto (p. ej. «tamaños de graneleros», no «tamaños de granelero»), también en títulos de YouTube, portadas y textos alternativos. Revisar ortografía, concordancia y acentos antes de programar."
+  "31/10/2026: el propietario pide cuidar los detalles de redacción. Cuando se habla de un grupo o una categoría, usar plural en todo el texto (p. ej. «tamaños de graneleros», no «tamaños de granelero»), también en títulos de YouTube, portadas y textos alternativos. Revisar ortografía, concordancia y acentos antes de programar.",
+  "31/10/2026: el tema 8 del calendario (conocimiento de embarque) se cubrió el 1/11 como novedad de la web (PRIORIDAD 1); al llegar siguiente_tema a 8, saltarlo. Los artículos «SOLAS en 10 minutos» y «FOB frente a CIF» siguen sin promocionar como novedad, pero sus temas ya salieron en Instagram (28 y 30/10): promocionarlos con un ángulo claramente distinto."
  ],
  "reutilizados": [
   {

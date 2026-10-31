@@ -7,7 +7,9 @@
    "ruta": "/articulos/conocimiento-de-embarque.html",
    "fecha": "2026-10-30",
    "publicado_en_web": true,
-   "promocionado": false
+   "promocionado": true,
+   "promocionado_fecha": "2026-11-01",
+   "piezas": "Carrusel IG 13:00, Short 17:30, TikTok 18:15 (CDMX); historia quiz y Reel IG pendientes de programar el 1/11"
   },
   {
    "tipo": "articulo",
