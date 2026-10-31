@@ -1,0 +1,9 @@
+{"slug":"tienda-lanzamiento","escenas":[
+{"tipo":"texto","lineas":["NUEVO EN LA","TIENDA"],"resaltar":1,"dur":2.0},
+{"tipo":"texto","lineas":["GUÍAS HECHAS","POR UN OFICIAL","DE PUENTE"],"resaltar":2,"dur":2.4},
+{"tipo":"texto","lineas":["LISTA PSC","63 PUNTOS","DE CONTROL"],"resaltar":0,"dur":2.2},
+{"tipo":"texto","lineas":["LAYTIME","12 EJERCICIOS","RESUELTOS"],"resaltar":0,"dur":2.2},
+{"tipo":"texto","lineas":["CALCULADORA","EN EXCEL"],"resaltar":0,"dur":1.8},
+{"tipo":"texto","lineas":["KIT DOCUMENTAL","NOR · SOF · B/L"],"resaltar":0,"dur":2.0},
+{"tipo":"texto","lineas":["DESDE","USD 9"],"resaltar":1,"dur":1.8},
+{"tipo":"cta","pregunta":"Visita la Tienda en oceanicaterra.com","linea":"Síguenos · @oceanicaterra","dur":3.2}]}
