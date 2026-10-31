@@ -152,6 +152,9 @@ async def render(spec, out):
         pistas = sorted(p for p in (ROOT / "musica").glob("*.m4a") if p.with_suffix(".json").exists())
         if spec.get("musica"):  # forzar una pista concreta, p. ej. "piano-suave-01"
             pistas = [p for p in pistas if p.stem == spec["musica"]] or pistas
+        marca = [p for p in pistas if p.stem == "jazz-suave-01"]  # música de marca por defecto (musica/jazz.py)
+        if marca and not spec.get("musica"):
+            pistas = marca
         musica = pistas[sum(slug.encode()) % len(pistas)] if pistas else None
         if musica:
             meta = json.loads(musica.with_suffix(".json").read_text())

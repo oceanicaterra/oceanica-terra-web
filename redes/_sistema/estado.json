@@ -1,278 +1,304 @@
 {
-  "siguiente_tema": 7,
-  "historial": [
-    {
-      "fecha": "2026-10-28",
-      "tema": 1,
-      "slug": "fob-cif",
-      "instagram": {
-        "post": "6ae17dac56ec3750d2529196",
-        "estado": "sent",
-        "url": "https://www.instagram.com/p/DfBmpYEkfuz/"
-      },
-      "youtube": {
-        "post": "6ae17dba1b33b85d1be2f753",
-        "estado": "sent"
-      },
-      "facebook": {
-        "post": "6ae1864c1b33b85d1be50481",
-        "estado": "sent"
-      }
-    },
-    {
-      "fecha": "2026-10-28",
-      "tipo": "noticias",
-      "instagram_story": {
-        "post": "6ae20ba300f35d308c815a51",
-        "estado": "sent",
-        "hora": "10:00"
-      },
-      "facebook": {
-        "post": "6ae20baafe2b5b0857629616",
-        "estado": "sent",
-        "hora": "11:00"
-      }
-    },
-    {
-      "fecha": "2026-10-29",
-      "tema": 2,
-      "slug": "teu",
-      "instagram": {
-        "post": "6ae20bc5522cb4d35117d05e",
-        "estado": "sent"
-      },
-      "youtube": {
-        "post": "6ae20bcffe2b5b085762a3da",
-        "estado": "sent"
-      },
-      "facebook": {
-        "post": "6ae20bd2620f841dd3492306",
-        "estado": "scheduled"
-      },
-      "musica_ig": "Momentum Rising — Auralux"
-    },
-    {
-      "fecha": "2026-10-30",
-      "tema": 3,
-      "slug": "solas-historia",
-      "instagram": {
-        "post": "6ae20be524430b41b8a5caeb",
-        "estado": "scheduled"
-      },
-      "youtube": {
-        "post": "6ae20be800f35d308c8172b7",
-        "estado": "scheduled"
-      },
-      "facebook": {
-        "post": "6ae20bed522cb4d35117dba3",
-        "estado": "scheduled"
-      },
-      "musica_ig": "Majestic — Jordan Olmos",
-      "historia_quiz": {
-        "post": "6ae4ebd734702c2daac88e57",
-        "estado": "scheduled",
-        "hora_orlando": "17:00"
-      }
-    },
-    {
-      "fecha": "2026-10-29",
-      "tipo": "noticias",
-      "slug": "noticias-2026-10-29",
-      "hora_orlando": "12:15",
-      "instagram_story": {
-        "post": "6ae35e5610365a6fbeee4106",
-        "estado": "sent"
-      },
-      "facebook_story": {
-        "post": "6ae35e57f3a8aff3f3528fa6",
-        "estado": "scheduled"
-      },
-      "instagram": {
-        "post": "6ae35e5ff3a8aff3f352906a",
-        "estado": "sent",
-        "hora_orlando": "12:20"
-      },
-      "facebook": {
-        "post": "6ae35e64f3a8aff3f35291e0",
-        "estado": "scheduled"
-      }
-    },
-    {
-      "fecha": "2026-10-31",
-      "tema": 4,
-      "slug": "semana-2026-10-31",
-      "musica": "piano-suave-01",
-      "sha": "c989b8ffd70256c2f29c8b3f65e4d0caf7b279d7",
-      "instagram": {
-        "post": "6ae35e7725e7fa4a8db1da41",
-        "estado": "cancelado"
-      },
-      "facebook": {
-        "post": "6ae35e7be079e57982e10ca4",
-        "estado": "scheduled"
-      },
-      "youtube": {
-        "post": "6ae35e81a87e7858ef13d782",
-        "estado": "cancelado"
-      },
-      "instagram_reel": {
-        "post": "6ae35e8425e7fa4a8db1dcfa",
-        "estado": "cancelado"
-      },
-      "facebook_reel": {
-        "post": "6ae35e8710365a6fbeee4d18",
-        "estado": "scheduled"
-      },
-      "musica_ig": "Orion — Austin Woodward & Adam Griffith",
-      "tiktok": {
-        "post": "6ae37e20145e9f24d4588ce8",
-        "estado": "cancelado"
-      },
-      "nota": "Cancelado el 30/10/2026 por decisión del propietario: las noticias de la semana solo van el domingo (resumen semanal). Sustituido por graneleros-tamanos."
-    },
-    {
-      "fecha": "2026-10-30",
-      "tipo": "reutilizado",
-      "tema": 1,
-      "slug": "fob-cif-riesgo",
-      "origen": "fob-cif (carrusel del 2026-10-28)",
-      "instagram_reel": {
-        "post": "6ae41e062782e7f331d119a1",
-        "estado": "cancelado",
-        "hora_orlando": "17:30"
-      },
-      "tiktok": {
-        "post": "6ae41e094b8768bfb2dcebd7",
-        "estado": "scheduled",
-        "hora_orlando": "17:45"
-      },
-      "musica_ig": "no aplica",
-      "nota": "Reel creado a mano por el vCISO a petición del propietario (30/10/2026) · 30/10 11:30: Reel de Instagram cancelado por el propietario (no repetir temas ya publicados en Instagram). Se mantiene el TikTok."
-    },
-    {
-      "fecha": "2026-10-30",
-      "tipo": "noticias",
-      "slug": "noticias-2026-10-30",
-      "sha": "3aa1e273e42a94290ee6860a3d0173377719ef26",
-      "hora_orlando": "12:15",
-      "instagram_story": {
-        "post": "6ae4aec2e266b27191effacf",
-        "estado": "scheduled"
-      }
-    },
-    {
-      "fecha": "2026-11-01",
-      "tipo": "resumen_semanal",
-      "slug": "resumen-semanal-2026-10-30",
-      "sha": "3aa1e273e42a94290ee6860a3d0173377719ef26",
-      "musica": "dreamwave-01",
-      "youtube": {
-        "post": "6ae4aec61c3539c1f4e008cb",
-        "estado": "scheduled",
-        "hora_orlando": "17:30"
-      },
-      "instagram_reel": {
-        "post": "6ae4aecde266b27191effce3",
-        "estado": "scheduled",
-        "hora_orlando": "17:00"
-      },
-      "tiktok": {
-        "post": "6ae4aecf3faa32d97820e55c",
-        "estado": "scheduled",
-        "hora_orlando": "17:15"
-      },
-      "musica_ig": "Fast Life (Instrumental) — Chela Rivas",
-      "nota": "Movido del viernes 30/10 al domingo 1/11/2026 por decisión del propietario: el resumen semanal sale los domingos (Reel 17:00, TikTok 17:15, Short 17:30, hora de Orlando)."
-    },
-    {
-      "fecha": "2026-10-30",
-      "tipo": "especial",
-      "tema": "El Ever Given bloqueó el Canal de Suez (marzo de 2021)",
-      "slug": "ever-given-suez",
-      "sha": "d97e8283cb8aeb5ed179a1b672332723e0569298",
-      "fuentes": "Reuters (nippon.com, 7/7/2021) · Wikipedia/BBC",
-      "youtube": {
-        "post": "6ae4d82b10a950f13736d4a4",
-        "estado": "scheduled",
-        "hora_orlando": "18:30"
-      },
-      "instagram_reel": {
-        "post": "6ae4d8a7cd8290b9b903ed6b",
-        "estado": "scheduled",
-        "hora_orlando": "19:00"
-      },
-      "tiktok": {
-        "post": "6ae4d8ad34702c2daac2daec",
-        "estado": "scheduled",
-        "hora_orlando": "19:15"
-      },
-      "musica_ig": "pendiente",
-      "nota": "Pieza especial que ocupa el hueco del resumen semanal, movido al domingo."
-    },
-    {
-      "fecha": "2026-10-31",
-      "tema": 6,
-      "slug": "graneleros-tamanos",
-      "sha": "dfbc6756af5720fc9acd7d75a16ab047d6c06ad9",
-      "fuentes": "Baltic Exchange · Brookes Bell",
-      "instagram": {
-        "post": "6ae4dc5f34702c2daac417d4",
-        "estado": "scheduled",
-        "hora_cdmx": "13:00"
-      },
-      "youtube": {
-        "post": "6ae4dc6a10a950f1373851a2",
-        "estado": "scheduled",
-        "hora_cdmx": "17:30"
-      },
-      "instagram_reel": {
-        "post": "6ae4dc6d34702c2daac41c32",
-        "estado": "scheduled",
-        "hora_cdmx": "18:00"
-      },
-      "tiktok": {
-        "post": "6ae4dc6e34702c2daac41c7e",
-        "estado": "scheduled",
-        "hora_cdmx": "18:15"
-      },
-      "musica_ig": "pendiente",
-      "historia_quiz": {
-        "post": "6ae4ebf8a351214acfa52b53",
-        "estado": "scheduled",
-        "hora_cdmx": "16:00"
-      }
-    }
-  ],
-  "noticias": [
-    "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
-    "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
-    "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
-    "https://portalportuario.cl/portonave-recibe-nuevo-servicio-de-las-navieras-cma-cgm-cosco-y-oocl/",
-    "https://maritime-executive.com/article/zim-confirms-loss-of-containership-attacked-in-black-sea-off-bulgaria",
-    "https://www.mundomaritimo.cl/noticias/mexico-inicia-construccion-del-puerto-punta-colonet-con-inversion-superior-a-us2180-millones"
-  ],
-  "canales": {
-    "instagram": "6ae175a72f1f5ed648f64678",
-    "youtube": "6ae176852f1f5ed648f65a4c",
-    "tiktok": "6ae378802f1f5ed648110762"
+ "siguiente_tema": 7,
+ "historial": [
+  {
+   "fecha": "2026-10-28",
+   "tema": 1,
+   "slug": "fob-cif",
+   "instagram": {
+    "post": "6ae17dac56ec3750d2529196",
+    "estado": "sent",
+    "url": "https://www.instagram.com/p/DfBmpYEkfuz/"
+   },
+   "youtube": {
+    "post": "6ae17dba1b33b85d1be2f753",
+    "estado": "sent"
+   },
+   "facebook": {
+    "post": "6ae1864c1b33b85d1be50481",
+    "estado": "sent"
+   }
   },
-  "notas": [
-    "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
-    "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
-    "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok).",
-    "2026-10-30: los viernes el resumen semanal choca con las horas del contenido educativo (YouTube 18:00, Reel 19:00, TikTok 19:15); se programa a las 18:30, 20:00 y 20:15 (Ciudad de México). Desde el sandbox no se puede abrir cdn.jsdelivr.net ni WebFetch a medios (permiso no concedido); Buffer sí descarga los archivos.",
-    "30/10/2026: el propietario no quiere publicar fuera de calendario un tema ya publicado en esa misma red. Excepción aprobada: el Reel reutilizado mensual del Paso 4b (con portada nueva) se mantiene.",
-    "30/10/2026: el propietario decidió que el resumen semanal sale los DOMINGOS (Reel 17:00, TikTok 17:15, Short 17:30, hora de Orlando) y sustituye a los vídeos de noticias del domingo; los viernes vuelven a tener vídeos de noticias. El resumen del 30/10 se movió al domingo 1/11. Ese viernes se publicó en su lugar el Reel/TikTok/Short «El Ever Given bloqueó el Canal de Suez»: en el tema 24 (Canal de Suez, 1869) usar otro ángulo (historia y apertura del canal), sin repetir el Ever Given.",
-    "30/10/2026: horarios ajustados por el propietario (nada de madrugada ni noche tarde). Educativo: YouTube 17:30, Reel 18:00 y TikTok 18:15 (Ciudad de México); noticias 12:15–13:30 Orlando; resumen dominical 17:00–17:30 Orlando; Reel reutilizado 15:30/15:45 CDMX. «Música de Reels» pasa a las 11:47 y 17:47 de Orlando. Ese día se reprogramaron: Ever Given 18:30/19:00/19:15, SOLAS 19:30/20:00/20:15 (Orlando) y las piezas «semana» del sábado 31/10 a 19:30/20:00/20:15 (Orlando). Al reprogramar con edit_post, los Reels de SOLAS y «semana» pueden haber perdido la música; «Música de Reels» la vuelve a poner si falta.",
-    "30/10/2026: las «noticias de la semana» solo salen el domingo (resumen semanal); los temas del pilar «Noticias del sector» del calendario se saltan. El tema 6 (graneleros) se publicó el 31/10. El tema 5 (guía gratis de Incoterms) se aplaza hasta después del tema 12, porque Incoterms (FOB/CIF) ya salió el 28 y el 30/10.",
-    "30/10/2026: nuevo formato aprobado por el propietario. Carrusel = para leer; Reels de Instagram y TikTok = Reel VISUAL de poco texto hecho con redes/_sistema/reel.py (ig-<slug>-reel.mp4). Primeros: Ever Given (30/10, IG 19:00 y TikTok 19:15 Orlando) y graneleros (31/10). Los Shorts de YouTube siguen con yt-<slug>.mp4.",
-    "30/10/2026: nueva pieza diaria aprobada por el propietario: historia interactiva «Pregunta del día» (vídeo de quiz con cuenta regresiva y respuesta, hecho con reel.py, escena «quiz»), a las 16:00 de Ciudad de México, sobre el tema del carrusel del día. La API de Instagram no permite stickers de encuesta/quiz; la interacción se pide por mensaje o reacción. Primeras: SOLAS (30/10, 17:00 Orlando) y graneleros (31/10)."
-  ],
-  "reutilizados": [
-    {
-      "slug_origen": "fob-cif",
-      "fecha": "2026-10-30",
-      "slug_nuevo": "fob-cif-riesgo"
-    }
-  ]
+  {
+   "fecha": "2026-10-28",
+   "tipo": "noticias",
+   "instagram_story": {
+    "post": "6ae20ba300f35d308c815a51",
+    "estado": "sent",
+    "hora": "10:00"
+   },
+   "facebook": {
+    "post": "6ae20baafe2b5b0857629616",
+    "estado": "sent",
+    "hora": "11:00"
+   }
+  },
+  {
+   "fecha": "2026-10-29",
+   "tema": 2,
+   "slug": "teu",
+   "instagram": {
+    "post": "6ae20bc5522cb4d35117d05e",
+    "estado": "sent"
+   },
+   "youtube": {
+    "post": "6ae20bcffe2b5b085762a3da",
+    "estado": "sent"
+   },
+   "facebook": {
+    "post": "6ae20bd2620f841dd3492306",
+    "estado": "scheduled"
+   },
+   "musica_ig": "Momentum Rising — Auralux"
+  },
+  {
+   "fecha": "2026-10-30",
+   "tema": 3,
+   "slug": "solas-historia",
+   "instagram": {
+    "post": "6ae20be524430b41b8a5caeb",
+    "estado": "scheduled"
+   },
+   "youtube": {
+    "post": "6ae20be800f35d308c8172b7",
+    "estado": "scheduled"
+   },
+   "facebook": {
+    "post": "6ae20bed522cb4d35117dba3",
+    "estado": "scheduled"
+   },
+   "musica_ig": "Majestic — Jordan Olmos",
+   "historia_quiz": {
+    "post": "6ae4ebd734702c2daac88e57",
+    "estado": "scheduled",
+    "hora_orlando": "17:00"
+   }
+  },
+  {
+   "fecha": "2026-10-29",
+   "tipo": "noticias",
+   "slug": "noticias-2026-10-29",
+   "hora_orlando": "12:15",
+   "instagram_story": {
+    "post": "6ae35e5610365a6fbeee4106",
+    "estado": "sent"
+   },
+   "facebook_story": {
+    "post": "6ae35e57f3a8aff3f3528fa6",
+    "estado": "scheduled"
+   },
+   "instagram": {
+    "post": "6ae35e5ff3a8aff3f352906a",
+    "estado": "sent",
+    "hora_orlando": "12:20"
+   },
+   "facebook": {
+    "post": "6ae35e64f3a8aff3f35291e0",
+    "estado": "scheduled"
+   }
+  },
+  {
+   "fecha": "2026-10-31",
+   "tema": 4,
+   "slug": "semana-2026-10-31",
+   "musica": "piano-suave-01",
+   "sha": "c989b8ffd70256c2f29c8b3f65e4d0caf7b279d7",
+   "instagram": {
+    "post": "6ae35e7725e7fa4a8db1da41",
+    "estado": "cancelado"
+   },
+   "facebook": {
+    "post": "6ae35e7be079e57982e10ca4",
+    "estado": "scheduled"
+   },
+   "youtube": {
+    "post": "6ae35e81a87e7858ef13d782",
+    "estado": "cancelado"
+   },
+   "instagram_reel": {
+    "post": "6ae35e8425e7fa4a8db1dcfa",
+    "estado": "cancelado"
+   },
+   "facebook_reel": {
+    "post": "6ae35e8710365a6fbeee4d18",
+    "estado": "scheduled"
+   },
+   "musica_ig": "Orion — Austin Woodward & Adam Griffith",
+   "tiktok": {
+    "post": "6ae37e20145e9f24d4588ce8",
+    "estado": "cancelado"
+   },
+   "nota": "Cancelado el 30/10/2026 por decisión del propietario: las noticias de la semana solo van el domingo (resumen semanal). Sustituido por graneleros-tamanos."
+  },
+  {
+   "fecha": "2026-10-30",
+   "tipo": "reutilizado",
+   "tema": 1,
+   "slug": "fob-cif-riesgo",
+   "origen": "fob-cif (carrusel del 2026-10-28)",
+   "instagram_reel": {
+    "post": "6ae41e062782e7f331d119a1",
+    "estado": "cancelado",
+    "hora_orlando": "17:30"
+   },
+   "tiktok": {
+    "post": "6ae41e094b8768bfb2dcebd7",
+    "estado": "scheduled",
+    "hora_orlando": "17:45"
+   },
+   "musica_ig": "no aplica",
+   "nota": "Reel creado a mano por el vCISO a petición del propietario (30/10/2026) · 30/10 11:30: Reel de Instagram cancelado por el propietario (no repetir temas ya publicados en Instagram). Se mantiene el TikTok."
+  },
+  {
+   "fecha": "2026-10-30",
+   "tipo": "noticias",
+   "slug": "noticias-2026-10-30",
+   "sha": "3aa1e273e42a94290ee6860a3d0173377719ef26",
+   "hora_orlando": "12:15",
+   "instagram_story": {
+    "post": "6ae4aec2e266b27191effacf",
+    "estado": "scheduled"
+   }
+  },
+  {
+   "fecha": "2026-11-01",
+   "tipo": "resumen_semanal",
+   "slug": "resumen-semanal-2026-10-30",
+   "sha": "3aa1e273e42a94290ee6860a3d0173377719ef26",
+   "musica": "dreamwave-01",
+   "youtube": {
+    "post": "6ae4aec61c3539c1f4e008cb",
+    "estado": "scheduled",
+    "hora_orlando": "17:30"
+   },
+   "instagram_reel": {
+    "post": "6ae4aecde266b27191effce3",
+    "estado": "scheduled",
+    "hora_orlando": "17:00"
+   },
+   "tiktok": {
+    "post": "6ae4aecf3faa32d97820e55c",
+    "estado": "scheduled",
+    "hora_orlando": "17:15"
+   },
+   "musica_ig": "Fast Life (Instrumental) — Chela Rivas",
+   "nota": "Movido del viernes 30/10 al domingo 1/11/2026 por decisión del propietario: el resumen semanal sale los domingos (Reel 17:00, TikTok 17:15, Short 17:30, hora de Orlando)."
+  },
+  {
+   "fecha": "2026-10-30",
+   "tipo": "especial",
+   "tema": "El Ever Given bloqueó el Canal de Suez (marzo de 2021)",
+   "slug": "ever-given-suez",
+   "sha": "d97e8283cb8aeb5ed179a1b672332723e0569298",
+   "fuentes": "Reuters (nippon.com, 7/7/2021) · Wikipedia/BBC",
+   "youtube": {
+    "post": "6ae4d82b10a950f13736d4a4",
+    "estado": "scheduled",
+    "hora_orlando": "18:30"
+   },
+   "instagram_reel": {
+    "post": "6ae4d8a7cd8290b9b903ed6b",
+    "estado": "scheduled",
+    "hora_orlando": "19:00"
+   },
+   "tiktok": {
+    "post": "6ae4d8ad34702c2daac2daec",
+    "estado": "scheduled",
+    "hora_orlando": "19:15"
+   },
+   "musica_ig": "pendiente",
+   "nota": "Pieza especial que ocupa el hueco del resumen semanal, movido al domingo."
+  },
+  {
+   "fecha": "2026-10-31",
+   "tema": 6,
+   "slug": "graneleros-tamanos",
+   "sha": "dfbc6756af5720fc9acd7d75a16ab047d6c06ad9",
+   "fuentes": "Baltic Exchange · Brookes Bell",
+   "instagram": {
+    "post": "6ae4dc5f34702c2daac417d4",
+    "estado": "scheduled",
+    "hora_cdmx": "13:00"
+   },
+   "youtube": {
+    "post": "6ae4dc6a10a950f1373851a2",
+    "estado": "scheduled",
+    "hora_cdmx": "17:30"
+   },
+   "instagram_reel": {
+    "post": "6ae4dc6d34702c2daac41c32",
+    "estado": "scheduled",
+    "hora_cdmx": "18:00"
+   },
+   "tiktok": {
+    "post": "6ae4dc6e34702c2daac41c7e",
+    "estado": "scheduled",
+    "hora_cdmx": "18:15"
+   },
+   "musica_ig": "pendiente",
+   "historia_quiz": {
+    "post": "6ae4ebf8a351214acfa52b53",
+    "estado": "scheduled",
+    "hora_cdmx": "16:00"
+   }
+  },
+  {
+   "fecha": "2026-10-31",
+   "tipo": "promo_herramienta",
+   "tema": "Conversor náutico (web)",
+   "slug": "conversor-nautico",
+   "instagram_reel": {
+    "post": "6ae5dbafceb491e585f646c6",
+    "estado": "scheduled",
+    "hora_orlando": "16:00"
+   },
+   "historia_enlace": {
+    "post": "6ae5dbb6eaa24d6f9a734c22",
+    "estado": "scheduled",
+    "hora_orlando": "16:10",
+    "enlace": "/herramientas/conversor-nautico.html (UTM instagram)"
+   },
+   "tiktok": {
+    "post": "6ae5dbb31891472093d02ab4",
+    "estado": "scheduled",
+    "hora_orlando": "16:15"
+   },
+   "musica_ig": "pendiente",
+   "nota": "Pedido del propietario: promocionar las herramientas de la web. Reel = atraer gente nueva; historia con enlace = seguidores."
+  }
+ ],
+ "noticias": [
+  "https://portalportuario.cl/iran-tomara-medidas-legales-contra-buques-ligados-a-naviera-surcoreana-sinokor/",
+  "https://splash247.com/kmtc-makes-chinese-shipyard-debut-with-six-boxships",
+  "https://portalportuario.cl/mexico-puerto-de-lazaro-cardenas-recibe-nueva-naviera-centrada-en-ro-ro-y-carga-de-proyecto",
+  "https://portalportuario.cl/portonave-recibe-nuevo-servicio-de-las-navieras-cma-cgm-cosco-y-oocl/",
+  "https://maritime-executive.com/article/zim-confirms-loss-of-containership-attacked-in-black-sea-off-bulgaria",
+  "https://www.mundomaritimo.cl/noticias/mexico-inicia-construccion-del-puerto-punta-colonet-con-inversion-superior-a-us2180-millones"
+ ],
+ "canales": {
+  "instagram": "6ae175a72f1f5ed648f64678",
+  "youtube": "6ae176852f1f5ed648f65a4c",
+  "tiktok": "6ae378802f1f5ed648110762"
+ },
+ "notas": [
+  "2026-10-28: Buffer gratuito rechaza firstComment ('requires a paid plan'); la pregunta va dentro del texto.",
+  "2026-10-29: Instagram es cuenta de Creador y está enlazada a la página de Facebook OceanicaTerra (requisito de Buffer para poner música). Los Reels de Instagram usan ig-<slug>-ritmo.mp4 (redes/_sistema/ritmo.py: cortes secos, zoom, CTA «biografía», música original de respaldo). La tarea «Música de Reels», en el ordenador, añade en Buffer una pista segura de la biblioteca de Instagram (redes/_sistema/musica/biblioteca_instagram.json) y baja a 0 el volumen del vídeo. Nunca canciones comerciales ni copias subidas por usuarios. No edites con edit_post un Reel que ya tenga música: la API de Buffer podría quitársela.",
+  "2026-10-29: Facebook sale de Buffer (plan gratis: 3 canales; la página tenía 0 seguidores) y entra TikTok (cuenta personal oceanicaterra, canal 6ae378802f1f5ed648110762). Facebook queda en pausa sin borrar nada; Instagram no comparte en Facebook lo publicado desde Buffer (probado el 29/10). TikTok recibe cada día el vídeo rítmico CON la música original (Buffer no puede añadir música de TikTok).",
+  "2026-10-30: los viernes el resumen semanal choca con las horas del contenido educativo (YouTube 18:00, Reel 19:00, TikTok 19:15); se programa a las 18:30, 20:00 y 20:15 (Ciudad de México). Desde el sandbox no se puede abrir cdn.jsdelivr.net ni WebFetch a medios (permiso no concedido); Buffer sí descarga los archivos.",
+  "30/10/2026: el propietario no quiere publicar fuera de calendario un tema ya publicado en esa misma red. Excepción aprobada: el Reel reutilizado mensual del Paso 4b (con portada nueva) se mantiene.",
+  "30/10/2026: el propietario decidió que el resumen semanal sale los DOMINGOS (Reel 17:00, TikTok 17:15, Short 17:30, hora de Orlando) y sustituye a los vídeos de noticias del domingo; los viernes vuelven a tener vídeos de noticias. El resumen del 30/10 se movió al domingo 1/11. Ese viernes se publicó en su lugar el Reel/TikTok/Short «El Ever Given bloqueó el Canal de Suez»: en el tema 24 (Canal de Suez, 1869) usar otro ángulo (historia y apertura del canal), sin repetir el Ever Given.",
+  "30/10/2026: horarios ajustados por el propietario (nada de madrugada ni noche tarde). Educativo: YouTube 17:30, Reel 18:00 y TikTok 18:15 (Ciudad de México); noticias 12:15–13:30 Orlando; resumen dominical 17:00–17:30 Orlando; Reel reutilizado 15:30/15:45 CDMX. «Música de Reels» pasa a las 11:47 y 17:47 de Orlando. Ese día se reprogramaron: Ever Given 18:30/19:00/19:15, SOLAS 19:30/20:00/20:15 (Orlando) y las piezas «semana» del sábado 31/10 a 19:30/20:00/20:15 (Orlando). Al reprogramar con edit_post, los Reels de SOLAS y «semana» pueden haber perdido la música; «Música de Reels» la vuelve a poner si falta.",
+  "30/10/2026: las «noticias de la semana» solo salen el domingo (resumen semanal); los temas del pilar «Noticias del sector» del calendario se saltan. El tema 6 (graneleros) se publicó el 31/10. El tema 5 (guía gratis de Incoterms) se aplaza hasta después del tema 12, porque Incoterms (FOB/CIF) ya salió el 28 y el 30/10.",
+  "30/10/2026: nuevo formato aprobado por el propietario. Carrusel = para leer; Reels de Instagram y TikTok = Reel VISUAL de poco texto hecho con redes/_sistema/reel.py (ig-<slug>-reel.mp4). Primeros: Ever Given (30/10, IG 19:00 y TikTok 19:15 Orlando) y graneleros (31/10). Los Shorts de YouTube siguen con yt-<slug>.mp4.",
+  "30/10/2026: nueva pieza diaria aprobada por el propietario: historia interactiva «Pregunta del día» (vídeo de quiz con cuenta regresiva y respuesta, hecho con reel.py, escena «quiz»), a las 16:00 de Ciudad de México, sobre el tema del carrusel del día. La API de Instagram no permite stickers de encuesta/quiz; la interacción se pide por mensaje o reacción. Primeras: SOLAS (30/10, 17:00 Orlando) y graneleros (31/10).",
+  "31/10/2026: música de marca por defecto = «jazz-suave-01» (smooth jazz instrumental ORIGINAL, generado con musica/jazz.py; 90 BPM, piano eléctrico, bajo, batería suave y saxo sintetizado). reel.py, ritmo.py y plantilla.py la usan salvo que se pida otra con --musica / \"musica\". Es el respaldo si no hay música en tendencia: la tarea «Música de Reels» sigue poniendo audio en tendencia de Instagram cuando puede. Nunca usar grabaciones comerciales (The Rippingtons, Marc Antoine, etc.): tienen derechos y Meta/YouTube/TikTok silencian o bloquean el vídeo.",
+  "31/10/2026: cada herramienta nueva de la web se promociona con Reel visual (IG + TikTok, para atraer) e historia con enlace directo a la herramienta y UTM (para seguidores). Primera: conversor náutico."
+ ],
+ "reutilizados": [
+  {
+   "slug_origen": "fob-cif",
+   "fecha": "2026-10-30",
+   "slug_nuevo": "fob-cif-riesgo"
+  }
+ ]
 }

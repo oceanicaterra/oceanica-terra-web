@@ -31,7 +31,9 @@
    "ruta": "/herramientas/conversor-nautico.html",
    "fecha": "2026-10-31",
    "publicado_en_web": true,
-   "promocionado": false
+   "promocionado": true,
+   "promocionado_fecha": "2026-10-31",
+   "piezas": "Reel IG 16:00, historia con enlace 16:10, TikTok 16:15 (Orlando)"
   }
  ]
 }

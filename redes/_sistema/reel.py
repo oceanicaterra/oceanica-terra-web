@@ -361,12 +361,15 @@ ESCENAS = {"quiz": esc_quiz, "texto": esc_texto, "bloqueo": esc_bloqueo, "fila":
            "tamanos": esc_tamanos, "cta": esc_cta}
 
 
+MUSICA_MARCA = "jazz-suave-01"  # pista de respaldo de la marca (musica/jazz.py)
+
+
 def elegir_musica(slug, nombre=None):
     pistas = sorted(p.stem for p in (ROOT / "musica").glob("*.m4a") if (ROOT / "musica" / f"{p.stem}.json").exists())
     if not pistas:
         return None, None
-    if nombre not in pistas:
-        nombre = pistas[sum(map(ord, slug)) % len(pistas)]
+    if nombre not in pistas:  # música de marca por defecto (smooth jazz original); si falta, rotación por slug
+        nombre = MUSICA_MARCA if MUSICA_MARCA in pistas else pistas[sum(map(ord, slug)) % len(pistas)]
     return ROOT / "musica" / f"{nombre}.m4a", json.loads((ROOT / "musica" / f"{nombre}.json").read_text())
 
 
