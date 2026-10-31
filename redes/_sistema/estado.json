@@ -265,6 +265,34 @@
    },
    "musica_ig": "pendiente",
    "nota": "Pedido del propietario: promocionar las herramientas de la web. Reel = atraer gente nueva; historia con enlace = seguidores."
+  },
+  {
+   "fecha": "2026-11-01",
+   "tipo": "herramienta_del_dia",
+   "slug": "demora-despacho",
+   "sha": "3a6be1fa7dfc9dc72b2203e453bfa9f98f5ce21e",
+   "historia": {
+    "post": "6ae5df8dceb491e585f7aa0f",
+    "estado": "scheduled",
+    "hora_cdmx": "14:30"
+   }
+  },
+  {
+   "fecha": "2026-11-02",
+   "tipo": "reel_herramienta",
+   "slug": "demora-despacho",
+   "sha": "3a6be1fa7dfc9dc72b2203e453bfa9f98f5ce21e",
+   "instagram_reel": {
+    "post": "6ae5df93406ab8a018b9e2cb",
+    "estado": "scheduled",
+    "hora_cdmx": "14:30"
+   },
+   "tiktok": {
+    "post": "6ae5df96406ab8a018b9e50b",
+    "estado": "scheduled",
+    "hora_cdmx": "14:45"
+   },
+   "musica_ig": "pendiente"
   }
  ],
  "noticias": [
@@ -293,7 +321,8 @@
   "30/10/2026: nueva pieza diaria aprobada por el propietario: historia interactiva «Pregunta del día» (vídeo de quiz con cuenta regresiva y respuesta, hecho con reel.py, escena «quiz»), a las 16:00 de Ciudad de México, sobre el tema del carrusel del día. La API de Instagram no permite stickers de encuesta/quiz; la interacción se pide por mensaje o reacción. Primeras: SOLAS (30/10, 17:00 Orlando) y graneleros (31/10).",
   "31/10/2026: música de marca por defecto = «jazz-suave-01» (smooth jazz instrumental ORIGINAL, generado con musica/jazz.py; 90 BPM, piano eléctrico, bajo, batería suave y saxo sintetizado). reel.py, ritmo.py y plantilla.py la usan salvo que se pida otra con --musica / \"musica\". Es el respaldo si no hay música en tendencia: la tarea «Música de Reels» sigue poniendo audio en tendencia de Instagram cuando puede. Nunca usar grabaciones comerciales (The Rippingtons, Marc Antoine, etc.): tienen derechos y Meta/YouTube/TikTok silencian o bloquean el vídeo.",
   "31/10/2026: cada herramienta nueva de la web se promociona con Reel visual (IG + TikTok, para atraer) e historia con enlace directo a la herramienta y UTM (para seguidores). Primera: conversor náutico.",
-  "31/10/2026: IDIOMA (pedido por el propietario el 31/10/2026, obligatorio en web, productos y redes): español de LATINOAMÉRICA, nunca de España. «video/videos» sin tilde, «podcast/podcasts» (no «pódcast»), «celular» (no «móvil»), «computadora» (no «ordenador»), «archivo» (no «fichero»), «en vivo» (no «en directo»), «al instante» (no «al momento»), «campo» (no «casilla»), «manejar» (no «conducir»), «tomar» (no «coger»), «¿Hace falta…?» (no «¿Echas en falta…?»), «ustedes» (nunca «vosotros» ni formas -áis/-éis). Nada de «vale», «guay», «currar», «pillar». Revisa cada texto antes de publicarlo."
+  "31/10/2026: IDIOMA (pedido por el propietario el 31/10/2026, obligatorio en web, productos y redes): español de LATINOAMÉRICA, nunca de España. «video/videos» sin tilde, «podcast/podcasts» (no «pódcast»), «celular» (no «móvil»), «computadora» (no «ordenador»), «archivo» (no «fichero»), «en vivo» (no «en directo»), «al instante» (no «al momento»), «campo» (no «casilla»), «manejar» (no «conducir»), «tomar» (no «coger»), «¿Hace falta…?» (no «¿Echas en falta…?»), «ustedes» (nunca «vosotros» ni formas -áis/-éis). Nada de «vale», «guay», «currar», «pillar». Revisa cada texto antes de publicarlo.",
+  "31/10/2026: plan de promoción de herramientas aprobado (el propietario confía en el criterio): historia diaria «Herramienta del día» a las 14:30 CDMX rotando estado.json.herramientas (2 historias al día cuando haya 6 o más herramientas); Reel de herramienta los miércoles 14:30/14:45 CDMX y el día de cada herramienta nueva. Ver Paso 4c del prompt de Redes."
  ],
  "reutilizados": [
   {
@@ -318,8 +347,8 @@
    "url": "https://oceanicaterra.com/#ejercicios",
    "story": "redes/_sistema/herramientas/story-demora-despacho.mp4",
    "reel": "redes/_sistema/herramientas/ig-herr-demora-despacho-reel.mp4",
-   "ultima_story": null,
-   "ultimo_reel": null
+   "ultima_story": "2026-11-01",
+   "ultimo_reel": "2026-11-02"
   }
  ]
 }
