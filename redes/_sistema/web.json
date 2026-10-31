@@ -379,5 +379,11 @@
   }
  ],
  "idioma": "IDIOMA (pedido por el propietario el 31/10/2026, obligatorio en web, productos y redes): español de LATINOAMÉRICA, nunca de España. «video/videos» sin tilde, «podcast/podcasts» (no «pódcast»), «celular» (no «móvil»), «computadora» (no «ordenador»), «archivo» (no «fichero»), «en vivo» (no «en directo»), «al instante» (no «al momento»), «campo» (no «casilla»), «costo/costos» (no «coste/costes»), «manejar» (no «conducir»), «tomar» (no «coger»), «¿Hace falta…?» (no «¿Echas en falta…?»), «ustedes» (nunca «vosotros» ni formas -áis/-éis). Nada de «vale», «guay», «currar», «pillar». Revisa cada texto antes de publicarlo.",
- "autor": "César Andrade (con tilde). Perfil: https://oceanicaterra.com/autor/cesar-andrade.html. Nunca nombrar a sus empleadores ni publicar datos personales."
+ "autor": {
+  "nombre": "César Andrade",
+  "perfil": "https://oceanicaterra.com/autor/cesar-andrade.html",
+  "bio_larga": "César Andrade, oficial de puente desde 2017, ingeniero marítimo y auditor interno ISM (Bureau Veritas). Cursa la Maestría en Ciencias de Administración de Empresas Navieras y Portuarias en la Universidad Marítima y Portuaria de México.",
+  "bio_corta": "César Andrade, oficial de puente desde 2017, ingeniero marítimo y auditor interno ISM (Bureau Veritas).",
+  "uso": "Larga para productos comerciales, de gestión, puertos o logística; corta para operación y seguridad a bordo. Nunca «estudiante de maestría», nunca nombrar empleadores ni datos personales."
+ }
 }
