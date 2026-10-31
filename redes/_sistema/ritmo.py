@@ -82,7 +82,7 @@ def cambiar_cta(src, dst, texto="Enlace en la biografía · oceanicaterra.com"):
     return True
 
 
-MUSICA_MARCA = "jazz-suave-01"  # pista de respaldo de la marca (musica/jazz.py)
+MUSICA_MARCA = "jazz-suave-"  # pistas de la marca (musica/jazz.py): smooth jazz original
 
 
 def elegir_musica(slug, nombre=None):
@@ -90,7 +90,8 @@ def elegir_musica(slug, nombre=None):
     if not pistas:
         return None, None
     if nombre not in pistas:  # música de marca por defecto (smooth jazz original); si falta, rotación por slug
-        nombre = MUSICA_MARCA if MUSICA_MARCA in pistas else pistas[sum(map(ord, slug)) % len(pistas)]
+        marca = [p for p in pistas if p.startswith(MUSICA_MARCA)]  # jazz-suave-01, -02, -03… rotan según el slug
+        nombre = (marca or pistas)[sum(map(ord, slug)) % len(marca or pistas)]
     return ROOT / "musica" / f"{nombre}.m4a", json.loads((ROOT / "musica" / f"{nombre}.json").read_text())
 
 
