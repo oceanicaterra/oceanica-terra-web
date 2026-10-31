@@ -1,0 +1,7 @@
+{"slug": "conocimiento-embarque", "escenas": [
+{"tipo": "texto", "lineas": ["¿QUIÉN RETIRA", "LA CARGA", "EN DESTINO?"], "resaltar": 2, "dur": 2.4},
+{"tipo": "texto", "lineas": ["QUIEN TIENE", "EL ORIGINAL", "DEL B/L"], "resaltar": 1, "dur": 2.6},
+{"tipo": "texto", "lineas": ["RECIBO", "CONTRATO", "Y TÍTULO"], "resaltar": 2, "dur": 2.6},
+{"tipo": "contador", "numero": 10, "antes": "", "despues": "campos", "etiqueta": "que conviene revisar en cada B/L", "nota": "Artículo de la Biblioteca · Oceanica Terra", "dur": 3.0},
+{"tipo": "texto", "lineas": ["EL ERROR", "MÁS CARO:", "ENTREGAR SIN ORIGINAL"], "resaltar": 2, "dur": 2.8},
+{"tipo": "cta", "pregunta": "El artículo completo está gratis en oceanicaterra.com", "linea": "Síguenos · @oceanicaterra", "dur": 3.0}]}
