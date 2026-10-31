@@ -357,6 +357,37 @@
     "hora_orlando": "14:30"
    },
    "musica_ig": "marca (jazz-suave-01)"
+  },
+  {
+   "fecha": "2026-10-31",
+   "tipo": "lanzamiento_guia_gratis",
+   "tema": "Guía gratis: GMDSS para oficiales de puente",
+   "slug": "guia-gmdss",
+   "sha": "c38a305653802c38b219c2f50646fe4a8b536982",
+   "enlace": "https://oceanicaterra.com/#guia-gratis-gmdss",
+   "pedido": "propietario, 31/10/2026 (publicación inmediata)",
+   "youtube": {
+    "post": "6ae6387521c807e9d57ce5fd",
+    "estado": "scheduled",
+    "hora_orlando": "17:00"
+   },
+   "historia_link": {
+    "post": "6ae6387af0984eef33261b0a",
+    "estado": "scheduled",
+    "hora_orlando": "17:15"
+   },
+   "instagram_reel": {
+    "post": "6ae6387f37c1acd2a0c557a3",
+    "estado": "scheduled",
+    "hora_orlando": "18:40"
+   },
+   "tiktok": {
+    "post": "6ae6388237c1acd2a0c55839",
+    "estado": "scheduled",
+    "hora_orlando": "18:55"
+   },
+   "musica_ig": "pendiente",
+   "nota": "Primeras piezas con la identidad visual B. Láminas del carrusel generadas (ig-guia-gmdss-*.png) pero no programadas: Instagram estaba casi lleno."
   }
  ],
  "noticias": [

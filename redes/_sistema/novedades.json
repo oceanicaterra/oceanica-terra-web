@@ -56,8 +56,10 @@
    "ruta": "/guia-gratis-gmdss.pdf",
    "fecha": "2026-10-31",
    "publicado_en_web": true,
-   "promocionado": false,
-   "nota": "Guía gratuita verificada el 31/10/2026: áreas A1–A4, GMDSS modernizado de 2024, frecuencias, alerta y cancelación, MAYDAY y pruebas de rutina. Enlazar a https://oceanicaterra.com/#guia-gratis-gmdss."
+   "promocionado": true,
+   "nota": "Guía gratuita verificada el 31/10/2026: áreas A1–A4, GMDSS modernizado de 2024, frecuencias, alerta y cancelación, MAYDAY y pruebas de rutina. Enlazar a https://oceanicaterra.com/#guia-gratis-gmdss.",
+   "promocionado_fecha": "2026-10-31",
+   "piezas": "Short YouTube 17:00, historia IG con enlace 17:15, Reel IG 18:40, TikTok 18:55 (Orlando). Carrusel (ig-guia-gmdss-*.png) listo en redes/2026-10-31 por si se quiere usar otro día."
   }
  ]
 }
