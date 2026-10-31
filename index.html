@@ -27,7 +27,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.oceanicaterra.com/#org","name":"Oceanica Terra","url":"https://www.oceanicaterra.com/","logo":"https://www.oceanicaterra.com/assets/og-oceanica-terra.jpg","email":"contacto@oceanicaterra.com","sameAs":["https://www.instagram.com/oceanicaterra/","https://www.facebook.com/1388088841059206","https://www.tiktok.com/@oceanicaterra","https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA"]},{"@type":"WebSite","@id":"https://www.oceanicaterra.com/#web","url":"https://www.oceanicaterra.com/","name":"Oceanica Terra","inLanguage":"es","publisher":{"@id":"https://www.oceanicaterra.com/#org"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 /* Layout: mar claro, siempre en tema claro. Portada con olas en movimiento, fondo con líneas de oleaje muy suaves y pie de página como fondo marino; las tarjetas blancas mantienen el texto legible */
 :root {
@@ -444,12 +444,233 @@ footer .wrap { display: grid; gap: 1.5rem; }
   nav.links { font-size: .93rem; gap: .3rem .8rem; }
 }
 </style>
+<style>
+/* ===== Diseño B «Apple + mar» (31/10/2026) ===== */
+/* Diseño B «Apple + mar»: bandas blancas y gris perla alternas, titulares grandes centrados,
+   tarjetas sin bordes con esquinas amplias, ilustraciones marítimas propias y menú que se despliega al pasar el mouse. */
+:root {
+  --paper: #F4F7FA;
+  --surface: #FFFFFF;
+  --ink: #0B1D2E;
+  --muted: #5A6B7B;
+  --rule: #E1E7EC;
+  --accent: #0A72B5;
+  --accent-ink: #0A69A6;
+  --sun: #E2622A;
+  --sea-1: #E7F4FB;
+  --sea-2: #C2E5F4;
+  --sea-3: #8ACDE6;
+  --hero-top: #FFFFFF;
+  --hero-bottom: #F1F8FC;
+  --deep: #F4F7FA;
+  --deep-fg: #0B1D2E;
+  --deep-soft: #5A6B7B;
+  --radius: 22px;
+  --shadow: 0 1px 2px rgba(11, 29, 46, .04), 0 12px 32px -18px rgba(11, 29, 46, .18);
+  --lift: 0 2px 4px rgba(11, 29, 46, .05), 0 22px 44px -22px rgba(11, 29, 46, .28);
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --bar-h: 52px;
+}
+body { background: var(--surface); background-image: none; font-size: 1.0625rem; line-height: 1.58; letter-spacing: -.011em; font-feature-settings: "cv11", "ss01"; }
+body::before { background: rgba(255,255,255,.86); }
+.bg-sea { display: none; }
+h1, h2, h3, h4 { letter-spacing: -.022em; font-weight: 700; }
+h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.032em; line-height: 1.06; }
+h3 { font-weight: 650; }
+.label { font-family: var(--font-display); text-transform: none; letter-spacing: 0; font-size: .95rem; font-weight: 600; color: var(--accent-ink); }
+.chip { font-family: var(--font-display); text-transform: none; letter-spacing: 0; font-size: .76rem; font-weight: 600; padding: .22rem .65rem; }
+:focus-visible { outline-color: var(--accent); }
+section[id], main[id] { scroll-margin-top: calc(var(--bar-h) + 12px); }
+
+/* ---- Barra superior con menú desplegable ---- */
+header.top { top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255,255,255,.86); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(11,29,46,.07); }
+header.top .wrap.gn-bar { height: var(--bar-h); padding-block: 0; flex-wrap: nowrap; gap: 1rem; }
+.brand span { font-weight: 700; font-size: .92rem; letter-spacing: .16em; }
+.brand svg { width: 24px; height: 24px; }
+nav.gn-menu { font-family: var(--font-display); font-size: .84rem; }
+.gn-list { list-style: none; margin: 0; padding: 0; display: flex; }
+.gn-item { display: flex; align-items: center; }
+nav.links a.gn-top { color: color-mix(in srgb, var(--ink) 82%, transparent); text-decoration: none; display: flex; align-items: center; }
+nav.links a.gn-top:hover { color: var(--ink); }
+.gn-exp { display: none; }
+.gn-tools { display: flex; align-items: center; gap: .5rem; }
+.langs { border-color: var(--rule); }
+.langs button { font-family: var(--font-display); font-weight: 600; font-size: .72rem; }
+header.top .social a { border: 0; padding: .3rem; color: var(--muted); }
+header.top .social a:hover { color: var(--accent-ink); }
+.gn-flyout { background: rgba(255,255,255,.97); }
+header.top .wrap.gn-fly-in { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) auto; gap: 1rem 3.5rem; padding-block: 2.2rem 2.8rem; align-items: start; }
+.gn-col { display: grid; gap: .55rem; align-content: start; }
+.gn-k { font-size: .76rem; font-weight: 500; color: var(--muted); margin-bottom: .2rem; }
+.gn-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+nav.links .gn-col a { color: var(--ink); text-decoration: none; }
+nav.links .gn-col a:hover { color: var(--accent-ink); }
+.gn-big a { font-size: 1.45rem; font-weight: 650; letter-spacing: -.02em; line-height: 1.2; }
+.gn-small a { font-size: .9rem; font-weight: 500; }
+.gn-mail { font-size: .9rem; color: var(--muted); user-select: all; }
+.gn-pic { margin: 0; width: 230px; display: grid; gap: .55rem; }
+.gn-pic .tile { aspect-ratio: 16 / 11; max-width: 100%; border-radius: 16px; background: linear-gradient(180deg, var(--sea-1), #D7EDF7); display: grid; place-items: center; color: var(--accent-ink); position: relative; overflow: hidden; }
+.gn-pic .tile::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -14px; height: 36px; border-radius: 50% 50% 0 0; background: var(--sea-2); opacity: .7; }
+.gn-pic .tile .ico { width: 64px; height: 64px; position: relative; z-index: 1; }
+.gn-pic .tile .pcover { width: 92px; min-height: 120px; padding: .6rem .55rem; position: relative; z-index: 1; transform: rotate(-4deg); box-shadow: inset 4px 0 0 rgba(0,0,0,.25), 0 14px 22px -12px rgba(5,20,40,.5); }
+.gn-pic .tile .pcover b { font-size: .78rem; margin-top: .5rem; color: #fff; }
+.gn-pic figcaption { font-size: .82rem; color: var(--muted); line-height: 1.35; }
+.gn-curtain { position: fixed; inset: 0; z-index: 40; background: rgba(236, 243, 248, .55); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .3s ease, visibility 0s linear .3s; }
+.gn-burger { display: none; }
+
+@media (hover: hover) and (min-width: 1100px) {
+  nav.gn-menu { flex: 1; display: flex; align-items: stretch; justify-content: space-between; align-self: stretch; gap: 1rem; }
+  .gn-list { margin-inline: auto; align-items: stretch; }
+  nav.links a.gn-top { padding: 0 .85rem; height: 100%; }
+  .gn-flyout { position: absolute; left: 0; right: 0; top: 100%; border-bottom: 1px solid var(--rule); box-shadow: 0 40px 50px -40px rgba(11,29,46,.35); visibility: hidden; opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity .22s ease, transform .3s ease, visibility 0s linear .3s; }
+  .gn-item:hover > .gn-flyout, .gn-item:focus-within > .gn-flyout { visibility: visible; opacity: 1; transform: none; pointer-events: auto; transition: opacity .25s ease .1s, transform .35s ease .1s, visibility 0s linear .1s; }
+  .gn-item:hover > a.gn-top, .gn-item:focus-within > a.gn-top { color: var(--ink); }
+  header.top:has(.gn-item:hover, .gn-item:focus-within) + .gn-curtain { opacity: 1; visibility: visible; transition: opacity .3s ease .1s, visibility 0s linear .1s; }
+  header.top.gn-hush .gn-flyout { visibility: hidden !important; opacity: 0 !important; }
+  header.top.gn-hush + .gn-curtain { opacity: 0 !important; visibility: hidden !important; }
+}
+@media (prefers-reduced-motion: reduce) { .gn-flyout, .gn-curtain { transition: none !important; transform: none !important; } }
+
+@media not all and (hover: hover) and (min-width: 1100px) {
+  header.top { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255,255,255,.97); }
+  header.top .wrap.gn-bar { justify-content: space-between; }
+  .gn-burger { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+  .gn-burger i { display: block; width: 18px; height: 1.6px; background: currentColor; border-radius: 2px; transition: transform .25s ease; }
+  .gn-burger span { display: grid; gap: 6px; }
+  header.top.open .gn-burger i:first-child { transform: translateY(3.8px) rotate(45deg); }
+  header.top.open .gn-burger i:last-child { transform: translateY(-3.8px) rotate(-45deg); }
+  nav.gn-menu { display: none; position: fixed; left: 0; right: 0; bottom: 0; top: calc(env(safe-area-inset-top, 0px) + var(--bar-h)); background: var(--surface); overflow-y: auto; overscroll-behavior: contain; padding: .6rem max(20px, env(safe-area-inset-right, 0px)) calc(2rem + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); }
+  header.top.open nav.gn-menu { display: block; }
+  .gn-list { flex-direction: column; }
+  .gn-item { flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+  nav.links a.gn-top { flex: 1; font-size: 1.6rem; font-weight: 650; letter-spacing: -.02em; padding: .7rem 0; color: var(--ink); }
+  .gn-exp { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; color: var(--muted); cursor: pointer; border-radius: 50%; }
+  .gn-exp svg { width: 16px; height: 16px; transition: transform .25s ease; }
+  .gn-item.open .gn-exp svg { transform: rotate(180deg); }
+  .gn-flyout { display: none; flex-basis: 100%; }
+  .gn-item.open .gn-flyout { display: block; }
+  header.top .gn-flyout > .wrap { padding-left: 0; padding-right: 0; }
+  header.top .wrap.gn-fly-in { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; padding-block: .2rem 1.3rem; }
+  .gn-big a { font-size: 1.12rem; }
+  .gn-pic { display: none; }
+  .gn-tools { flex-wrap: wrap; gap: 1rem; padding-top: 1.4rem; }
+  header.top .social span { position: static; width: auto; height: auto; clip: auto; }
+  header.top .social a { border: 1px solid var(--rule); padding: .4rem .8rem; border-radius: 999px; font-family: var(--font-display); font-size: .85rem; gap: .4rem; }
+  body.gn-lock { overflow: hidden; }
+}
+
+/* ---- Botones tipo píldora ---- */
+.btn { border-radius: 980px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: -.01em; padding: .78rem 1.45rem; box-shadow: none; border-width: 1.5px; }
+.btn-primary { background: var(--accent); }
+.btn-primary:hover { filter: none; background: #08609A; }
+.btn-ghost { border-color: var(--accent); color: var(--accent-ink); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+/* Pie claro */
+.shore { background: var(--surface); }
+.shore .s1 path { fill: var(--sea-2); opacity: .5; }
+.shore .s2 path { fill: var(--paper); }
+footer { background: var(--paper); color: var(--muted); }
+.legal details summary { color: var(--ink); }
+.social.foot a { color: var(--muted); border-color: var(--rule); background: var(--surface); }
+.social.foot a:hover, .social.foot a:focus-visible { color: var(--accent-ink); border-color: currentColor; }
+
+/* ---- Portada ---- */
+.hero { background: linear-gradient(180deg, var(--hero-top) 0%, var(--hero-bottom) 100%); padding-bottom: 0; }
+.hero .waves { display: none; }
+.hero .wrap { padding-block: clamp(2.2rem, 4.5vw, 3.6rem) clamp(1rem, 2vw, 1.6rem); }
+.hero h1 { font-size: clamp(2.8rem, 6.4vw, 4.8rem); font-weight: 800; letter-spacing: -.045em; line-height: 1.0; }
+.hero h1 em { background: linear-gradient(95deg, #0A5F98 0%, #1AA0CF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.5; }
+.today { border: 0; border-radius: 16px; background: var(--surface); }
+.today:hover { box-shadow: var(--lift); }
+.today-k { font-family: var(--font-display); text-transform: none; letter-spacing: 0; font-weight: 600; font-size: .74rem; background: var(--sun); }
+.audience span { font-family: var(--font-display); font-size: .84rem; border: 0; background: color-mix(in srgb, var(--sea-1) 80%, #fff); color: #34536A; padding: .3rem .8rem; }
+.stage { position: relative; height: clamp(230px, 34vw, 520px); }
+.stage svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .scene .ship { animation: bob 7s ease-in-out infinite; }
+  .scene .tug { animation: tug 5.5s ease-in-out infinite; }
+  .scene .drift { animation: glide 14s ease-in-out infinite alternate; }
+  .scene .beam { animation: beam 4s ease-in-out infinite; transform-origin: 12px -104px; }
+}
+@keyframes bob { 50% { transform: translateY(2.5px); } }
+@keyframes tug { 0%, 100% { transform: translate(372px, 0); } 50% { transform: translate(380px, 2px); } }
+@keyframes glide { to { transform: translateX(-40px); } }
+@keyframes beam { 50% { opacity: .2; } }
+
+/* ---- Bandas ---- */
+section.band { padding-block: clamp(4rem, 9vw, 7rem); background: var(--surface); }
+section.band.alt { background: var(--paper); }
+.sec-head { text-align: center; justify-items: center; margin-inline: auto; max-width: 50rem; margin-bottom: clamp(2.2rem, 5vw, 3.4rem); }
+.sec-head p:not(.label) { font-size: 1.15rem; }
+.sec-head .row { justify-content: center; }
+.news-head { flex-direction: column; align-items: center; text-align: center; }
+.news-head .sec-head { margin-bottom: 0; }
+
+/* Tarjetas: sin bordes, esquinas amplias, el fondo contrasta con la banda */
+:is(.entry, .mod, .prod, .art, .feature, .sheet, .story, .freebie, .calc) { border: 0; border-radius: var(--radius); box-shadow: none; }
+section.band:not(.alt) :is(.entry, .mod, .prod, .art, .feature, .sheet, .story, .freebie) { background: var(--paper); }
+section.band.alt :is(.entry, .mod, .prod, .art, .feature, .sheet, .story, .freebie) { background: var(--surface); box-shadow: var(--shadow); }
+:is(.mod, .story, .prod):hover { box-shadow: var(--lift); border-color: transparent; }
+.prod.best { box-shadow: inset 0 0 0 2px var(--accent); }
+.prod .ribbon { background: var(--sun); font-family: var(--font-display); text-transform: none; letter-spacing: 0; font-weight: 600; font-size: .74rem; }
+.entry { padding: 1.25rem 1.3rem; }
+.entry .meta, .art-head .meta, .mod-n, .harbour .n, .series .n, .story .meta, .byline, .fmt, .news-updated { font-family: var(--font-display); letter-spacing: 0; font-weight: 600; }
+.entry .meta { font-size: .78rem; }
+.story .cat { text-transform: none; }
+.byline { font-weight: 500; }
+.calc { box-shadow: var(--shadow); }
+.inp { border-radius: 12px; }
+.out { background: #0B2545; }
+.callout { border-left: 0; border-radius: 16px; background: var(--sea-1); }
+.freebie { border-left: 0; }
+.chip.free { background: var(--accent); }
+.mod-more, .prod-buy, .dlg-buy { border-top-color: var(--rule); }
+table.reg th { font-family: var(--font-display); letter-spacing: .02em; font-weight: 600; }
+table.reg td.y, .kind { font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+.kind { border-radius: 999px; padding: .12rem .55rem; }
+.specs dt { font-family: var(--font-display); }
+.steps { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.series, .upcoming { border-top: 1px solid var(--rule); }
+.dlg { border-radius: var(--radius); }
+.firstpage { border-radius: 10px; }
+
+/* Biblioteca: pestañas tipo píldora y franja de la flota */
+.tabs { justify-content: center; gap: .5rem; }
+.tabs button { border: 0; border-radius: 980px; background: var(--paper); font-weight: 600; font-size: .95rem; padding: .55rem 1.1rem; }
+section.alt .tabs button { background: var(--surface); }
+.tabs button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.panel-intro { margin-inline: auto; text-align: center; }
+.fleet { margin: -.6rem auto 2.4rem; max-width: 64rem; overflow-x: auto; scrollbar-width: none; border-radius: var(--radius); }
+.fleet::-webkit-scrollbar { display: none; }
+.fleet-svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.fleet-svg .fl { font: 600 15px var(--font-display); fill: #4A6378; letter-spacing: -.01em; }
+.fleet-hint { display: none; text-align: center; font-size: .82rem; color: var(--muted); margin: -1.8rem 0 2rem; }
+@media (max-width: 780px) { .fleet-hint { display: block; } }
+
+/* Dársenas: mosaico con dibujos */
+.harbour { border-top: 0; gap: 1rem; }
+.harbour a { background: var(--surface); border: 0; border-radius: var(--radius); padding: 1.5rem 1.4rem 1.5rem; box-shadow: var(--shadow); gap: .55rem; transition: box-shadow .2s ease, transform .2s ease; }
+.harbour a:hover { box-shadow: var(--lift); }
+@media (prefers-reduced-motion: no-preference) { .harbour a:hover { transform: translateY(-3px); } }
+.harbour .h-ico { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: linear-gradient(160deg, var(--sea-1), #D3ECF7); color: var(--accent-ink); margin-bottom: .35rem; }
+.harbour .h-ico svg { width: 32px; height: 32px; }
+.harbour .chip { justify-self: start; }
+
+@media (max-width: 960px) { .harbour { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 780px) { .book { order: 0; } .cover { width: min(58%, 220px); } }
+@media (max-width: 520px) { .harbour { grid-template-columns: minmax(0, 1fr); } .hero h1 { letter-spacing: -.04em; } }
+.freebie + .freebie { margin-top: -1rem; }
+</style>
 
 <div class="bg-sea" aria-hidden="true"><svg viewBox="0 0 2880 900" preserveAspectRatio="none"><path d="M0 140 C120 126 360 154 480 140 C600 126 840 154 960 140 C1080 126 1320 154 1440 140 C1560 126 1800 154 1920 140 C2040 126 2280 154 2400 140 C2520 126 2760 154 2880 140"/><path d="M0 300 C120 290 360 310 480 300 C600 290 840 310 960 300 C1080 290 1320 310 1440 300 C1560 290 1800 310 1920 300 C2040 290 2280 310 2400 300 C2520 290 2760 310 2880 300"/><path d="M0 470 C120 454 360 486 480 470 C600 454 840 486 960 470 C1080 454 1320 486 1440 470 C1560 454 1800 486 1920 470 C2040 454 2280 486 2400 470 C2520 454 2760 486 2880 470"/><path d="M0 640 C120 628 360 652 480 640 C600 628 840 652 960 640 C1080 628 1320 652 1440 640 C1560 628 1800 652 1920 640 C2040 628 2280 652 2400 640 C2520 628 2760 652 2880 640"/><path d="M0 800 C120 785 360 815 480 800 C600 785 840 815 960 800 C1080 785 1320 815 1440 800 C1560 785 1800 815 1920 800 C2040 785 2280 815 2400 800 C2520 785 2760 815 2880 800"/></svg></div>
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
+  <div class="wrap gn-bar">
     <a class="brand" href="#inicio" aria-label="Oceanica Terra, inicio">
       <svg viewBox="0 0 32 32" aria-hidden="true">
         <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/>
@@ -458,23 +679,18 @@ footer .wrap { display: grid; gap: 1.5rem; }
       </svg>
       <span>OCEANICA TERRA</span>
     </a>
-    <nav class="links" aria-label="Secciones">
-      <a href="#biblioteca">Biblioteca</a>
-      <a href="#academia">Academia</a>
-      <a href="/herramientas/">Herramientas</a>
-      <a href="#publicaciones">Tienda</a>
-      <a href="#actualidad">Noticias</a>
-      <a href="#videos">Videos</a>
-      <a href="#contacto">Contacto</a>
-      <span class="langs" role="group" aria-label="Idioma">
+    <button type="button" class="gn-burger" aria-expanded="false" aria-controls="gn-menu" aria-label="Abrir el menú"><span><i></i><i></i></span></button>
+    <nav class="links gn-menu" id="gn-menu" aria-label="Secciones">
+      <ul class="gn-list"><li class="gn-item" data-menu="bib"><a class="gn-top" href="#biblioteca">Biblioteca</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-bib" aria-label="Ver opciones de Biblioteca"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-bib"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Explorar la biblioteca</p><ul><li><a href="#biblioteca" data-tab="t-buques">Tipos de buque</a></li><li><a href="#biblioteca" data-tab="t-logistica">Transporte y logística</a></li><li><a href="#biblioteca" data-tab="t-ingenieria">Construcción e ingeniería</a></li><li><a href="#biblioteca" data-tab="t-navegacion">Navegación y cubierta</a></li><li><a href="#biblioteca" data-tab="t-seguridad">Seguridad y medio ambiente</a></li><li><a href="#biblioteca" data-tab="t-convenios">Convenios e instituciones</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">Artículos</p><ul><li><a href="/articulos/conocimiento-de-embarque.html">El conocimiento de embarque, campo por campo</a></li><li><a href="/articulos/solas-en-10-minutos.html">SOLAS en 10 minutos</a></li><li><a href="/articulos/fob-frente-a-cif.html">FOB frente a CIF sin confusiones</a></li><li><a href="#plataforma">Qué encontrarás en Oceanica Terra</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14C20 11 14 10 8 11v25c6-1 12 0 16 3 4-3 10-4 16-3V11c-6-1-12 0-16 3zM24 14v25"/><path d="M12 18c3-.4 6 0 8 1M12 24c3-.4 6 0 8 1M28 19c2-1 5-1.4 8-1M28 25c2-1 5-1.4 8-1" stroke-opacity=".5"/></svg></div><figcaption>Del casco al contrato: fichas y artículos con fuentes.</figcaption></figure></div></div></li><li class="gn-item" data-menu="aca"><a class="gn-top" href="#academia">Academia</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-aca" aria-label="Ver opciones de Academia"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-aca"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Academia</p><ul><li><a href="#academia">Plan de estudios: 20 módulos</a></li><li><a href="#modulo-11" data-dialog="modulo-11">Módulo 11 · Fletamentos y mercados de fletes</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">Formatos</p><ul><li><a href="#academia">Cursos grabados</a></li><li><a href="#academia">Webinars y talleres</a></li><li><a href="#contacto">Formación para empresas y escuelas</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19l19-8 19 8-19 8z"/><path d="M13 23v8c0 3 22 3 22 0v-8M43 19v9"/></svg></div><figcaption>Plan de estudios en administración marítima y portuaria.</figcaption></figure></div></div></li><li class="gn-item" data-menu="her"><a class="gn-top" href="/herramientas/">Herramientas</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-her" aria-label="Ver opciones de Herramientas"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-her"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Herramientas gratuitas</p><ul><li><a href="/herramientas/conversor-nautico.html">Conversor náutico</a></li><li><a href="#ejercicios">Calculadora de demora y despacho</a></li><li><a href="/herramientas/">Todas las herramientas</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">Practicar</p><ul><li><a href="#ejercicios">Caso resuelto: ¿cuánto debe pagar el fletador?</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="7" width="24" height="34" rx="4"/><rect x="16" y="11" width="16" height="7" rx="1.5"/><path d="M17 25h2M23 25h2M29 25h2M17 30h2M23 30h2M29 30h2M17 35h2M23 35h2M29 35h2" stroke-width="2.6" stroke-linecap="round"/></svg></div><figcaption>Calculadoras gratuitas para practicar.</figcaption></figure></div></div></li><li class="gn-item" data-menu="tie"><a class="gn-top" href="#publicaciones">Tienda</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-tie" aria-label="Ver opciones de Tienda"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-tie"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Tienda</p><ul><li><a href="#publicaciones">Ver la tienda</a></li><li><a href="#guia-gratis">Guía gratis: Incoterms 2020</a></li><li><a href="#guia-gratis-gmdss">Guía gratis: GMDSS</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">Publicaciones</p><ul><li><a href="#producto-libro">Laytime y demora sin misterios</a></li><li><a href="#producto-pack">Pack Laytime completo</a></li><li><a href="#producto-calculadora">Calculadora de laytime y demora (Excel)</a></li><li><a href="#producto-kit">Kit de documentación del buque en puerto</a></li><li><a href="#producto-psc">Lista de comprobación para inspecciones PSC</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><div class="pcover"><span>GUÍA PRÁCTICA</span><b>Laytime y demora sin misterios</b></div></div><figcaption>Pago seguro con PayPal o tarjeta y descarga inmediata.</figcaption></figure></div></div></li><li class="gn-item" data-menu="not"><a class="gn-top" href="#actualidad">Noticias</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-not" aria-label="Ver opciones de Noticias"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-not"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Noticias</p><ul><li><a href="#actualidad">Noticias de hoy</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">Cada día en redes</p><ul><li><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@oceanicaterra" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener">YouTube</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15"/><ellipse cx="24" cy="24" rx="6.5" ry="15"/><path d="M9.5 19h29M9.5 29h29"/></svg></div><figcaption>Lo más importante del mar, resumido y con su fuente.</figcaption></figure></div></div></li><li class="gn-item" data-menu="vid"><a class="gn-top" href="#videos">Videos</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-vid" aria-label="Ver opciones de Videos"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-vid"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Videos</p><ul><li><a href="#videos">Diez primeros videos del canal</a></li><li><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener">Canal de YouTube</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">También en</p><ul><li><a href="https://www.tiktok.com/@oceanicaterra" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener">Instagram</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="11" width="34" height="26" rx="6"/><path d="M21 18l9 6-9 6z" fill="currentColor"/></svg></div><figcaption>Cómo funcionan los buques y el comercio marítimo.</figcaption></figure></div></div></li><li class="gn-item" data-menu="con"><a class="gn-top" href="#contacto">Contacto</a><button type="button" class="gn-exp" aria-expanded="false" aria-controls="fly-con" aria-label="Ver opciones de Contacto"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="gn-flyout" id="fly-con"><div class="wrap gn-fly-in"><div class="gn-col gn-big"><p class="gn-k">Contacto</p><ul><li><a href="#contacto">Escríbenos</a></li><li><a href="#sobre">Sobre nosotros</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></div><div class="gn-col gn-small"><p class="gn-k">El autor</p><ul><li><a href="/autor/cesar-andrade.html">César Andrade</a></li></ul></div><figure class="gn-pic" aria-hidden="true"><div class="tile"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="13" width="34" height="23" rx="3"/><path d="M8 15l16 11 16-11"/></svg></div><figcaption>contacto@oceanicaterra.com</figcaption></figure></div></div></li></ul>
+      <div class="gn-tools"><span class="langs" role="group" aria-label="Idioma">
         <button type="button" data-lang="es" aria-pressed="true">ES</button>
         <button type="button" class="soon" data-lang="en" aria-pressed="false" title="English — próximamente" aria-label="English (próximamente)">EN</button>
         <button type="button" class="soon" data-lang="it" aria-pressed="false" title="Italiano — próximamente" aria-label="Italiano (próximamente)">IT</button>
-      </span>
-      <span class="social" role="group" aria-label="Redes sociales de Oceanica Terra"><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener" title="Oceanica Terra en Instagram" aria-label="Oceanica Terra en Instagram (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.2-1.8h5l1.2 1.8h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Instagram</span></a><a href="https://www.tiktok.com/@oceanicaterra" target="_blank" rel="noopener" title="Oceanica Terra en TikTok" aria-label="Oceanica Terra en TikTok (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 4.2v10.3a3.4 3.4 0 1 1-3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.4 4.2c.5 2.5 2.2 4.1 4.8 4.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>TikTok</span></a><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener" title="Oceanica Terra en YouTube" aria-label="Oceanica Terra en YouTube (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 8.6v6.8l5.4-3.4z" fill="currentColor"/></svg><span>YouTube</span></a></span>
+      </span><span class="social" role="group" aria-label="Redes sociales de Oceanica Terra"><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener" title="Oceanica Terra en Instagram" aria-label="Oceanica Terra en Instagram (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.2-1.8h5l1.2 1.8h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Instagram</span></a><a href="https://www.tiktok.com/@oceanicaterra" target="_blank" rel="noopener" title="Oceanica Terra en TikTok" aria-label="Oceanica Terra en TikTok (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 4.2v10.3a3.4 3.4 0 1 1-3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.4 4.2c.5 2.5 2.2 4.1 4.8 4.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>TikTok</span></a><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener" title="Oceanica Terra en YouTube" aria-label="Oceanica Terra en YouTube (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 8.6v6.8l5.4-3.4z" fill="currentColor"/></svg><span>YouTube</span></a></span></div>
     </nav>
   </div>
 </header>
+<div class="gn-curtain" aria-hidden="true"></div>
 <div class="langnote" id="langnote" hidden><div class="wrap" id="langnote-text"></div></div>
 
 <main id="inicio">
@@ -508,6 +724,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
         <span class="chip on">Primer libro disponible</span>
       </div>
     </div>
+    <div class="stage"><svg class="scene" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustración: un portacontenedores de Oceanica Terra atracado bajo las grúas de un puerto al amanecer, con un remolcador y un faro"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1F8FC"/><stop offset=".22" stop-color="#D3EAF7"/><stop offset=".72" stop-color="#F3F9FD"/><stop offset="1" stop-color="#FFF6EA"/></linearGradient><radialGradient id="sunglow"><stop offset="0" stop-color="#FFE4B8" stop-opacity=".9"/><stop offset="1" stop-color="#FFE4B8" stop-opacity="0"/></radialGradient><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ED3EB"/><stop offset="1" stop-color="#6FB9DC"/></linearGradient></defs><rect width="1600" height="600" fill="url(#sky)"/><circle cx="1190" cy="190" r="170" fill="url(#sunglow)"/><circle cx="1190" cy="190" r="58" fill="#FFEFD3"/><g fill="#FFFFFF" opacity=".92"><ellipse cx="250" cy="140" rx="70" ry="18"/><ellipse cx="225" cy="128" rx="34" ry="20"/><ellipse cx="272" cy="124" rx="40" ry="24"/></g><g fill="#FFFFFF" opacity=".92"><ellipse cx="760" cy="125" rx="56.0" ry="14.4"/><ellipse cx="740.0" cy="115.4" rx="27.200000000000003" ry="16.0"/><ellipse cx="777.6" cy="112.2" rx="32.0" ry="19.200000000000003"/></g><g fill="#FFFFFF" opacity=".92"><ellipse cx="1470" cy="135" rx="63.0" ry="16.2"/><ellipse cx="1447.5" cy="124.2" rx="30.6" ry="18.0"/><ellipse cx="1489.8" cy="120.6" rx="36.0" ry="21.6"/></g><path d="M840 470 C960 420 1080 432 1180 418 C1300 400 1420 428 1600 410 V470 Z" fill="#D3E6F0"/><path d="M0 360 C80 350 170 352 250 392 C300 418 330 446 360 470 H0 Z" fill="#BCD7E6"/><g transform="translate(150 358)"><path d="M-14 0 L-9 -96 H9 L14 0 Z" fill="#FFFFFF"/><path d="M-12 -30 H12 L13 -14 H-13 Z M-10 -70 H10 L11 -54 H-11 Z" fill="#C4553D"/><rect x="-11" y="-112" width="22" height="16" fill="#FFF3D6" stroke="#12324D" stroke-width="2"/><path d="M-14 -112 L0 -126 L14 -112 Z" fill="#12324D"/><path class="beam" d="M12 -104 L120 -122 L120 -86 Z" fill="#FFE9B8" opacity=".55"/></g><rect x="700" y="440" width="900" height="30" fill="#B7C9D5"/><rect x="700" y="438" width="900" height="4" fill="#9FB3C1"/><rect x="1430" y="426" width="26" height="12.5" fill="#F2C14E"/><rect x="1430" y="412" width="26" height="12.5" fill="#3D6E8F"/><rect x="1458" y="426" width="26" height="12.5" fill="#2F8FC4"/><rect x="1458" y="412" width="26" height="12.5" fill="#2F8FC4"/><rect x="1458" y="398" width="26" height="12.5" fill="#B5523B"/><rect x="1486" y="426" width="26" height="12.5" fill="#6BB39A"/><rect x="1486" y="412" width="26" height="12.5" fill="#E07A3F"/><rect x="1520" y="426" width="26" height="12.5" fill="#2F8FC4"/><rect x="1520" y="412" width="26" height="12.5" fill="#6BB39A"/><rect x="1520" y="398" width="26" height="12.5" fill="#2F8FC4"/><rect x="1548" y="426" width="26" height="12.5" fill="#2F8FC4"/><rect x="1548" y="412" width="26" height="12.5" fill="#6BB39A"/><rect x="1548" y="398" width="26" height="12.5" fill="#E07A3F"/><g class="crane" fill="none" stroke="#E06A3B" stroke-width="7" stroke-linejoin="round"><path d="M746 470 L750 300 M814 470 L810 300"/><path d="M750 300 H810 M748 380 H812" stroke-width="6"/><path d="M748 380 L810 300 M812 380 L750 300" stroke-width="3"/><path d="M630 280 H876" stroke-width="8"/><path d="M790 280 L810 214 L830 280" stroke-width="5"/><path d="M810 214 L630 280 M810 214 L876 280" stroke-width="2.5"/></g><rect x="710" y="284" width="20" height="16" rx="2" fill="#FFFFFF" stroke="#E06A3B" stroke-width="2"/><path d="M720 300 V318" stroke="#12324D" stroke-width="1.5"/><rect x="840" y="268" width="34" height="12" fill="#E06A3B"/><g class="crane" fill="none" stroke="#E06A3B" stroke-width="7" stroke-linejoin="round"><path d="M956 470 L960 300 M1024 470 L1020 300"/><path d="M960 300 H1020 M958 380 H1022" stroke-width="6"/><path d="M958 380 L1020 300 M1022 380 L960 300" stroke-width="3"/><path d="M840 280 H1086" stroke-width="8"/><path d="M1000 280 L1020 214 L1040 280" stroke-width="5"/><path d="M1020 214 L840 280 M1020 214 L1086 280" stroke-width="2.5"/></g><rect x="920" y="284" width="20" height="16" rx="2" fill="#FFFFFF" stroke="#E06A3B" stroke-width="2"/><path d="M930 300 V318" stroke="#12324D" stroke-width="1.5"/><rect x="1050" y="268" width="34" height="12" fill="#E06A3B"/><g class="crane" fill="none" stroke="#E06A3B" stroke-width="7" stroke-linejoin="round"><path d="M1166 470 L1170 300 M1234 470 L1230 300"/><path d="M1170 300 H1230 M1168 380 H1232" stroke-width="6"/><path d="M1168 380 L1230 300 M1232 380 L1170 300" stroke-width="3"/><path d="M1050 280 H1296" stroke-width="8"/><path d="M1210 280 L1230 214 L1250 280" stroke-width="5"/><path d="M1230 214 L1050 280 M1230 214 L1296 280" stroke-width="2.5"/></g><rect x="1130" y="284" width="20" height="16" rx="2" fill="#FFFFFF" stroke="#E06A3B" stroke-width="2"/><path d="M1140 300 V318" stroke="#12324D" stroke-width="1.5"/><rect x="1260" y="268" width="34" height="12" fill="#E06A3B"/><path d="M510 170 q5 -6 10 0 q5 -6 10 0" fill="none" stroke="#12324D" stroke-width="2" stroke-linecap="round"/><path d="M550 150 q5 -6 10 0 q5 -6 10 0" fill="none" stroke="#12324D" stroke-width="2" stroke-linecap="round"/><path d="M970 130 q5 -6 10 0 q5 -6 10 0" fill="none" stroke="#12324D" stroke-width="2" stroke-linecap="round"/><rect y="468" width="1600" height="132" fill="url(#sea)"/><g class="drift" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"><path d="M60 500 h80"/><path d="M260 530 h120"/><path d="M1450 515 h90"/><path d="M1180 560 h130"/><path d="M120 575 h70"/><path d="M700 585 h110"/><path d="M1500 590 h60"/></g><g class="ship"><ellipse cx="940" cy="512" rx="470" ry="12" fill="#2C6E92" opacity=".22"/><rect x="500" y="417" width="29" height="13.5" fill="#E07A3F"/><rect x="500" y="402" width="29" height="13.5" fill="#6BB39A"/><rect x="500" y="387" width="29" height="13.5" fill="#E07A3F"/><rect x="500" y="372" width="29" height="13.5" fill="#2F8FC4"/><rect x="531" y="417" width="29" height="13.5" fill="#3D6E8F"/><rect x="531" y="402" width="29" height="13.5" fill="#F2C14E"/><rect x="531" y="387" width="29" height="13.5" fill="#2F8FC4"/><rect x="568" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="568" y="402" width="29" height="13.5" fill="#F2C14E"/><rect x="568" y="387" width="29" height="13.5" fill="#2F8FC4"/><rect x="599" y="417" width="29" height="13.5" fill="#6BB39A"/><rect x="599" y="402" width="29" height="13.5" fill="#B5523B"/><rect x="636" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="636" y="402" width="29" height="13.5" fill="#E07A3F"/><rect x="667" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="667" y="402" width="29" height="13.5" fill="#3D6E8F"/><rect x="667" y="387" width="29" height="13.5" fill="#B5523B"/><rect x="667" y="372" width="29" height="13.5" fill="#F2C14E"/><rect x="698" y="417" width="29" height="13.5" fill="#B5523B"/><rect x="698" y="402" width="29" height="13.5" fill="#C9D3DB"/><rect x="698" y="387" width="29" height="13.5" fill="#6BB39A"/><rect x="698" y="372" width="29" height="13.5" fill="#F2C14E"/><rect x="729" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="729" y="402" width="29" height="13.5" fill="#C9D3DB"/><rect x="729" y="387" width="29" height="13.5" fill="#2F8FC4"/><rect x="729" y="372" width="29" height="13.5" fill="#F2C14E"/><rect x="760" y="417" width="29" height="13.5" fill="#F2C14E"/><rect x="760" y="402" width="29" height="13.5" fill="#C9D3DB"/><rect x="791" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="791" y="402" width="29" height="13.5" fill="#2F8FC4"/><rect x="791" y="387" width="29" height="13.5" fill="#3D6E8F"/><rect x="791" y="372" width="29" height="13.5" fill="#F2C14E"/><rect x="822" y="417" width="29" height="13.5" fill="#F2C14E"/><rect x="822" y="402" width="29" height="13.5" fill="#3D6E8F"/><rect x="822" y="387" width="29" height="13.5" fill="#E07A3F"/><rect x="822" y="372" width="29" height="13.5" fill="#2F8FC4"/><rect x="853" y="417" width="29" height="13.5" fill="#B5523B"/><rect x="853" y="402" width="29" height="13.5" fill="#B5523B"/><rect x="853" y="387" width="29" height="13.5" fill="#B5523B"/><rect x="884" y="417" width="29" height="13.5" fill="#F2C14E"/><rect x="884" y="402" width="29" height="13.5" fill="#2F8FC4"/><rect x="884" y="387" width="29" height="13.5" fill="#2F8FC4"/><rect x="915" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="915" y="402" width="29" height="13.5" fill="#E07A3F"/><rect x="915" y="387" width="29" height="13.5" fill="#C9D3DB"/><rect x="915" y="372" width="29" height="13.5" fill="#F2C14E"/><rect x="946" y="417" width="29" height="13.5" fill="#B5523B"/><rect x="946" y="402" width="29" height="13.5" fill="#E07A3F"/><rect x="946" y="387" width="29" height="13.5" fill="#F2C14E"/><rect x="946" y="372" width="29" height="13.5" fill="#B5523B"/><rect x="977" y="417" width="29" height="13.5" fill="#F2C14E"/><rect x="977" y="402" width="29" height="13.5" fill="#E07A3F"/><rect x="977" y="387" width="29" height="13.5" fill="#6BB39A"/><rect x="977" y="372" width="29" height="13.5" fill="#C9D3DB"/><rect x="1008" y="417" width="29" height="13.5" fill="#3D6E8F"/><rect x="1008" y="402" width="29" height="13.5" fill="#3D6E8F"/><rect x="1008" y="387" width="29" height="13.5" fill="#F2C14E"/><rect x="1008" y="372" width="29" height="13.5" fill="#2F8FC4"/><rect x="1039" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="1039" y="402" width="29" height="13.5" fill="#C9D3DB"/><rect x="1039" y="387" width="29" height="13.5" fill="#F2C14E"/><rect x="1039" y="372" width="29" height="13.5" fill="#3D6E8F"/><rect x="1070" y="417" width="29" height="13.5" fill="#3D6E8F"/><rect x="1070" y="402" width="29" height="13.5" fill="#B5523B"/><rect x="1070" y="387" width="29" height="13.5" fill="#3D6E8F"/><rect x="1101" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="1101" y="402" width="29" height="13.5" fill="#F2C14E"/><rect x="1101" y="387" width="29" height="13.5" fill="#F2C14E"/><rect x="1101" y="372" width="29" height="13.5" fill="#6BB39A"/><rect x="1132" y="417" width="29" height="13.5" fill="#F2C14E"/><rect x="1132" y="402" width="29" height="13.5" fill="#F2C14E"/><rect x="1132" y="387" width="29" height="13.5" fill="#C9D3DB"/><rect x="1132" y="372" width="29" height="13.5" fill="#C9D3DB"/><rect x="1169" y="417" width="29" height="13.5" fill="#2F8FC4"/><rect x="1169" y="402" width="29" height="13.5" fill="#B5523B"/><rect x="1169" y="387" width="29" height="13.5" fill="#B5523B"/><rect x="1169" y="372" width="29" height="13.5" fill="#F2C14E"/><rect x="1200" y="417" width="29" height="13.5" fill="#E07A3F"/><rect x="1200" y="402" width="29" height="13.5" fill="#F2C14E"/><rect x="1200" y="387" width="29" height="13.5" fill="#2F8FC4"/><rect x="1231" y="417" width="29" height="13.5" fill="#3D6E8F"/><rect x="1231" y="402" width="29" height="13.5" fill="#2F8FC4"/><rect x="1231" y="387" width="29" height="13.5" fill="#F2C14E"/><rect x="1231" y="372" width="29" height="13.5" fill="#3D6E8F"/><path d="M466 424 L500 504 L1392 504 L1414 446 L1414 424 Z" fill="#12324D"/><path d="M494 492 L1396 492 L1392 504 L500 504 Z" fill="#C4553D"/><text x="560" y="466" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4">OCEANICA TERRA</text><rect x="1300" y="336" width="82" height="88" fill="#F7FAFC"/><rect x="1290" y="336" width="104" height="9" fill="#F7FAFC"/><rect x="1300" y="350" width="82" height="9" fill="#12324D"/><path d="M1306 372 H1376 M1306 388 H1376 M1306 404 H1376" stroke="#C5D3DD" stroke-width="3"/><rect x="1360" y="306" width="22" height="30" fill="#12324D"/><rect x="1360" y="314" width="22" height="6" fill="#E06A3B"/><path d="M1330 336 V316 M1322 320 H1338" stroke="#12324D" stroke-width="2.5"/></g><g class="tug" transform="translate(372 0)"><path d="M0 486 L8 506 L86 506 L96 488 Z" fill="#12324D"/><path d="M4 500 H90" stroke="#C4553D" stroke-width="5"/><rect x="28" y="462" width="34" height="24" fill="#F7FAFC"/><rect x="31" y="467" width="28" height="6" fill="#12324D"/><rect x="50" y="450" width="8" height="12" fill="#E06A3B"/><path d="M-6 506 q10 -6 20 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></g><path d="M0 578 C200 566 400 590 600 578 C800 566 1000 590 1200 578 C1400 566 1500 584 1600 576 V600 H0 Z" fill="#F4F7FA"/></svg></div>
   </section>
 
   <!-- ÍNDICE DE LA PLATAFORMA -->
@@ -519,14 +736,14 @@ footer .wrap { display: grid; gap: 1.5rem; }
         <p>Así se organiza Oceanica Terra. Cada sección indica si ya está disponible o en preparación.</p>
       </div>
       <div class="harbour">
-        <a href="#biblioteca"><span class="n">01</span><h3>Biblioteca</h3><p>Tipos de buque, logística, construcción naval, navegación, seguridad, convenios y los primeros artículos.</p><span class="chip on">Disponible</span></a>
-        <a href="#academia"><span class="n">02</span><h3>Academia</h3><p>20 módulos con resumen y primera página gratis, cursos, webinars y formación para empresas.</p><span class="chip on">1 de 20 disponible</span></a>
-        <a href="#publicaciones"><span class="n">03</span><h3>Tienda y publicaciones</h3><p>Libros, herramientas en Excel, kits documentales y una guía gratuita.</p><span class="chip on">Guía gratis</span></a>
-        <a href="#ejercicios"><span class="n">04</span><h3>Ejercicios y herramientas</h3><p>Casos resueltos y calculadoras gratuitas para practicar.</p><span class="chip on">Disponible</span></a>
-        <a href="#actualidad"><span class="n">05</span><h3>Noticias del día</h3><p>Lo más importante del mundo marítimo y portuario, resumido y con enlace a la fuente.</p><span class="chip on">Cada mañana</span></a>
-        <a href="#videos"><span class="n">06</span><h3>Videos y podcasts</h3><p>Series en YouTube y redes: cómo funcionan los buques y el comercio marítimo.</p><span class="chip soon">En preparación</span></a>
-                <a href="#sobre"><span class="n">07</span><h3>Sobre nosotros</h3><p>Misión editorial, estándar de verificación y colaboración profesional.</p><span class="chip on">Disponible</span></a>
-        <a href="#contacto"><span class="n">08</span><h3>Contacto y colaboración</h3><p>Compras, licencias para escuelas y empresas, autores y revisores técnicos.</p><span class="chip on">Disponible</span></a>
+        <a href="#biblioteca"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14C20 11 14 10 8 11v25c6-1 12 0 16 3 4-3 10-4 16-3V11c-6-1-12 0-16 3zM24 14v25"/><path d="M12 18c3-.4 6 0 8 1M12 24c3-.4 6 0 8 1M28 19c2-1 5-1.4 8-1M28 25c2-1 5-1.4 8-1" stroke-opacity=".5"/></svg></span><span class="n">01</span><h3>Biblioteca</h3><p>Tipos de buque, logística, construcción naval, navegación, seguridad, convenios y los primeros artículos.</p><span class="chip on">Disponible</span></a>
+        <a href="#academia"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19l19-8 19 8-19 8z"/><path d="M13 23v8c0 3 22 3 22 0v-8M43 19v9"/></svg></span><span class="n">02</span><h3>Academia</h3><p>20 módulos con resumen y primera página gratis, cursos, webinars y formación para empresas.</p><span class="chip on">1 de 20 disponible</span></a>
+        <a href="#publicaciones"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17h26l-2 23H13z"/><path d="M18 21v-6a6 6 0 0 1 12 0v6"/></svg></span><span class="n">03</span><h3>Tienda y publicaciones</h3><p>Libros, herramientas en Excel, kits documentales y guías gratuitas de Incoterms y GMDSS.</p><span class="chip on">2 guías gratis</span></a>
+        <a href="#ejercicios"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="7" width="24" height="34" rx="4"/><rect x="16" y="11" width="16" height="7" rx="1.5"/><path d="M17 25h2M23 25h2M29 25h2M17 30h2M23 30h2M29 30h2M17 35h2M23 35h2M29 35h2" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="n">04</span><h3>Ejercicios y herramientas</h3><p>Casos resueltos y calculadoras gratuitas para practicar.</p><span class="chip on">Disponible</span></a>
+        <a href="#actualidad"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15"/><ellipse cx="24" cy="24" rx="6.5" ry="15"/><path d="M9.5 19h29M9.5 29h29"/></svg></span><span class="n">05</span><h3>Noticias del día</h3><p>Lo más importante del mundo marítimo y portuario, resumido y con enlace a la fuente.</p><span class="chip on">Cada mañana</span></a>
+        <a href="#videos"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="11" width="34" height="26" rx="6"/><path d="M21 18l9 6-9 6z" fill="currentColor"/></svg></span><span class="n">06</span><h3>Videos y podcasts</h3><p>Series en YouTube y redes: cómo funcionan los buques y el comercio marítimo.</p><span class="chip soon">En preparación</span></a>
+                <a href="#sobre"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 41l2-24h4l2 24z"/><path d="M20 11h8v6h-8zM19 11l5-5 5 5M21 29h6M30 13l8-3M30 16l8 1"/></svg></span><span class="n">07</span><h3>Sobre nosotros</h3><p>Misión editorial, estándar de verificación y colaboración profesional.</p><span class="chip on">Disponible</span></a>
+        <a href="#contacto"><span class="h-ico"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="13" width="34" height="23" rx="3"/><path d="M8 15l16 11 16-11"/></svg></span><span class="n">08</span><h3>Contacto y colaboración</h3><p>Compras, licencias para escuelas y empresas, autores y revisores técnicos.</p><span class="chip on">Disponible</span></a>
       </div>
     </div>
   </section>
@@ -539,6 +756,8 @@ footer .wrap { display: grid; gap: 1.5rem; }
         <h2>Del casco al contrato</h2>
         <p>Fichas introductorias de cada área y artículos completos con fuentes y fecha de verificación.</p>
       </div>
+      <div class="fleet"><svg class="fleet-svg" viewBox="0 0 1580 190" role="img" aria-label="Ilustración: portacontenedores, granelero, petrolero, gasero LNG, crucero y remolcador"><defs><linearGradient id="fsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D7EEF8"/><stop offset="1" stop-color="#F4FAFD"/></linearGradient></defs><rect y="132" width="1580" height="58" fill="url(#fsea)"/><rect x="43" y="92" width="11" height="6.5" fill="#2F8FC4"/><rect x="43" y="84" width="11" height="6.5" fill="#F2C14E"/><rect x="43" y="76" width="11" height="6.5" fill="#B5523B"/><rect x="43" y="68" width="11" height="6.5" fill="#F2C14E"/><rect x="56" y="92" width="11" height="6.5" fill="#E07A3F"/><rect x="56" y="84" width="11" height="6.5" fill="#F2C14E"/><rect x="56" y="76" width="11" height="6.5" fill="#C9D3DB"/><rect x="56" y="68" width="11" height="6.5" fill="#2F8FC4"/><rect x="69" y="92" width="11" height="6.5" fill="#F2C14E"/><rect x="69" y="84" width="11" height="6.5" fill="#2F8FC4"/><rect x="82" y="92" width="11" height="6.5" fill="#3D6E8F"/><rect x="82" y="84" width="11" height="6.5" fill="#F2C14E"/><rect x="82" y="76" width="11" height="6.5" fill="#6BB39A"/><rect x="82" y="68" width="11" height="6.5" fill="#F2C14E"/><rect x="95" y="92" width="11" height="6.5" fill="#3D6E8F"/><rect x="95" y="84" width="11" height="6.5" fill="#E07A3F"/><rect x="95" y="76" width="11" height="6.5" fill="#2F8FC4"/><rect x="108" y="92" width="11" height="6.5" fill="#E07A3F"/><rect x="108" y="84" width="11" height="6.5" fill="#C9D3DB"/><rect x="108" y="76" width="11" height="6.5" fill="#E07A3F"/><rect x="121" y="92" width="11" height="6.5" fill="#F2C14E"/><rect x="121" y="84" width="11" height="6.5" fill="#3D6E8F"/><rect x="121" y="76" width="11" height="6.5" fill="#3D6E8F"/><rect x="134" y="92" width="11" height="6.5" fill="#F2C14E"/><rect x="134" y="84" width="11" height="6.5" fill="#F2C14E"/><rect x="134" y="76" width="11" height="6.5" fill="#B5523B"/><rect x="153" y="92" width="11" height="6.5" fill="#F2C14E"/><rect x="153" y="84" width="11" height="6.5" fill="#6BB39A"/><rect x="153" y="76" width="11" height="6.5" fill="#C9D3DB"/><rect x="153" y="68" width="11" height="6.5" fill="#3D6E8F"/><rect x="166" y="92" width="11" height="6.5" fill="#3D6E8F"/><rect x="166" y="84" width="11" height="6.5" fill="#2F8FC4"/><rect x="166" y="76" width="11" height="6.5" fill="#3D6E8F"/><rect x="179" y="92" width="11" height="6.5" fill="#3D6E8F"/><rect x="179" y="84" width="11" height="6.5" fill="#6BB39A"/><rect x="179" y="76" width="11" height="6.5" fill="#B5523B"/><rect x="192" y="92" width="11" height="6.5" fill="#C9D3DB"/><rect x="192" y="84" width="11" height="6.5" fill="#F2C14E"/><rect x="192" y="76" width="11" height="6.5" fill="#B5523B"/><rect x="192" y="68" width="11" height="6.5" fill="#2F8FC4"/><rect x="205" y="92" width="11" height="6.5" fill="#2F8FC4"/><rect x="205" y="84" width="11" height="6.5" fill="#6BB39A"/><rect x="205" y="76" width="11" height="6.5" fill="#C9D3DB"/><path d="M25 100 L37 132 L265 132 L275 108 L275 100 Z" fill="#12324D"/><path d="M33 126 H269 L267 132 H36 Z" fill="#C4553D"/><rect x="231" y="66" width="26" height="34" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><rect x="231" y="70" width="26" height="4" fill="#12324D"/><rect x="247" y="58" width="8" height="8" fill="#12324D"/><text x="150.0" y="172" text-anchor="middle" class="fl">Portacontenedores</text><rect x="345" y="96" width="22" height="7" rx="2" fill="#3D6E8F"/><rect x="375" y="96" width="22" height="7" rx="2" fill="#3D6E8F"/><rect x="405" y="96" width="22" height="7" rx="2" fill="#3D6E8F"/><rect x="435" y="96" width="22" height="7" rx="2" fill="#3D6E8F"/><rect x="465" y="96" width="22" height="7" rx="2" fill="#3D6E8F"/><path d="M372 103 V78 L388 70" fill="none" stroke="#E0A33B" stroke-width="3"/><path d="M402 103 V78 L418 70" fill="none" stroke="#E0A33B" stroke-width="3"/><path d="M432 103 V78 L448 70" fill="none" stroke="#E0A33B" stroke-width="3"/><path d="M462 103 V78 L478 70" fill="none" stroke="#E0A33B" stroke-width="3"/><path d="M325 103 L337 132 L525 132 L535 111 L535 103 Z" fill="#12324D"/><path d="M333 126 H529 L527 132 H336 Z" fill="#C4553D"/><rect x="497" y="74" width="26" height="29" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><rect x="497" y="78" width="26" height="4" fill="#12324D"/><rect x="515" y="66" width="8" height="8" fill="#12324D"/><text x="430.0" y="172" text-anchor="middle" class="fl">Granelero</text><path d="M605 104 H755" stroke="#E0A33B" stroke-width="3"/><path d="M680 104 V90 L697 84" fill="none" stroke="#12324D" stroke-width="2.5"/><path d="M585 106 L597 132 L795 132 L805 114 L805 106 Z" fill="#12324D"/><path d="M593 126 H799 L797 132 H596 Z" fill="#C4553D"/><rect x="765" y="72" width="28" height="34" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><rect x="765" y="76" width="28" height="4" fill="#12324D"/><rect x="783" y="62" width="9" height="10" fill="#12324D"/><text x="695.0" y="172" text-anchor="middle" class="fl">Petrolero</text><circle cx="895" cy="100" r="19" fill="#E9EEF2" stroke="#12324D" stroke-width="1.5"/><circle cx="937" cy="100" r="19" fill="#E9EEF2" stroke="#12324D" stroke-width="1.5"/><circle cx="979" cy="100" r="19" fill="#E9EEF2" stroke="#12324D" stroke-width="1.5"/><circle cx="1021" cy="100" r="19" fill="#E9EEF2" stroke="#12324D" stroke-width="1.5"/><path d="M855 102 L867 132 L1075 132 L1085 110 L1085 102 Z" fill="#12324D"/><path d="M863 126 H1079 L1077 132 H866 Z" fill="#C4553D"/><rect x="1049" y="70" width="26" height="32" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><rect x="1049" y="74" width="26" height="4" fill="#12324D"/><rect x="1065" y="62" width="8" height="8" fill="#12324D"/><text x="970.0" y="172" text-anchor="middle" class="fl">Gasero LNG</text><path d="M1153 102 L1165 62 H1350 L1361 102 Z" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><path d="M1169 72 H1349" stroke="#7FB6D4" stroke-width="3" stroke-dasharray="5 3"/><path d="M1166 82 H1351" stroke="#7FB6D4" stroke-width="3" stroke-dasharray="5 3"/><path d="M1163 92 H1353" stroke="#7FB6D4" stroke-width="3" stroke-dasharray="5 3"/><path d="M1195 62 L1201 50 H1325 L1331 62 Z" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><rect x="1285" y="38" width="18" height="12" fill="#E06A3B"/><path d="M1135 102 L1147 132 L1365 132 L1375 110 L1375 102 Z" fill="#12324D"/><path d="M1143 126 H1369 L1367 132 H1146 Z" fill="#C4553D"/><text x="1255.0" y="172" text-anchor="middle" class="fl">Crucero</text><path d="M1425 110 L1437 132 L1495 132 L1505 118 L1505 110 Z" fill="#12324D"/><path d="M1433 126 H1499 L1497 132 H1436 Z" fill="#C4553D"/><rect x="1451" y="88" width="26" height="22" fill="#F7FAFC" stroke="#12324D" stroke-width="1.5"/><rect x="1451" y="92" width="26" height="4" fill="#12324D"/><rect x="1469" y="78" width="7" height="10" fill="#E06A3B"/><text x="1465.0" y="172" text-anchor="middle" class="fl">Remolcador</text></svg></div>
+      <p class="fleet-hint">Desliza para ver la flota →</p>
       <div class="tabs" role="tablist" aria-label="Áreas de la biblioteca">
         <button role="tab" id="t-buques" aria-controls="p-buques" aria-selected="true">Tipos de buque</button>
         <button role="tab" id="t-logistica" aria-controls="p-logistica" aria-selected="false" tabindex="-1">Transporte y logística</button>
@@ -871,6 +1090,15 @@ footer .wrap { display: grid; gap: 1.5rem; }
         </div>
         <a class="btn btn-ghost" href="/guia-gratis-incoterms-2020.pdf" target="_blank" rel="noopener">Descargar gratis</a>
       </article>
+      <article class="freebie" id="guia-gratis-gmdss">
+        <div class="pcover"><span>GUÍA GRATIS</span><b>GMDSS para oficiales de puente</b></div>
+        <div>
+          <span class="chip free">Gratis · PDF de 8 páginas</span>
+          <h3>Guía rápida: GMDSS para oficiales de puente</h3>
+          <p>Las cuatro áreas marítimas, qué cambió con el GMDSS modernizado de 2024, equipos y frecuencias de socorro, cómo dar y cancelar una alerta, el mensaje MAYDAY y las pruebas diarias, semanales y mensuales. Sin registro.</p>
+        </div>
+        <a class="btn btn-ghost" href="/guia-gratis-gmdss.pdf" target="_blank" rel="noopener">Descargar gratis</a>
+      </article>
 
       <div class="shop">
         <article class="prod" id="producto-libro">
@@ -1151,7 +1379,7 @@ footer .wrap { display: grid; gap: 1.5rem; }
       <details><summary>Aviso educativo</summary><p>Nada en este sitio sustituye los procedimientos aprobados de a bordo, los requisitos oficiales vigentes ni el criterio de un profesional cualificado. Oceanica Terra no está afiliada a la OMI, la OIT ni a ninguna administración marítima.</p></details>
     </div>
     <p class="social-row">Síguenos: <span class="social foot" role="group" aria-label="Redes sociales de Oceanica Terra"><a href="https://www.instagram.com/oceanicaterra/" target="_blank" rel="noopener" title="Oceanica Terra en Instagram" aria-label="Oceanica Terra en Instagram (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.2-1.8h5l1.2 1.8h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12.4" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Instagram</span></a><a href="https://www.tiktok.com/@oceanicaterra" target="_blank" rel="noopener" title="Oceanica Terra en TikTok" aria-label="Oceanica Terra en TikTok (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 4.2v10.3a3.4 3.4 0 1 1-3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.4 4.2c.5 2.5 2.2 4.1 4.8 4.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>TikTok</span></a><a href="https://www.youtube.com/channel/UCG6881kVqyRiSnb0mSk_nrA" target="_blank" rel="noopener" title="Oceanica Terra en YouTube" aria-label="Oceanica Terra en YouTube (se abre en otra pestaña)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 8.6v6.8l5.4-3.4z" fill="currentColor"/></svg><span>YouTube</span></a></span></p>
-    <p>© 2026 César Andrade · Oceanica Terra · Educación marítima en español · ES activo, EN e IT en preparación · Actualizado el 28 de octubre de 2026</p>
+    <p>© 2026 César Andrade · Oceanica Terra · Educación marítima en español · ES activo, EN e IT en preparación · Actualizado el 31 de octubre de 2026</p>
   </div>
 </footer>
 
@@ -1389,5 +1617,6 @@ $("calc-form").addEventListener("submit", e => e.preventDefault());
 calc();
 </script>
 
+<script src="/assets/menu.js" defer></script>
 </body>
 </html>
