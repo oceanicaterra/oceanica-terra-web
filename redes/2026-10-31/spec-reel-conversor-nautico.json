@@ -1,0 +1,7 @@
+{"slug":"conversor-nautico","escenas":[
+{"tipo":"texto","lineas":["¿CUÁNTOS KM/H","SON 20","NUDOS?"],"resaltar":2,"dur":2.4},
+{"tipo":"contador","numero":37,"antes":"20 nudos ≈","despues":"km/h","etiqueta":"1 nudo = 1,852 km/h exactos","nota":"Factores verificados en NIST SP 811","dur":3.2},
+{"tipo":"texto","lineas":["NUDOS · MILLAS","PIES · BRAZAS","TONELADAS · BARRILES"],"dur":2.6},
+{"tipo":"texto","lineas":["TODO EN UNA","HERRAMIENTA","GRATIS"],"resaltar":2,"dur":2.2},
+{"tipo":"texto","lineas":["PARA EL PUENTE,","LA OFICINA","Y EL ALMACÉN"],"dur":2.4},
+{"tipo":"cta","pregunta":"Pruébala gratis en oceanicaterra.com","linea":"Enlace en la biografía · @oceanicaterra","dur":3.0}]}
