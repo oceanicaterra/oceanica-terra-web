@@ -3,7 +3,8 @@
   "reglas": [
     "Válida: autor con nombre de artista o sello (p. ej. «Auralux», «Jordan Olmos», «Giulio Cercato»), duración de al menos 30 s.",
     "Prohibida: autor con nombre de usuario (minúsculas, puntos, guiones bajos o números), «Original audio», títulos que nombran canciones o artistas famosos, covers, remixes, «sped up», «slowed».",
-    "Prohibida: pistas de menos de 30 s (los «Reels Sound» de 5–9 s no sirven para vídeos de 20–26 s)."
+    "Prohibida: pistas de menos de 30 s (los «Reels Sound» de 5–9 s no sirven para vídeos de 20–26 s).",
+    "Algunos artistas de la biblioteca (p. ej. Giulio Cercato) publican la misma pista con voz y en versión «(Instrumental)»: elegir la que lleve «(Instrumental)» en el título, salvo pistas ya marcadas aquí como verificadas."
   ],
   "pistas": [
     {
@@ -36,7 +37,9 @@
       "titulo": "Blue Horizon (Instrumental)",
       "artista": "Giulio Cercato",
       "animo": "mar abierto, viaje",
-      "estado": "candidata"
+      "estado": "verificada",
+      "duracion": "2:39",
+      "nota": "Existe una versión con voz («Blue Horizon») del mismo artista: elegir siempre la (Instrumental)."
     },
     {
       "titulo": "Heros Journey (Instrumental)",
@@ -62,6 +65,20 @@
       "artista": "Chela Rivas",
       "duracion": "3:25",
       "animo": "noticias, actualidad, ritmo enérgico",
+      "estado": "verificada"
+    },
+    {
+      "titulo": "Power On (Instrumental)",
+      "artista": "Giulio Cercato",
+      "duracion": "1:56",
+      "animo": "explicación técnica, herramientas, tecnología, curiosidad",
+      "estado": "verificada"
+    },
+    {
+      "titulo": "3, 2, 1 (Instrumental)",
+      "artista": "Kolektivo",
+      "duracion": "2:08",
+      "animo": "explicación técnica con cálculo o revelación final",
       "estado": "verificada"
     }
   ],
@@ -91,6 +108,27 @@
       "pista": "Fast Life (Instrumental) — Chela Rivas",
       "tipo": "noticias / resumen semanal",
       "nota": "Reel movido al domingo 1/11/2026 17:00 (Orlando); comprobar que conserva la música."
+    },
+    {
+      "fecha": "2026-10-31",
+      "slug": "conversor-nautico",
+      "post": "6ae5dbafceb491e585f646c6",
+      "pista": "Power On (Instrumental) — Giulio Cercato",
+      "tipo": "explicación técnica / herramienta"
+    },
+    {
+      "fecha": "2026-10-31",
+      "slug": "graneleros-tamanos",
+      "post": "6ae4dc6d34702c2daac41c32",
+      "pista": "Blue Horizon (Instrumental) — Giulio Cercato",
+      "tipo": "explicación técnica (tipos de buque, rutas oceánicas)"
+    },
+    {
+      "fecha": "2026-11-02",
+      "slug": "demora-despacho",
+      "post": "6ae5df93406ab8a018b9e2cb",
+      "pista": "3, 2, 1 (Instrumental) — Kolektivo",
+      "tipo": "explicación técnica / herramienta con revelación del resultado"
     }
   ]
 }
