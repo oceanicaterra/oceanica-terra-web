@@ -45,7 +45,9 @@
    "publicado_en_web": true,
    "promocionado": false,
    "payhip": "https://payhip.com/b/1UEuJ",
-   "precio": "USD 12"
+   "precio": "USD 12",
+   "lanzamiento_hecho": "2026-10-31",
+   "nota": "Reel de lanzamiento ya publicado; falta solo el carrusel."
   }
  ]
 }

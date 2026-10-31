@@ -278,23 +278,6 @@
    }
   },
   {
-   "fecha": "2026-11-02",
-   "tipo": "reel_herramienta",
-   "slug": "demora-despacho",
-   "sha": "3a6be1fa7dfc9dc72b2203e453bfa9f98f5ce21e",
-   "instagram_reel": {
-    "post": "6ae5df93406ab8a018b9e2cb",
-    "estado": "scheduled",
-    "hora_cdmx": "14:30"
-   },
-   "tiktok": {
-    "post": "6ae5df96406ab8a018b9e50b",
-    "estado": "scheduled",
-    "hora_cdmx": "14:45"
-   },
-   "musica_ig": "3, 2, 1 (Instrumental) — Kolektivo"
-  },
-  {
    "fecha": "2026-11-01",
    "tema": 8,
    "novedad": "/articulos/conocimiento-de-embarque.html",
@@ -332,6 +315,48 @@
    },
    "musica_ig": "pendiente",
    "nota": "Instagram tenía 8 pendientes el 31/10 (9 tras el carrusel): la historia «Pregunta del día» (16:00) y el Reel (18:00) del 1/11 quedan generados y subidos (SHA arriba) pero sin programar. La ejecución del 1/11 debe programarlos con estos archivos, sin regenerarlos."
+  },
+  {
+   "fecha": "2026-10-31",
+   "tipo": "dato_del_dia",
+   "dato": "Más de 4 de cada 100 buques inspeccionados en el Paris MoU en 2025 quedaron detenidos (4,18 %)",
+   "fuente": "Paris MoU, comunicado del 59.º Comité PSC (mayo de 2026)",
+   "sha": "614316e7b42586ac215f8f190c98ac83b7dbc156",
+   "historia": {
+    "post": "6ae61e76ab019b908714362c",
+    "estado": "scheduled",
+    "hora_orlando": "13:30"
+   },
+   "enlace": "#producto-psc"
+  },
+  {
+   "fecha": "2026-10-31",
+   "tipo": "lanzamiento_productos",
+   "productos": [
+    "psc",
+    "libro",
+    "calculadora",
+    "pack",
+    "kit"
+   ],
+   "slug": "tienda-lanzamiento",
+   "sha": "614316e7b42586ac215f8f190c98ac83b7dbc156",
+   "instagram_reel": {
+    "post": "6ae61f12ab019b9087149043",
+    "estado": "scheduled",
+    "hora_orlando": "14:00"
+   },
+   "tiktok": {
+    "post": "6ae61f1537c1acd2a0be2948",
+    "estado": "scheduled",
+    "hora_orlando": "14:15"
+   },
+   "youtube": {
+    "post": "6ae61f1aab019b9087149231",
+    "estado": "scheduled",
+    "hora_orlando": "14:30"
+   },
+   "musica_ig": "marca (jazz-suave-01)"
   }
  ],
  "noticias": [
@@ -365,7 +390,8 @@
   "31/10/2026: música de la marca ampliada (al propietario le encantó jazz-suave-01): jazz-suave-01 (saxo, 90 BPM), -02 (piano nocturno, 78 BPM), -03 (saxo al atardecer, 96 BPM) y -04 (brisa bossa con flauta, 100 BPM), todas originales (musica/jazz.py <salida> <variante>). reel.py, ritmo.py y plantilla.py rotan entre ellas según el slug, así que no hace falta elegir; para forzar una, --musica jazz-suave-0X o \"musica\" en el spec.",
   "31/10/2026: el propietario pide cuidar los detalles de redacción. Cuando se habla de un grupo o una categoría, usar plural en todo el texto (p. ej. «tamaños de graneleros», no «tamaños de granelero»), también en títulos de YouTube, portadas y textos alternativos. Revisar ortografía, concordancia y acentos antes de programar.",
   "31/10/2026: el tema 8 del calendario (conocimiento de embarque) se cubrió el 1/11 como novedad de la web (PRIORIDAD 1); al llegar siguiente_tema a 8, saltarlo. Los artículos «SOLAS en 10 minutos» y «FOB frente a CIF» siguen sin promocionar como novedad, pero sus temas ya salieron en Instagram (28 y 30/10): promocionarlos con un ángulo claramente distinto.",
-  "31/10/2026: el autor se escribe «César Andrade», con tilde, en todo (web, productos, PDF, metadatos). En redes se sigue firmando «Oceanica Terra». Vocabulario: «costo/costos», nunca «coste/costes»."
+  "31/10/2026: el autor se escribe «César Andrade», con tilde, en todo (web, productos, PDF, metadatos). En redes se sigue firmando «Oceanica Terra». Vocabulario: «costo/costos», nunca «coste/costes».",
+  "31/10/2026: lanzamiento de la Tienda hecho (Reel IG/TikTok/Short «Nuevo en la Tienda» + historia «Dato del día» con enlace a la PSC). Para la PSC solo falta el carrusel de la PRIORIDAD 1: no repitas el Reel de lanzamiento. El Reel de la calculadora de demora del 2/11 se canceló para liberar la cola; lo cubrirá el miércoles (Paso 4c)."
  ],
  "reutilizados": [
   {
@@ -391,7 +417,7 @@
    "story": "redes/_sistema/herramientas/story-demora-despacho.mp4",
    "reel": "redes/_sistema/herramientas/ig-herr-demora-despacho-reel.mp4",
    "ultima_story": "2026-11-01",
-   "ultimo_reel": "2026-11-02"
+   "ultimo_reel": null
   }
  ]
 }
