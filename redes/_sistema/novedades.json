@@ -36,6 +36,16 @@
    "promocionado": true,
    "promocionado_fecha": "2026-10-31",
    "piezas": "Reel IG 16:00, historia con enlace 16:10, TikTok 16:15 (Orlando)"
+  },
+  {
+   "tipo": "producto",
+   "titulo": "Lista de comprobación para inspecciones PSC",
+   "ancla": "#producto-psc",
+   "fecha": "2026-10-31",
+   "publicado_en_web": true,
+   "promocionado": false,
+   "payhip": "https://payhip.com/b/1UEuJ",
+   "precio": "USD 12"
   }
  ]
 }
