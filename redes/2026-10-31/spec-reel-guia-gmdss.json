@@ -1,0 +1,8 @@
+{"slug":"guia-gmdss","escenas":[
+{"tipo":"texto","lineas":["¿SABRÍAS","CANCELAR UNA","FALSA ALERTA?"],"resaltar":2,"dur":2.4},
+{"tipo":"texto","lineas":["GUÍA GRATIS","GMDSS"],"resaltar":1,"dur":2.2},
+{"tipo":"texto","lineas":["ÁREAS","A1 · A2 · A3 · A4"],"resaltar":1,"dur":2.6},
+{"tipo":"texto","lineas":["ALERTA DSC","Y MAYDAY","POR VOZ"],"resaltar":1,"dur":2.6},
+{"tipo":"contador","numero":8,"antes":"PDF DE","despues":"páginas","etiqueta":"Frecuencias, pruebas de rutina y errores frecuentes","dur":3.0},
+{"tipo":"texto","lineas":["GRATIS","SIN REGISTRO"],"resaltar":0,"dur":2.2},
+{"tipo":"cta","pregunta":"Descárgala en la Tienda de oceanicaterra.com","linea":"Síguenos · @oceanicaterra","dur":3.2}]}

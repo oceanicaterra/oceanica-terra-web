@@ -1,0 +1,9 @@
+{"slug":"guia-gmdss","fuente":"Fuentes: OMI (SOLAS IV y A.814) · IMSO",
+"slides":[
+{"estilo":"dark","html":"<div class='kicker'>Guía gratis · Radiocomunicaciones</div><h1>¿Sabrías cancelar una falsa alerta de socorro?</h1><p>GMDSS para oficiales de puente, explicado en 8 páginas.</p>"},
+{"estilo":"light","html":"<div class='kicker'>🌐 Las cuatro áreas marítimas</div><h2>A1, A2, A3 y A4</h2><p>Lo que debe llevar tu buque depende de dónde navega: <em>VHF, MF, satélite o HF</em>.</p>"},
+{"estilo":"light","html":"<div class='kicker'>🛰️ Desde el 1 de enero de 2024</div><h2>El GMDSS modernizado</h2><p>Inmarsat C e Iridium como servicios por satélite reconocidos, y el télex por radio (NBDP) <em>ya no es obligatorio</em>.</p>"},
+{"estilo":"light","html":"<div class='kicker'>📻 Socorro</div><h2>Alerta DSC y después MAYDAY por voz</h2><p>Canal 70 para la alerta y canal 16 para hablar. En MF: <em>2187,5 kHz y 2182 kHz</em>.</p>"},
+{"estilo":"light","html":"<div class='kicker'>⚠️ Falsa alerta</div><h2>Cancélala de inmediato</h2><p>Por voz, a «All stations», en <em>cada banda</em> por la que salió. Lo grave es no hacerlo.</p>"},
+{"estilo":"dark","html":"<div class='kicker'>Guía gratis · PDF de 8 páginas</div><h2>Descárgala sin registro</h2><p>Áreas, equipos, frecuencias, MAYDAY, pruebas de rutina y errores frecuentes.</p><span class='cta'>Enlace en la biografía · oceanicaterra.com</span>"}],
+"facebook":{"kicker":"Guía gratis","titulo":"GMDSS para oficiales de puente","texto":"Descárgala gratis en oceanicaterra.com"}}
