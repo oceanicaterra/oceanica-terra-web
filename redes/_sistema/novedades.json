@@ -48,6 +48,16 @@
    "precio": "USD 12",
    "lanzamiento_hecho": "2026-10-31",
    "nota": "Reel de lanzamiento ya publicado; falta solo el carrusel."
+  },
+  {
+   "tipo": "guia",
+   "titulo": "Guía gratis: GMDSS para oficiales de puente (PDF de 8 páginas)",
+   "ancla": "#guia-gratis-gmdss",
+   "ruta": "/guia-gratis-gmdss.pdf",
+   "fecha": "2026-10-31",
+   "publicado_en_web": true,
+   "promocionado": false,
+   "nota": "Guía gratuita verificada el 31/10/2026: áreas A1–A4, GMDSS modernizado de 2024, frecuencias, alerta y cancelación, MAYDAY y pruebas de rutina. Enlazar a https://oceanicaterra.com/#guia-gratis-gmdss."
   }
  ]
 }

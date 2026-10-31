@@ -22,64 +22,65 @@ ROOT = pathlib.Path(__file__).resolve().parent
 
 
 def ensure_fonts():
+    """Letra de la marca desde el 31/10/2026: Inter (SIL OFL, gratuita)."""
     have = subprocess.run(["fc-list"], capture_output=True, text=True).stdout
-    if "IBM Plex Sans Condensed" in have and "Source Serif 4" in have:
+    if "Inter" in have:
         return
     tmp = pathlib.Path("/tmp/gfonts")
-    if not tmp.exists():
-        subprocess.run(["git", "clone", "--depth", "1", "--filter=blob:none", "--sparse",
-                        "https://github.com/google/fonts", str(tmp)], check=True)
-        subprocess.run(["git", "-C", str(tmp), "sparse-checkout", "set",
-                        "ofl/ibmplexsanscondensed", "ofl/sourceserif4"], check=True)
+    if not (tmp / "ofl/inter").exists():
+        if not tmp.exists():
+            subprocess.run(["git", "clone", "--depth", "1", "--filter=blob:none", "--sparse",
+                            "https://github.com/google/fonts", str(tmp)], check=True)
+        subprocess.run(["git", "-C", str(tmp), "sparse-checkout", "add", "ofl/inter"], check=True)
     dest = pathlib.Path.home() / ".fonts"
     dest.mkdir(exist_ok=True)
-    for f in list((tmp / "ofl/ibmplexsanscondensed").glob("IBMPlexSansCondensed-*.ttf")) + \
-             list((tmp / "ofl/sourceserif4").glob("*.ttf")):
+    for f in (tmp / "ofl/inter").glob("*.ttf"):
         (dest / f.name).write_bytes(f.read_bytes())
     subprocess.run(["fc-cache", "-f"], check=True)
 
 
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:VARW;height:VARH;font-family:'Source Serif 4',Georgia,serif;color:#0A2540;overflow:hidden}
+/* Identidad visual B «Apple + mar» (31/10/2026): fondos claros, letra Inter, azul océano y toques de naranja amanecer.
+   El estilo «dark» de las especificaciones ya no es azul oscuro: es la variante «mar» (celeste suave). */
+body{width:VARW;height:VARH;font-family:'Inter',-apple-system,'Segoe UI',Arial,sans-serif;color:#0B1D2E;overflow:hidden;letter-spacing:-.01em}
 .s{position:relative;width:100%;height:100%;padding:VARPAD;display:flex;flex-direction:column;
-   background:linear-gradient(180deg,#FFFFFF 0%,#DFF2FA 100%)}
-.s.dark{background:radial-gradient(120% 80% at 80% 0%,#0B3A57 0%,#0B2545 60%);color:#fff}
-.waves{position:absolute;left:0;width:100%;bottom:0;height:22%;opacity:.9}
-.brand{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;letter-spacing:.18em;font-size:VARBRAND;color:#0B6E8F}
-.dark .brand{color:#6FC0DE}
-.kicker{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
-   font-size:VARK;color:#D9480F;margin-top:VARGAP}
-h1{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:ZZTITLE;line-height:1.02;margin-top:.25em;letter-spacing:-.01em}
-h2{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:ZZSUB;line-height:1.08;margin-top:.3em}
-p{font-size:VARP;line-height:1.38;margin-top:.7em;max-width:94%}
-.dark p{color:#C3DDEA}
-em{font-style:normal;background:linear-gradient(transparent 62%,rgba(111,192,222,.55) 0);}
-.dark em{background:linear-gradient(transparent 62%,rgba(217,72,15,.6) 0);color:#fff}
-.tag{display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:VARK;
-   padding:.25em .7em;border-radius:6px;margin-top:VARGAP}
-.no{background:#D9480F;color:#fff}.yes{background:#1F6F4A;color:#fff}
-table{width:100%;border-collapse:collapse;margin-top:VARGAP;font-size:VART;position:relative;z-index:2}
-th{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;text-align:left;padding:.45em .4em;background:#0B2545;color:#fff}
-td{padding:.5em .4em;border-bottom:2px solid #BFE3F0;vertical-align:top;background:rgba(255,255,255,.75)}
-td:first-child{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;color:#4A6075}
-tr.hl td{background:#FDE7DC;font-weight:600}
+   background:linear-gradient(180deg,#FFFFFF 0%,#F1F8FC 100%)}
+.s.dark{background:linear-gradient(170deg,#F3FAFD 0%,#D5ECF7 100%);color:#0B1D2E}
+.waves{position:absolute;left:0;width:100%;bottom:0;height:22%;opacity:.95}
+.brand{font-weight:700;letter-spacing:.18em;font-size:VARBRAND;color:#0B1D2E}
+.brand::before{content:"";display:inline-block;width:.62em;height:.62em;border-radius:50%;background:#0A72B5;margin-right:.55em;vertical-align:.02em}
+.kicker{font-weight:600;font-size:VARK;color:#0A69A6;margin-top:VARGAP;letter-spacing:-.005em}
+h1{font-weight:800;font-size:ZZTITLE;line-height:1.0;margin-top:.25em;letter-spacing:-.045em}
+h2{font-weight:750;font-size:ZZSUB;line-height:1.06;margin-top:.3em;letter-spacing:-.03em}
+p{font-size:VARP;line-height:1.4;margin-top:.7em;max-width:94%;color:#4A5D6E}
+.dark p{color:#3E5568}
+em{font-style:normal;background:linear-gradient(transparent 62%,rgba(10,114,181,.18) 0);color:#0B1D2E}
+.dark em{background:linear-gradient(transparent 62%,rgba(226,98,42,.22) 0)}
+.tag{display:inline-block;font-weight:700;font-size:VARK;padding:.3em .85em;border-radius:999px;margin-top:VARGAP}
+.no{background:#E2622A;color:#fff}.yes{background:#1F6F4A;color:#fff}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-top:VARGAP;font-size:VART;position:relative;z-index:2;
+   background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -26px rgba(11,29,46,.35)}
+th{font-weight:700;text-align:left;padding:.55em .55em;background:#E7F4FB;color:#0B1D2E}
+td{padding:.55em .55em;border-top:2px solid #E1E7EC;vertical-align:top;background:#fff}
+td:first-child{font-weight:600;color:#0A69A6}
+tr.hl td{background:#FDEEE6;font-weight:600}
 .foot{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2;
-   font-family:'IBM Plex Sans Condensed',sans-serif;font-size:VARF;color:#4A6075}
-.dark .foot{color:#BFD0E0}
+   font-size:VARF;color:#5A6B7B;font-weight:500}
+.dark .foot{color:#4A6378}
 .num{font-weight:700}
-.cta{display:inline-block;margin-top:VARGAP;background:#D9480F;color:#fff;font-family:'IBM Plex Sans Condensed',sans-serif;
-   font-weight:700;font-size:VARK;padding:.55em 1em;border-radius:10px}
+.cta{display:inline-block;margin-top:VARGAP;background:#0A72B5;color:#fff;
+   font-weight:700;font-size:VARK;padding:.6em 1.15em;border-radius:999px}
 .content{position:relative;z-index:2;margin:auto 0;padding-bottom:8%}
-.news{margin-top:VARGAP;border-left:6px solid #6FC0DE;padding-left:.8em}
-.news h3{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:VARNEWS;line-height:1.12;color:#fff}
-.news small{display:block;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:VARF;color:#6FC0DE;margin-top:.4em;letter-spacing:.06em;text-transform:uppercase}
+.news{margin-top:VARGAP;background:#fff;border-radius:22px;padding:.7em .9em;box-shadow:0 14px 30px -22px rgba(11,29,46,.35)}
+.news h3{font-weight:700;font-size:VARNEWS;line-height:1.14;color:#0B1D2E;letter-spacing:-.02em}
+.news small{display:block;font-size:VARF;color:#0A69A6;margin-top:.4em;font-weight:600}
 """
 
 WAVES = """<svg class="waves" viewBox="0 0 1000 200" preserveAspectRatio="none">
-<path d="M0,90 C160,40 330,140 500,90 C670,40 840,140 1000,90 L1000,200 L0,200Z" fill="#B5E1F0" opacity=".55"/>
-<path d="M0,130 C180,90 320,170 500,130 C680,90 820,170 1000,130 L1000,200 L0,200Z" fill="#6FC0DE" opacity=".45"/></svg>"""
-WAVES_DARK = WAVES.replace("#B5E1F0", "#0B6E8F")
+<path d="M0,90 C160,40 330,140 500,90 C670,40 840,140 1000,90 L1000,200 L0,200Z" fill="#C2E5F4" opacity=".6"/>
+<path d="M0,130 C180,90 320,170 500,130 C680,90 820,170 1000,130 L1000,200 L0,200Z" fill="#8ACDE6" opacity=".45"/></svg>"""
+WAVES_DARK = WAVES.replace("#C2E5F4", "#FFFFFF")
 
 
 def page(w, h, scale, body, cls, foot_left="", foot_right=""):

@@ -32,6 +32,11 @@
   {
    "fecha": "2026-10-31",
    "motivo": "Herramientas: página índice /herramientas/ y conversor náutico (/herramientas/conversor-nautico.html) con factores NIST SP 811; acceso «Herramientas» en la navegación de todas las páginas y en la portada (#herramientas); sitemap (commit 33fe2b4)"
+  },
+  {
+   "fecha": "2026-10-31",
+   "commit": "7718e4e",
+   "resumen": "Diseño B «Apple + mar» en toda la web (Inter, colores claros, menú desplegable, ilustraciones propias) y nueva guía gratis «GMDSS para oficiales de puente»."
   }
  ]
 }

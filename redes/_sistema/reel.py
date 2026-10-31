@@ -28,17 +28,44 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = pathlib.Path(__file__).resolve().parent
 W, H, FPS = 1080, 1920, 30
-NAVY, NAVY2 = (11, 37, 69), (11, 58, 87)
-NARANJA, CIELO, BLANCO = (217, 72, 15), (111, 192, 222), (255, 255, 255)
+# Identidad visual B «Apple + mar» (31/10/2026): fondo claro, texto tinta, resaltes en azul océano.
+FONDO_ARRIBA, FONDO_ABAJO = (255, 255, 255), (214, 236, 247)
+TINTA, SUAVE, BLANCO = (11, 29, 46), (74, 99, 120), (255, 255, 255)
+AZUL, SOL, BORDE = (10, 114, 181), (226, 98, 42), (213, 224, 232)
+NAVY = TINTA  # compatibilidad con especificaciones antiguas
+NARANJA = AZUL  # el antiguo resalte naranja pasa a azul océano
+CIELO = SUAVE
 ARENA, ARENA2, AGUA, AGUA2 = (214, 190, 140), (196, 168, 116), (24, 92, 130), (20, 78, 112)
 COLORES_CONT = [(217, 72, 15), (11, 110, 143), (230, 180, 60), (90, 140, 70), (180, 60, 60), (240, 240, 240)]
 
 
+_VAR = {"Bold": "Bold", "Medium": "Medium", "SemiBold": "SemiBold", "Regular": "Regular", "ExtraBold": "ExtraBold"}
+
+
 def fuente(peso, tam):
-    for p in [pathlib.Path.home() / ".fonts" / f"IBMPlexSansCondensed-{peso}.ttf",
-              pathlib.Path(f"/tmp/gfonts/ofl/ibmplexsanscondensed/IBMPlexSansCondensed-{peso}.ttf")]:
+    """Inter (letra de la marca). Busca la estática del sistema y, si no, la variable de Google Fonts."""
+    for p in [pathlib.Path(f"/usr/share/fonts/opentype/inter/Inter-{peso}.otf"),
+              pathlib.Path.home() / ".fonts" / f"Inter-{peso}.ttf"]:
         if p.exists():
             return ImageFont.truetype(str(p), tam)
+    for p in list((pathlib.Path.home() / ".fonts").glob("Inter*opsz*wght*.ttf")) + \
+            list(pathlib.Path("/tmp/gfonts/ofl/inter").glob("Inter*opsz*wght*.ttf")):
+        if "Italic" in p.name:
+            continue
+        f = ImageFont.truetype(str(p), tam)
+        try:
+            f.set_variation_by_name(_VAR.get(peso, "Bold"))
+        except Exception:
+            pass
+        return f
+    try:
+        sys.path.insert(0, str(ROOT))
+        from plantilla import ensure_fonts
+        ensure_fonts()
+        if any((pathlib.Path.home() / ".fonts").glob("Inter*.ttf")):
+            return fuente(peso, tam)
+    except Exception:
+        pass
     return ImageFont.load_default()
 
 
@@ -54,12 +81,16 @@ def ease_back(t):
 
 
 def fondo():
-    im = Image.new("RGB", (W, H), NAVY)
+    im = Image.new("RGB", (W, H), FONDO_ARRIBA)
     d = ImageDraw.Draw(im)
     for y in range(0, H, 8):
-        k = y / H
-        c = tuple(int(NAVY2[i] * (1 - k) + NAVY[i] * k) for i in range(3))
+        k = (y / H) ** 1.3
+        c = tuple(int(FONDO_ARRIBA[i] * (1 - k) + FONDO_ABAJO[i] * k) for i in range(3))
         d.rectangle([0, y, W, y + 8], fill=c)
+    # olas suaves al pie, como en la web
+    for amp, base, col in [(26, H - 210, (194, 229, 244)), (20, H - 140, (168, 216, 237))]:
+        pts = [(x, base + amp * math.sin(x / 150.0)) for x in range(0, W + 10, 10)] + [(W, H), (0, H)]
+        d.polygon(pts, fill=col)
     return im
 
 
@@ -72,7 +103,8 @@ def base():
         FONDO = fondo()
     im = FONDO.copy()
     d = ImageDraw.Draw(im)
-    d.text((70, 90), "OCEANICA TERRA", font=fuente("Bold", 34), fill=CIELO)
+    d.ellipse([70, 101, 92, 123], fill=AZUL)
+    d.text((108, 90), "OCEANICA TERRA", font=fuente("Bold", 32), fill=TINTA)
     return im, d
 
 
@@ -81,7 +113,7 @@ def texto_centrado(d, y, txt, f, color, x=None, sombra=False):
     w = bb[2] - bb[0]
     xx = (W - w) // 2 - bb[0] if x is None else x
     if sombra:
-        d.text((xx + 4, y + 4), txt, font=f, fill=(0, 0, 0))
+        d.text((xx + 3, y + 3), txt, font=f, fill=BLANCO)
     d.text((xx, y), txt, font=f, fill=color)
     return bb[3] - bb[1]
 
@@ -126,7 +158,7 @@ def esc_texto(e, t, dur):
         if k <= 0:
             y += h + 30
             continue
-        col = NARANJA if e.get("resaltar") == i else BLANCO
+        col = AZUL if e.get("resaltar") == i else TINTA
         capa = Image.new("RGBA", (W, h + 60), (0, 0, 0, 0))
         dc = ImageDraw.Draw(capa)
         texto_centrado(dc, 10, l, f, col + (255,))
@@ -190,12 +222,12 @@ def esc_bloqueo(e, t, dur):
     if k2 > 0.95:
         pulso = 0.5 + 0.5 * math.sin((t - dur * 0.7) * 10)
         r = 70 + 14 * pulso
-        d.ellipse([540 - r, 960 - r - 330, 540 + r, 960 + r - 330], outline=NARANJA, width=12)
-        d.line([(540 - r * 0.6, 630 - r * 0.6), (540 + r * 0.6, 630 + r * 0.6)], fill=NARANJA, width=12)
+        d.ellipse([540 - r, 960 - r - 330, 540 + r, 960 + r - 330], outline=SOL, width=12)
+        d.line([(540 - r * 0.6, 630 - r * 0.6), (540 + r * 0.6, 630 + r * 0.6)], fill=SOL, width=12)
     f1, f2 = fuente("Bold", 80), fuente("Bold", 96)
-    texto_centrado(d, 200, e.get("arriba", ""), f1, CIELO)
+    texto_centrado(d, 200, e.get("arriba", ""), f1, AZUL)
     if t > dur * 0.55:
-        texto_centrado(d, 1620, e.get("abajo", ""), f2, BLANCO, sombra=True)
+        texto_centrado(d, 1620, e.get("abajo", ""), f2, TINTA, sombra=True)
     return im
 
 
@@ -226,10 +258,10 @@ def esc_fila(e, t, dur):
     d = ImageDraw.Draw(im)
     val = int(e["numero"] * ease_out(t / (dur * 0.75)))
     txt = f"{e.get('prefijo', '')}{val:,}".replace(",", ".")
-    d.rounded_rectangle([110, 1560, W - 110, 1860], radius=30, fill=NAVY)
-    texto_centrado(d, 1570, txt, fuente("Bold", 170), NARANJA)
+    d.rounded_rectangle([110, 1560, W - 110, 1860], radius=40, fill=BLANCO, outline=BORDE, width=3)
+    texto_centrado(d, 1570, txt, fuente("Bold", 170), AZUL)
     et = e.get("etiqueta", "")
-    texto_centrado(d, 1770, et, ajustar(d, et, "Bold", 70, W - 300), BLANCO)
+    texto_centrado(d, 1770, et, ajustar(d, et, "Bold", 70, W - 300), TINTA)
     return im
 
 
@@ -237,21 +269,21 @@ def esc_contador(e, t, dur):
     im, d = base()
     val = e["numero"] * ease_out(t / (dur * 0.7))
     txt = f"{int(val):,}".replace(",", ".")
-    texto_centrado(d, 620, e.get("antes", ""), fuente("Bold", 90), CIELO)
-    texto_centrado(d, 730, txt, ajustar(d, txt, "Bold", 300, W - 140), NARANJA)
-    texto_centrado(d, 1060, e.get("despues", ""), fuente("Bold", 110), BLANCO)
+    texto_centrado(d, 620, e.get("antes", ""), fuente("Bold", 90), SUAVE)
+    texto_centrado(d, 730, txt, ajustar(d, txt, "Bold", 300, W - 140), AZUL)
+    texto_centrado(d, 1060, e.get("despues", ""), fuente("Bold", 110), TINTA)
     if t > dur * 0.35:
         lineas, f = envolver(d, e.get("etiqueta", ""), "Medium", 64, W - 200)
         y = 1220
         for l in lineas:
-            texto_centrado(d, y, l, f, BLANCO)
+            texto_centrado(d, y, l, f, TINTA)
             y += 80
     if e.get("nota"):
-        texto_centrado(d, 1700, e["nota"], fuente("Medium", 40), CIELO)
+        texto_centrado(d, 1700, e["nota"], fuente("Medium", 40), SUAVE)
     return im
 
 
-def silueta_lateral(largo, alto, color=(230, 236, 242)):
+def silueta_lateral(largo, alto, color=(18, 50, 77)):
     im = Image.new("RGBA", (largo + 10, alto * 3 + 10), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     y_cub = alto * 2
@@ -267,7 +299,7 @@ def silueta_lateral(largo, alto, color=(230, 236, 242)):
 
 def esc_tamanos(e, t, dur):
     im, d = base()
-    texto_centrado(d, 230, e.get("titulo", ""), ajustar(d, e.get("titulo", ""), "Bold", 96, W - 140), BLANCO)
+    texto_centrado(d, 230, e.get("titulo", ""), ajustar(d, e.get("titulo", ""), "Bold", 96, W - 140), TINTA)
     barcos = e["barcos"]
     n = len(barcos)
     paso = (dur * 0.8) / n
@@ -278,11 +310,12 @@ def esc_tamanos(e, t, dur):
             break
         largo = int(880 * escala * k) + 1
         alto = max(12, int(70 * escala))
-        s = silueta_lateral(largo, alto, NARANJA if i == n - 1 else (230, 236, 242))
+        s = silueta_lateral(largo, alto, AZUL if i == n - 1 else (18, 50, 77))
         im.paste(s, (100, y + 150 - s.height), s)
-        d.text((100, y + 165), nombre, font=fuente("Bold", 64), fill=NARANJA if i == n - 1 else BLANCO)
-        d.text((100 + d.textbbox((0, 0), nombre + "  ", font=fuente("Bold", 64))[2], y + 180), sub,
-               font=fuente("Medium", 44), fill=CIELO)
+        fn = ajustar(d, nombre, "Bold", 60, 520)
+        d.text((100, y + 165), nombre, font=fn, fill=AZUL if i == n - 1 else TINTA)
+        fs = ajustar(d, sub, "Medium", 42, W - 200 - d.textbbox((0, 0), nombre + "  ", font=fn)[2])
+        d.text((100 + d.textbbox((0, 0), nombre + "  ", font=fn)[2], y + 180), sub, font=fs, fill=SUAVE)
         y += 300
     return im
 
@@ -293,14 +326,14 @@ def esc_cta(e, t, dur):
     lineas, f = envolver(d, e["pregunta"], "Bold", 110, W - 160)
     y = 650
     for l in lineas:
-        texto_centrado(d, y + int((1 - k) * 60), l, f, BLANCO)
+        texto_centrado(d, y + int((1 - k) * 60), l, f, TINTA)
         y += 125
     if t > 0.6:
         fb = fuente("Bold", 54)
         txt = e.get("linea", "Síguenos · @oceanicaterra")
         bb = d.textbbox((0, 0), txt, font=fb)
         w = bb[2] - bb[0] + 80
-        d.rounded_rectangle([(W - w) // 2, y + 80, (W + w) // 2, y + 200], radius=18, fill=NARANJA)
+        d.rounded_rectangle([(W - w) // 2, y + 80, (W + w) // 2, y + 200], radius=60, fill=AZUL)
         texto_centrado(d, y + 108, txt, fb, BLANCO)
     return im
 
@@ -308,11 +341,11 @@ def esc_cta(e, t, dur):
 def esc_quiz(e, t, dur):
     """Pregunta con 3 opciones, cuenta regresiva y revelación de la respuesta correcta."""
     im, d = base()
-    texto_centrado(d, 230, e.get("kicker", "PREGUNTA DEL DÍA"), fuente("Bold", 56), NARANJA)
+    texto_centrado(d, 230, e.get("kicker", "PREGUNTA DEL DÍA"), fuente("Bold", 56), AZUL)
     lineas, f = envolver(d, e["pregunta"], "Bold", 92, W - 160)
     y = 330
     for l in lineas:
-        texto_centrado(d, y, l, f, BLANCO)
+        texto_centrado(d, y, l, f, TINTA)
         y += 104
     t_cuenta = e.get("cuenta", 5)
     t_rev = 1.2 + t_cuenta
@@ -325,11 +358,11 @@ def esc_quiz(e, t, dur):
         correcta = i == e["correcta"]
         revelado = t >= t_rev
         if revelado and correcta:
-            fondo_c, borde, col = NARANJA, NARANJA, BLANCO
+            fondo_c, borde, col = AZUL, AZUL, BLANCO
         elif revelado:
-            fondo_c, borde, col = (20, 45, 75), (60, 80, 105), (120, 140, 160)
+            fondo_c, borde, col = (238, 243, 246), BORDE, (150, 166, 180)
         else:
-            fondo_c, borde, col = (16, 52, 88), CIELO, BLANCO
+            fondo_c, borde, col = BLANCO, (191, 221, 238), TINTA
         x0 = 110 + int((1 - k) * 80)
         d.rounded_rectangle([x0, y, W - 110, y + 150], radius=28, fill=fondo_c, outline=borde, width=5)
         d.text((x0 + 40, y + 38), letras[i], font=fuente("Bold", 70), fill=col)
@@ -342,17 +375,17 @@ def esc_quiz(e, t, dur):
         n = int(t_rev - t) + 1
         cx, cy, r = W // 2, y + 140, 90
         frac = (t_rev - t) - int(t_rev - t)
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(60, 80, 105), width=14)
-        d.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=NARANJA, width=14)
-        texto_centrado(d, cy - 70, str(n), fuente("Bold", 120), BLANCO)
-        texto_centrado(d, cy + 120, "Piensa tu respuesta...", fuente("Medium", 50), CIELO)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=BORDE, width=14)
+        d.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=AZUL, width=14)
+        texto_centrado(d, cy - 70, str(n), fuente("Bold", 120), TINTA)
+        texto_centrado(d, cy + 120, "Piensa tu respuesta...", fuente("Medium", 50), SUAVE)
     elif t >= t_rev and e.get("explicacion"):
         k = ease_out((t - t_rev - 0.3) / 0.5)
         if k > 0:
             lineas, f = envolver(d, e["explicacion"], "Medium", 58, W - 200)
             yy = y + 60
             for l in lineas:
-                texto_centrado(d, yy, l, f, BLANCO)
+                texto_centrado(d, yy, l, f, TINTA)
                 yy += 74
     return im
 
