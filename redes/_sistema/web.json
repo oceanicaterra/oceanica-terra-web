@@ -1,377 +1,381 @@
 {
-  "descripcion": "Hoja de ruta de la web. La tarea «Web Oceanica Terra» toma el primer item pendiente o en_curso, trabaja en la rama web y anota el avance. Puede añadir items nuevos al final (artículos de actualidad cada semana, más guías de buques, más módulos y productos) sin borrar los existentes.",
-  "items": [
-    {
-      "id": "seo-base",
-      "tipo": "web",
-      "titulo": "Base para crecer en Google",
-      "detalle": "Páginas propias por artículo (/articulos/<slug>.html) con estilo compartido, sitemap.xml, robots.txt, metadatos Open Graph y enlaces a Instagram, Facebook y YouTube en el pie. (Los enlaces a redes en cabecera y pie ya están hechos desde el 28/10.)",
-      "estado": "hecho",
-      "fecha": "2026-10-29",
-      "nota": "Hecho: canonical, Open Graph/Twitter con imagen 1200x630 (/assets/og-oceanica-terra.jpg), datos estructurados Organization/WebSite, robots.txt, sitemap.xml, 404.html y /assets/sitio.css (estilo compartido de páginas internas). Las páginas por artículo se crean en art-bl-pagina; cada página nueva debe añadirse a sitemap.xml."
-    },
-    {
-      "id": "redes-tiktok-y-ajustes",
-      "tipo": "web",
-      "titulo": "Enlace a TikTok y pequeños arreglos de la portada (PRIORITARIO)",
-      "detalle": "1) HECHO el 29/10/2026 (TikTok sustituye a Facebook en cabecera y pie de index.html y 404.html; commit c5035c1 en main). Antes: añadir el enlace a TikTok https://www.tiktok.com/@oceanicaterra con su icono en la cabecera y el pie, junto a Instagram y YouTube (pedido del propietario, 29/10/2026). Facebook sigue en la web: la página existe, aunque ya no se publica en ella a diario. 2) En la Tienda, los productos «Muy pronto» no deben llevar botón «Comprar» activo (cambiar por «Muy pronto», sin enlace). 3) El selector de idioma muestra EN e IT aunque solo el español está activo: ocultarlos o marcarlos como «próximamente». 4) Revisar que «En preparación» y «Ver resumen y primera página» se vean separados en las tarjetas de la Academia. Validar y publicar en una sola publicación. Es una tarea corta: hazla en la próxima ejecución antes de seguir con «art-bl-pagina» (su avance está guardado en la rama web).",
-      "estado": "hecho",
-      "fecha_alta": "2026-10-29",
-      "fecha": "2026-10-30",
-      "nota": "Hecho y publicado el 30/10: Tienda sin botón Comprar activo para productos sin enlace (la ficha muestra «Muy pronto»; hoy los 4 productos tienen enlace de Payhip y salen «Disponible»), EN e IT marcados como próximamente, y separación clara entre «En preparación» y «Ver resumen y primera página»."
-    },
-    {
-      "id": "art-bl-pagina",
-      "tipo": "articulo",
-      "titulo": "Llevar los 3 artículos existentes a páginas propias",
-      "detalle": "Conocimiento de embarque, SOLAS y FOB/CIF: cada uno en /articulos/ con enlace desde la Biblioteca (el ancla actual se mantiene).",
-      "estado": "hecho",
-      "nota": "Publicado el 30/10: /articulos/conocimiento-de-embarque.html, /articulos/solas-en-10-minutos.html y /articulos/fob-frente-a-cif.html, enlazados desde sus tarjetas (anclas #art-* intactas) y en sitemap.xml. Plantilla reutilizable: cabecera y pie de 404.html + /assets/sitio.css.",
-      "fecha": "2026-10-30"
-    },
-    {
-      "id": "prod-checklist-psc",
-      "tipo": "producto",
-      "titulo": "Lista de comprobación para inspecciones PSC (PDF)",
-      "detalle": "Qué revisa el Estado rector del puerto y cómo prepararse, con fuentes de los MoU.",
-      "estado": "hecho",
-      "precio_sugerido": "USD 7",
-      "fecha": "2026-10-30",
-      "documento": "https://claude.ai/artifact/DPWZMQpguNVBCsYuzzKJDu",
-      "nota": "Listo para Payhip el 30/10/2026 (USD 7). Fuentes verificadas ese día: OMI A.1185(33), BMA sobre A.1206(34), Paris MoU, Panamá, DIMAR, OIT. En la web: No."
-    },
-    {
-      "id": "prod-glosario",
-      "tipo": "producto",
-      "titulo": "Glosario marítimo español-inglés (PDF)",
-      "detalle": "300+ términos de fletamento, puerto, documentación y seguridad, con definición breve propia.",
-      "estado": "pendiente",
-      "precio_sugerido": "USD 7"
-    },
-    {
-      "id": "prod-solas-marpol",
-      "tipo": "producto",
-      "titulo": "Guía rápida SOLAS y MARPOL (PDF)",
-      "detalle": "Capítulos y anexos clave en tablas, con fecha de verificación de cada dato.",
-      "estado": "pendiente",
-      "precio_sugerido": "USD 9"
-    },
-    {
-      "id": "prod-ingles-maritimo",
-      "tipo": "producto",
-      "titulo": "Inglés marítimo práctico: frases SMCP de la OMI explicadas, con situaciones reales (puente, VHF, puerto, emergencias)",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Explicar y practicar las frases normalizadas (SMCP, resolución A.918(22)) con ejemplos propios; no reproducir el documento completo.",
-      "fecha": null
-    },
-    {
-      "id": "prod-stcw-mapa",
-      "tipo": "producto",
-      "titulo": "Mapa de la formación STCW: qué cursos y certificados necesita cada cargo a bordo y en qué orden",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Contenido programático general de cursos OMI/STCW explicado por competencias (formación básica, PSCRB, lucha contra incendios avanzada, primeros auxilios, etc.), con fuentes oficiales.",
-      "fecha": null
-    },
-    {
-      "id": "prod-ecdis",
-      "tipo": "producto",
-      "titulo": "Guía práctica de ECDIS: planificación y monitoreo de la derrota, alarmas, capas y errores comunes",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
-      "fecha": null
-    },
-    {
-      "id": "prod-radar-arpa",
-      "tipo": "producto",
-      "titulo": "Guía práctica de RADAR/ARPA: ajustes, punteo, CPA/TCPA y su uso con el COLREG",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
-      "fecha": null
-    },
-    {
-      "id": "prod-ais",
-      "tipo": "producto",
-      "titulo": "Guía práctica de AIS: qué transmite, cómo interpretarlo y sus limitaciones",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
-      "fecha": null
-    },
-    {
-      "id": "prod-gmdss",
-      "tipo": "producto",
-      "titulo": "Guía práctica de GMDSS: áreas marítimas, equipos, DSC, NAVTEX y procedimientos de socorro",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
-      "fecha": null
-    },
-    {
-      "id": "prod-estabilidad",
-      "tipo": "producto",
-      "titulo": "Estabilidad del buque explicada: GM, curva GZ, efecto de superficie libre y criterios, con ejercicios resueltos",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
-      "fecha": null
-    },
-    {
-      "id": "prod-lsa",
-      "tipo": "producto",
-      "titulo": "Mantenimiento de equipos de salvamento (LSA): botes, balsas, chalecos y aros; inspecciones semanales, mensuales y anuales",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Basado en SOLAS capítulo III y el Código IDS (LSA); citar sin reproducir.",
-      "fecha": null
-    },
-    {
-      "id": "prod-security-safety",
-      "tipo": "producto",
-      "titulo": "Seguridad a bordo (Safety y Security): Código IGS (ISM) y Código PBIP (ISPS) en la práctica, simulacros y registros",
-      "estado": "pendiente",
-      "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
-      "fecha": null
-    },
-    {
-      "id": "prod-maniobras",
-      "tipo": "producto",
-      "titulo": "Curso: maniobra de buques (hélice y timón, atraque y desatraque, remolcadores, fondeo), con casos prácticos",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-liderazgo",
-      "tipo": "producto",
-      "titulo": "Curso: liderazgo y trabajo en equipo a bordo (gestión de recursos del puente BRM/ERM y competencias STCW de liderazgo)",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-salud-mental",
-      "tipo": "producto",
-      "titulo": "Guía: bienestar y salud mental en la mar (soledad, estrés, fatiga, convivencia y dónde pedir ayuda las 24 h)",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Tema sensible: tono cuidadoso, fuentes OMS/OIT/ISWAN, incluir líneas de ayuda verificadas para gente de mar y aclarar que no sustituye la atención profesional.",
-      "fecha": null
-    },
-    {
-      "id": "prod-alimentacion",
-      "tipo": "producto",
-      "titulo": "Guía: alimentación y hábitos saludables a bordo (MLC 2006, cocina y provisiones, descanso, actividad física) con consejos prácticos",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Consejos generales de salud pública (OMS); nada de dietas ni cifras personalizadas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-nav-costera",
-      "tipo": "producto",
-      "titulo": "Curso: navegación costera con ejercicios resueltos (carta, situación, mareas, corrientes, abatimiento)",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-nav-astronomica",
-      "tipo": "producto",
-      "titulo": "Curso: navegación astronómica práctica (recta de altura, meridiana, error de compás por azimut) con ejercicios",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-entrevistas",
-      "tipo": "producto",
-      "titulo": "Guía: cómo preparar entrevistas de embarque y exámenes oficiales de competencia, por cargo",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Solo preguntas de práctica propias; nunca preguntas de examen filtradas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-derecho-maritimo",
-      "tipo": "producto",
-      "titulo": "Curso: derecho marítimo básico (CONVEMAR, pabellón, abordaje, salvamento, avería gruesa, conocimiento de embarque y reglas de La Haya-Visby, Hamburgo y Rotterdam)",
-      "estado": "pendiente",
-      "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
-      "fecha": null
-    },
-    {
-      "id": "prod-mlc",
-      "tipo": "producto",
-      "titulo": "Guía: derechos del marino según el Convenio sobre el Trabajo Marítimo (MLC 2006): contrato, descanso, salario, repatriación y quejas",
-      "estado": "pendiente",
-      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
-      "fecha": null
-    },
-    {
-      "id": "prod-combustibles",
-      "tipo": "producto",
-      "titulo": "Guía: combustibles alternativos a bordo (GNL, metanol, amoníaco, hidrógeno): riesgos y formación necesaria",
-      "estado": "pendiente",
-      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
-      "fecha": null
-    },
-    {
-      "id": "prod-cii-eexi",
-      "tipo": "producto",
-      "titulo": "Guía: CII, EEXI y SEEMP explicados para oficiales (descarbonización y qué cambia en la operación diaria)",
-      "estado": "pendiente",
-      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
-      "fecha": null
-    },
-    {
-      "id": "prod-espacios-cerrados",
-      "tipo": "producto",
-      "titulo": "Lista de comprobación: entrada segura en espacios cerrados y simulacros obligatorios",
-      "estado": "pendiente",
-      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
-      "fecha": null
-    },
-    {
-      "id": "prod-ciberseguridad",
-      "tipo": "producto",
-      "titulo": "Guía: ciberseguridad a bordo para tripulantes (gestión del riesgo cibernético en el SGS)",
-      "estado": "pendiente",
-      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
-      "fecha": null
-    },
-    {
-      "id": "prod-fatiga",
-      "tipo": "producto",
-      "titulo": "Guía: fatiga y horas de descanso (STCW y MLC): cómo registrarlas y prevenir errores",
-      "estado": "pendiente",
-      "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
-      "fecha": null
-    },
-    {
-      "id": "prod-kit",
-      "tipo": "producto",
-      "titulo": "Kit de documentación del buque en puerto",
-      "detalle": "Modelos comentados campo por campo de NOR, hoja de hechos (SOF) y carta de protesta, ya anunciado como «Muy pronto».",
-      "estado": "pendiente",
-      "precio_sugerido": "USD 12",
-      "nota": "Ojo: la Tienda ya tiene una ficha «Kit de documentación del buque en puerto» con enlace de Payhip (YK8hW) que se muestra como Disponible. Antes de redactarlo, comprobar si es el mismo producto; si lo es, convertir este item en una segunda edición o en otro producto distinto."
-    },
-    {
-      "id": "herr-conversor",
-      "tipo": "web",
-      "titulo": "Herramientas: conversor náutico (nudos ↔ km/h, millas náuticas ↔ km, metros ↔ pies, toneladas)",
-      "estado": "pendiente",
-      "nota": "Página /herramientas/ con JavaScript propio, sin librerías ni cookies. Pedido del propietario el 30/10/2026: herramientas de uso diario para marinos y logística.",
-      "fecha": null
-    },
-    {
-      "id": "herr-beaufort",
-      "tipo": "web",
-      "titulo": "Herramientas: escalas Beaufort (viento) y Douglas (mar) interactivas + enlaces a servicios oficiales de meteorología marítima",
-      "estado": "pendiente",
-      "nota": "Enlaces solo a servicios oficiales y verificados (p. ej. NOAA, servicios meteorológicos nacionales, WMO/GMDSS).",
-      "fecha": null
-    },
-    {
-      "id": "herr-eta",
-      "tipo": "web",
-      "titulo": "Herramientas: calculadora de ETA (distancia, velocidad, hora de salida en UTC y hora local)",
-      "estado": "pendiente",
-      "nota": null,
-      "fecha": null
-    },
-    {
-      "id": "herr-cbm",
-      "tipo": "web",
-      "titulo": "Herramientas: calculadora de carga (CBM, peso volumétrico y cuántas cajas caben en un contenedor de 20' y 40')",
-      "estado": "pendiente",
-      "nota": "Medidas internas de contenedores solo de fuentes verificadas (ISO 668 / navieras), con fecha de verificación.",
-      "fecha": null
-    },
-    {
-      "id": "herr-meteo",
-      "tipo": "web",
-      "titulo": "Meteorología marítima: viento y oleaje previstos para puertos de Latinoamérica",
-      "estado": "pendiente",
-      "nota": "Solo con una fuente de datos GRATUITA cuya licencia permita uso en un sitio comercial, sin clave secreta en el repositorio y sin cookies (verificar la licencia con WebFetch y citarla). Muchas API gratuitas son solo para uso no comercial: si no hay una válida, hacer una página de enlaces oficiales por país.",
-      "fecha": null
-    },
-    {
-      "id": "herr-senales",
-      "tipo": "web",
-      "titulo": "Herramientas: alfabeto fonético y banderas del Código Internacional de Señales (dibujadas en SVG propio)",
-      "estado": "pendiente",
-      "nota": null,
-      "fecha": null
-    },
-    {
-      "id": "guia-buques-1",
-      "tipo": "biblioteca",
-      "titulo": "Guía completa: portacontenedores",
-      "detalle": "Primera de las 18 fichas convertida en guía: diseño, equipo, operación, riesgos y normativa, con fuentes oficiales.",
-      "estado": "pendiente"
-    },
-    {
-      "id": "modulo-01",
-      "tipo": "academia",
-      "titulo": "Academia: módulo 01 completo",
-      "detalle": "Introducción al transporte marítimo: lección gratis en la web + resto del módulo como producto (Doc).",
-      "estado": "pendiente"
-    },
-    {
-      "id": "art-actualidad-1",
-      "tipo": "articulo",
-      "titulo": "Artículo de actualidad",
-      "detalle": "Tema con más interés en noticias.json de las últimas 2 semanas, explicado a fondo con fuentes.",
-      "estado": "pendiente"
-    },
-    {
-      "id": "guia-buques-2",
-      "tipo": "biblioteca",
-      "titulo": "Guía completa: graneleros",
-      "detalle": "Segunda ficha convertida en guía.",
-      "estado": "pendiente"
-    },
-    {
-      "id": "modulo-08",
-      "tipo": "academia",
-      "titulo": "Academia: módulo 08 completo",
-      "detalle": "Incoterms y comercio internacional.",
-      "estado": "pendiente"
-    },
-    {
-      "id": "videos-pagina",
-      "tipo": "videos",
-      "titulo": "Sección de vídeos con los Shorts publicados",
-      "detalle": "Mostrar los Shorts ya publicados en YouTube y el enlace al canal.",
-      "estado": "pendiente"
-    }
-  ],
-  "registro": [
-    {
-      "fecha": "2026-10-28",
-      "hecho": "Enlaces a Instagram, Facebook y YouTube en cabecera fija y pie (publicado)."
-    },
-    {
-      "fecha": "2026-10-29",
-      "hecho": "Base SEO publicada: metadatos para Google y redes (vista previa con imagen al compartir), sitemap.xml, robots.txt, página 404 y estilo compartido para las futuras páginas de artículos, guías y lecciones."
-    },
-    {
-      "fecha": "2026-10-30",
-      "hecho": "Publicadas las páginas propias de los 3 artículos de la Biblioteca (conocimiento de embarque, SOLAS, FOB/CIF), con fuentes verificadas hoy (CNUDMI, OMI, ICC Academy y otras) y un esquema propio FOB/CIF en SVG. Arreglos de portada: Tienda, selector de idioma y tarjetas de la Academia."
-    },
-    {
-      "fecha": "2026-10-30",
-      "hecho": "PRIORIDAD TIENDA (pedido del propietario): los productos de pago pasan al principio de la hoja de ruta: lista PSC, glosario marítimo español-inglés y guía rápida SOLAS/MARPOL. Lo demás sigue después."
-    },
-    {
-      "fecha": "2026-10-30",
-      "hecho": "Pedido del propietario: sumar a la web herramientas de uso diario para marinos y logística (conversor, Beaufort/Douglas, ETA, carga/CBM, meteorología marítima, señales), sin quitar nada. Los productos de la Tienda los hace desde hoy la tarea «Tienda Oceanica Terra»."
-    },
-    {
-      "fecha": "2026-10-30",
-      "hecho": "Nueva serie de productos «Guías prácticas STCW» propuesta por el propietario: inglés marítimo (SMCP), mapa de formación STCW, ECDIS, RADAR/ARPA, AIS, GMDSS, estabilidad, mantenimiento LSA y Safety/Security (IGS/PBIP)."
-    },
-    {
-      "fecha": "2026-10-30",
-      "hecho": "Ampliado el catálogo de productos: cursos de maniobra, liderazgo, navegación costera y astronómica, derecho marítimo, guía de entrevistas y exámenes, bienestar y salud mental, alimentación a bordo (ideas del propietario) y, por investigación propia, MLC 2006, combustibles alternativos, CII/EEXI, espacios cerrados, ciberseguridad y fatiga."
-    },
-    {
-      "fecha": "2026-10-30",
-      "hecho": "Tienda: «Lista de comprobación para inspecciones PSC» redactada en Claude Docs y lista para Payhip (USD 7)."
-    }
-  ]
+ "descripcion": "Hoja de ruta de la web. La tarea «Web Oceanica Terra» toma el primer item pendiente o en_curso, trabaja en la rama web y anota el avance. Puede añadir items nuevos al final (artículos de actualidad cada semana, más guías de buques, más módulos y productos) sin borrar los existentes.",
+ "items": [
+  {
+   "id": "seo-base",
+   "tipo": "web",
+   "titulo": "Base para crecer en Google",
+   "detalle": "Páginas propias por artículo (/articulos/<slug>.html) con estilo compartido, sitemap.xml, robots.txt, metadatos Open Graph y enlaces a Instagram, Facebook y YouTube en el pie. (Los enlaces a redes en cabecera y pie ya están hechos desde el 28/10.)",
+   "estado": "hecho",
+   "fecha": "2026-10-29",
+   "nota": "Hecho: canonical, Open Graph/Twitter con imagen 1200x630 (/assets/og-oceanica-terra.jpg), datos estructurados Organization/WebSite, robots.txt, sitemap.xml, 404.html y /assets/sitio.css (estilo compartido de páginas internas). Las páginas por artículo se crean en art-bl-pagina; cada página nueva debe añadirse a sitemap.xml."
+  },
+  {
+   "id": "redes-tiktok-y-ajustes",
+   "tipo": "web",
+   "titulo": "Enlace a TikTok y pequeños arreglos de la portada (PRIORITARIO)",
+   "detalle": "1) HECHO el 29/10/2026 (TikTok sustituye a Facebook en cabecera y pie de index.html y 404.html; commit c5035c1 en main). Antes: añadir el enlace a TikTok https://www.tiktok.com/@oceanicaterra con su icono en la cabecera y el pie, junto a Instagram y YouTube (pedido del propietario, 29/10/2026). Facebook sigue en la web: la página existe, aunque ya no se publica en ella a diario. 2) En la Tienda, los productos «Muy pronto» no deben llevar botón «Comprar» activo (cambiar por «Muy pronto», sin enlace). 3) El selector de idioma muestra EN e IT aunque solo el español está activo: ocultarlos o marcarlos como «próximamente». 4) Revisar que «En preparación» y «Ver resumen y primera página» se vean separados en las tarjetas de la Academia. Validar y publicar en una sola publicación. Es una tarea corta: hazla en la próxima ejecución antes de seguir con «art-bl-pagina» (su avance está guardado en la rama web).",
+   "estado": "hecho",
+   "fecha_alta": "2026-10-29",
+   "fecha": "2026-10-30",
+   "nota": "Hecho y publicado el 30/10: Tienda sin botón Comprar activo para productos sin enlace (la ficha muestra «Muy pronto»; hoy los 4 productos tienen enlace de Payhip y salen «Disponible»), EN e IT marcados como próximamente, y separación clara entre «En preparación» y «Ver resumen y primera página»."
+  },
+  {
+   "id": "art-bl-pagina",
+   "tipo": "articulo",
+   "titulo": "Llevar los 3 artículos existentes a páginas propias",
+   "detalle": "Conocimiento de embarque, SOLAS y FOB/CIF: cada uno en /articulos/ con enlace desde la Biblioteca (el ancla actual se mantiene).",
+   "estado": "hecho",
+   "nota": "Publicado el 30/10: /articulos/conocimiento-de-embarque.html, /articulos/solas-en-10-minutos.html y /articulos/fob-frente-a-cif.html, enlazados desde sus tarjetas (anclas #art-* intactas) y en sitemap.xml. Plantilla reutilizable: cabecera y pie de 404.html + /assets/sitio.css.",
+   "fecha": "2026-10-30"
+  },
+  {
+   "id": "prod-checklist-psc",
+   "tipo": "producto",
+   "titulo": "Lista de comprobación para inspecciones PSC (PDF)",
+   "detalle": "Qué revisa el Estado rector del puerto y cómo prepararse, con fuentes de los MoU.",
+   "estado": "hecho",
+   "precio_sugerido": "USD 7",
+   "fecha": "2026-10-30",
+   "documento": "https://claude.ai/artifact/DPWZMQpguNVBCsYuzzKJDu",
+   "nota": "Listo para Payhip el 30/10/2026 (USD 7). Fuentes verificadas ese día: OMI A.1185(33), BMA sobre A.1206(34), Paris MoU, Panamá, DIMAR, OIT. En la web: No."
+  },
+  {
+   "id": "prod-glosario",
+   "tipo": "producto",
+   "titulo": "Glosario marítimo español-inglés (PDF)",
+   "detalle": "300+ términos de fletamento, puerto, documentación y seguridad, con definición breve propia.",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 7"
+  },
+  {
+   "id": "prod-solas-marpol",
+   "tipo": "producto",
+   "titulo": "Guía rápida SOLAS y MARPOL (PDF)",
+   "detalle": "Capítulos y anexos clave en tablas, con fecha de verificación de cada dato.",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 9"
+  },
+  {
+   "id": "prod-ingles-maritimo",
+   "tipo": "producto",
+   "titulo": "Inglés marítimo práctico: frases SMCP de la OMI explicadas, con situaciones reales (puente, VHF, puerto, emergencias)",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Explicar y practicar las frases normalizadas (SMCP, resolución A.918(22)) con ejemplos propios; no reproducir el documento completo.",
+   "fecha": null
+  },
+  {
+   "id": "prod-stcw-mapa",
+   "tipo": "producto",
+   "titulo": "Mapa de la formación STCW: qué cursos y certificados necesita cada cargo a bordo y en qué orden",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Contenido programático general de cursos OMI/STCW explicado por competencias (formación básica, PSCRB, lucha contra incendios avanzada, primeros auxilios, etc.), con fuentes oficiales.",
+   "fecha": null
+  },
+  {
+   "id": "prod-ecdis",
+   "tipo": "producto",
+   "titulo": "Guía práctica de ECDIS: planificación y monitoreo de la derrota, alarmas, capas y errores comunes",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+   "fecha": null
+  },
+  {
+   "id": "prod-radar-arpa",
+   "tipo": "producto",
+   "titulo": "Guía práctica de RADAR/ARPA: ajustes, punteo, CPA/TCPA y su uso con el COLREG",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+   "fecha": null
+  },
+  {
+   "id": "prod-ais",
+   "tipo": "producto",
+   "titulo": "Guía práctica de AIS: qué transmite, cómo interpretarlo y sus limitaciones",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+   "fecha": null
+  },
+  {
+   "id": "prod-gmdss",
+   "tipo": "producto",
+   "titulo": "Guía práctica de GMDSS: áreas marítimas, equipos, DSC, NAVTEX y procedimientos de socorro",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+   "fecha": null
+  },
+  {
+   "id": "prod-estabilidad",
+   "tipo": "producto",
+   "titulo": "Estabilidad del buque explicada: GM, curva GZ, efecto de superficie libre y criterios, con ejercicios resueltos",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+   "fecha": null
+  },
+  {
+   "id": "prod-lsa",
+   "tipo": "producto",
+   "titulo": "Mantenimiento de equipos de salvamento (LSA): botes, balsas, chalecos y aros; inspecciones semanales, mensuales y anuales",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque». Basado en SOLAS capítulo III y el Código IDS (LSA); citar sin reproducir.",
+   "fecha": null
+  },
+  {
+   "id": "prod-security-safety",
+   "tipo": "producto",
+   "titulo": "Seguridad a bordo (Safety y Security): Código IGS (ISM) y Código PBIP (ISPS) en la práctica, simulacros y registros",
+   "estado": "pendiente",
+   "nota": "Serie «Guías prácticas STCW» (idea del propietario, 30/10/2026). Guía práctica PROPIA en español, organizada según las competencias del Código STCW (cita la tabla correspondiente, p. ej. A-II/1, sin reproducir su texto). NO copiar cursos modelo de la OMI, manuales de fabricantes ni publicaciones protegidas: explicar con palabras propias, ejemplos y ejercicios, y remitir a la fuente oficial. Aviso extra obligatorio: «Esta guía no sustituye la formación aprobada ni la familiarización con el equipo concreto del buque».",
+   "fecha": null
+  },
+  {
+   "id": "prod-maniobras",
+   "tipo": "producto",
+   "titulo": "Curso: maniobra de buques (hélice y timón, atraque y desatraque, remolcadores, fondeo), con casos prácticos",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-liderazgo",
+   "tipo": "producto",
+   "titulo": "Curso: liderazgo y trabajo en equipo a bordo (gestión de recursos del puente BRM/ERM y competencias STCW de liderazgo)",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-salud-mental",
+   "tipo": "producto",
+   "titulo": "Guía: bienestar y salud mental en la mar (soledad, estrés, fatiga, convivencia y dónde pedir ayuda las 24 h)",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Tema sensible: tono cuidadoso, fuentes OMS/OIT/ISWAN, incluir líneas de ayuda verificadas para gente de mar y aclarar que no sustituye la atención profesional.",
+   "fecha": null
+  },
+  {
+   "id": "prod-alimentacion",
+   "tipo": "producto",
+   "titulo": "Guía: alimentación y hábitos saludables a bordo (MLC 2006, cocina y provisiones, descanso, actividad física) con consejos prácticos",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Consejos generales de salud pública (OMS); nada de dietas ni cifras personalizadas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-nav-costera",
+   "tipo": "producto",
+   "titulo": "Curso: navegación costera con ejercicios resueltos (carta, situación, mareas, corrientes, abatimiento)",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-nav-astronomica",
+   "tipo": "producto",
+   "titulo": "Curso: navegación astronómica práctica (recta de altura, meridiana, error de compás por azimut) con ejercicios",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-entrevistas",
+   "tipo": "producto",
+   "titulo": "Guía: cómo preparar entrevistas de embarque y exámenes oficiales de competencia, por cargo",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas. Solo preguntas de práctica propias; nunca preguntas de examen filtradas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-derecho-maritimo",
+   "tipo": "producto",
+   "titulo": "Curso: derecho marítimo básico (CONVEMAR, pabellón, abordaje, salvamento, avería gruesa, conocimiento de embarque y reglas de La Haya-Visby, Hamburgo y Rotterdam)",
+   "estado": "pendiente",
+   "nota": "Idea del propietario (30/10/2026). Guía/curso propio en español, con fuentes oficiales verificadas y fecha; sin copiar publicaciones protegidas.",
+   "fecha": null
+  },
+  {
+   "id": "prod-mlc",
+   "tipo": "producto",
+   "titulo": "Guía: derechos del marino según el Convenio sobre el Trabajo Marítimo (MLC 2006): contrato, descanso, salario, repatriación y quejas",
+   "estado": "pendiente",
+   "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+   "fecha": null
+  },
+  {
+   "id": "prod-combustibles",
+   "tipo": "producto",
+   "titulo": "Guía: combustibles alternativos a bordo (GNL, metanol, amoníaco, hidrógeno): riesgos y formación necesaria",
+   "estado": "pendiente",
+   "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+   "fecha": null
+  },
+  {
+   "id": "prod-cii-eexi",
+   "tipo": "producto",
+   "titulo": "Guía: CII, EEXI y SEEMP explicados para oficiales (descarbonización y qué cambia en la operación diaria)",
+   "estado": "pendiente",
+   "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+   "fecha": null
+  },
+  {
+   "id": "prod-espacios-cerrados",
+   "tipo": "producto",
+   "titulo": "Lista de comprobación: entrada segura en espacios cerrados y simulacros obligatorios",
+   "estado": "pendiente",
+   "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+   "fecha": null
+  },
+  {
+   "id": "prod-ciberseguridad",
+   "tipo": "producto",
+   "titulo": "Guía: ciberseguridad a bordo para tripulantes (gestión del riesgo cibernético en el SGS)",
+   "estado": "pendiente",
+   "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+   "fecha": null
+  },
+  {
+   "id": "prod-fatiga",
+   "tipo": "producto",
+   "titulo": "Guía: fatiga y horas de descanso (STCW y MLC): cómo registrarlas y prevenir errores",
+   "estado": "pendiente",
+   "nota": "Idea de investigación de Oceanica Terra (30/10/2026), tema de actualidad en la formación de gente de mar; verificar con fuentes oficiales (OMI, OIT) antes de redactar.",
+   "fecha": null
+  },
+  {
+   "id": "prod-kit",
+   "tipo": "producto",
+   "titulo": "Kit de documentación del buque en puerto",
+   "detalle": "Modelos comentados campo por campo de NOR, hoja de hechos (SOF) y carta de protesta, ya anunciado como «Muy pronto».",
+   "estado": "pendiente",
+   "precio_sugerido": "USD 12",
+   "nota": "Ojo: la Tienda ya tiene una ficha «Kit de documentación del buque en puerto» con enlace de Payhip (YK8hW) que se muestra como Disponible. Antes de redactarlo, comprobar si es el mismo producto; si lo es, convertir este item en una segunda edición o en otro producto distinto."
+  },
+  {
+   "id": "herr-conversor",
+   "tipo": "web",
+   "titulo": "Herramientas: conversor náutico (nudos ↔ km/h, millas náuticas ↔ km, metros ↔ pies, toneladas)",
+   "estado": "hecho",
+   "nota": "Página /herramientas/ con JavaScript propio, sin librerías ni cookies. Pedido del propietario el 30/10/2026: herramientas de uso diario para marinos y logística. Hecho y publicado el 31/10/2026: /herramientas/ (índice con las próximas herramientas como «En preparación») y /herramientas/conversor-nautico.html (velocidad, distancia, calado/eslora, masa, volumen; factores de NIST SP 811 apéndice B.8 verificados ese día). Acceso en la navegación y en la portada (#herramientas).",
+   "fecha": "2026-10-31"
+  },
+  {
+   "id": "herr-beaufort",
+   "tipo": "web",
+   "titulo": "Herramientas: escalas Beaufort (viento) y Douglas (mar) interactivas + enlaces a servicios oficiales de meteorología marítima",
+   "estado": "pendiente",
+   "nota": "Enlaces solo a servicios oficiales y verificados (p. ej. NOAA, servicios meteorológicos nacionales, WMO/GMDSS).",
+   "fecha": null
+  },
+  {
+   "id": "herr-eta",
+   "tipo": "web",
+   "titulo": "Herramientas: calculadora de ETA (distancia, velocidad, hora de salida en UTC y hora local)",
+   "estado": "pendiente",
+   "nota": null,
+   "fecha": null
+  },
+  {
+   "id": "herr-cbm",
+   "tipo": "web",
+   "titulo": "Herramientas: calculadora de carga (CBM, peso volumétrico y cuántas cajas caben en un contenedor de 20' y 40')",
+   "estado": "pendiente",
+   "nota": "Medidas internas de contenedores solo de fuentes verificadas (ISO 668 / navieras), con fecha de verificación.",
+   "fecha": null
+  },
+  {
+   "id": "herr-meteo",
+   "tipo": "web",
+   "titulo": "Meteorología marítima: viento y oleaje previstos para puertos de Latinoamérica",
+   "estado": "pendiente",
+   "nota": "Solo con una fuente de datos GRATUITA cuya licencia permita uso en un sitio comercial, sin clave secreta en el repositorio y sin cookies (verificar la licencia con WebFetch y citarla). Muchas API gratuitas son solo para uso no comercial: si no hay una válida, hacer una página de enlaces oficiales por país.",
+   "fecha": null
+  },
+  {
+   "id": "herr-senales",
+   "tipo": "web",
+   "titulo": "Herramientas: alfabeto fonético y banderas del Código Internacional de Señales (dibujadas en SVG propio)",
+   "estado": "pendiente",
+   "nota": null,
+   "fecha": null
+  },
+  {
+   "id": "guia-buques-1",
+   "tipo": "biblioteca",
+   "titulo": "Guía completa: portacontenedores",
+   "detalle": "Primera de las 18 fichas convertida en guía: diseño, equipo, operación, riesgos y normativa, con fuentes oficiales.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "modulo-01",
+   "tipo": "academia",
+   "titulo": "Academia: módulo 01 completo",
+   "detalle": "Introducción al transporte marítimo: lección gratis en la web + resto del módulo como producto (Doc).",
+   "estado": "pendiente"
+  },
+  {
+   "id": "art-actualidad-1",
+   "tipo": "articulo",
+   "titulo": "Artículo de actualidad",
+   "detalle": "Tema con más interés en noticias.json de las últimas 2 semanas, explicado a fondo con fuentes.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "guia-buques-2",
+   "tipo": "biblioteca",
+   "titulo": "Guía completa: graneleros",
+   "detalle": "Segunda ficha convertida en guía.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "modulo-08",
+   "tipo": "academia",
+   "titulo": "Academia: módulo 08 completo",
+   "detalle": "Incoterms y comercio internacional.",
+   "estado": "pendiente"
+  },
+  {
+   "id": "videos-pagina",
+   "tipo": "videos",
+   "titulo": "Sección de vídeos con los Shorts publicados",
+   "detalle": "Mostrar los Shorts ya publicados en YouTube y el enlace al canal.",
+   "estado": "pendiente"
+  }
+ ],
+ "registro": [
+  {
+   "fecha": "2026-10-28",
+   "hecho": "Enlaces a Instagram, Facebook y YouTube en cabecera fija y pie (publicado)."
+  },
+  {
+   "fecha": "2026-10-29",
+   "hecho": "Base SEO publicada: metadatos para Google y redes (vista previa con imagen al compartir), sitemap.xml, robots.txt, página 404 y estilo compartido para las futuras páginas de artículos, guías y lecciones."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "Publicadas las páginas propias de los 3 artículos de la Biblioteca (conocimiento de embarque, SOLAS, FOB/CIF), con fuentes verificadas hoy (CNUDMI, OMI, ICC Academy y otras) y un esquema propio FOB/CIF en SVG. Arreglos de portada: Tienda, selector de idioma y tarjetas de la Academia."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "PRIORIDAD TIENDA (pedido del propietario): los productos de pago pasan al principio de la hoja de ruta: lista PSC, glosario marítimo español-inglés y guía rápida SOLAS/MARPOL. Lo demás sigue después."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "Pedido del propietario: sumar a la web herramientas de uso diario para marinos y logística (conversor, Beaufort/Douglas, ETA, carga/CBM, meteorología marítima, señales), sin quitar nada. Los productos de la Tienda los hace desde hoy la tarea «Tienda Oceanica Terra»."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "Nueva serie de productos «Guías prácticas STCW» propuesta por el propietario: inglés marítimo (SMCP), mapa de formación STCW, ECDIS, RADAR/ARPA, AIS, GMDSS, estabilidad, mantenimiento LSA y Safety/Security (IGS/PBIP)."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "Ampliado el catálogo de productos: cursos de maniobra, liderazgo, navegación costera y astronómica, derecho marítimo, guía de entrevistas y exámenes, bienestar y salud mental, alimentación a bordo (ideas del propietario) y, por investigación propia, MLC 2006, combustibles alternativos, CII/EEXI, espacios cerrados, ciberseguridad y fatiga."
+  },
+  {
+   "fecha": "2026-10-30",
+   "hecho": "Tienda: «Lista de comprobación para inspecciones PSC» redactada en Claude Docs y lista para Payhip (USD 7)."
+  },
+  {
+   "fecha": "2026-10-31",
+   "hecho": "Web: publicada la sección Herramientas (/herramientas/) con el conversor náutico; enlace «Herramientas» en la navegación y bloque en la portada. Siguiente: herr-beaufort."
+  }
+ ]
 }

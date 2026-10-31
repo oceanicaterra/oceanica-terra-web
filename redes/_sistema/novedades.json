@@ -24,6 +24,14 @@
    "fecha": "2026-10-30",
    "publicado_en_web": true,
    "promocionado": false
+  },
+  {
+   "tipo": "herramienta",
+   "titulo": "Conversor náutico: nudos, millas, pies, brazas, toneladas y barriles",
+   "ruta": "/herramientas/conversor-nautico.html",
+   "fecha": "2026-10-31",
+   "publicado_en_web": true,
+   "promocionado": false
   }
  ]
 }

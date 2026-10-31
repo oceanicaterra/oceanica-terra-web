@@ -28,6 +28,10 @@
   {
    "fecha": "2026-10-30",
    "motivo": "Páginas propias para los 3 artículos de la Biblioteca (/articulos/), sitemap actualizado, Reglas de Rotterdam con fuente CNUDMI, y arreglos de portada: Tienda sin botón Comprar para productos sin enlace, EN/IT como próximamente, tarjetas de la Academia más claras (commit bf33016)"
+  },
+  {
+   "fecha": "2026-10-31",
+   "motivo": "Herramientas: página índice /herramientas/ y conversor náutico (/herramientas/conversor-nautico.html) con factores NIST SP 811; acceso «Herramientas» en la navegación de todas las páginas y en la portada (#herramientas); sitemap (commit 33fe2b4)"
   }
  ]
 }
