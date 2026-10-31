@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T06:37:10-04:00",
+  "updated": "2026-10-31T06:42:08-04:00",
   "items": [
     {
       "title": "Se hunde en el mar Negro el portacontenedores Contship Jet tras ser atacado por drones navales",
@@ -9,6 +9,14 @@
       "date": "2026-10-29",
       "category": "seguridad",
       "lead": true
+    },
+    {
+      "title": "Disputa por cláusula de prioridad de atraque frena una segunda terminal de contenedores en Montevideo",
+      "summary": "Uruguay evalúa una segunda terminal de contenedores, pero el contrato de 2021 que extiende la concesión de TCP hasta 2081 obliga a darle prioridad en los portacontenedores. Neltume propone una terminal de USD 900 millones y 1,15 millones de TEU, mientras Katoen Natie amenaza con arbitraje.",
+      "source": "PortalPortuario",
+      "url": "https://portalportuario.cl/clausula-en-contrato-de-tcp-impediria-libre-competencia-en-puerto-de-montevideo/",
+      "date": "2026-10-29",
+      "category": "puertos"
     },
     {
       "title": "México inicia la construcción del puerto de Punta Colonet con inversión superior a 2.180 millones de dólares",
@@ -57,14 +65,6 @@
       "url": "https://portalportuario.cl/actividad-de-transporte-y-produccion-de-puerto-de-ningbo-zhoushan-alcanza-record-en-septiembre",
       "date": "2026-10-26",
       "category": "puertos"
-    },
-    {
-      "category": "rutas",
-      "title": "ZIM añade el puerto de Houston a su servicio semanal Venezuela Line",
-      "summary": "La naviera incorpora Houston a la rotación del servicio VEL, que enlaza Puerto Cabello, Cartagena, Kingston, Guanta, La Guaira y Georgetown con frecuencia semanal, usando los buques Tzini, Seamaster y Martí Cloud.",
-      "source": "PortalPortuario",
-      "url": "https://portalportuario.cl/zim-incluye-al-puerto-de-houston-en-itinerario-de-su-servicio-venezuela-line",
-      "date": "2026-10-26"
     },
     {
       "category": "canales",
